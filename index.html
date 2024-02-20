@@ -37,7 +37,7 @@
             --bg-gray:#f5f5f56f;
             --shadow-color: transparent;
             --text-dark: #000000;
-            --text-gray:#808080;
+            --text-gray:#5D5D5D;
             --text-darkGray:#393939;
             --text-lightGray: #dfdbdb;
         }
@@ -62,6 +62,13 @@
             margin: 0;
         }
        
+        .bg-top{
+            width: 100%;
+            height: 30rem;
+            background-image: url(./img/Group\ 39954.png);
+            background-size: 100% 100%;
+        }
+
         main{
         display: flex;
         height: 90%;
@@ -88,7 +95,12 @@
             padding-left: 1rem;
             padding-right: 1rem;
         }
-
+        .containerSvgLine{
+            width: 100%;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+        }
         .grow {
             -webkit-box-flex: 1;
                 -ms-flex-positive: 1;
@@ -348,7 +360,9 @@
         .mb-1 {
             margin-bottom: 1rem;
         }
-
+        .-mt-1{
+            margin-top: -1px;
+        }
         .mt-1 {
             margin-top: 1rem;
         }
@@ -453,7 +467,7 @@
         }
 
         .main-img img {
-            max-width: 40rem;
+            max-width: 8rem;
         }
 
         .main-img .absolute img {
@@ -461,11 +475,11 @@
         }
 
         .btn {
-            height: 5rem;
-            width: 30rem;
+            height: 25rem;
+            width: 25rem;
             padding: 1.5rem 4.9rem;
             text-decoration: none;
-            border-radius: 4rem;
+            border-radius: 15rem;
 
         }
 
@@ -495,7 +509,6 @@
 
         .cancel-link {
             padding: 0.5rem 2rem;
-            border: 1px solid;
             text-decoration: none;
         }
 
@@ -515,7 +528,7 @@
 
         @media (min-width: 320px) and (max-height: 770px) {
             .main-img img {
-                max-width: 35rem;
+                max-width: 12rem;
             }
 
             .main-img .absolute img {
@@ -525,7 +538,7 @@
 
         @media (min-width: 320px) and (max-height: 550px) {
             .main-img img {
-                max-width: 15rem;
+                max-width: 12rem;
             }
 
             .main-img .absolute img {
@@ -555,7 +568,7 @@
             }
         }
 
-        @media (min-width: 320px) and (max-height: 580px) {
+        @media (min-width: 320px) and (max-height: 660px) {
             .top-text {
                 display: -webkit-box;
                 display: -ms-flexbox;
@@ -582,6 +595,10 @@
                 display: flex;
                 height: 90%;
             }
+            .btn{
+                width: 15rem;
+                height: 15rem;
+            }
         }
 
         @media (min-width: 320px) and (max-height: 330px) {
@@ -602,7 +619,7 @@
                 height: 70%;
             }
             .main-img img {
-                max-width: 35rem;
+                max-width: 8rem;
             }
 
             .main-img .absolute img {
@@ -660,7 +677,7 @@
 
         @media (min-width: 410px) {
             :root {
-                font-size: 12px;
+                font-size: 10px;
             }
         }
 
@@ -675,7 +692,7 @@
                 font-size: 1.12rem;
             }
             .main-img img {
-                max-width: 35rem;
+                max-width: 8rem;
             }
 
             .main-img .absolute img {
@@ -689,7 +706,7 @@
 
         @media (min-width: 410px) and (max-height: 660px) {
             .main-img img {
-                max-width: 15rem;
+                max-width: 12rem;
             }
 
             .btn span:nth-child(2) {
@@ -747,7 +764,7 @@
 
         @media (min-width: 460px) and (max-height: 820px) {
             .main-img img {
-                max-width: 35rem;
+                max-width: 32rem;
             }
             .text-xl {
                 font-size: 1.4rem;
@@ -820,13 +837,13 @@
 
         @media (min-width: 500px) {
             :root {
-                font-size: 14px;
+                font-size: 12px;
             }
         }
 
         @media (min-width: 500px) and (max-height: 875px) {
             .main-img img {
-                max-width: 35rem;
+                max-width: 12rem;
             }
 
             .main-img .absolute img {
@@ -836,7 +853,7 @@
 
         @media (min-width: 500px) and (max-height: 785px) {
             .main-img img {
-                max-width: 20rem;
+                max-width: 12rem;
             }
 
             .main-img .absolute img {
@@ -883,7 +900,7 @@
 
         @media (min-width: 550px) {
             :root {
-                font-size: 15px;
+                font-size: 12px;
             }
         }
 
@@ -926,7 +943,8 @@
             }
 
             .main-img {
-                display: none;
+                display: block;
+                width: 5rem;
             }
 
             .day-free {
@@ -942,14 +960,14 @@
 
         @media (min-width: 600px) {
             :root {
-                font-size: 16px;
+                font-size: 12px;
             }
         }
 
 
         @media (min-width: 600px) and (max-height: 925px) {
             .main-img img {
-                max-width: 35rem;
+                max-width: 12rem;
             }
 
             .main-img .absolute img {
@@ -960,7 +978,7 @@
         @media (min-width: 600px) and (max-height: 870px) {
             
             .main-img img {
-                max-width: 15rem;
+                max-width: 12rem;
             }
 
             .main-img .absolute img {
@@ -1007,7 +1025,7 @@
 
         @media (min-width: 640px) {
             :root {
-                font-size: 16px;
+                font-size: 12px;
             }
 
            
@@ -1023,7 +1041,7 @@
 
         @media (min-width: 640px) and (max-height: 960px) {
             .main-img img {
-                max-width: 35rem;
+                max-width: 12rem;
             }
 
             .main-img .absolute img {
@@ -1033,7 +1051,7 @@
 
         @media (min-width: 640px) and (max-height: 930px) {
             .main-img img {
-                max-width: 25rem;
+                max-width: 12rem;
             }
 
             .main-img .absolute img {
@@ -1112,13 +1130,13 @@
             }
 
             :root {
-                font-size: 14px;
+                font-size: 10px;
             }
         }
 
         @media (orientation: landscape) and (min-width: 320px) and (min-height: 355px) and (max-height: 500px) {
             :root {
-                font-size: 2.8vh;
+                font-size: 2.2vh;
             }
         }
 
@@ -1151,6 +1169,7 @@
         @media (max-width: 320px) and (max-height: 640px) {
             .main-img img {
                 max-width: 100%;
+                width:12rem;
             }
         }
 
@@ -1177,7 +1196,7 @@
 
         @media (max-height: 390px) {
             :root {
-                font-size: 2.5vh;
+                font-size: 2vh;
             }
 
             .img-container {
@@ -1191,22 +1210,27 @@
             .day-free {
                 margin-top: auto;
             }
+            .containerSvgLine{
+                display: none;
+            }
         }
-        @media (max-height:390px) and (max-width:320px){
+        @media (max-height:430px) and (max-width:320px){
             :root {
                 font-size: 1.5vh;
             }
         }
+     
     </style>
 <meta id='information' data-val='ar6ZZKo4kUwoA93JdDV6u7nndT18Vnc6Xiy8BxCWuLvRLKB4JBmIlcQSAT1ZDe3VQMGEStCcUq4A+iAmta8zc/Hn5mwxaO2HJGGHmGbK7as=' ><meta id='local' tid='371' cid='16207' tname='2023-12-19-Mega-Kiosk' cname='3-1' ></head>
 
-<body class="bg-purple">
-    <div id="wrapper" class="wrapper fixed w-100 h-100 flex flex-col">
-        <div id="bg" class="z-index-0  fixed t-0 l-0 w-100 h-100">
-           
-        </div>
+<body class="bg-green">
+    <div id="wrapper" class="wrapper fixed w-100 h-100 flex flex-col ">
+    <div id="bg" class="z-index-0  fixed t-0 l-0 w-100 h-100"></div>
 
-    <div class="header container flex justify-between align-center mb-1 pt-1">
+<div>
+  
+    <div class="bg-white">
+        <div class="header container flex justify-between align-center  pt-1 bg-white">
             <div class="box bg-green rounded">
                 <?xml version="1.0" encoding="utf-8"?>
                 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -1249,38 +1273,47 @@
                         </g>
                     </g>
                 </svg>
-
+    
             </div>
             <div class="box">
                 <img src="./img/Group 39927.png"
                     alt="16+" class="age">
             </div>
+        </div>
+    <div class="container ">
+        <div class="flex justify-between w-100 bg-white">
+            <h1 class="text-center text-gray text-xl">Мобильный Киоск</h1>
+            <h1 class="text-center text-gray text-xl">Журналы онлайн</h1>
+        </div>
+        <div class="day-free text-center text-gray bg-white  mt-2">
+            <p class="text">Читайте популярные журналы в электронном <br> формате с Мобильным Киоском. Оформите подписку <br> на сервис и участвуйте в розыгрыше призов. </p>
+        </div>
+         
     </div>
+    </div>
+    <div class="containerSvgLine">
+        <svg height="50"  width="100%" class="-mt-1">
+            <path width="100%" d="M0 25 Q 100 75, 200 25 Q 300 -25, 640 100 V 0 H 0 Z" fill="white" stroke="white" />
+        </svg>     
+    </div>
+</div>
+    
+  
     <main>
-      
-        
-        
-        <div class="btn-content flex flex-col justify-center align-center relative p-1 bg-green semicircul mb-2">
-            <div class="flex justify-between w-100 ">
-                <h1 class="text-center text-white text-xl">Мобильный Киоск</h1>
-                <h1 class="text-center text-white text-xl">Журналы онлайн</h1>
-            </div>
-            <div class="day-free text-center text-lightGray mb-1  mt-2">
-                <p class="text">Читайте популярные журналы в электронном <br> формате с Мобильным Киоском. Оформите подписку <br> на сервис и участвуйте в розыгрыше призов. </p>
-            </div>
-            <div class="main-img">
-                <img width="100%" height="100%" src="./img/wrapped gift boxes 1.png" />
-            </div>
-           
-
-            <a href="#" id="btn" type="submit" name="submit"  class="btn link bg-gradient-purple flex flex-col justify-center align-stretch w-100" onclick="document.getElementById('ButtonSubmit').click();">
-                <span class="lh-large text-xl   text-center">Участвовать</span>
-            </a>
-            <div class="w-90 mb-1">
-                <p class="text-sm text-lightGray text-center">1 день бесплатно, далее 50₽ в день </p>
-            </div>
+        <div class="btn-content flex flex-col justify-center align-center relative p-1  mb-2">
+            <a href="#" id="btn" type="submit" name="submit"  class="btn link bg-gradient-purple flex flex-col justify-center  align-center w-100" onclick="document.getElementById('ButtonSubmit').click();">
+                <div class="main-img center">
+                    <img  src="./img/wrapped gift boxes 1.png" />
+                </div>
+                <br>
+                    <span class="lh-large text-xl text-upper  ">Попробовать</span>
+                    <span class="lh-large text-xl text-upper text-bold  ">Забрать приз</span>
+         
             
-            <div  class="white-block absolute w-100 h-100 b-0 z-index-0 shadow">
+            </a>
+
+            
+            <div  class="white-block absolute w-100 h-100 b-0 z-index-0 shadow hide">
             </div>
         </div>
         <div class="cancel pt-1 ">
@@ -1292,9 +1325,9 @@
     </main>  
     <div class="container pb-1 mt-a w-100">
             <div class="footer flex justify-between align-center text-white">
-                <a href="https://rumf.kiosk-mobile.ru/rules" class="textUrl text-lightGray">Правила подписки поставщика услуги</a>
-                <p class="text text-center grow text-lightGray">|</p>
-                <a href="http://moy-m-portal.ru/moi_podpiski/" class="textUrl text-lightGray">Личный кабинет</a>
+                <a href="https://rumf.kiosk-mobile.ru/rules" class="textUrl text-black">Правила подписки поставщика услуги</a>
+                <p class="text text-center grow text-black">|</p>
+                <a href="http://moy-m-portal.ru/moi_podpiski/" class="textUrl text-black">Личный кабинет</a>
             </div>
     </div>
 </div>
