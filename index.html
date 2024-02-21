@@ -7,16 +7,6 @@
     <meta name="apple-mobile-web-app-capable" content="no"/>
  
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Jost:ital,wght@0,100..900;1,100..900&family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap" rel="stylesheet">
     <title>Megafon Киоск</title>
     <style>
         /*
@@ -37,14 +27,12 @@
         :root {
             font-size: 10px;
             --btn-color: #ffffff;
-            --btn-dark: #000000;
+            --btn-dark: #ffffff;
             --bg-purple: #721983;
-            --bg-green: #26bf4b;
+            --bg-green: #00B858;
             --bg-white: #ffffff;
             --shadow-color: transparent;
-            --text-dark: #000000;
-            --text-gray:#808080;
-            --text-white:#ffffff;
+            --text-dark: #ffffff;
         }
 
         html {
@@ -52,12 +40,6 @@
             height: 100vh;
             padding: env(safe-area-inset);
         }
-        .LiterataText{
-        font-family: "Literata", serif;
-       }
-       .JostText{
-        font-family: "Jost", sans-serif;
-       }
 
         body {
             padding: 0;
@@ -71,20 +53,11 @@
             height: 100vh;
         }
 
-        main{
-        display: flex;
-        height: 80%;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        }
         img {
             max-width: 100%;
             width: 100%;
         }
-        .logoImg{
-            width: 6rem;
-        }
+
         p {
             margin: 0;
             padding: 0;
@@ -213,7 +186,9 @@
         .r-0 {
             right: 0;
         }
-
+        .w-90{
+            width:90%;
+        }
         .w-100 {
             width: 100%;
         }
@@ -221,22 +196,17 @@
         .h-100 {
             height: 100%;
         }
-
+        .text-sm{
+            font-size: 1.4rem;
+            line-height: 1;
+        }
         .text {
             font-size: 1.2rem;
             line-height: 1;
         }
-        .textV2{
-            font-size: 1.2rem;
-            line-height: 1; 
-        }
 
         .text-white {
             color: #fff;
-        }
-
-        .text-purple{
-            color:#E457FF;
         }
 
         .text-black {
@@ -250,7 +220,7 @@
             font-size: 1.5rem !important;
         }
         .text-lg {
-            font-size: 1rem !important;
+            font-size: 1.3rem !important;
         }
 
         .text-2xl {
@@ -263,6 +233,9 @@
 
         .text-center {
             text-align: center;
+        }
+        .text-right{
+            text-align: right;
         }
 
         .text-upper {
@@ -277,9 +250,6 @@
             font-weight: 500;
         }
 
-        .text-gray{
-            color:var(--text-gray);
-        }
         .text-normal {
             font-weight: 400;
         }
@@ -307,12 +277,11 @@
         }
 
         .bg-gradient-purple {
-            background: linear-gradient(131deg, #721983 37.5%, #1b051fe3 100%);
-            background: radial-gradient(#270028 37.5%, #000000);
+            background: linear-gradient(180deg, #721983 37.5%, #1B051F 100%);
         }
 
         .bg-green {
-            background-color: #26bf4b !important;
+            background-color: #00B858 !important;
         }
 
         .bg-white {
@@ -340,9 +309,6 @@
 
         .mt-1 {
             margin-top: 1rem;
-        }
-        .mt-2{
-            margin-top: 2rem;
         }
 
         .mb-2 {
@@ -374,7 +340,7 @@
         }
 
         .lh-large {
-            line-height: 1.2;
+            line-height: 1.5rem;
         }
 
         .link {
@@ -392,35 +358,21 @@
         .link:active {
             color: var(--btn-color)
         }
-        .link-white {
-            color: var(--text-white)
-        }
-        .link-white:hover {
-            color: var(--text-white)
-        }
-        .link-white:link {
-            color: var(--text-white)
-        }
-        .link-white:visited {
-            color: var(--text-white)
-        }
-        .link-white:active {
-            color: var(--text-white)
-        }
+
         .link-dark {
-            color: var(--text-gray)
+            color: var(--btn-dark)
         }
         .link-dark:hover {
-            color: var(--text-gray)
+            color: var(--btn-dark)
         }
         .link-dark:link {
-            color: var(--text-gray)
+            color: var(--btn-dark)
         }
         .link-dark:visited {
-            color: var(--text-gray)
+            color: var(--btn-dark)
         }
         .link-dark:active {
-            color: var(--text-gray)
+            color: var(--btn-dark)
         }
 
         .wrapper {
@@ -432,13 +384,13 @@
 
         .header .box:nth-child(1) {
             padding: 0.8rem 1rem;
-            width: 12rem;
+            width: 10rem;
             line-height: 0;
         }
 
         .header .box:nth-child(2) {
             line-height: 0;
-            width: 4rem;
+            width: 3rem;
         }
 
 
@@ -451,9 +403,15 @@
             margin-left: auto;
             margin-right: auto;
         }
-
+        main{
+        display: flex;
+        height: 80%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        }
         .main-img img {
-            max-width: 40rem;
+            max-width: 29rem;
         }
 
         .main-img .absolute img {
@@ -465,20 +423,31 @@
             gap: 10px;
             height: 6rem;
             width: 30rem;
-            padding: 2rem 0rem;
+            padding: 4rem 0rem;
             text-decoration: none;
             box-sizing: border-box;
             border-radius: 15px;
-            background-color: #189648;
         }
 
         .btn span {
             white-space: nowrap;
-            text-align: center;
         }
-
+.header-block{
+    background-color: var(--bg-purple) !important;
+            width: 70rem;
+            min-width: 100vw;
+            min-height: 15vh;
+            height: 50rem;
+            left: 50%;
+            -webkit-transform: translate(-50%, calc(100% - 6.5rem));
+                -ms-transform: translate(-50%, calc(100% - 6.5rem));
+                    transform: translate(-50%, calc(100% - 6.5rem));
+            border-bottom-left-radius: 100%;
+            border-bottom-right-radius: 100%;
+            transform: translate(-50%, calc(10% - 40.5rem));
+}
         .white-block {
-            background-color: #fff !important;
+            background-color: var(--bg-purple) !important;
             width: 70rem;
             min-width: 150vw;
             min-height: 100vh;
@@ -486,8 +455,10 @@
             left: 50%;
             -webkit-transform: translate(-50%, calc(100% - 6.5rem));
                 -ms-transform: translate(-50%, calc(100% - 6.5rem));
-                    transform: translate(-50%, calc(100% - 25rem));
-         
+                    transform: translate(-50%, calc(100% - 6.5rem));
+            border-top-left-radius: 100%;
+            border-top-right-radius: 100%;
+            transform: translate(-50%, calc(100% - 5rem));
         }
 
         .white-block svg {
@@ -509,16 +480,18 @@
 
         .footer p {
             font-size: 1rem;
+            color:var(--text-dark);
         }
 
         .textUrl{
             font-size: 1rem;
             text-decoration: underline;
+            color:var(--text-dark);
         }
 
         @media (min-width: 320px) and (max-height: 770px) {
             .main-img img {
-                max-width: 25rem;
+                max-width: 20rem;
             }
 
             .main-img .absolute img {
@@ -532,7 +505,7 @@
             }
 
             .main-img .absolute img {
-                max-width: 35rem;
+                max-width: 20rem;
             }
             .btn span:nth-child(1) {
                     font-size: 1.8rem;
@@ -543,8 +516,8 @@
 
         @media (min-width: 320px) and (max-height: 470px) {
             .btn {
-                padding: 1.5rem;
-                max-width: 30rem;
+                padding: 1.5rem 4.9rem;
+                max-width: 26rem;
             }
 
             .btn span:nth-child(2) {
@@ -558,7 +531,7 @@
             }
         }
 
-        @media (min-width: 320px) and (max-height: 510px) {
+        @media (min-width: 320px) and (max-height: 430px) {
             .top-text {
                 display: -webkit-box;
                 display: -ms-flexbox;
@@ -571,9 +544,6 @@
 
             .day-free {
                 margin-top: auto;
-            }
-            .logoImg {
-                width: 4rem;
             }
         }
 
@@ -591,12 +561,8 @@
         }
 
         @media (min-width: 355px) and (max-height: 700px) {
-            main{
-                height: 80%;
-                justify-content: center;
-            }
             .main-img img {
-                max-width: 35rem;
+                max-width: 20rem;
             }
 
             .main-img .absolute img {
@@ -606,21 +572,18 @@
 
         @media (min-width: 355px) and (max-height: 600px) {
             .main-img img {
-                max-width: 20rem;
+                max-width: 15rem;
             }
 
             .main-img .absolute img {
-                max-width: 35rem;
+                max-width: 20rem;
             }
         }
 
         @media (min-width: 355px) and (max-height: 550px) {
             .btn {
-                padding: 1.5rem;
-                max-width: 30rem;
-            }
-            .btn svg{
-                width:3rem;
+                padding: 1.5rem 4.9rem;
+                max-width: 26rem;
             }
 
             .btn span:nth-child(2) {
@@ -634,9 +597,11 @@
             }
         }
 
-        @media (min-width: 355px) and (max-height: 500px) {
+        @media (min-width: 355px) and (max-height: 470px) {
             .top-text {
-                display: block;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
             }
 
             .main-img {
@@ -645,9 +610,6 @@
 
             .day-free {
                 margin-top: auto;
-            }
-            .logoImg {
-                width: 4rem;
             }
         }
 
@@ -664,20 +626,11 @@
         }
 
         @media (min-width: 410px) and (max-height: 770px) {
-            main{
-                display: flex;
-                height: 90%;
-            }
-            
             .text{
                 font-size: 1.12rem;
             }
-            .textV2{
-                font-size: 1.25rem;
-            }
             .main-img img {
                 max-width: 35rem;
-                width: 35rem;
             }
 
             .main-img .absolute img {
@@ -691,7 +644,7 @@
 
         @media (min-width: 410px) and (max-height: 690px) {
             .main-img img {
-                max-width: 20rem;
+                max-width: 15rem;
             }
 
             .btn span:nth-child(2) {
@@ -699,14 +652,14 @@
             }
 
             .main-img .absolute img {
-                max-width: 35rem;
+                max-width: 20rem;
             }
         }
 
         @media (min-width: 410px) and (max-height: 610px) {
             .btn {
-                padding: 1.5rem;
-                max-width: 30rem;
+                padding: 1.5rem 4.9rem;
+                max-width: 26rem;
             }
             .btn span:nth-child(2) {
                 font-size: 2.4rem;
@@ -719,9 +672,11 @@
             }
         }
 
-        @media (min-width: 410px) and (max-height: 595px) {
+        @media (min-width: 410px) and (max-height: 525px) {
             .top-text {
-               display: block;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
             }
 
             .main-img {
@@ -747,7 +702,7 @@
 
         @media (min-width: 460px) and (max-height: 820px) {
             .main-img img {
-                max-width: 25rem;
+                max-width: 20rem;
             }
             .text-xl {
                 font-size: 1.4rem;
@@ -759,18 +714,18 @@
 
         @media (min-width: 460px) and (max-height: 710px) {
             .main-img img {
-                max-width: 20rem;
+                max-width: 15rem;
             }
 
             .main-img .absolute img {
-                max-width: 35rem;
+                max-width: 20rem;
             }
         }
 
         @media (min-width: 460px) and (max-height: 660px) {
             .btn {
-                padding: 1.5rem;
-                max-width: 30rem;
+                padding: 1.5rem 4.9rem;
+                max-width: 26rem;
             }
 
             .btn span:nth-child(2) {
@@ -784,9 +739,11 @@
             }
         }
 
-        @media (min-width: 460px) and (max-height: 640px) {
+        @media (min-width: 460px) and (max-height: 565px) {
             .top-text {
-               display: block;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
             }
 
             .main-img {
@@ -806,13 +763,13 @@
 
         @media (min-width: 500px) {
             :root {
-                font-size: 12px;
+                font-size: 14px;
             }
         }
 
         @media (min-width: 500px) and (max-height: 875px) {
             .main-img img {
-                max-width: 35rem;
+                max-width: 20rem;
             }
 
             .main-img .absolute img {
@@ -822,18 +779,18 @@
 
         @media (min-width: 500px) and (max-height: 785px) {
             .main-img img {
-                max-width: 20rem;
+                max-width: 15rem;
             }
 
             .main-img .absolute img {
-                max-width: 35rem;
+                max-width: 20rem;
             }
         }
 
         @media (min-width: 500px) and (max-height: 720px) {
             .btn {
-                padding: 1.5rem;
-                max-width: 30rem;
+                padding: 1.5rem 4.9rem;
+                max-width: 26rem;
             }
 
             .btn span:nth-child(2) {
@@ -847,9 +804,11 @@
             }
         }
 
-        @media (min-width: 500px) and (max-height: 688px) {
+        @media (min-width: 500px) and (max-height: 605px) {
             .top-text {
-                display: block;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
             }
 
             .main-img {
@@ -869,13 +828,13 @@
 
         @media (min-width: 550px) {
             :root {
-                font-size: 12px;
+                font-size: 15px;
             }
         }
 
         @media (min-width: 550px) and (max-height: 890px) {
             .main-img img {
-                max-width: 25rem;
+                max-width: 20rem;
             }
 
             .main-img .absolute img {
@@ -885,18 +844,18 @@
 
         @media (min-width: 550px) and (max-height: 820px) {
             .main-img img {
-                max-width: 24rem;
+                max-width: 15rem;
             }
 
             .main-img .absolute img {
-                max-width: 35rem;
+                max-width: 20rem;
             }
         }
 
         @media (min-width: 550px) and (max-height: 760px) {
             .btn {
-                padding: 1.5rem;
-                max-width: 30rem;
+                padding: 1.5rem 4.9rem;
+                max-width: 26rem;
             }
         }
 
@@ -908,7 +867,9 @@
 
         @media (min-width: 550px) and (max-height: 640px) {
             .top-text {
-                display: block;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
             }
 
             .main-img {
@@ -935,7 +896,7 @@
 
         @media (min-width: 600px) and (max-height: 925px) {
             .main-img img {
-                max-width: 35rem;
+                max-width: 20rem;
             }
 
             .main-img .absolute img {
@@ -949,14 +910,14 @@
             }
 
             .main-img .absolute img {
-                max-width: 35rem;
+                max-width: 20rem;
             }
         }
 
         @media (min-width: 600px) and (max-height: 810px) {
             .btn {
-                padding: 1.5rem;
-                max-width: 30rem;
+                padding: 1.5rem 4.9rem;
+                max-width: 26rem;
             }
 
             .btn span:nth-child(2) {
@@ -970,9 +931,11 @@
             }
         }
 
-        @media (min-width: 600px) and (max-height: 830px) {
+        @media (min-width: 600px) and (max-height: 700px) {
             .top-text {
-                display: block;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
             }
 
             .main-img {
@@ -995,7 +958,9 @@
                 font-size: 16px;
             }
 
-           
+            .mb-1 {
+                margin-bottom: 0.5rem;
+            }
 
             .mb-2 {
                 margin-bottom: 1.5rem;
@@ -1006,9 +971,9 @@
             }
         }
 
-        @media (min-width: 640px) and (max-height: 1030px) {
+        @media (min-width: 640px) and (max-height: 960px) {
             .main-img img {
-                max-width: 30rem;
+                max-width: 20rem;
             }
 
             .main-img .absolute img {
@@ -1018,18 +983,18 @@
 
         @media (min-width: 640px) and (max-height: 930px) {
             .main-img img {
-                max-width: 25rem;
+                max-width: 15rem;
             }
 
             .main-img .absolute img {
-                max-width: 35rem;
+                max-width: 20rem;
             }
         }
 
         @media (min-width: 640px) and (max-height: 845px) {
             .btn {
-                padding: 1.5rem;
-                max-width: 30rem;
+                padding: 1.5rem 4.9rem;
+                max-width: 26rem;
             }
 
             .btn span:nth-child(2) {
@@ -1061,8 +1026,8 @@
                 margin-top: auto;
             }
             .btn {
-                padding: 1.5rem;
-                max-width: 30rem;
+                 padding: 1.5rem 4.9rem;
+                max-width: 26rem;
             }
           
         }
@@ -1090,7 +1055,9 @@
 
         @media (orientation: landscape) and (min-width: 320px) and (min-height: 355px) and (max-height: 590px) {
             .top-text-big {
-                display: block;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
             }
 
             :root {
@@ -1100,10 +1067,7 @@
 
         @media (orientation: landscape) and (min-width: 320px) and (min-height: 355px) and (max-height: 470px) {
             :root {
-                font-size: 2.5vh;
-            }
-            .white-block {
-                transform: translate(-50%, calc(100% - 20rem));
+                font-size: 2.8vh;
             }
         }
 
@@ -1117,7 +1081,7 @@
             .white-block {
                 -webkit-transform: translate(-50%, calc(100% - 4rem));
                     -ms-transform: translate(-50%, calc(100% - 4rem));
-                        transform: translate(-50%, calc(100% - 20rem))
+                        transform: translate(-50%, calc(100% - 4rem))
             }
         }
 
@@ -1135,13 +1099,13 @@
 
         @media (max-width: 320px) and (max-height: 640px) {
             .main-img img {
-                max-width: 80%;
+                max-width: 70%;
             }
         }
 
         @media (max-width: 320px) and (max-height: 550px) {
             .main-img img {
-                max-width: 25rem;
+                max-width: 20rem;
             }
         }
 
@@ -1156,18 +1120,15 @@
         }
 
 
-        @media (max-height: 495px) {
+        @media (max-height: 300px) {
             :root {
-                font-size: 2.2vh;
+                font-size: 3vh;
             }
 
             .img-container {
                 display: none;
             }
 
-            .main-img{
-                display: none;
-            }
             .top-text-big {
                 display: none;
             }
@@ -1175,25 +1136,17 @@
             .day-free {
                 margin-top: auto;
             }
-            .header .box:nth-child(1) {
-                padding: 0.8rem 1rem;
-                width: 10rem;
-                line-height: 0;
-}
-
-            .logoImg{
-            display: none;
-                width: 4rem;
-            }
         }
     </style>
-<meta id='information' data-val='ar6ZZKo4kUwoA93JdDV6u7nndT18Vnc6Xiy8BxCWuLvRLKB4JBmIlcQSAT1ZDe3VQMGEStCcUq4A+iAmta8zc/Hn5mwxaO2HJGGHmGbK7as=' ><meta id='local' tid='371' cid='16207' tname='2023-12-19-Mega-Kiosk' cname='3-1' ></head>
+<meta id='information' data-val='ar6ZZKo4kUwoA93JdDV6u6KViEKU0p05sUYPqiu4L0hOP6/3TtsST2QXx+f1GiItv4RA10zDu8HJoSX+AIQy55NOWnR/yCVUg1JJOnuiCUk=' ><meta id='local' tid='371' cid='16200' tname='2023-12-19-Mega-Kiosk' cname='2-1' ></head>
 
 <body>
     <div id="wrapper" class="wrapper fixed w-100 h-100 flex flex-col">
-        <div id="bg" class="z-index-0 bg-gradient-purple fixed t-0 l-0 w-100 h-100"></div>
-<div >
-    <div class="header container flex justify-between align-center  pt-1">
+        <div id="bg" class="z-index-0 bg-white fixed t-0 l-0 w-100 h-100"></div>
+<div>
+    <div  class="header-block absolute w-100 h-100 t-0 z-index-0 shadow">
+    </div>
+    <div class="header container flex justify-between align-center mb-1 pt-1">
         <div class="box bg-green rounded">
             <?xml version="1.0" encoding="utf-8"?>
             <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -1242,87 +1195,54 @@
             <img src="./img/Group 39927.png"
                 alt="16+" class="age">
         </div>
-        
     </div>
-    <div class="container ">
-        <div class="flex justify-between w-100 ">
-            <h1 class="text-center text-white text-xl LiterataText">Мобильный Киоск</h1>
-            <h1 class="text-center text-white text-xl LiterataText">Журналы онлайн</h1>
+    <div class=" container">
+        <p class="text-center text-white text-2xl mt-2 text-bold">Мобильный Киоск<br>
+            Журналы онлайн</p>
+    </div>
+    
+</div>
+       
+
+<main>
+    <div class="main-img text-center flex flex-col justify-center align-center relative z-index-0 pt-1"> 
+        <img width="100%" src="./img/Group 39942.png" />
+    </div>
+    <div class="btn-content flex justify-center align-center relative">
+        <a href="#" id="btn" type="submit" name="submit"  class="btn link bg-green flex flex-col  justify-center align-center w-100" onclick="document.getElementById('ButtonSubmit').click();">
+            <span class="lh-large text-xl text-upper   text-center">Читать 1 день</span>
+            <span class="lh-large text-2xl text-upper text-bold text-center">бесплатно</span>      
+        </a>
+        <div  class="white-block absolute w-100 h-100 b-0 z-index-0 shadow">
         </div>
-         
+    </div>
+    
+    <div class="container mt-1 text-center">
+        <div class="w-90 mb-1">
+            <p class="text-sm text-white text-right">Далее 50₽ в день</p>
+        </div>
+        <div class="day-free text-center text-white mt-1 mb-2">
+            <p class="text">Присоединяйтесь к Мобильному Киоску и получайте <br> доступ к огромному архиву журналов. Оформив<br> подписку на сервис. Вы можете получить приз. </p>
+        </div>
+        <div class="cancel mb-1">
+            <a href="https://www.google.com/" id="cancel"  class="cancel-link link link-dark rounded inline-block">Отмена</a>
+        </div>
+    </div>
+</main>
+<div class="container pb-1 mt-a w-100">
+    <div class="footer flex justify-between align-center">
+        <a href="https://rumf.kiosk-mobile.ru/rules" class="textUrl">Правила подписки поставщика услуги</a>
+        <p class="text text-center grow">|</p>
+        <a href="http://moy-m-portal.ru/moi_podpiski/" class="textUrl">Личный кабинет</a>
     </div>
 </div>
-        
-       
-    <main>
-      
-        <div class="main-img text-center flex flex-col justify-center align-center relative z-index-0  pt-1"> 
-            <img width="100%" src="./img/Group 39930.png" />
-        </div>
-   
-       <div class="flex flex-col justify-between">
-        <div class="day-free  text-black mb-2">
-            <div class=" container text-white mb-1 mt-2">
-                <p class="textV2 mb-1">
-                    Присоединяйтесь к Мобильному Киоску и получайте доступ к огромному архиву журналов.
-                </p>
-                <p class="textV2 text-purple text-bold">Получите шанс выиграть приз,<br> оформив подписку на сервис.</p>
-                <div class="textV2 mb-1 mt-1">
-                    <p class="JostText">1 день бесплатно, далее 50Р в день</p> 
-                </div>
-            </div>
-           
-        </div>
-        <div class="btn-content flex flex-col justify-center align-center relative mb-1 mt-2">
-            
-            <a href="#" id="btn" type="submit" name="submit"  class="btn link  flex  justify-center align-center w-100" onclick="document.getElementById('ButtonSubmit').click();">
-                <span class="lh-large text-xl   text-center">Попробовать бесплатно</span>
-            </a>
-           
-            <div  class="white-block absolute w-100 h-100 b-0 z-index-0 shadow hide">
-            </div>
-        </div>
-        <div class="container mt-1 text-center">
-         
-            <div class="cancel mb-1">
-                <a href="https://www.google.com/" id="cancel" class="cancel-link link link-white rounded inline-block text-white">Отмена</a>
-            </div>
-        </div>
-       </div> 
-       
-       
-        
-       
-        
-       
-
-    </main>
-       
-
-        <div class="container pb-1 mt-a w-100">
-            <div class="footer flex justify-between align-center">
-                <a href="https://rumf.kiosk-mobile.ru/rules" class="textUrl text-white">Правила подписки поставщика</a>
-                <p class="text text-center text-white">|</p>
-                <a href="http://moy-m-portal.ru/moi_podpiski/" class="textUrl text-white">Личный кабинет</a>
-            </div>
-        </div>
-    </div>
+</div>
+    
     <script>
         // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
         let vh = window.innerHeight * 0.01;
         // Then we set the value in the --vh custom property to the root of the document
         document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-
-        window.addEventListener('loaded', () => {
-        // We execute the same script as before
-        let vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        })
-        window.addEventListener("orientationchange", function() {
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }, false);
         // We listen to the resize event
         window.addEventListener('resize', () => {
         // We execute the same script as before
@@ -1334,4 +1254,3 @@
 </body>
 
 </html>
-
