@@ -10,9 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Jost:ital,wght@0,100..900;1,100..900&family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>Megafon Киоск</title>
     <style>
         /*
@@ -40,7 +37,7 @@
             --shadow-color: transparent;
             --text-dark: #000000;
             --text-gray:#808080;
-            --text-lightGray: #000000;
+            --text-lightGray: #dfdbdb;
             --btn-cancel:#808080;
         }
 
@@ -72,7 +69,7 @@
             margin-top:0rem;
             background-size: cover;
             background-repeat: no-repeat;
-            background-position: center;
+            background-position: top;
             padding: 0;
             margin: 0;
         }
@@ -81,15 +78,9 @@
         height: 90%;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        margin-top: -2rem;
+        justify-content: flex-end;
+        margin-top: -12.5rem;
         }
-
-        .logo{
-            width: 11rem;
-            height: 11rem;
-        }
-
         img {
             max-width: 100%;
             width: 100%;
@@ -98,16 +89,6 @@
         p {
             margin: 0;
             padding: 0;
-        }
-        .btn-contentWrapper{
-        background: rgba(255, 255, 255, 0.789);
-        padding: 1rem;
-        max-width: 40rem;
-        width: 90%;
-        border-radius: 25px;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        margin: 0 auto;
         }
         .btn-content{
             width: 100%;
@@ -254,11 +235,11 @@
 
         .text {
             font-size: 1.5rem;
-            line-height: 1.5rem;
+            line-height: 1.6rem;
         }
 
         .text-sm{
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             line-height: 1.5rem;
         }
 
@@ -416,8 +397,7 @@
 
         .lh-large {
             line-height: 1.2;
-            font-family: "Roboto", sans-serif;
-
+            font-family: Inter;
         }
 
         .link {
@@ -458,10 +438,7 @@
             height: 100vh;
             height: calc(var(--vh, 1vh) * 100);
         }
-        .header{
-            background-color: white;
-            padding: 0.1rem;
-        }
+
         .header .box:nth-child(1) {
             padding: 0.8rem 1rem;
             width: 12rem;
@@ -494,17 +471,17 @@
         }
 
         .btn {
-            height: 7.5rem;
+            height: 7rem;
             width: 100%;
             padding: 1.5rem 4.9rem;
             text-decoration: none;
-            border-radius: 5rem;
+            border-radius: 1rem;
             border-bottom: solid 5px #217b37;
 
         }
 
         .btn span {
-            color: #000000;
+            color: black;
             white-space: nowrap;
         }
 
@@ -518,7 +495,7 @@
             left: 50%;
             -webkit-transform: translate(-50%, calc(100% - 6.5rem));
                 -ms-transform: translate(-50%, calc(100% - 6.5rem));
-                    transform: translate(-50%, calc(100% - 22rem));
+                    transform: translate(-50%, calc(100% - 10rem));
          
         }
 
@@ -529,16 +506,11 @@
         }
 
         .cancel-link {
-            font-size: 1.4rem;
-            padding: 0.7rem 2rem;
+            font-size: 1.2rem;
+            padding: 0.5rem 2rem;
             border: 1px solid #808080;
             text-decoration: none;
             color:#808080;
-            background-color: #80808000;
-        }
-        .footerWrapper{
-            background-color: #000;
-            padding: 1rem;
         }
 
         .footer{
@@ -556,7 +528,7 @@
         }
         .footer-text{
             font-size: 1.03rem;
-            color: #ffffff;
+            color: #787575;
         }
 
         @media (min-width: 320px) and (max-height: 770px) {
@@ -578,27 +550,23 @@
                 max-width: 35rem;
             }
             .btn span:nth-child(1) {
-                    font-size: 2.8rem;
+                    font-size: 1.8rem;
             }
             .white-block {
               -webkit-transform: translate(-50%, calc(100% - 6.5rem));
               -ms-transform: translate(-50%, calc(100% - 6.5rem));
-              transform: translate(-50%, calc(100% - 22rem));
+              transform: translate(-50%, calc(100% - 12rem));
 }
                 
         }
 
-        @media (min-width: 320px) and (max-height: 630px) {
+        @media (min-width: 320px) and (max-height: 470px) {
             .btn {
                 padding: 1.5rem 4.9rem;
             }
 
             .btn span:nth-child(2) {
                 font-size: 2.4rem;
-            }
-            .logo {
-                width: 7rem;
-                height: 7rem;
             }
         }
 
@@ -626,7 +594,7 @@
                 font-size: 1.8rem;
             }
             .text{
-                font-size: 1rem;
+                font-size: 1.4rem;
             }
             .text-right{
                 text-align: center;
@@ -634,6 +602,7 @@
             main{
                 display: block;
                 height: 90%;
+                margin-top: 2rem;
             }
         }
 
@@ -647,9 +616,6 @@
         @media (min-width: 355px) {
             :root {
                 font-size: 11px;
-            }
-            .btn-contentWrapper{
-                margin-top: 2rem;
             }
         }
 
@@ -716,7 +682,7 @@
 
         @media (min-width: 410px) {
             :root {
-                font-size: 11px;
+                font-size: 12px;
             }
         }
 
@@ -728,7 +694,7 @@
             }
            
             .text{
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
             .main-img img {
                 max-width: 35rem;
@@ -796,7 +762,7 @@
 
         @media (min-width: 460px) {
             :root {
-                font-size: 11px;
+                font-size: 13px;
             }
         }
 
@@ -868,6 +834,7 @@
             main{
                 display: block;
                 height: 90%;
+                margin-top: 2rem;
             }
 
         }
@@ -996,7 +963,7 @@
 
         @media (min-width: 600px) {
             :root {
-                font-size: 14px;
+                font-size: 16px;
             }
         }
 
@@ -1061,7 +1028,7 @@
 
         @media (min-width: 640px) {
             :root {
-                font-size: 14px;
+                font-size: 16px;
             }
 
            
@@ -1134,7 +1101,7 @@
                 max-width: 26rem;
             }
             .white-block {                
-                transform: translate(-50%, calc(100% - 20rem));
+                transform: translate(-50%, calc(100% - 10rem));
 }
           
         }
@@ -1160,19 +1127,19 @@
 
 
 
-        @media (orientation: landscape) and (min-width: 320px) and (min-height: 355px) and (max-height: 635px) {
+        @media (orientation: landscape) and (min-width: 320px) and (min-height: 355px) and (max-height: 590px) {
             .top-text-big {
                 display: block;
             }
 
             :root {
-                font-size: 12px;
+                font-size: 14px;
             }
         }
 
         @media (orientation: landscape) and (min-width: 320px) and (min-height: 355px) and (max-height: 500px) {
             :root {
-                font-size: 2.3vh;
+                font-size: 2.8vh;
             }
         }
 
@@ -1186,7 +1153,7 @@
             .white-block {
                 -webkit-transform: translate(-50%, calc(100% - 4rem));
                     -ms-transform: translate(-50%, calc(100% - 4rem));
-                        transform: translate(-50%, calc(100% - 20rem))
+                        transform: translate(-50%, calc(100% - 10rem))
             }
         }
 
@@ -1194,12 +1161,12 @@
             .white-block {
                 -webkit-transform: translate(-50%, calc(100% - 4rem));
                     -ms-transform: translate(-50%, calc(100% - 4rem));
-                        transform: translate(-50%, calc(100% - 20rem))
+                        transform: translate(-50%, calc(100% - 10rem))
             }
             #bg{
-            background-size: auto;
-        }
-        
+                background-size: auto;
+            }
+           
         }
 
 
@@ -1238,14 +1205,14 @@
             }
 
             .day-free {
-                margin-top: auto;
+                margin-top: -1rem;
             }
         }
 
 
-        @media (max-height: 450px) {
+        @media (max-height: 390px) {
             :root {
-                font-size: 2vh;
+                font-size: 2.5vh;
             }
 
             .img-container {
@@ -1277,32 +1244,32 @@
                     <g id="Page-1">
                         <g id="megafon-logo-green">
                             <g id="Group">
-                                <path id="Shape" fill="#000" d="M30.3,0.7v27.8l0,0l0,0c0,1.3-1,2.2-2.2,2.2h-3.3l0,0c-0.2,0-0.3,0.2-0.3,0.3v23.3
+                                <path id="Shape" fill="#25c04b" d="M30.3,0.7v27.8l0,0l0,0c0,1.3-1,2.2-2.2,2.2h-3.3l0,0c-0.2,0-0.3,0.2-0.3,0.3v23.3
                     c0.8,0,1.6,0.2,2.5,0.2c14.9,0,27-12.1,27-27C54,13.8,43.7,2.3,30.3,0.7z M29.7,42.3c-1.9,0-3.3-1.6-3.3-3.3
                     c0-1.9,1.6-3.3,3.3-3.3c1.9,0,3.3,1.6,3.3,3.3C33.2,40.8,31.6,42.3,29.7,42.3z M37.6,42.3c-1.9,0-3.3-1.6-3.3-3.3
                     c0-1.9,1.6-3.3,3.3-3.3c1.9,0,3.3,1.6,3.3,3.3S39.6,42.3,37.6,42.3z M45.6,42.3c-1.9,0-3.3-1.6-3.3-3.3c0-1.9,1.6-3.3,3.3-3.3
                     c1.9,0,3.3,1.6,3.3,3.3S47.5,42.3,45.6,42.3z" />
-                                <path id="Shape_1_" fill="#000" d="M27,0.6c-14.9,0-27,12.1-27,27c0,13.1,9.1,23.8,21.3,26.3V29.6l0,0c0-1.1,1-2,2-2.2l0,0
+                                <path id="Shape_1_" fill="#25c04b" d="M27,0.6c-14.9,0-27,12.1-27,27c0,13.1,9.1,23.8,21.3,26.3V29.6l0,0c0-1.1,1-2,2-2.2l0,0
                     h1.1h2.2c0.2,0,0.3-0.2,0.3-0.3L27,0.6L27,0.6z M21.8,22.8c-1.9,0-3.3-1.6-3.3-3.3c0-1.9,1.6-3.3,3.3-3.3c1.9,0,3.3,1.6,3.3,3.3
                     S23.6,22.8,21.8,22.8z" />
                             </g>
                             <g id="Group_1_" transform="translate(67.000000, 10.000000)">
-                                <polygon id="Shape_2_" fill="#000" points="230.3,5.3 230.3,15.5 216.7,15.5 216.7,5.3 209.8,5.3 209.8,32.3 216.7,32.3
+                                <polygon id="Shape_2_" fill="#25c04b" points="230.3,5.3 230.3,15.5 216.7,15.5 216.7,5.3 209.8,5.3 209.8,32.3 216.7,32.3
                     216.7,21.4 230.3,21.4 230.3,32.3 237,32.3 237,5.3 			" />
-                                <path id="Shape_3_" fill="#000"
+                                <path id="Shape_3_" fill="#25c04b"
                                     d="M117.9,8.4c-1.1-2.4-3.3-3.7-5.5-3.7l0,0l0,0l0,0c-2.2,0-4.5,1.3-5.5,3.7L96,32.4h7.2
                     l2.4-5.7h14l2.4,5.7h7.2L117.9,8.4z M107.5,21.3l4.1-9.9c0.2-0.3,0.3-0.3,0.5-0.3l0,0l0,0c0.2,0,0.5,0,0.5,0.3l4.1,9.9H107.5z" />
-                                <path id="Shape_4_" fill="#000" d="M37.5,0.5c-3.2,0-5.2,1.7-6.7,5.1l-8.7,20.3L13.3,5.5c-1.4-3.3-3.5-5.1-6.7-5.1
+                                <path id="Shape_4_" fill="#25c04b" d="M37.5,0.5c-3.2,0-5.2,1.7-6.7,5.1l-8.7,20.3L13.3,5.5c-1.4-3.3-3.5-5.1-6.7-5.1
                     c-3,0-6,2-6,6.7v25.1h6.7V8l8.9,20.1c1.1,2.9,3.2,4.6,5.9,4.6l0,0l0,0l0,0l0,0c2.9,0,4.8-1.7,5.9-4.6L36.9,8v24.5h6.7V7.4
                     C43.5,2.7,40.5,0.5,37.5,0.5z" />
-                                <path id="Shape_5_" fill="#000" d="M55.4,26.6c-0.3,0-0.7-0.3-0.7-0.7v-4.8h16.8v-5.5H54.7v-4.1c0-0.3,0.3-0.7,0.7-0.7h16.7
+                                <path id="Shape_5_" fill="#25c04b" d="M55.4,26.6c-0.3,0-0.7-0.3-0.7-0.7v-4.8h16.8v-5.5H54.7v-4.1c0-0.3,0.3-0.7,0.7-0.7h16.7
                     V5.1h-20c-2.4,0-4,1.9-4,4V28c0,2,1.7,4,4,4h20v-5.7H55.4V26.6L55.4,26.6z" />
-                                <path id="Shape_6_" fill="#000" d="M83.4,32.3V11.7c0-0.3,0.3-0.7,0.7-0.7h16.7V5.3h-20c-2.4,0-4,1.9-4,4v22.9L83.4,32.3
+                                <path id="Shape_6_" fill="#25c04b" d="M83.4,32.3V11.7c0-0.3,0.3-0.7,0.7-0.7h16.7V5.3h-20c-2.4,0-4,1.9-4,4v22.9L83.4,32.3
                     L83.4,32.3L83.4,32.3z" />
-                                <path id="Shape_7_" fill="#000" d="M205.4,18.9c0-9.4-4.1-13.8-14.3-13.8h-2.4c-10.2,0-14.3,4.5-14.3,13.8l0,0
+                                <path id="Shape_7_" fill="#25c04b" d="M205.4,18.9c0-9.4-4.1-13.8-14.3-13.8h-2.4c-10.2,0-14.3,4.5-14.3,13.8l0,0
                     c0,9.2,4.1,13.8,14.3,13.8h2.2C201.3,32.5,205.4,28.1,205.4,18.9L205.4,18.9z M190.9,27h-2.2c-5.5,0-7.8-2.5-7.8-8.1l0,0
                     c0-5.4,1.9-8.1,7.8-8.1h2.2c5.7,0,7.8,2.7,7.8,8.1l0,0C198.7,24.4,196.6,27,190.9,27z" />
-                                <path id="Shape_8_" fill="#000" d="M155.7,1.1h-13.4c-10,0-14,5.1-14,13.8c0,1.4,0.2,2.7,0.3,3.8c1.1,6.2,4.8,10,14.1,10h3
+                                <path id="Shape_8_" fill="#25c04b" d="M155.7,1.1h-13.4c-10,0-14,5.1-14,13.8c0,1.4,0.2,2.7,0.3,3.8c1.1,6.2,4.8,10,14.1,10h3
                     v3.5h6.7v-3.5h2.9c9.4,0,13.1-3.8,14.1-10c0.2-1.1,0.3-2.4,0.3-3.8C169.6,6.2,165.5,1.1,155.7,1.1z M145.5,23.1h-3
                     c-4.6,0-6.2-1.7-7.2-4.5c-0.3-1-0.3-2.4-0.3-3.8c0-5.7,2.7-8.1,6.5-8.1h4.1v16.4H145.5L145.5,23.1z M162.7,18.9
                     c-1,2.7-2.7,4.5-7.2,4.5h-3V6.9h4.1c3.8,0,6.5,2.4,6.5,8.1C163,16.5,163,17.7,162.7,18.9z" />
@@ -1313,64 +1280,52 @@
 
             </div>
             <div class="box">
-                <svg width="4.5rem" height="24.000000" viewBox="0 0 53 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <svg width="4.5rem" height="28.000000" viewBox="0 0 65 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <defs>
-                        <pattern id="pattern_25_20" patternContentUnits="objectBoundingBox" width="1.000000" height="1.000000">
-                            <use xlink:href="#image25_2_0" transform="matrix(0.018868,0,0,0.041667,0,0)"/>
+                        <pattern id="pattern_28_10" patternContentUnits="objectBoundingBox" width="1.000000" height="1.000000">
+                            <use xlink:href="#image28_1_0" transform="matrix(0.020408,0,0,0.045455,0,0)"/>
                         </pattern>
-                        <image id="image25_2_0" width="53.000000" height="24.000000" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAAYCAYAAABa1LWYAAAABHNCSVQICAgIfAhkiAAAAhRJREFUWIXt1surTVEcB/DPvR6XM3C5JYUwFGEgRv4AIgMzUcpj4DEURYrSfQwMlMfYf6Cc61lCTEQ3igF1yyPlFRnII/ca7HO6x9r7nL3Obh+D2/3Wr/Zv7e/6re9vPX5rMYXJjSU4ilOR/MU4hnv4gnEMdEZae+jDPtzFH4mwak6fWRjCzxq/0TqW1PQIUVuwA5vQ00bsBRjG2mLSUujD3Ab/Gz4VCfRVeoYbrdlKVfAog/8DN3AWG9vUMhDEutCMmLdSvW0OXEe/9ApdxAl8LhgzGt2RvFc4jycR3KU4GLSdxAH/ISHyV+q4ZIs9rflVrMnpszuI+xynsQqr0YVnGGlXbCzykuovEHNr4D/AHWwI2h9iJ14WGKNUVLUuFDPwO+CMaV5o3kqqZBZaFahmhvgzFYuF0qvf1YK/CIMlayg9qTkZba8ld9x8bMbH4P92xatsJvLOVBk4hOu176s4jEsN/3uwHreCfqOBX9rlGyLvTK2U3udhgahkcPZGjB19+Za9/bJmblrgf8evoG1mmSLKTuq9dGLLA3+ZdBKlbKM6yk4KrgT+Hv8mcST4P4b7ZQroRKE4h10mJmydRPSw5EWxLeBfxrsO6IhGXqGoY0jcZflBsh1jMBvzGqxSJIEsxCbVjTNavyZeyH9HFkJYmfKwQlK5Rmv2GLczeOO4iWsmZri31ndE8orYjzeFVE9hkuAvVEKnjzhnc8IAAAAASUVORK5CYII="/>
+                        <image id="image28_1_0" width="49.000000" height="22.000000" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAWCAYAAABpNXSSAAAABHNCSVQICAgIfAhkiAAAA1ZJREFUWIXlVltIFFEY/v4zM1pulAhldLVSkSJ7MH0IcdcQSnfroeghioJ66wJFF4qINKJ66DHwMQp6iIJCdyqo0O32EFEhJOpuV0oSu5Cp4bpz/h5ybWZ2dt11tpf6YB6+M//5/v87c875B/gHQOkELX4QWCAkbxaMvB6ffmKi+OK2+nmCxDYG1gJYDiCfiM72eINH3RbsBDXZi2WP1xSMRrWNDN4Kg6sBCCboqcSK2nxTNMprAmgfAzlZrzYJLCaK2nxTVEwLgOSWaJTqAc5NV2jR3fWFqjB0MCqyUdiyx2sKooaaH+cUEwM9ta2fnWItJjTyfAJ4Rpq7bBxznq7LU4ccDYwAHAJElyFlKBPN0VHtEJiPxDmTbAawyynWvp1mZJIoDs8P4zSI7AaalVjO8a66618mo5kJHM8EAe8kU5CIqwGsSCWw6F7DQhDtNo8xcWPEe7Mpi3WmhMUEAcdIKMHumpYOACgJ+YPg1CY0hXawVacz0uc5VRZqWB6DKIdkgpAvI95bz/9C/QBsJnp8+ulMBRhYb+OPSmYNtxtM1QT+fbxYoKTd/8Qg2vraGwy7rDkBKU/w2Jfwm6L1sFcPxGnF0wptYHD2MKyLwSl0P8ZiSsWbupa+hFztfs6ocgBhn04AIDKdaMbX74VzkHiuUi3MXFU1zrrJ6QRXJnJVTHcYfi+Z64nFTCLyA+i3vd+8+E7dpG7BZEjasScLBu15VavfHqM3S0OBg8x80RSSq2g5VQDu2Ka+tvECAPkmPgBg4maXKWKGIklIy5hgfDPzQQ9d8wxaTIAYC+1aYZ++xMxLQ4EzbGp2AC6Hfbpjs3O1nQxJCSsjmRQz713ZOgwgaokhyup/lSsTY7eMxQgpRpmZl7WtLYL9Z5DYcVtMFq5M/Aa3Wil2Ln25abxog5TDtglSUdSH7vP+geuDzUKcJ8nbMb4gVDnaP/SwONSgE1M5gA22KTe6q1t63eY1w/WXiNQEnwF8zjpKlcTUiEQD/QobB9LRHdamnhxRUBB/hqaJg8lis3LFhr1VR4tDT1QC7UfyZhcmSZu6Vt9+m47mh1VXfwL4mU5sahMSL0DItXAnUKOMAAdK7weuQPJeBnsBmg8gykAHAZc0zrvQufrqYDpF/Zf4BZcOGUrcvWUjAAAAAElFTkSuQmCC"/>
                     </defs>
-                    <rect id="age" width="52.999969" height="24.000000" fill="url(#pattern_25_20)" fill-opacity="1.000000"/>
+                    <rect id="age" width="49.000000" height="22.000000" fill="url(#pattern_28_10)" fill-opacity="1.000000"/>
                 </svg>
             </div>
+            
+    </div>
+    <div class="day-free text-center text-lightGray mb-2">
+        <p class="text text-bold">Получите доступ к огромному архиву <br>журналов и наслаждайтесь чтением<br>в любом месте</p>
     </div>
     <main>
-        <div class="btn-contentWrapper">
-            <div class="btn-content flex flex-col justify-center align-center relative pt-1">
-                <div class="logo mb-1">
-                    <svg width="100%" height="100%" viewBox="0 0 175 178" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <defs>
-                            <pattern id="pattern_26_40" patternContentUnits="objectBoundingBox" width="1.000000" height="1.000000">
-                                <use xlink:href="#image26_4_0" transform="matrix(0.005714,0,0,0.005618,0,0)"/>
-                            </pattern>
-                            <image id="image26_4_0" width="175.000000" height="178.000000" xlink:href="data:image/png;base64,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"/>
-                        </defs>
-                        <rect id="logo" width="175.000031" height="178.000000" fill="url(#pattern_26_40)" fill-opacity="1.000000"/>
-                    </svg>
-                </div>
-                <div class="day-free text-center text-lightGray mb-2">
-                    <p class="text ">Получите доступ к огромному архиву <br>журналов и наслаждайтесь чтением <br> в любом месте</p>
-                </div>
-                <div class="containerBtn">
-                    <a href="#" id="btn" type="submit" name="submit"  class="btn link bg-green flex flex-col justify-center align-stretch w-100" onclick="document.getElementById('ButtonSubmit').click();">
-                        <span class="lh-large text-2xl  text-bold text-center">Подтвердить</span>
-                    </a>
-                </div>
-                
-                <div class="w-90 mt-1">
-                    <p class="text-sm text-gray  text-center"> 50₽ в день </p>
-                </div>
-                
-                <div  class="white-block absolute w-100 h-100 b-0 z-index-0 shadow hide">
-                </div>
+      
+        
+        
+        <div class="btn-content flex flex-col justify-center align-center relative pt-1">
+            <div class="containerBtn">
+                <a href="#" id="btn" type="submit" name="submit"  class="btn link bg-green flex flex-col justify-center align-stretch w-100" onclick="document.getElementById('ButtonSubmit').click();">
+                    <span class="lh-large text-2xl  text-bold text-center">Попробовать</span>
+                </a>
             </div>
-            <div class="container mt-1 text-center">
-                   
-                <div class="cancel mb-1">
-                    <a href="https://www.google.com/" id="cancel" class="cancel-link link link-white roundedCancel inline-block">Отмена</a>
-                </div>
+            
+            <div class="w-90 mt-1">
+                <p class="text-sm text-lightGray text-center"> 50₽ в день </p>
             </div>
-
+            
+            <div  class="white-block absolute w-100 h-100 b-0 z-index-0 shadow">
+            </div>
         </div>
-        
-        
+        <div class="container mt-1 text-center">
+               
+            <div class="cancel mb-1">
+                <a href="https://www.google.com/" id="cancel" class="cancel-link link link-white roundedCancel inline-block">Отмена</a>
+            </div>
+        </div>
        
 
     </main>  
-    <div class="container pb-1 mt-a w-100 footerWrapper">
+    <div class="container pb-1 mt-a w-100">
             <div class="footer  align-center text-white">
-                <span class="footer-text text-white text-bold">Нажимая на кнопку «Подтвердить», Вы соглашаетесь с<br> 
-                    <a href="https://rumf.kiosk-mobile.ru/rules" class="textUrl footer-text text-white text-bold">Правила подписки поставщика услуги</a> | <a href="http://moy-m-portal.ru/moi_podpiski/" class="textUrl footer-text text-lightGray text-bold">Личный кабинет</a></span>
+                <span class="footer-text text-lightGray">Нажимая на кнопку «Попробовать», Вы соглашаетесь с<br> 
+                    <a href="https://rumf.kiosk-mobile.ru/rules" class="textUrl footer-text text-lightGray">Правила подписки поставщика услуги</a> | <a href="http://moy-m-portal.ru/moi_podpiski/" class="textUrl footer-text text-lightGray">Личный кабинет</a></span>
             </div>
     </div>
 </div>
