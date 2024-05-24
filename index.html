@@ -9,11 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Jost:ital,wght@0,100..900;1,100..900&family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
     <title>Megafon Киоск</title>
     <style>
         /*
@@ -42,7 +38,7 @@
             --text-dark: #000000;
             --text-gray:#808080;
             --text-lightGray: #dfdbdb;
-            --btn-cancel:#808080;
+            --btn-cancel:#393939;
         }
 
         html {
@@ -69,13 +65,7 @@
 
         }
         #bg{
-            background-image: url('./img/bg.png');
             margin-top:0rem;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            padding: 0;
-            margin: 0;
         }
         main{
         display: flex;
@@ -83,14 +73,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-top: -2rem;
+        margin-top: -2.5rem;
         }
-
-        .logo{
-            width: 11rem;
-            height: 11rem;
-        }
-
         img {
             max-width: 100%;
             width: 100%;
@@ -111,12 +95,21 @@
             padding-left: 1rem;
             padding-right: 1rem;
         }
+        .containerV2 {
+            width: 30rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .iconsImg{
+            width: 100%;
+        }
         .containerBtn{
             display: flex;
             justify-content: center;
-            width: 95%;
+            width: 80%;
             max-width: 37rem;
-            margin:0 auto;
         } 
         .grow {
             -webkit-box-flex: 1;
@@ -245,9 +238,8 @@
         }
 
         .text {
-            font-size: 1.8rem;
-            line-height: 2.5rem;
-            font-family: "Roboto Condensed", sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
         }
 
         .text-sm{
@@ -267,14 +259,14 @@
             font-size: 1.6rem !important;
         }
         .text-xl {
-            font-size: 1.5rem !important;
+            font-size: 2.4rem !important;
         }
         .text-lg {
             font-size: 1rem !important;
         }
 
         .text-2xl {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
         }
 
         .text-medium {
@@ -282,8 +274,9 @@
         }
         .text-left{
             text-align: left;
-            font-family: "Noto Serif Display", serif;
+            margin-left: 2rem;
         }
+
         .text-center {
             text-align: center;
         }
@@ -339,11 +332,11 @@
 
 
         .bg-gradient-purple {
-            background: linear-gradient(90deg, #fd5b4e 0.5%, #4564fa 100%);
+            background: linear-gradient(90deg, #C0392B 0.5%, #8e44ad 100%);
         }
 
         .bg-green {
-            background-color: #c07f3b !important;
+            background-color: #26bf4b !important;
         }
 
         .bg-white {
@@ -357,7 +350,7 @@
             border-radius: 100px;
         }
         .roundedCancel{
-            border-radius: 10px;
+            border-radius: 30px;
         }
 
         .circle {
@@ -412,8 +405,7 @@
 
         .lh-large {
             line-height: 1.2;
-            font-family: "Roboto", sans-serif;
-
+            font-family: Inter;
         }
 
         .link {
@@ -454,10 +446,7 @@
             height: 100vh;
             height: calc(var(--vh, 1vh) * 100);
         }
-        .header{
-            background-color: rgba(255, 255, 255, 0);
-            padding: 0.1rem;
-        }
+
         .header .box:nth-child(1) {
             padding: 0.8rem 1rem;
             width: 12rem;
@@ -482,7 +471,7 @@
         }
 
         .main-img img {
-            max-width: 40rem;
+            max-width: 30rem;
         }
 
         .main-img .absolute img {
@@ -490,19 +479,17 @@
         }
 
         .btn {
-            height: 7rem;
+            height: 6rem;
             width: 100%;
-            padding: 1.5rem 2rem;
+            padding: 1.5rem 4.9rem;
             text-decoration: none;
-            border-radius: 0.5rem;
-            margin:0 auto;
+            border-radius: 15rem;
 
         }
 
         .btn span {
             color: #ffffff;
             white-space: nowrap;
-            font-family: "Roboto", sans-serif;
         }
 
         .white-block {
@@ -530,12 +517,8 @@
             padding: 0.5rem 2rem;
             border: 1px solid #808080;
             text-decoration: none;
-            color:black;
-            background-color: #80808000;
-        }
-        .footerWrapper{
-            background-color: #00000000;
-            padding: 1rem;
+            color:#393939;
+            background-color: #808080;
         }
 
         .footer{
@@ -553,7 +536,7 @@
         }
         .footer-text{
             font-size: 1.03rem;
-            color: #787575;
+            color: #ffffff;
         }
 
         @media (min-width: 320px) and (max-height: 770px) {
@@ -564,7 +547,6 @@
             .main-img .absolute img {
                 max-width: 30rem;
             }
-            
         }
 
         @media (min-width: 320px) and (max-height: 550px) {
@@ -576,26 +558,23 @@
                 max-width: 35rem;
             }
             .btn span:nth-child(1) {
-                    font-size: 2.8rem;
+                    font-size: 1.8rem;
             }
             .white-block {
               -webkit-transform: translate(-50%, calc(100% - 6.5rem));
               -ms-transform: translate(-50%, calc(100% - 6.5rem));
               transform: translate(-50%, calc(100% - 22rem));
-            }   
+}
+                
         }
 
-        @media (min-width: 320px) and (max-height: 550px) {
+        @media (min-width: 320px) and (max-height: 470px) {
             .btn {
                 padding: 1.5rem 4.9rem;
             }
 
             .btn span:nth-child(2) {
                 font-size: 2.4rem;
-            }
-            .logo {
-                width: 7rem;
-                height: 7rem;
             }
         }
 
@@ -632,8 +611,8 @@
                 display: block;
                 height: 90%;
             }
-            .text-left {
-                text-align: center;
+            #bg img {
+                display: none;
             }
         }
 
@@ -655,7 +634,7 @@
                 height: 70%;
             }
             .main-img img {
-                max-width: 35rem;
+                max-width: 24rem;
             }
 
             .main-img .absolute img {
@@ -665,11 +644,15 @@
 
         @media (min-width: 355px) and (max-height: 600px) {
             .main-img img {
-                max-width: 20rem;
+                max-width: 12rem;
             }
 
             .main-img .absolute img {
                 max-width: 35rem;
+            }
+            img {
+                max-width: 100%;
+                width: 64%;
             }
         }
 
@@ -720,15 +703,17 @@
         @media (min-width: 410px) and (max-height: 770px) {
             main{
                 display: flex;
-                height: 86%;
+                height: 90%;
                 
             }
+
+           
            
             .text{
-                font-size: 1.8rem;
+                font-size: 1.12rem;
             }
             .main-img img {
-                max-width: 35rem;
+                max-width: 27rem;
             }
 
             .main-img .absolute img {
@@ -769,11 +754,17 @@
             }
         }
 
-        @media (min-width: 410px) and (max-height: 525px) {
+        @media (min-width: 410px) and (max-height: 550px) {
             .top-text {
                 display: -webkit-box;
                 display: -ms-flexbox;
                 display: flex;
+            }
+
+            .text-left{
+                text-align: center;
+                margin-left: 0;
+                margin-bottom: 0.1rem;
             }
 
             .main-img {
@@ -783,6 +774,10 @@
             .day-free {
                 margin-top: auto;
             }
+            img {
+                max-width: 100%;
+                width: 20rem;
+}
         }
 
         @media (min-width: 410px) and (max-height: 400px) {
@@ -799,7 +794,7 @@
 
         @media (min-width: 460px) and (max-height: 820px) {
             .main-img img {
-                max-width: 35rem;
+                max-width: 25rem;
             }
             .text-xl {
                 font-size: 1.4rem;
@@ -865,9 +860,7 @@
             main{
                 display: block;
                 height: 90%;
-            }
-            .text-left{
-                text-align: center;
+                margin-top: 1rem;
             }
 
         }
@@ -880,7 +873,7 @@
 
         @media (min-width: 500px) and (max-height: 875px) {
             .main-img img {
-                max-width: 35rem;
+                max-width: 27rem;
             }
 
             .main-img .absolute img {
@@ -900,7 +893,7 @@
 
         @media (min-width: 500px) and (max-height: 720px) {
             .btn {
-                padding: 1.5rem 2rem;
+                padding: 1.5rem 4.9rem;
                 max-width: 26rem;
             }
 
@@ -943,7 +936,7 @@
 
         @media (min-width: 550px) and (max-height: 890px) {
             .main-img img {
-                max-width: 35rem;
+                max-width: 27rem;
             }
 
             .main-img .absolute img {
@@ -963,7 +956,7 @@
 
         @media (min-width: 550px) and (max-height: 760px) {
             .btn {
-                padding: 1.5rem 2rem;
+                padding: 1.5rem 4.9rem;
                 max-width: 26rem;
             }
         }
@@ -996,7 +989,7 @@
 
         @media (min-width: 600px) {
             :root {
-                font-size: 15px;
+                font-size: 16px;
             }
         }
 
@@ -1024,7 +1017,7 @@
 
         @media (min-width: 600px) and (max-height: 810px) {
             .btn {
-                padding: 1.5rem 2rem;
+                padding: 1.5rem 4.9rem;
                 max-width: 26rem;
             }
 
@@ -1040,6 +1033,10 @@
         }
 
         @media (min-width: 600px) and (max-height: 830px) {
+            img {
+            max-width: 100%;
+            width: 20%;
+        }
             .top-text {
                 display: block;
             }
@@ -1061,7 +1058,7 @@
 
         @media (min-width: 640px) {
             :root {
-                font-size: 14px;
+                font-size: 16px;
             }
 
            
@@ -1077,7 +1074,7 @@
 
         @media (min-width: 640px) and (max-height: 960px) {
             .main-img img {
-                max-width: 35rem;
+                max-width: 27rem;
             }
 
             .main-img .absolute img {
@@ -1087,7 +1084,7 @@
 
         @media (min-width: 640px) and (max-height: 930px) {
             .main-img img {
-                max-width: 25rem;
+                max-width: 23rem;
             }
 
             .main-img .absolute img {
@@ -1097,7 +1094,7 @@
 
         @media (min-width: 640px) and (max-height: 845px) {
             .btn {
-                padding: 1.5rem 2rem;
+                padding: 1.5rem 4.9rem;
                 max-width: 26rem;
             }
 
@@ -1130,7 +1127,7 @@
                 margin-top: auto;
             }
             .btn {
-                padding: 1.5rem 2rem;
+                 padding: 1.5rem 4.9rem;
                 max-width: 26rem;
             }
             .white-block {                
@@ -1160,19 +1157,19 @@
 
 
 
-        @media (orientation: landscape) and (min-width: 320px) and (min-height: 355px) and (max-height: 635px) {
+        @media (orientation: landscape) and (min-width: 320px) and (min-height: 355px) and (max-height: 590px) {
             .top-text-big {
                 display: block;
             }
 
             :root {
-                font-size: 12px;
+                font-size: 14px;
             }
         }
 
         @media (orientation: landscape) and (min-width: 320px) and (min-height: 355px) and (max-height: 500px) {
             :root {
-                font-size: 2vh;
+                font-size: 2.8vh;
             }
         }
 
@@ -1197,9 +1194,27 @@
                         transform: translate(-50%, calc(100% - 20rem))
             }
             #bg{
-            background-size: auto;
+                display: flex;
+                justify-content: center;
+            }
+            #bg img{
+                width: 30rem;
+            }
+            .text-left{
+                margin-left: 4rem;
+            }
+            .header{
+                width: 30rem;
+            }
         }
-        
+
+        @media screen and (min-width: 768px) and (max-height: 600px) {
+            #bg img{
+               display: none;
+            }
+            .text-left{
+                margin-left: 0rem;
+            }
         }
 
 
@@ -1232,20 +1247,26 @@
             }
         }
 
-        @media (max-width: 320px) and (max-height: 530px) {
+        @media (max-width: 320px) and (max-height: 570px) {
             .img-container {
-                display: none;
+                display: block;
             }
-
+            .main-img img {
+                max-width: 50%;
+            }
+            img {
+                max-width: 100%;
+                width: 80%;
+}
             .day-free {
                 margin-top: auto;
             }
         }
 
 
-        @media (max-height: 490px) {
+        @media (max-height: 390px) {
             :root {
-                font-size: 1.8vh;
+                font-size: 2.5vh;
             }
 
             .img-container {
@@ -1265,10 +1286,12 @@
 
 <body>
     <div id="wrapper" class="wrapper fixed w-100 h-100 flex flex-col">
-        <div id="bg" class="z-index-0 bg-black fixed t-0 l-0 w-100 h-100"></div>
+        <div id="bg" class="z-index-0 bg-black fixed t-0 l-0 w-100 h-100">
+            <img src="./img/bg.png" />
+        </div>
 
-        <div class="header container flex justify-between align-center mb-1 pt-1">
-            <div class="box  rounded">
+    <div class="header container flex justify-between align-center mb-1 pt-1">
+            <div class="box bg-green  rounded">
                 <?xml version="1.0" encoding="utf-8"?>
                 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
@@ -1277,32 +1300,32 @@
                     <g id="Page-1">
                         <g id="megafon-logo-green">
                             <g id="Group">
-                                <path id="Shape" fill="#25c04b" d="M30.3,0.7v27.8l0,0l0,0c0,1.3-1,2.2-2.2,2.2h-3.3l0,0c-0.2,0-0.3,0.2-0.3,0.3v23.3
+                                <path id="Shape" fill="#ffffff" d="M30.3,0.7v27.8l0,0l0,0c0,1.3-1,2.2-2.2,2.2h-3.3l0,0c-0.2,0-0.3,0.2-0.3,0.3v23.3
                     c0.8,0,1.6,0.2,2.5,0.2c14.9,0,27-12.1,27-27C54,13.8,43.7,2.3,30.3,0.7z M29.7,42.3c-1.9,0-3.3-1.6-3.3-3.3
                     c0-1.9,1.6-3.3,3.3-3.3c1.9,0,3.3,1.6,3.3,3.3C33.2,40.8,31.6,42.3,29.7,42.3z M37.6,42.3c-1.9,0-3.3-1.6-3.3-3.3
                     c0-1.9,1.6-3.3,3.3-3.3c1.9,0,3.3,1.6,3.3,3.3S39.6,42.3,37.6,42.3z M45.6,42.3c-1.9,0-3.3-1.6-3.3-3.3c0-1.9,1.6-3.3,3.3-3.3
                     c1.9,0,3.3,1.6,3.3,3.3S47.5,42.3,45.6,42.3z" />
-                                <path id="Shape_1_" fill="#25c04b" d="M27,0.6c-14.9,0-27,12.1-27,27c0,13.1,9.1,23.8,21.3,26.3V29.6l0,0c0-1.1,1-2,2-2.2l0,0
+                                <path id="Shape_1_" fill="#ffffff" d="M27,0.6c-14.9,0-27,12.1-27,27c0,13.1,9.1,23.8,21.3,26.3V29.6l0,0c0-1.1,1-2,2-2.2l0,0
                     h1.1h2.2c0.2,0,0.3-0.2,0.3-0.3L27,0.6L27,0.6z M21.8,22.8c-1.9,0-3.3-1.6-3.3-3.3c0-1.9,1.6-3.3,3.3-3.3c1.9,0,3.3,1.6,3.3,3.3
                     S23.6,22.8,21.8,22.8z" />
                             </g>
                             <g id="Group_1_" transform="translate(67.000000, 10.000000)">
-                                <polygon id="Shape_2_" fill="#25c04b" points="230.3,5.3 230.3,15.5 216.7,15.5 216.7,5.3 209.8,5.3 209.8,32.3 216.7,32.3
+                                <polygon id="Shape_2_" fill="#ffffff" points="230.3,5.3 230.3,15.5 216.7,15.5 216.7,5.3 209.8,5.3 209.8,32.3 216.7,32.3
                     216.7,21.4 230.3,21.4 230.3,32.3 237,32.3 237,5.3 			" />
-                                <path id="Shape_3_" fill="#25c04b"
+                                <path id="Shape_3_" fill="#ffffff"
                                     d="M117.9,8.4c-1.1-2.4-3.3-3.7-5.5-3.7l0,0l0,0l0,0c-2.2,0-4.5,1.3-5.5,3.7L96,32.4h7.2
                     l2.4-5.7h14l2.4,5.7h7.2L117.9,8.4z M107.5,21.3l4.1-9.9c0.2-0.3,0.3-0.3,0.5-0.3l0,0l0,0c0.2,0,0.5,0,0.5,0.3l4.1,9.9H107.5z" />
-                                <path id="Shape_4_" fill="#25c04b" d="M37.5,0.5c-3.2,0-5.2,1.7-6.7,5.1l-8.7,20.3L13.3,5.5c-1.4-3.3-3.5-5.1-6.7-5.1
+                                <path id="Shape_4_" fill="#ffffff" d="M37.5,0.5c-3.2,0-5.2,1.7-6.7,5.1l-8.7,20.3L13.3,5.5c-1.4-3.3-3.5-5.1-6.7-5.1
                     c-3,0-6,2-6,6.7v25.1h6.7V8l8.9,20.1c1.1,2.9,3.2,4.6,5.9,4.6l0,0l0,0l0,0l0,0c2.9,0,4.8-1.7,5.9-4.6L36.9,8v24.5h6.7V7.4
                     C43.5,2.7,40.5,0.5,37.5,0.5z" />
-                                <path id="Shape_5_" fill="#25c04b" d="M55.4,26.6c-0.3,0-0.7-0.3-0.7-0.7v-4.8h16.8v-5.5H54.7v-4.1c0-0.3,0.3-0.7,0.7-0.7h16.7
+                                <path id="Shape_5_" fill="#ffffff" d="M55.4,26.6c-0.3,0-0.7-0.3-0.7-0.7v-4.8h16.8v-5.5H54.7v-4.1c0-0.3,0.3-0.7,0.7-0.7h16.7
                     V5.1h-20c-2.4,0-4,1.9-4,4V28c0,2,1.7,4,4,4h20v-5.7H55.4V26.6L55.4,26.6z" />
-                                <path id="Shape_6_" fill="#25c04b" d="M83.4,32.3V11.7c0-0.3,0.3-0.7,0.7-0.7h16.7V5.3h-20c-2.4,0-4,1.9-4,4v22.9L83.4,32.3
+                                <path id="Shape_6_" fill="#ffffff" d="M83.4,32.3V11.7c0-0.3,0.3-0.7,0.7-0.7h16.7V5.3h-20c-2.4,0-4,1.9-4,4v22.9L83.4,32.3
                     L83.4,32.3L83.4,32.3z" />
-                                <path id="Shape_7_" fill="#25c04b" d="M205.4,18.9c0-9.4-4.1-13.8-14.3-13.8h-2.4c-10.2,0-14.3,4.5-14.3,13.8l0,0
+                                <path id="Shape_7_" fill="#ffffff" d="M205.4,18.9c0-9.4-4.1-13.8-14.3-13.8h-2.4c-10.2,0-14.3,4.5-14.3,13.8l0,0
                     c0,9.2,4.1,13.8,14.3,13.8h2.2C201.3,32.5,205.4,28.1,205.4,18.9L205.4,18.9z M190.9,27h-2.2c-5.5,0-7.8-2.5-7.8-8.1l0,0
                     c0-5.4,1.9-8.1,7.8-8.1h2.2c5.7,0,7.8,2.7,7.8,8.1l0,0C198.7,24.4,196.6,27,190.9,27z" />
-                                <path id="Shape_8_" fill="#25c04b" d="M155.7,1.1h-13.4c-10,0-14,5.1-14,13.8c0,1.4,0.2,2.7,0.3,3.8c1.1,6.2,4.8,10,14.1,10h3
+                                <path id="Shape_8_" fill="#ffffff" d="M155.7,1.1h-13.4c-10,0-14,5.1-14,13.8c0,1.4,0.2,2.7,0.3,3.8c1.1,6.2,4.8,10,14.1,10h3
                     v3.5h6.7v-3.5h2.9c9.4,0,13.1-3.8,14.1-10c0.2-1.1,0.3-2.4,0.3-3.8C169.6,6.2,165.5,1.1,155.7,1.1z M145.5,23.1h-3
                     c-4.6,0-6.2-1.7-7.2-4.5c-0.3-1-0.3-2.4-0.3-3.8c0-5.7,2.7-8.1,6.5-8.1h4.1v16.4H145.5L145.5,23.1z M162.7,18.9
                     c-1,2.7-2.7,4.5-7.2,4.5h-3V6.9h4.1c3.8,0,6.5,2.4,6.5,8.1C163,16.5,163,17.7,162.7,18.9z" />
@@ -1315,39 +1338,44 @@
             <div class="box">
                 <svg width="4.5rem" height="28.000000" viewBox="0 0 65 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <defs>
-                        <pattern id="pattern_28_10" patternContentUnits="objectBoundingBox" width="1.000000" height="1.000000">
-                            <use xlink:href="#image28_1_0" transform="matrix(0.020408,0,0,0.045455,0,0)"/>
+                        <pattern id="pattern_24_10" patternContentUnits="objectBoundingBox" width="1.000000" height="1.000000">
+                            <use xlink:href="#image24_1_0" transform="matrix(0.02,0,0,0.035714,0,0)"/>
                         </pattern>
-                        <image id="image28_1_0" width="49.000000" height="22.000000" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAWCAYAAABpNXSSAAAABHNCSVQICAgIfAhkiAAAA1ZJREFUWIXlVltIFFEY/v4zM1pulAhldLVSkSJ7MH0IcdcQSnfroeghioJ66wJFF4qINKJ66DHwMQp6iIJCdyqo0O32EFEhJOpuV0oSu5Cp4bpz/h5ybWZ2dt11tpf6YB6+M//5/v87c875B/gHQOkELX4QWCAkbxaMvB6ffmKi+OK2+nmCxDYG1gJYDiCfiM72eINH3RbsBDXZi2WP1xSMRrWNDN4Kg6sBCCboqcSK2nxTNMprAmgfAzlZrzYJLCaK2nxTVEwLgOSWaJTqAc5NV2jR3fWFqjB0MCqyUdiyx2sKooaaH+cUEwM9ta2fnWItJjTyfAJ4Rpq7bBxznq7LU4ccDYwAHAJElyFlKBPN0VHtEJiPxDmTbAawyynWvp1mZJIoDs8P4zSI7AaalVjO8a66618mo5kJHM8EAe8kU5CIqwGsSCWw6F7DQhDtNo8xcWPEe7Mpi3WmhMUEAcdIKMHumpYOACgJ+YPg1CY0hXawVacz0uc5VRZqWB6DKIdkgpAvI95bz/9C/QBsJnp8+ulMBRhYb+OPSmYNtxtM1QT+fbxYoKTd/8Qg2vraGwy7rDkBKU/w2Jfwm6L1sFcPxGnF0wptYHD2MKyLwSl0P8ZiSsWbupa+hFztfs6ocgBhn04AIDKdaMbX74VzkHiuUi3MXFU1zrrJ6QRXJnJVTHcYfi+Z64nFTCLyA+i3vd+8+E7dpG7BZEjasScLBu15VavfHqM3S0OBg8x80RSSq2g5VQDu2Ka+tvECAPkmPgBg4maXKWKGIklIy5hgfDPzQQ9d8wxaTIAYC+1aYZ++xMxLQ4EzbGp2AC6Hfbpjs3O1nQxJCSsjmRQz713ZOgwgaokhyup/lSsTY7eMxQgpRpmZl7WtLYL9Z5DYcVtMFq5M/Aa3Wil2Ln25abxog5TDtglSUdSH7vP+geuDzUKcJ8nbMb4gVDnaP/SwONSgE1M5gA22KTe6q1t63eY1w/WXiNQEnwF8zjpKlcTUiEQD/QobB9LRHdamnhxRUBB/hqaJg8lis3LFhr1VR4tDT1QC7UfyZhcmSZu6Vt9+m47mh1VXfwL4mU5sahMSL0DItXAnUKOMAAdK7weuQPJeBnsBmg8gykAHAZc0zrvQufrqYDpF/Zf4BZcOGUrcvWUjAAAAAElFTkSuQmCC"/>
+                        <image id="image24_1_0" width="50.000000" height="28.000000" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAcCAYAAAAjmez3AAAABHNCSVQICAgIfAhkiAAAAkxJREFUWIXtl0uITmEYx3/PuAyzcJmSchtlY4OFWClbIgs7UYpsXFZEkaI0YxYWym0nykJZKDMiGzQ2UsYUC0qRlFsjSS75fhbfV47znfnO+b45Y/X969R5nvf/PpfzvO/7vAfaaKON0qAuUg+pxwvyF6iH1fvqqFX0TXScYwXTre5S76m/a8EM5MyZpvarP6zHhCQyeaxAgI3AVmA90FnUoDoXGARWlhGg2g3MSqi+RMTHopM/Z3zJJDIronapjzL439Xb6ml1XZOJ9KVsncviZVYEmNmMswR6qa/EeeBoRHxq0WYhdOSMvwLOAk/yDKk9wJ6U+lhE7J7oJGDsihwBBiJiBKC2lFbk2NqRsvcMOKEuA5YDATyNiMfjCzkbmYlERG8Ltjal5AfAXWBNUqk+BLZFxIsWfIwP6kCjza5OUX+lOJUGh8Wb2umW5atpQP4eKYp51Fc3GvDnAydL8g2Ul8iMDN1rqj1oDrAB+JAa36K2ejrWYazNXgb2RsSt2vtN9QBwKTHeCawG7qTmvUzJdQ0RqGuIZVWkkqEbTcnXMjg9aUVELEk+wIUU5UoGp7REsq4Mk1IBfgN+pjhTS/JfTiIR8Y76ZJYmBXUx9YEXuzMVQFkVAbiRkneqycAPpsYrwFBZzsvc7GeA7fz9OKuAIXWQamffnOJfj4i3JfrPR15DTPD6C/aw97WlVsT3dHV24un6H4l0qKds3NWfq3n3tqZRdGkN8+/P1XAWKSIqwH71KrAPWAsspHpajQCXgYsR8bXliNtoo42W8AfSqx4X1SSiCwAAAABJRU5ErkJggg=="/>
                     </defs>
-                    <rect id="age" width="49.000000" height="22.000000" fill="url(#pattern_28_10)" fill-opacity="1.000000"/>
-                </svg>
+                    <rect id="age" width="50.000000" height="28.000000" fill="url(#pattern_24_10)" fill-opacity="1.000000"/>
+                </svg> 
             </div>
-            
     </div>
-    <main>
-      
+    <div class="container mb-1">
+        <h1 class="container text-left text-gray text-xl mt-1 mb-1">Мобильный Киоск <br> Журналы онлайн</h1>
+    </div>
+    <div class="container img-container">
+        <div class="main-img text-center flex justify-center align-center relative mb-1 pt-1">
+           <img src="./img/main.png" />
+        </div>
+    </div>
+    
+    <main>   
         
-        
-        <div class="btn-content flex flex-col justify-center  relative pt-1">
-            <h1 class="text-left container text-white text-2xl mt-2">Чтение в любом <br> месте</h1>
-            <div class="day-free container text-left text-lightGray mb-2">
-                <p class="text">Присоединяйтесь к Мобильному Киоску <br>и получайте доступ к огромному архиву<br> журналов</p>
+        <div class="btn-content flex flex-col justify-center align-center relative pt-1">
+            <div class="containerV2 mb-1">
+                <img class="iconsImg" src="./img/icons.png" /> 
             </div>
             <div class="containerBtn">
-                <a href="#" id="btn" type="submit" name="submit"  class="btn link bg-green flex flex-col justify-center align-stretch w-100" onclick="document.getElementById('ButtonSubmit').click();">
-                    <span class="lh-large text-2xl  text-bold text-center">Подтвердить</span>
+                <a href="#" id="btn" type="submit" name="submit"  class="btn link bg-gradient-purple flex flex-col justify-center align-stretch w-100" onclick="document.getElementById('ButtonSubmit').click();">
+                    <span class="lh-large text-2xl  text-bold text-center">Читать</span>
                 </a>
             </div>
             
-            <div class="w-100 mt-1">
+            <div class="w-90 mt-1">
                 <p class="text-sm text-lightGray text-center"> 50₽ в день </p>
             </div>
             
             <div  class="white-block absolute w-100 h-100 b-0 z-index-0 shadow hide">
             </div>
         </div>
-        <div class="container mt-2 text-center">
+        <div class="container mt-1 text-center">
                
             <div class="cancel mb-1">
                 <a href="https://www.google.com/" id="cancel" class="cancel-link link link-white roundedCancel inline-block">Отмена</a>
@@ -1356,9 +1384,9 @@
        
 
     </main>  
-    <div class="container pb-1 mt-a w-100 footerWrapper">
-            <div class="footer  align-center footer-text">
-                    <a href="https://rumf.kiosk-mobile.ru/rules" class="textUrl footer-text text-lightGray text-bold">Правила подписки поставщика услуги</a> | <a href="http://moy-m-portal.ru/moi_podpiski/" class="textUrl footer-text text-lightGray text-bold">Личный кабинет</a></span>
+    <div class="container pb-1 mt-a w-100">
+            <div class="footer  align-center text-white">
+                    <a href="https://rumf.kiosk-mobile.ru/rules" class="textUrl footer-text text-lightGray">Правила подписки поставщика услуги</a> | <a href="http://moy-m-portal.ru/moi_podpiski/" class="textUrl footer-text text-lightGray">Личный кабинет</a></span>
             </div>
     </div>
 </div>
