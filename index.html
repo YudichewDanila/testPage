@@ -38,6 +38,7 @@
             --text-dark: #000000;
             --text-gray:#808080;
             --text-lightGray: #dfdbdb;
+            --text-blue:#615c99;
             --btn-cancel:#808080;
         }
 
@@ -288,6 +289,9 @@
         .text-lightGray{
             color:var(--text-lightGray);
         }
+        .text-blue{
+            color: var(--text-blue);
+        }
         .text-normal {
             font-weight: 400;
         }
@@ -318,7 +322,7 @@
 
 
         .bg-gradient-purple {
-            background: linear-gradient(90deg, #fd5b4e 0.5%, #4564fa 100%);
+            background-color:  #4c468c;
         }
 
         .bg-green {
@@ -331,12 +335,15 @@
         .bg-black{
             background-color: #000000 !important;
         }
+        .bg-blue{
+            background: linear-gradient(180deg, #4c468b 8.5%, #1a192e 100%);
+        }
 
         .rounded {
             border-radius: 100px;
         }
         .roundedCancel{
-            border-radius: 6px;
+            border-radius: 30px;
         }
 
         .circle {
@@ -457,7 +464,7 @@
         }
 
         .main-img img {
-            max-width: 35rem;
+            max-width: 20rem;
         }
 
         .main-img .absolute img {
@@ -472,6 +479,16 @@
             border-radius: 0.5rem;
 
         }
+        .half-circle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 3rem;
+    background: radial-gradient(circle closest-side at 100% 0, rgba(247, 247, 247, 0.016), #f7f7f714);
+    border-radius: 0px 0px 15px 15px;
+}
 
         .btn span {
             color: #ffffff;
@@ -479,7 +496,7 @@
         }
 
         .white-block {
-            background: linear-gradient(180deg, rgba(0, 0, 0) 0.04%, #000 62.43%);filter: blur(1.5rem);
+            background: linear-gradient(180deg, rgb(255, 255, 255) 0.04%, #ffffff 62.43%);filter: blur(1.5rem);
             will-change: transform;
             width: 70rem;
             min-width: 150vw;
@@ -526,7 +543,7 @@
 
         @media (min-width: 320px) and (max-height: 770px) {
             .main-img img {
-                max-width: 35rem;
+                max-width: 25rem;
             }
 
             .main-img .absolute img {
@@ -596,6 +613,11 @@
                 display: block;
                 height: 90%;
             }
+            .white-block {
+        -webkit-transform: translate(-50%, calc(100% - 6.5rem));
+        -ms-transform: translate(-50%, calc(100% - 6.5rem));
+        transform: translate(-50%, calc(100% - 5rem));
+    }
         }
 
         @media (min-width: 320px) and (max-height: 330px) {
@@ -616,7 +638,7 @@
                 height: 70%;
             }
             .main-img img {
-                max-width: 30rem;
+                max-width: 20rem;
             }
 
             .main-img .absolute img {
@@ -626,7 +648,7 @@
 
         @media (min-width: 355px) and (max-height: 620px) {
             .main-img img {
-                max-width: 20rem;
+                max-width: 14rem;
             }
 
             .main-img .absolute img {
@@ -689,7 +711,7 @@
                 font-size: 1.2rem;
             }
             .main-img img {
-                max-width: 31rem;
+                max-width: 22rem;
             }
 
             .main-img .absolute img {
@@ -703,7 +725,7 @@
 
         @media (min-width: 410px) and (max-height: 660px) {
             .main-img img {
-                max-width: 15rem;
+                max-width: 13rem;
             }
 
             .btn span:nth-child(2) {
@@ -760,7 +782,7 @@
 
         @media (min-width: 460px) and (max-height: 820px) {
             .main-img img {
-                max-width: 28rem;
+                max-width: 20rem;
             }
             .text-xl {
                 font-size: 1.4rem;
@@ -838,7 +860,7 @@
 
         @media (min-width: 500px) and (max-height: 875px) {
             .main-img img {
-                max-width: 35rem;
+                max-width: 20rem;
             }
 
             .main-img .absolute img {
@@ -848,7 +870,7 @@
 
         @media (min-width: 500px) and (max-height: 785px) {
             .main-img img {
-                max-width: 20rem;
+                max-width: 13rem;
             }
 
             .main-img .absolute img {
@@ -911,7 +933,7 @@
 
         @media (min-width: 550px) and (max-height: 820px) {
             .main-img img {
-                max-width: 20rem;
+                max-width: 15rem;
             }
 
             .main-img .absolute img {
@@ -970,9 +992,9 @@
         }
 
         @media (min-width: 600px) and (max-height: 870px) {
-            
+
             .main-img img {
-                max-width: 15rem;
+                max-width: 13rem;
             }
 
             .main-img .absolute img {
@@ -1036,7 +1058,7 @@
 
         @media (min-width: 640px) and (max-height: 960px) {
             .main-img img {
-                max-width: 32rem;
+                max-width: 20rem;
             }
 
             .main-img .absolute img {
@@ -1046,7 +1068,7 @@
 
         @media (min-width: 640px) and (max-height: 930px) {
             .main-img img {
-                max-width: 20rem;
+                max-width: 14rem;
             }
 
             .main-img .absolute img {
@@ -1081,14 +1103,14 @@
                 display: flex;
             }
             main{
-                margin-top: -5rem;
+                margin-top: -3rem;
             }
 
             .main-img {
                 display: block;
             }
             .main-img img {
-                max-width: 14rem;
+                max-width: 8rem;
             }
             .day-free {
                 margin-top: auto;
@@ -1098,7 +1120,7 @@
                 max-width: 32rem;
             }
             .white-block {                
-                transform: translate(-50%, calc(100% - 20rem));
+                transform: translate(-50%, calc(100% - 6rem));
 }
           
         }
@@ -1142,7 +1164,7 @@
 
         @media (orientation: landscape) and (min-width: 320px) and (min-height: 355px) and (max-height: 500px) {
             :root {
-                font-size: 2.8vh;
+                font-size: 2vh;
             }
             main{
                 margin-top: 0rem;
@@ -1151,7 +1173,7 @@
 
         @media (min-height: 1200px) {
             .img-container {
-                margin-top: auto;
+                margin-top: inherit;
             }
         }
 
@@ -1167,7 +1189,7 @@
             .white-block {
                 -webkit-transform: translate(-50%, calc(100% - 4rem));
                     -ms-transform: translate(-50%, calc(100% - 4rem));
-                        transform: translate(-50%, calc(100% - 20rem))
+                        transform: translate(-50%, calc(100% - 5rem))
             }
             #bg{
                 display: flex;
@@ -1185,7 +1207,7 @@
             }
 
             .main-img img {
-                max-width: 100%;
+                max-width: 70%;
             }
         }
         @media (max-width: 300px) {
@@ -1197,20 +1219,20 @@
 
         @media (max-width: 320px) and (max-height: 640px) {
             .main-img img {
-                max-width: 100%;
+                max-width: 70%;
             }
             
         }
 
         @media (max-width: 320px) and (max-height: 550px) {
             .main-img img {
-                max-width: 35rem;
+                max-width: 13rem;
             }
         }
 
         @media (max-width: 320px) and (max-height: 530px) {
             .img-container {
-                display: none;
+                display: block;
             }
 
             .day-free {
@@ -1241,11 +1263,11 @@
 
 <body>
     <div id="wrapper" class="wrapper fixed w-100 h-100 flex flex-col">
-        <div id="bg" class="z-index-0 bg-black fixed t-0 l-0 w-100 h-100">
+        <div id="bg" class="z-index-0 bg-blue fixed t-0 l-0 w-100 h-100">
             <img src="./img/bg.png" />
         </div>
 
-    <div class="header container flex justify-between align-center mb-2">
+    <div class="header container flex justify-between align-center mb-1">
             <div class="box  rounded">
                 <?xml version="1.0" encoding="utf-8"?>
                 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -1303,6 +1325,9 @@
                 
             </div>
     </div>
+    <div class="day-free text-center text-lightGray mb-2">
+        <p class="text text-upper">Присоединяйтесь к Мобильному Киоску <br> и получайте доступ к огромному <br> архиву журналов</p>
+    </div>
     <main>
         <div class="container img-container">
             <div class="main-img text-center flex flex-col justify-center align-center relative mt-2">
@@ -1315,17 +1340,15 @@
         
         
         <div class="btn-content flex flex-col justify-center align-center relative pt-1">
-            <div class="day-free text-center text-lightGray mb-2">
-                <p class="text text-bold">Присоединяйтесь к Мобильному Киоску и получайте <br> доступ к огромному архиву журналов</p>
-            </div>
             <div class="containerBtn">
-                <a href="#" id="btn" type="submit" name="submit"  class="btn link bg-gradient-purple flex flex-col justify-center align-stretch w-100" onclick="document.getElementById('ButtonSubmit').click();">
+                <a href="#" id="btn" type="submit" name="submit"  class="btn link bg-gradient-purple flex flex-col justify-center align-stretch w-100 relative" onclick="document.getElementById('ButtonSubmit').click();">
+                    <span class="half-circle"></span>
                     <span class="lh-large text-2xl  text-bold text-center">Читать</span>
                 </a>
             </div>
             
             <div class="w-90 mt-1">
-                <p class="text-sm text-lightGray text-center"> 50₽ в день </p>
+                <p class="text-sm text-blue text-center text-bold"> 50₽ в день </p>
             </div>
             
             <div  class="white-block absolute w-100 h-100 b-0 z-index-0 shadow">
