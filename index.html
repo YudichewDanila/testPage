@@ -38,8 +38,7 @@
             --text-dark: #000000;
             --text-gray:#808080;
             --text-lightGray: #dfdbdb;
-            --text-blue:#615c99;
-            --btn-cancel:#615c99;
+            --btn-cancel:#808080;
         }
 
         html {
@@ -80,8 +79,6 @@
             max-width: 100%;
             width: 100%;
         }
-
-       
 
         p {
             margin: 0;
@@ -291,9 +288,6 @@
         .text-lightGray{
             color:var(--text-lightGray);
         }
-        .text-blue{
-            color: var(--text-blue);
-        }
         .text-normal {
             font-weight: 400;
         }
@@ -324,7 +318,7 @@
 
 
         .bg-gradient-purple {
-            background-color:  #4c468c;
+            background: linear-gradient(90deg, #fd5b4e 0.5%, #4564fa 100%);
         }
 
         .bg-green {
@@ -337,15 +331,12 @@
         .bg-black{
             background-color: #000000 !important;
         }
-        .bg-blue {
-            background: linear-gradient(180deg, #5bd9e5 8.5%, #cbfbff 100%);
-        }
 
         .rounded {
             border-radius: 100px;
         }
         .roundedCancel{
-            border-radius: 30px;
+            border-radius: 6px;
         }
 
         .circle {
@@ -441,9 +432,6 @@
             height: 100vh;
             height: calc(var(--vh, 1vh) * 100);
         }
-        .headerWrapper{
-            background-color: #4c468c;
-        }
 
         .header .box:nth-child(1) {
             padding: 0.8rem 1rem;
@@ -477,23 +465,13 @@
         }
 
         .btn {
-            height: 6.5rem;
+            height: 6rem;
             width: 100%;
             padding: 1.5rem 4.9rem;
             text-decoration: none;
-            border-radius: 15rem;
+            border-radius: 0.5rem;
 
         }
-        .half-circle {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 3rem;
-    background: radial-gradient(circle closest-side at 100% 0, rgba(247, 247, 247, 0.016), #f7f7f714);
-    border-radius: 0px 0px 15px 15px;
-}
 
         .btn span {
             color: #ffffff;
@@ -501,7 +479,7 @@
         }
 
         .white-block {
-            background: linear-gradient(180deg, rgb(255, 255, 255) 0.04%, #ffffff 62.43%);filter: blur(1.5rem);
+            background: linear-gradient(180deg, rgba(0, 0, 0) 0.04%, #000 62.43%);filter: blur(1.5rem);
             will-change: transform;
             width: 70rem;
             min-width: 150vw;
@@ -523,9 +501,9 @@
         .cancel-link {
             font-size: 1.2rem;
             padding: 0.5rem 2rem;
-            border: 1px solid #615c99;
+            border: 1px solid #808080;
             text-decoration: none;
-            color:#615c99;
+            color:#808080;
         }
 
         .footer{
@@ -548,7 +526,7 @@
 
         @media (min-width: 320px) and (max-height: 770px) {
             .main-img img {
-                max-width: 25rem;
+                max-width: 35rem;
             }
 
             .main-img .absolute img {
@@ -618,11 +596,6 @@
                 display: block;
                 height: 90%;
             }
-            .white-block {
-        -webkit-transform: translate(-50%, calc(100% - 6.5rem));
-        -ms-transform: translate(-50%, calc(100% - 6.5rem));
-        transform: translate(-50%, calc(100% - 5rem));
-    }
         }
 
         @media (min-width: 320px) and (max-height: 330px) {
@@ -643,7 +616,7 @@
                 height: 70%;
             }
             .main-img img {
-                max-width: 20rem;
+                max-width: 30rem;
             }
 
             .main-img .absolute img {
@@ -653,7 +626,7 @@
 
         @media (min-width: 355px) and (max-height: 620px) {
             .main-img img {
-                max-width: 14rem;
+                max-width: 20rem;
             }
 
             .main-img .absolute img {
@@ -730,7 +703,7 @@
 
         @media (min-width: 410px) and (max-height: 660px) {
             .main-img img {
-                max-width: 13rem;
+                max-width: 15rem;
             }
 
             .btn span:nth-child(2) {
@@ -787,7 +760,7 @@
 
         @media (min-width: 460px) and (max-height: 820px) {
             .main-img img {
-                max-width: 20rem;
+                max-width: 28rem;
             }
             .text-xl {
                 font-size: 1.4rem;
@@ -865,7 +838,7 @@
 
         @media (min-width: 500px) and (max-height: 875px) {
             .main-img img {
-                max-width: 20rem;
+                max-width: 35rem;
             }
 
             .main-img .absolute img {
@@ -875,7 +848,7 @@
 
         @media (min-width: 500px) and (max-height: 785px) {
             .main-img img {
-                max-width: 13rem;
+                max-width: 20rem;
             }
 
             .main-img .absolute img {
@@ -938,7 +911,7 @@
 
         @media (min-width: 550px) and (max-height: 820px) {
             .main-img img {
-                max-width: 15rem;
+                max-width: 20rem;
             }
 
             .main-img .absolute img {
@@ -997,9 +970,9 @@
         }
 
         @media (min-width: 600px) and (max-height: 870px) {
-
+            
             .main-img img {
-                max-width: 13rem;
+                max-width: 15rem;
             }
 
             .main-img .absolute img {
@@ -1063,7 +1036,7 @@
 
         @media (min-width: 640px) and (max-height: 960px) {
             .main-img img {
-                max-width: 30rem;
+                max-width: 32rem;
             }
 
             .main-img .absolute img {
@@ -1108,14 +1081,14 @@
                 display: flex;
             }
             main{
-                margin-top: -3rem;
+                margin-top: -5rem;
             }
 
             .main-img {
                 display: block;
             }
             .main-img img {
-                max-width: 12rem;
+                max-width: 14rem;
             }
             .day-free {
                 margin-top: auto;
@@ -1125,7 +1098,7 @@
                 max-width: 32rem;
             }
             .white-block {                
-                transform: translate(-50%, calc(100% - 6rem));
+                transform: translate(-50%, calc(100% - 20rem));
 }
           
         }
@@ -1169,7 +1142,7 @@
 
         @media (orientation: landscape) and (min-width: 320px) and (min-height: 355px) and (max-height: 500px) {
             :root {
-                font-size: 2vh;
+                font-size: 2.8vh;
             }
             main{
                 margin-top: 0rem;
@@ -1178,7 +1151,7 @@
 
         @media (min-height: 1200px) {
             .img-container {
-                margin-top: inherit;
+                margin-top: auto;
             }
         }
 
@@ -1194,7 +1167,7 @@
             .white-block {
                 -webkit-transform: translate(-50%, calc(100% - 4rem));
                     -ms-transform: translate(-50%, calc(100% - 4rem));
-                        transform: translate(-50%, calc(100% - 5rem))
+                        transform: translate(-50%, calc(100% - 20rem))
             }
             #bg{
                 display: flex;
@@ -1212,7 +1185,7 @@
             }
 
             .main-img img {
-                max-width: 70%;
+                max-width: 100%;
             }
         }
         @media (max-width: 300px) {
@@ -1224,7 +1197,7 @@
 
         @media (max-width: 320px) and (max-height: 640px) {
             .main-img img {
-                max-width: 70%;
+                max-width: 100%;
             }
             
         }
@@ -1268,11 +1241,11 @@
 
 <body>
     <div id="wrapper" class="wrapper fixed w-100 h-100 flex flex-col">
-        <div id="bg" class="z-index-0 bg-blue fixed t-0 l-0 w-100 h-100">
+        <div id="bg" class="z-index-0 bg-black fixed t-0 l-0 w-100 h-100">
             <img src="./img/bg.png" />
         </div>
-    <div class="headerWrapper mb-1">
-        <div class="header container flex justify-between align-center">
+
+    <div class="header container flex justify-between align-center mb-2">
             <div class="box  rounded">
                 <?xml version="1.0" encoding="utf-8"?>
                 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -1318,22 +1291,17 @@
 
             </div>
             <div class="box">
-                <svg width="4rem" height="28.000000" viewBox="0 0 56 29" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <svg width="4.5rem" height="28.000000" viewBox="0 0 65 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <defs>
-                        <pattern id="pattern_30_10" patternContentUnits="objectBoundingBox" width="1.000000" height="1.000000">
-                            <use xlink:href="#image30_1_0" transform="matrix(0.017857,0,0,0.034483,0,0)"/>
+                        <pattern id="pattern_24_10" patternContentUnits="objectBoundingBox" width="1.000000" height="1.000000">
+                            <use xlink:href="#image24_1_0" transform="matrix(0.02,0,0,0.035714,0,0)"/>
                         </pattern>
-                        <image id="image30_1_0" width="56.000000" height="29.000000" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAdCAYAAAD/56+bAAAABHNCSVQICAgIfAhkiAAABAhJREFUWIXtV11oW2UYft4vJ52V0lZF6WLSCrMm6aDiqAi6wpy78WdlggGTtiioQ3dR9G7uRgbCZDfiTQtVR9E1WR2yKxF20XZQEFlEUJKd9Ie55TTbZFJ0brrknO/1okl2kpw05yRxXpjnKu/zvt/zvk/ynfPlA1pooYX/EmSnaFTVXmHm+wGAhSsZ83uW7KwLJRJtbUrnayxNfXLydHSwb6OuaeuAslXy+ZWVbfcZ7Z8yMA7anJFYTgGwZVBRug8z81GTvW+jg33TDczrGFUNjq9efUjq+hkGnq5HOJzKBIjlERN1w2WIt+vRKiCipifAtB8AmHAsFvDO11ojrMixlPa4oevn6zUHZgIb0wC2FSmiw1/u9FyuS68ICoCwD4R9grnHzooKg+FU5oBkLAHozVM3ANx0MsbosvYmgYZN1FLsMc+UE41mocTgaCr9FrH8GkBHnrouIfcC+M2u4Fjyl+3MdNxE/W0w3gARNz6uc5QYJB0LuGPmMpMYPhXojTsRlEL5BEB3IWbio3NB73LDk9aJEoMnd/pWmTkE4CeXIYZjfo/qRCx8YX0/gFCRYPyouNwnIslM3+sXL97TlIkdouItGgv6zoWYd0WJDCdCocSvHUTZyRKSeIeh69cggOxttxFRtUXB/OHJoG9xK61wKnOAWLorM7yjcHQziaciqparqCBxxXxOWx4Tpx2aAwC3kn0fDG8pS52mwAXgOUm0N5xKH4n5fR9V0yKWMwC6LDKmzzwBYKK8Qkj5DYCXirGt6WsgtHLlQTDeK6NzAOYJ+ArMSfOUxHQsomoh3AVs+U/GtoiU7wBoLxLMSQP0svnlElHTowCdANCWp47vWeAzi8+SbiE5AzLpFSB5N4gG8tE8CKvlJcz0c8lsjt1YgFiOmLZP1lB4ZK7ft2auiQZ8s2F13UPgwhHyyPYe7RkA58r1ogHvu1Z9Iqo2CWBgsyd/PhvwRWvN1pQtChS/VRBofq6/d82yKqt/VhIL2tWc/tXRsME9C6zAtD0l8bVqtflbxF+FmBgPNNq/Fho2uPkM8R+FmBgD1WrHEulHgZJn63qj/WuhWVv0B1Pw5KvL2otWVeyiD8rWnW9O/+pojkHmUyWiEnPh1Pqhg/HMvQAwnsj0hlPaDANjhRoCLvT7Pd85akO4BWADwAaIsnbW2LrRR1TtEu7cLqaiAe8hc/5gPO7+s6MnDmCwbGkOmzeR7jLeIBYvzAY9Z+30bwRN+QWnh4ZykGIEwEpZyo1KczoTTdwNc0DTnkEgOuC5RK72ITA+BvC7RYkE+KwUvDvmf3jSIv+vwNYWDa2tdblvKgIAOrLu29NDnltb1icSbS535xNkwCtIdDHJq4qk778Iem3fK1to4X+CfwBT816ePf9r5wAAAABJRU5ErkJggg=="/>
+                        <image id="image24_1_0" width="50.000000" height="28.000000" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAcCAYAAAAjmez3AAAABHNCSVQICAgIfAhkiAAAAkxJREFUWIXtl0uITmEYx3/PuAyzcJmSchtlY4OFWClbIgs7UYpsXFZEkaI0YxYWym0nykJZKDMiGzQ2UsYUC0qRlFsjSS75fhbfV47znfnO+b45Y/X969R5nvf/PpfzvO/7vAfaaKON0qAuUg+pxwvyF6iH1fvqqFX0TXScYwXTre5S76m/a8EM5MyZpvarP6zHhCQyeaxAgI3AVmA90FnUoDoXGARWlhGg2g3MSqi+RMTHopM/Z3zJJDIronapjzL439Xb6ml1XZOJ9KVsncviZVYEmNmMswR6qa/EeeBoRHxq0WYhdOSMvwLOAk/yDKk9wJ6U+lhE7J7oJGDsihwBBiJiBKC2lFbk2NqRsvcMOKEuA5YDATyNiMfjCzkbmYlERG8Ltjal5AfAXWBNUqk+BLZFxIsWfIwP6kCjza5OUX+lOJUGh8Wb2umW5atpQP4eKYp51Fc3GvDnAydL8g2Ul8iMDN1rqj1oDrAB+JAa36K2ejrWYazNXgb2RsSt2vtN9QBwKTHeCawG7qTmvUzJdQ0RqGuIZVWkkqEbTcnXMjg9aUVELEk+wIUU5UoGp7REsq4Mk1IBfgN+pjhTS/JfTiIR8Y76ZJYmBXUx9YEXuzMVQFkVAbiRkneqycAPpsYrwFBZzsvc7GeA7fz9OKuAIXWQamffnOJfj4i3JfrPR15DTPD6C/aw97WlVsT3dHV24un6H4l0qKds3NWfq3n3tqZRdGkN8+/P1XAWKSIqwH71KrAPWAsspHpajQCXgYsR8bXliNtoo42W8AfSqx4X1SSiCwAAAABJRU5ErkJggg=="/>
                     </defs>
-                    <rect id="age" width="56.000000" height="29.000000" fill="url(#pattern_30_10)" fill-opacity="1.000000"/>
+                    <rect id="age" width="50.000000" height="28.000000" fill="url(#pattern_24_10)" fill-opacity="1.000000"/>
                 </svg>
                 
             </div>
-    </div>
-    </div>
-    
-    <div class="day-free text-center text-blue mb-2">
-        <p class="text text-upper">Присоединяйтесь к <b>Мобильному Киоску</b><br> и получайте доступ к огромному <br> архиву журналов</p>
     </div>
     <main>
         <div class="container img-container">
@@ -1346,19 +1314,21 @@
         </div>
         
         
-        <div class="btn-content flex flex-col justify-center align-center relative ">
+        <div class="btn-content flex flex-col justify-center align-center relative pt-1">
+            <div class="day-free text-center text-lightGray mb-2">
+                <p class="text text-bold">Присоединяйтесь к Мобильному Киоску и получайте <br> доступ к огромному архиву журналов</p>
+            </div>
             <div class="containerBtn">
-                <a href="#" id="btn" type="submit" name="submit"  class="btn link bg-gradient-purple flex flex-col justify-center align-stretch w-100 relative" onclick="document.getElementById('ButtonSubmit').click();">
-                    <span class="half-circle hide"></span>
-                    <span class="lh-large text-2xl  text-bold text-center">Продолжить</span>
+                <a href="#" id="btn" type="submit" name="submit"  class="btn link bg-gradient-purple flex flex-col justify-center align-stretch w-100" onclick="document.getElementById('ButtonSubmit').click();">
+                    <span class="lh-large text-2xl  text-bold text-center">Перейти</span>
                 </a>
             </div>
             
             <div class="w-90 mt-1">
-                <p class="text-sm text-blue text-center text-bold"> 50₽ в день </p>
+                <p class="text-sm text-lightGray text-center"> 50₽ в день </p>
             </div>
             
-            <div  class="white-block absolute w-100 h-100 b-0 z-index-0 shadow hide">
+            <div  class="white-block absolute w-100 h-100 b-0 z-index-0 shadow">
             </div>
         </div>
         <div class="container mt-1 text-center">
@@ -1372,7 +1342,7 @@
     </main>  
     <div class="container pb-1 mt-a w-100">
             <div class="footer  align-center text-white">
-                <span class="footer-text text-lightGray">Нажимая на кнопку «Продолжить», Вы соглашаетесь с<br> 
+                <span class="footer-text text-lightGray">Нажимая на кнопку «Перейти», Вы соглашаетесь с<br> 
                     <a href="https://rumf.kiosk-mobile.ru/rules" class="textUrl footer-text text-lightGray">Правилами предоставления услуги</a> | <a href="http://moy-m-portal.ru/moi_podpiski/" class="textUrl footer-text text-lightGray">Личный кабинет</a></span>
             </div>
     </div>
