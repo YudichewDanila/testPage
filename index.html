@@ -585,6 +585,17 @@
         filter: blur(4px);
         z-index: -1;      
         }
+        .shadowBlock::before {
+            background: linear-gradient(180deg, rgba(0, 0, 0) 0.04%, #000 62.43%);filter: blur(1.5rem);
+            will-change: transform;
+            width: 70rem;
+            min-width: 150vw;
+            min-height: 142vh;
+            left: 50%;
+            -webkit-transform: translate(-50%, calc(100% - 6.5rem));
+            -ms-transform: translate(-50%, calc(100% - 6.5rem));
+            transform: translate(-50%, -2rem); 
+        }
 
         .white-block svg {
             -webkit-transform: translate(0, -50%);
