@@ -506,22 +506,33 @@
             padding-bottom: 0rem;
         }
         .mainImg{
+            display: none;
             width: 30rem;
+        }
+        .ItemImg{
+            width: 3em;
+        }
+        .ItemsBlock{
+            height: 100%;
+            max-height: 40rem;
+            justify-content: space-around;
+            font-size: 1rem;
         }
         .wrapperItem{
             width: 100%;
-            max-width: 32rem;
+            max-width: 35rem;
             border-radius: 50px;
-            background-color: #000000;
-            border:solid 1px gray;
-            padding: 0.5rem;
+            background-color: #101010db;
+            border:solid 1px #2f2d2a;
+            padding: 0.8em;
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1em;
+            font-size: 1em;
         }
         .wrapperItem span{
             color: white;
-            margin-left: 1rem;
-            font-size: 1rem;
+            margin-left: 1em;
+            font-size: 1.1em;
         }
         .footerWrapper {
             background-color: #00000000;
@@ -708,6 +719,9 @@
             .top-text-big {
                 display: none;
             }
+            .ItemsBlock{
+                font-size: 1.3vh;
+            }
         }
 
         @media (min-width: 320px) and (max-height: 430px) {
@@ -748,7 +762,7 @@
 
         @media (min-width: 355px) {
             :root {
-                font-size: 11px;
+                font-size: 10px;
             }
            
         }
@@ -772,11 +786,14 @@
             }
         }
 
-        @media (min-width: 355px) and (max-height: 620px) {
+        @media (min-width: 355px) and (max-height: 650px) {
             .main-img img {
                 max-width: 20rem;
             }
 
+            .ItemsBlock{
+                font-size: 0.8rem;
+            }
             .main-img .absolute img {
                 max-width: 35rem;
             }
@@ -822,7 +839,7 @@
 
         @media (min-width: 410px) {
             :root {
-                font-size: 12px;
+                font-size: 11px;
             }
         }
         @media (min-width:410px) and (max-height:620px){
@@ -847,7 +864,7 @@
             .main-img img {
                 max-width: 31rem;
             }
-
+            
             .main-img .absolute img {
                 max-width: 30rem;
             }
@@ -914,6 +931,9 @@
             }
             .mainImg{
                 width: 28rem;
+            }
+            .ItemsBlock{
+                font-size: 0.8rem;
             }
         }
 
@@ -1054,7 +1074,10 @@
 
         @media (min-width: 550px) {
             :root {
-                font-size: 12px;
+                font-size: 10px;
+            }
+            .ItemsBlock{
+                font-size: 0.8rem;
             }
             .mainImg{
                 width: 30rem;
@@ -1183,10 +1206,12 @@
 
         @media (min-width: 640px) {
             :root {
-                font-size: 13px;
+                font-size: 12px;
             }
 
-           
+            .ItemsBlock{
+                font-size: 1rem;
+            }
 
             .mb-2 {
                 margin-bottom: 1.5rem;
@@ -1298,14 +1323,18 @@
                 display: block;
             }
 
+            .ItemsBlock{
+                font-size: 0.8rem;
+            }
+
             :root {
-                font-size: 11px;
+                font-size: 10px;
             }
         }
 
         @media (orientation: landscape) and (min-width: 320px) and (min-height: 355px) and (max-height: 590px) {
             :root {
-                font-size: 2.1vh;
+                font-size: 1.7vh;
             }
             main{
                 margin-top: 0rem;
@@ -1315,6 +1344,12 @@
                 margin: 0 auto;
                 width: 23rem;
             }
+
+            .ItemsBlock{
+                font-size: 1.5vh;
+                height: 50%;
+            }
+
         }
 
         @media (min-width: 410px) and (max-height: 550px){
@@ -1329,15 +1364,25 @@
                 width:20rem;
                 margin-bottom: 1rem;
             }
+            .wrapperItem {
+                margin-bottom: 0.1em;
+                font-size: 0.9em;
+}
         }
 
         @media (min-height: 760px) {
+           
             main {
                 justify-content: space-around;
             }
             
             .btn-content{
                 margin-bottom: 5rem;
+            }
+        }
+        @media (min-width:400px) and (min-height: 760px) {
+            :root{
+                font-size: 11px;
             }
         }
 
@@ -1385,7 +1430,7 @@
 
         @media (max-width: 320px) {
             :root {
-                font-size: 2.5vw;
+                font-size: 2.3vw;
             }
 
             .btn span:nth-child(1) {
@@ -1423,15 +1468,31 @@
 
         }
 
-        @media (min-width: 320px) and (max-width: 480px) and (max-height: 550px){
+        @media (min-width: 320px) and (max-width: 480px) and (max-height: 610px){
             :root {
                 font-size: 8px;
             }
            .mainImg{
             margin: 0 auto;
-            width: 23rem;
+            width: 25rem;
             margin-bottom: 1rem;
            }
+           .ItemsBlock{
+            height: 50%;
+           }
+           .wrapperItem{
+            font-size: 1em;
+           }
+        }
+      
+
+        @media (max-height: 440px){
+            .mainImg{
+                display: block;
+            }
+            .ItemsBlock{
+                display: none;
+            } 
         }
         @media (max-height: 390px) {
             :root {
@@ -1451,6 +1512,9 @@
                 display: none;
                 margin: 0 auto;
             }
+            .ItemsBlock{
+                display: none;
+            } 
             .day-free {
                 display: block;
             }
@@ -1470,6 +1534,9 @@
                 display: none;
             }
             .containerV2{
+                display: none;
+            }
+            .ItemsBlock{
                 display: none;
             }
         }
@@ -1563,7 +1630,7 @@
         </div>
        
     <main>
-        <div class="mainImg mb-1">
+        <div class="mainImg mb-1 ">
             <svg  width="100%" height="100%" viewBox="0 0 602 423" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="1" y="0.5" width="600" height="66" rx="33" fill="#101010" stroke="#2E2E2E"/>
                 <g clip-path="url(#clip0_763_182)">
@@ -1630,122 +1697,92 @@
         </div>
         
             
-        <div class="container flex flex-col mb-1 w-100 h-100 align-center hide">
+        <div class="container flex flex-col mb-2 w-100 align-center ItemsBlock">
             <div class="wrapperItem flex">
-                <svg width="3rem" height="3rem" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_763_186)">
-                    <mask id="mask0_763_186" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="49" height="48">
-                    <path d="M48.2393 0H0.239258V48H48.2393V0Z" fill="white"/>
-                    </mask>
-                    <g mask="url(#mask0_763_186)">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0422 8.98195C11.8409 7.60643 13.6034 7.1388 14.9789 7.93748L39.5464 22.2022C40.9219 23.0009 41.3895 24.7634 40.5908 26.139C39.7922 27.5145 38.0296 27.9821 36.6541 27.1834L12.0867 12.9187C10.7112 12.12 10.2435 10.3575 11.0422 8.98195Z" fill="#E2E2E2"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.1583 8.15967C15.7489 8.15967 17.0383 9.44909 17.0383 11.0397V37.9197C17.0383 39.5102 15.7489 40.7997 14.1583 40.7997C12.5677 40.7997 11.2783 39.5102 11.2783 37.9197V11.0397C11.2783 9.44909 12.5677 8.15967 14.1583 8.15967Z" fill="#464646"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.54 27.187L15.4376 41.1026L12.5576 36.1143L36.66 22.1987L39.54 27.187Z" fill="#FFCF4B"/>
-                    <path d="M14.159 17.2799C18.1354 17.2799 21.359 14.0563 21.359 10.0799C21.359 6.10343 18.1354 2.87988 14.159 2.87988C10.1825 2.87988 6.95898 6.10343 6.95898 10.0799C6.95898 14.0563 10.1825 17.2799 14.159 17.2799Z" fill="#E2E2E2"/>
-                    <path d="M38.159 31.2001C42.1354 31.2001 45.359 27.9765 45.359 24C45.359 20.0236 42.1354 16.8 38.159 16.8C34.1825 16.8 30.959 20.0236 30.959 24C30.959 27.9765 34.1825 31.2001 38.159 31.2001Z" fill="#FFCF4B"/>
-                    <path d="M14.159 45.5999C18.1354 45.5999 21.359 42.3764 21.359 38.4C21.359 34.4235 18.1354 31.2 14.159 31.2C10.1825 31.2 6.95898 34.4235 6.95898 38.4C6.95898 42.3764 10.1825 45.5999 14.159 45.5999Z" fill="#464646"/>
-                    </g>
-                    </g>
-                    <defs>
-                    <clipPath id="clip0_763_186">
-                    <rect width="48" height="48" fill="white" transform="translate(0.239258)"/>
-                    </clipPath>
-                    </defs>
-                </svg>                    
+                <div class="ItemImg">
+                    <svg width="100%" height="100%" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_763_186)">
+                        <mask id="mask0_763_186" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="49" height="48">
+                        <path d="M48.2393 0H0.239258V48H48.2393V0Z" fill="white"/>
+                        </mask>
+                        <g mask="url(#mask0_763_186)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0422 8.98195C11.8409 7.60643 13.6034 7.1388 14.9789 7.93748L39.5464 22.2022C40.9219 23.0009 41.3895 24.7634 40.5908 26.139C39.7922 27.5145 38.0296 27.9821 36.6541 27.1834L12.0867 12.9187C10.7112 12.12 10.2435 10.3575 11.0422 8.98195Z" fill="#E2E2E2"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.1583 8.15967C15.7489 8.15967 17.0383 9.44909 17.0383 11.0397V37.9197C17.0383 39.5102 15.7489 40.7997 14.1583 40.7997C12.5677 40.7997 11.2783 39.5102 11.2783 37.9197V11.0397C11.2783 9.44909 12.5677 8.15967 14.1583 8.15967Z" fill="#464646"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M39.54 27.187L15.4376 41.1026L12.5576 36.1143L36.66 22.1987L39.54 27.187Z" fill="#FFCF4B"/>
+                        <path d="M14.159 17.2799C18.1354 17.2799 21.359 14.0563 21.359 10.0799C21.359 6.10343 18.1354 2.87988 14.159 2.87988C10.1825 2.87988 6.95898 6.10343 6.95898 10.0799C6.95898 14.0563 10.1825 17.2799 14.159 17.2799Z" fill="#E2E2E2"/>
+                        <path d="M38.159 31.2001C42.1354 31.2001 45.359 27.9765 45.359 24C45.359 20.0236 42.1354 16.8 38.159 16.8C34.1825 16.8 30.959 20.0236 30.959 24C30.959 27.9765 34.1825 31.2001 38.159 31.2001Z" fill="#FFCF4B"/>
+                        <path d="M14.159 45.5999C18.1354 45.5999 21.359 42.3764 21.359 38.4C21.359 34.4235 18.1354 31.2 14.159 31.2C10.1825 31.2 6.95898 34.4235 6.95898 38.4C6.95898 42.3764 10.1825 45.5999 14.159 45.5999Z" fill="#464646"/>
+                        </g>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_763_186">
+                        <rect width="48" height="48" fill="white" transform="translate(0.239258)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>   
+                </div>              
                 <span>Узнавайте о последних тенденциях в мире технологий</span>
             </div>
             <div class="wrapperItem flex">
-                <svg width="3rem" height="3rem" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_763_186)">
-                    <mask id="mask0_763_186" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="49" height="48">
-                    <path d="M48.2393 0H0.239258V48H48.2393V0Z" fill="white"/>
-                    </mask>
-                    <g mask="url(#mask0_763_186)">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0422 8.98195C11.8409 7.60643 13.6034 7.1388 14.9789 7.93748L39.5464 22.2022C40.9219 23.0009 41.3895 24.7634 40.5908 26.139C39.7922 27.5145 38.0296 27.9821 36.6541 27.1834L12.0867 12.9187C10.7112 12.12 10.2435 10.3575 11.0422 8.98195Z" fill="#E2E2E2"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.1583 8.15967C15.7489 8.15967 17.0383 9.44909 17.0383 11.0397V37.9197C17.0383 39.5102 15.7489 40.7997 14.1583 40.7997C12.5677 40.7997 11.2783 39.5102 11.2783 37.9197V11.0397C11.2783 9.44909 12.5677 8.15967 14.1583 8.15967Z" fill="#464646"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.54 27.187L15.4376 41.1026L12.5576 36.1143L36.66 22.1987L39.54 27.187Z" fill="#FFCF4B"/>
-                    <path d="M14.159 17.2799C18.1354 17.2799 21.359 14.0563 21.359 10.0799C21.359 6.10343 18.1354 2.87988 14.159 2.87988C10.1825 2.87988 6.95898 6.10343 6.95898 10.0799C6.95898 14.0563 10.1825 17.2799 14.159 17.2799Z" fill="#E2E2E2"/>
-                    <path d="M38.159 31.2001C42.1354 31.2001 45.359 27.9765 45.359 24C45.359 20.0236 42.1354 16.8 38.159 16.8C34.1825 16.8 30.959 20.0236 30.959 24C30.959 27.9765 34.1825 31.2001 38.159 31.2001Z" fill="#FFCF4B"/>
-                    <path d="M14.159 45.5999C18.1354 45.5999 21.359 42.3764 21.359 38.4C21.359 34.4235 18.1354 31.2 14.159 31.2C10.1825 31.2 6.95898 34.4235 6.95898 38.4C6.95898 42.3764 10.1825 45.5999 14.159 45.5999Z" fill="#464646"/>
-                    </g>
-                    </g>
-                    <defs>
-                    <clipPath id="clip0_763_186">
-                    <rect width="48" height="48" fill="white" transform="translate(0.239258)"/>
-                    </clipPath>
-                    </defs>
-                </svg>                    
-                <span>Узнавайте о последних тенденциях в мире технологий</span>
+                <div class="ItemImg">
+                   
+                    <svg width="100%" height="100%" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24.5 35H18.5C9.66343 35 2.5 27.8366 2.5 19V12L8.53641 12.0137C17.3587 12.0338 24.5 19.1914 24.5 28.0137V35Z" fill="#FFCC66"/>
+                        <path d="M46.5 12V18.9999C46.5 27.8364 39.3365 34.9999 30.5 34.9999H24.5V28.0137C24.5 19.1914 31.6412 12.0339 40.4635 12.0138L46.5 12Z" fill="#464646"/>
+                        <path d="M24.5011 3L28.4996 7.00001C34.8707 13.3699 34.8695 24.629 28.4996 31L24.5011 35L20.4996 31C14.1285 24.6301 14.1297 13.3711 20.4996 6.99998L24.5011 3Z" fill="#E3E3E3"/>
+                        <path d="M24.5 44C26.1569 44 27.5 42.6569 27.5 41C27.5 39.3431 26.1569 38 24.5 38C22.8431 38 21.5 39.3431 21.5 41C21.5 42.6569 22.8431 44 24.5 44Z" fill="#464646"/>
+                        </svg>
+                          
+                </div>              
+                <span>Открывайте секреты здорового образа жизни</span>
             </div>
             <div class="wrapperItem flex">
-                <svg width="3rem" height="3rem" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_763_186)">
-                    <mask id="mask0_763_186" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="49" height="48">
-                    <path d="M48.2393 0H0.239258V48H48.2393V0Z" fill="white"/>
-                    </mask>
-                    <g mask="url(#mask0_763_186)">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0422 8.98195C11.8409 7.60643 13.6034 7.1388 14.9789 7.93748L39.5464 22.2022C40.9219 23.0009 41.3895 24.7634 40.5908 26.139C39.7922 27.5145 38.0296 27.9821 36.6541 27.1834L12.0867 12.9187C10.7112 12.12 10.2435 10.3575 11.0422 8.98195Z" fill="#E2E2E2"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.1583 8.15967C15.7489 8.15967 17.0383 9.44909 17.0383 11.0397V37.9197C17.0383 39.5102 15.7489 40.7997 14.1583 40.7997C12.5677 40.7997 11.2783 39.5102 11.2783 37.9197V11.0397C11.2783 9.44909 12.5677 8.15967 14.1583 8.15967Z" fill="#464646"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.54 27.187L15.4376 41.1026L12.5576 36.1143L36.66 22.1987L39.54 27.187Z" fill="#FFCF4B"/>
-                    <path d="M14.159 17.2799C18.1354 17.2799 21.359 14.0563 21.359 10.0799C21.359 6.10343 18.1354 2.87988 14.159 2.87988C10.1825 2.87988 6.95898 6.10343 6.95898 10.0799C6.95898 14.0563 10.1825 17.2799 14.159 17.2799Z" fill="#E2E2E2"/>
-                    <path d="M38.159 31.2001C42.1354 31.2001 45.359 27.9765 45.359 24C45.359 20.0236 42.1354 16.8 38.159 16.8C34.1825 16.8 30.959 20.0236 30.959 24C30.959 27.9765 34.1825 31.2001 38.159 31.2001Z" fill="#FFCF4B"/>
-                    <path d="M14.159 45.5999C18.1354 45.5999 21.359 42.3764 21.359 38.4C21.359 34.4235 18.1354 31.2 14.159 31.2C10.1825 31.2 6.95898 34.4235 6.95898 38.4C6.95898 42.3764 10.1825 45.5999 14.159 45.5999Z" fill="#464646"/>
-                    </g>
-                    </g>
-                    <defs>
-                    <clipPath id="clip0_763_186">
-                    <rect width="48" height="48" fill="white" transform="translate(0.239258)"/>
-                    </clipPath>
-                    </defs>
-                </svg>                    
-                <span>Узнавайте о последних тенденциях в мире технологий</span>
+                <div class="ItemImg">
+                    <svg width="100%" height="100%" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="18.1562" cy="17.5" r="17.5" fill="#FFCC66"/>
+                        </svg>   
+                </div>              
+                <span>Расширяйте карьерные горизонты</span>
             </div>
             <div class="wrapperItem flex">
-                <svg width="3rem" height="3rem" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_763_186)">
-                    <mask id="mask0_763_186" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="49" height="48">
-                    <path d="M48.2393 0H0.239258V48H48.2393V0Z" fill="white"/>
-                    </mask>
-                    <g mask="url(#mask0_763_186)">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0422 8.98195C11.8409 7.60643 13.6034 7.1388 14.9789 7.93748L39.5464 22.2022C40.9219 23.0009 41.3895 24.7634 40.5908 26.139C39.7922 27.5145 38.0296 27.9821 36.6541 27.1834L12.0867 12.9187C10.7112 12.12 10.2435 10.3575 11.0422 8.98195Z" fill="#E2E2E2"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.1583 8.15967C15.7489 8.15967 17.0383 9.44909 17.0383 11.0397V37.9197C17.0383 39.5102 15.7489 40.7997 14.1583 40.7997C12.5677 40.7997 11.2783 39.5102 11.2783 37.9197V11.0397C11.2783 9.44909 12.5677 8.15967 14.1583 8.15967Z" fill="#464646"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.54 27.187L15.4376 41.1026L12.5576 36.1143L36.66 22.1987L39.54 27.187Z" fill="#FFCF4B"/>
-                    <path d="M14.159 17.2799C18.1354 17.2799 21.359 14.0563 21.359 10.0799C21.359 6.10343 18.1354 2.87988 14.159 2.87988C10.1825 2.87988 6.95898 6.10343 6.95898 10.0799C6.95898 14.0563 10.1825 17.2799 14.159 17.2799Z" fill="#E2E2E2"/>
-                    <path d="M38.159 31.2001C42.1354 31.2001 45.359 27.9765 45.359 24C45.359 20.0236 42.1354 16.8 38.159 16.8C34.1825 16.8 30.959 20.0236 30.959 24C30.959 27.9765 34.1825 31.2001 38.159 31.2001Z" fill="#FFCF4B"/>
-                    <path d="M14.159 45.5999C18.1354 45.5999 21.359 42.3764 21.359 38.4C21.359 34.4235 18.1354 31.2 14.159 31.2C10.1825 31.2 6.95898 34.4235 6.95898 38.4C6.95898 42.3764 10.1825 45.5999 14.159 45.5999Z" fill="#464646"/>
-                    </g>
-                    </g>
-                    <defs>
-                    <clipPath id="clip0_763_186">
-                    <rect width="48" height="48" fill="white" transform="translate(0.239258)"/>
-                    </clipPath>
-                    </defs>
-                </svg>                    
-                <span>Узнавайте о последних тенденциях в мире технологий</span>
+                <div class="ItemImg">
+                    <svg width="100%" height="100%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.3143 45H2.45894C1.75625 45 1.27271 44.2943 1.52638 43.639L12.7027 14.7668C12.8816 14.3046 13.3262 14 13.8218 14H26.5401C27.2428 14 27.7263 14.7057 27.4727 15.361L16.2469 44.361C16.0978 44.7461 15.7273 45 15.3143 45Z" fill="black"/>
+                        <path d="M35.1773 34H22.459C21.7563 34 21.2728 33.2943 21.5264 32.639L32.7522 3.63901C32.9013 3.25387 33.2718 3 33.6848 3H46.5402C47.2429 3 47.7264 3.70568 47.4728 4.36099L36.2964 33.2332C36.1175 33.6954 35.6729 34 35.1773 34Z" fill="#FFCC66"/>
+                        <path d="M22.074 34H35.2693C36.0749 34 36.6072 33.1626 36.2653 32.4331L27.9216 14.6331C27.7405 14.2468 27.3523 14 26.9256 14H13.7303C12.9247 14 12.3923 14.8374 12.7343 15.5669L21.078 33.3669C21.2591 33.7532 21.6473 34 22.074 34Z" fill="#E3E3E3"/>
+                        </svg>  
+                </div>              
+                <span>Принимайте лучшие инвестиционные идеи</span>
             </div>
             <div class="wrapperItem flex">
-                <svg width="3rem" height="3rem" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_763_186)">
-                    <mask id="mask0_763_186" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="49" height="48">
-                    <path d="M48.2393 0H0.239258V48H48.2393V0Z" fill="white"/>
-                    </mask>
-                    <g mask="url(#mask0_763_186)">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0422 8.98195C11.8409 7.60643 13.6034 7.1388 14.9789 7.93748L39.5464 22.2022C40.9219 23.0009 41.3895 24.7634 40.5908 26.139C39.7922 27.5145 38.0296 27.9821 36.6541 27.1834L12.0867 12.9187C10.7112 12.12 10.2435 10.3575 11.0422 8.98195Z" fill="#E2E2E2"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.1583 8.15967C15.7489 8.15967 17.0383 9.44909 17.0383 11.0397V37.9197C17.0383 39.5102 15.7489 40.7997 14.1583 40.7997C12.5677 40.7997 11.2783 39.5102 11.2783 37.9197V11.0397C11.2783 9.44909 12.5677 8.15967 14.1583 8.15967Z" fill="#464646"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.54 27.187L15.4376 41.1026L12.5576 36.1143L36.66 22.1987L39.54 27.187Z" fill="#FFCF4B"/>
-                    <path d="M14.159 17.2799C18.1354 17.2799 21.359 14.0563 21.359 10.0799C21.359 6.10343 18.1354 2.87988 14.159 2.87988C10.1825 2.87988 6.95898 6.10343 6.95898 10.0799C6.95898 14.0563 10.1825 17.2799 14.159 17.2799Z" fill="#E2E2E2"/>
-                    <path d="M38.159 31.2001C42.1354 31.2001 45.359 27.9765 45.359 24C45.359 20.0236 42.1354 16.8 38.159 16.8C34.1825 16.8 30.959 20.0236 30.959 24C30.959 27.9765 34.1825 31.2001 38.159 31.2001Z" fill="#FFCF4B"/>
-                    <path d="M14.159 45.5999C18.1354 45.5999 21.359 42.3764 21.359 38.4C21.359 34.4235 18.1354 31.2 14.159 31.2C10.1825 31.2 6.95898 34.4235 6.95898 38.4C6.95898 42.3764 10.1825 45.5999 14.159 45.5999Z" fill="#464646"/>
-                    </g>
-                    </g>
-                    <defs>
-                    <clipPath id="clip0_763_186">
-                    <rect width="48" height="48" fill="white" transform="translate(0.239258)"/>
-                    </clipPath>
-                    </defs>
-                </svg>                    
-                <span>Узнавайте о последних тенденциях в мире технологий</span>
+                <div class="ItemImg">
+                    <svg width="100%" height="100%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_763_240)">
+                        <mask id="mask0_763_240" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="48" height="48">
+                        <path d="M48 0H0V48H48V0Z" fill="white"/>
+                        </mask>
+                        <g mask="url(#mask0_763_240)">
+                        <mask id="mask1_763_240" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="48" height="48">
+                        <path d="M48 0H0V48H48V0Z" fill="white"/>
+                        </mask>
+                        <g mask="url(#mask1_763_240)">
+                        <path d="M3 10.3199C3 9.15726 4.11283 8.31784 5.23076 8.63725L24 13.9999V43.9999L5.53847 38.7252C4.03592 38.2959 3 36.9225 3 35.3598V10.3199Z" fill="#FFCC66"/>
+                        <path d="M45 10.3199C45 9.15726 43.8872 8.31784 42.7692 8.63725L24 13.9999V43.9999L42.4615 38.7252C43.9641 38.2959 45 36.9225 45 35.3598V10.3199Z" fill="#464646"/>
+                        <path d="M39 3.82049C39 3.08679 38.1513 2.67889 37.5784 3.13723L24 13.9999V43.9999L37.0296 33.5762C38.275 32.5799 39 31.0715 39 29.4766V3.82049Z" fill="#E3E3E3"/>
+                        <path d="M15 11.5336L10 10V21.2465C10.0001 26.305 15 25.8473 15 22.2689V11.5336Z" fill="#464646"/>
+                        </g>
+                        </g>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_763_240">
+                        <rect width="48" height="48" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>  
+                </div>              
+                <span>Читайте бестселлеры в кратком изложение</span>
             </div>
+           
         </div>
         <div class="container shadowBlock">
            
