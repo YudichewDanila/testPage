@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width, viewport-fit=cover"/>
+    <meta name="apple-mobile-web-app-capable" content="no"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +40,7 @@
         height: calc(var(--vh, 1vh) * 100);
         padding: 0;
         margin: 0;
-        overflow: hidden;
+        /* overflow: hidden; */
         background: linear-gradient(#010703, #194721);
     }
 
@@ -76,7 +78,7 @@
 
     .main{
         width: 100%;
-        height: 100%;
+        height: 90%;
     }
 
     .footer{
@@ -150,7 +152,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    z-index: -1;
+    z-index: 0;
     margin-bottom: -10rem;
     position: relative;
     overflow: hidden;
@@ -183,6 +185,7 @@
         border-radius: var(--btnRadius-size);
         color: white;
         background-color: #26b83b;
+        z-index: 1;
     }
     
     .btn span{
@@ -358,6 +361,10 @@ cursor: pointer;
         --footerWrapper-size: 0.7rem;
         --mainImgEnable: none;
     } 
+
+    .main{
+        display: block;
+    }
 }
 
 @media(max-height: 350px){
