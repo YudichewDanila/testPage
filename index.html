@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width, viewport-fit=cover"/>
-    <meta name="apple-mobile-web-app-capable" content="no"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,19 +16,11 @@
         margin: 0;
         padding: 0;
     }
-
-    html {
-            width: 100%;
-            height: 100vh;
-            padding: env(safe-area-inset);
-        }
-
     :root {
         font-size: 10px;
         --container: 1200px;
         --mainLogoText-size: 10rem;
         --mainImg: 35rem;
-        --Img: 110%;
         --mainText-size: 1.5rem;
         --mainPrice-size: 1.2rem;
         --btnWrapper-size: 10px;
@@ -45,13 +34,11 @@
     body{
         display: flex;
         flex-direction: column;
-        width: 100%;
         height: 100vh;
-        position: fixed;
         height: calc(var(--vh, 1vh) * 100);
         padding: 0;
         margin: 0;
-        /* overflow: hidden; */
+        overflow: hidden;
         background: linear-gradient(#010703, #194721);
     }
 
@@ -89,7 +76,7 @@
 
     .main{
         width: 100%;
-        height: 90%;
+        height: 100%;
     }
 
     .footer{
@@ -175,21 +162,6 @@
 }
 
 
-.bgImg{
-    display: var(--mainImgEnable);
-    position: relative;
-    width: 100%;
-    height: 100%;
-    max-width: var(--mainImg);
-    overflow: hidden; 
-}
-
-.bgImg img{
-    width: var(--Img);
-    position: absolute;
-}
-
-
 .btnWrapper{
         display: flex;
         flex-direction: column;
@@ -205,7 +177,7 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 10rem;
+        height: 10em;
         text-decoration: none;
         text-align: center;
         border-radius: var(--btnRadius-size);
@@ -257,7 +229,6 @@ cursor: pointer;
         font-size: 10px;
         --container: 1200px;
         --mainImg: 40rem;
-        --Img: 110%;
         --mainLogoText-size: 9rem;
         --mainText-size: 1.4rem;
         --mainPrice-size: 1.3rem;
@@ -334,7 +305,6 @@ cursor: pointer;
     :root {
         font-size: 10px;
         --mainImg: 30rem;
-        --Img: 100%;
     } 
 }
 
@@ -342,8 +312,7 @@ cursor: pointer;
     :root {
         font-size: 12px;
         --btnWrapper-size: 16px;
-        --mainImg: 44rem;
-        --Img: 100%;
+        --mainImg: 50rem;
     }
     
     .mainImg img{
@@ -356,8 +325,7 @@ cursor: pointer;
     :root {
         font-size: 10px;
         --container: 1200px;
-        --mainImg: 30rem;
-        --Img: 100%;
+        --mainImg: 28rem;
         --mainLogoText-size: 5rem;
         --mainText-size: 1.2rem;
         --mainPrice-size: 1.2rem;
@@ -372,7 +340,6 @@ cursor: pointer;
 @media (max-height: 500px) { 
     :root {
         --mainImg: 25rem;
-        --Img:100%;
     } 
 }
 
@@ -385,8 +352,7 @@ cursor: pointer;
         --mainText-size: 1.2rem;
         --mainPrice-size: 1.2rem;
         --btnWrapper-size: 10px;
-        /* --btnFonts-size: 3.5em; */
-        --btnFonts-size: 30px;
+        --btnFonts-size: 3.5em;
         --btnRadius-size: 13px;
         --cancelWrapper-size: 1rem;
         --footerWrapper-size: 0.7rem;
@@ -408,12 +374,6 @@ cursor: pointer;
         --cancelWrapper-size: 3vh;
         --footerWrapper-size: 2vh;
     } 
-}
-
-@media(min-height: 800px){
-.bgImg img{
-    bottom: -10%;
-}
 }
 </style>
 </head>
@@ -475,6 +435,17 @@ cursor: pointer;
                     </defs>
                     <rect id="logo 1" width="63.000000" height="29.000000" x="0.000000" y="0.000000" fill="url(#pattern_0)" />
                 </svg>
+                
+            <!-- 
+            <svg width="100%" height="100%" viewBox="0 -2 55 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                    <pattern id="pattern_28_10" patternContentUnits="objectBoundingBox" width="1.000000" height="1.000000">
+                        <use xlink:href="#image28_1_0" transform="matrix(0.020408,0,0,0.045455,0,0)"></use>
+                    </pattern>
+                    <image id="image28_1_0" width="49.000000" height="22.000000" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAWCAYAAABpNXSSAAAABHNCSVQICAgIfAhkiAAAA1ZJREFUWIXlVltIFFEY/v4zM1pulAhldLVSkSJ7MH0IcdcQSnfroeghioJ66wJFF4qINKJ66DHwMQp6iIJCdyqo0O32EFEhJOpuV0oSu5Cp4bpz/h5ybWZ2dt11tpf6YB6+M//5/v87c875B/gHQOkELX4QWCAkbxaMvB6ffmKi+OK2+nmCxDYG1gJYDiCfiM72eINH3RbsBDXZi2WP1xSMRrWNDN4Kg6sBCCboqcSK2nxTNMprAmgfAzlZrzYJLCaK2nxTVEwLgOSWaJTqAc5NV2jR3fWFqjB0MCqyUdiyx2sKooaaH+cUEwM9ta2fnWItJjTyfAJ4Rpq7bBxznq7LU4ccDYwAHAJElyFlKBPN0VHtEJiPxDmTbAawyynWvp1mZJIoDs8P4zSI7AaalVjO8a66618mo5kJHM8EAe8kU5CIqwGsSCWw6F7DQhDtNo8xcWPEe7Mpi3WmhMUEAcdIKMHumpYOACgJ+YPg1CY0hXawVacz0uc5VRZqWB6DKIdkgpAvI95bz/9C/QBsJnp8+ulMBRhYb+OPSmYNtxtM1QT+fbxYoKTd/8Qg2vraGwy7rDkBKU/w2Jfwm6L1sFcPxGnF0wptYHD2MKyLwSl0P8ZiSsWbupa+hFztfs6ocgBhn04AIDKdaMbX74VzkHiuUi3MXFU1zrrJ6QRXJnJVTHcYfi+Z64nFTCLyA+i3vd+8+E7dpG7BZEjasScLBu15VavfHqM3S0OBg8x80RSSq2g5VQDu2Ka+tvECAPkmPgBg4maXKWKGIklIy5hgfDPzQQ9d8wxaTIAYC+1aYZ++xMxLQ4EzbGp2AC6Hfbpjs3O1nQxJCSsjmRQz713ZOgwgaokhyup/lSsTY7eMxQgpRpmZl7WtLYL9Z5DYcVtMFq5M/Aa3Wil2Ln25abxog5TDtglSUdSH7vP+geuDzUKcJ8nbMb4gVDnaP/SwONSgE1M5gA22KTe6q1t63eY1w/WXiNQEnwF8zjpKlcTUiEQD/QobB9LRHdamnhxRUBB/hqaJg8lis3LFhr1VR4tDT1QC7UfyZhcmSZu6Vt9+m47mh1VXfwL4mU5sahMSL0DItXAnUKOMAAdK7weuQPJeBnsBmg8gykAHAZc0zrvQufrqYDpF/Zf4BZcOGUrcvWUjAAAAAElFTkSuQmCC"></image>
+                </defs>
+                <rect id="age" width="49.000000" height="22.000000" fill="url(#pattern_28_10)" fill-opacity="1.000000"></rect>
+            </svg>-->
             </div>
     </div>
 </header>
@@ -495,12 +466,7 @@ cursor: pointer;
                 </div>
                 <b>МОБИЛЬНЫЙ КИОСК</b> <br> ЛУЧШИЕ ЖУРНАЛЫ В ОДНОМ КЛИКЕ 
             </div>
-            <!-- 
             <div class="mainImg">
-                <img src="./assets/main.png" />
-            </div>
-             -->
-            <div class="bgImg">
                 <img src="./assets/main.png" />
             </div>
             <div class="container btnWrapper">
@@ -529,13 +495,6 @@ cursor: pointer;
 <script>
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-
-    window.addEventListener('loaded', () => {
-        // We execute the same script as before
-        let vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        })
 
     window.addEventListener("orientationchange", function() {
         let vh = window.innerHeight * 0.01;
