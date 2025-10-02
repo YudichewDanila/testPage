@@ -5,7 +5,6 @@
     padding: 0;  
 }
 
-/* Подключение Montserrat Regular (обычное начертание) */
 @font-face {
     font-family: 'Montserrat';
     src: url('./fonts/Montserrat-Regular.ttf') format('truetype');
@@ -13,7 +12,14 @@
     font-style: normal;
 }
 
-/* Подключение Montserrat Light (светлое начертание) */
+@font-face {
+    font-family: 'Myriadpro';
+    src: url('./fonts/MYRIADPRO-REGULAR.OTF') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
 @font-face {
     font-family: 'Montserrat';
     src: url('./fonts/Montserrat-Light.ttf') format('truetype');
@@ -21,7 +27,6 @@
     font-style: normal;
 }
 
-/* Подключение Montserrat Light Italic (светлое курсивное начертание) */
 @font-face {
     font-family: 'Montserrat';
     src: url('./fonts/Montserrat-LightItalic.ttf') format('truetype');
@@ -29,7 +34,6 @@
     font-style: italic;
 }
 
-/* Подключение Montserrat Black Italic (чёрное курсивное начертание) */
 @font-face {
     font-family: 'Montserrat';
     src: url('./fonts/Montserrat-BlackItalic.ttf') format('truetype');
@@ -104,13 +108,13 @@ body{
     text-align: center;
     font-size: 4rem;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 300; /* Light Italic */
+    font-weight: 300; 
     font-style: italic;
     margin-bottom: 2rem;
 }
 
 .hero__accent {
-    font-weight: 900; /* Black Italic */
+    font-weight: 900; 
     font-style: italic;
 }
 
@@ -128,7 +132,7 @@ body{
     line-height: 3rem;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 300; /* Light */
+    font-weight: 300; 
     font-style: normal;
     color: #eeeeee;
 }
@@ -145,7 +149,7 @@ body{
     padding: 3rem;
     font-size: 2.2rem;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 300; /* Light */
+    font-weight: 300; 
     background: #f62c84;
     text-align: center;
     border-radius: 2rem;
@@ -163,33 +167,29 @@ body{
     border-radius: 5rem;
     background-color: white;
     padding: 2rem 0;
+    margin-bottom: 0rem;
 }
 
-.features__block {
- 
+.features-section {
+    margin-bottom: 4rem;
 }
 
-.features__title {
+.features-section__title {
     font-family: 'Montserrat', sans-serif;
     font-size: 4rem;
     text-align: center;
-    font-weight: 300; /* Light */
+    font-weight: 300; 
     margin-bottom: 1rem;
 }
 
-.features__accent {
-    font-weight: 900; /* Black Italic */
+.features-section__accent {
+    font-weight: 900; 
 }
 
 .features {
     background-color: white;
     padding: 4rem 0;
 }
-
-.features__block {
-    /* Основной блок features */
-}
-
 
 .features__wrapper {
     display: flex;
@@ -232,10 +232,6 @@ body{
     padding: 4rem 0;
 }
 
-.steps__block {
-    /* Основной блок steps */
-}
-
 .steps__title {
     font-family: 'Montserrat', sans-serif;
     font-size: 4rem;
@@ -263,7 +259,7 @@ body{
 
 
 .steps__icon {
-    width: 12rem; /* Большие иконки как вы хотели */
+    width: 12rem; 
     height: 12rem;
     margin: 0 auto 2rem;
     display: block;
@@ -308,6 +304,232 @@ body{
     cursor: pointer;
 }
 
+
+
+.comentaries {
+    position: relative;
+    width: 100%;
+    height: 40rem;
+    max-width: 640px;
+    margin:0 auto;
+    padding-top: 2rem;
+}
+
+.comentaries-slider {
+    position: relative;
+}
+
+.comentaries-slider input[type="radio"] {
+    display: none;
+}
+
+.comentaries-scroll-wrapper {
+    padding: 2rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    
+    /* Ограничиваем видимую область */
+    width: 100%;
+    max-width: 45rem;
+    margin: 0 auto;
+
+}
+.comentaries-scroll-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.comentaries-track {
+    display: flex;
+    width: 200%;
+    transition: transform 0.3s ease;
+}
+
+
+#slide1:checked ~ .comentaries-scroll-wrapper .comentaries-track {
+    transform: translateX(0%);
+}
+#slide2:checked ~ .comentaries-scroll-wrapper .comentaries-track {
+    transform: translateX(-50%);
+}
+
+#slide3:checked ~ .comentaries-scroll-wrapper .comentaries-track {
+    transform: translateX(-100%);
+}
+
+/* Карточка комментария */
+.comentary-card {
+    flex: 0 0 50%;
+    width: 45rem;
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    color: black;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    scroll-snap-align: start;
+}
+
+.comentary-card p {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    font-size: 2.5rem;
+    color: #666;
+}
+
+.comentary-card span {
+    display: block;
+    font-style: italic;
+    color: #666;
+    text-align: right;
+}
+
+/* Навигационные кнопки */
+.slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.nav-btn {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* Активная кнопка */
+#slide1:checked ~ .slider-nav .nav-btn:nth-child(1),
+#slide2:checked ~ .slider-nav .nav-btn:nth-child(2),
+#slide3:checked ~ .slider-nav .nav-btn:nth-child(3) {
+    background: white;
+    color: #f62c84;
+    border-color: white;
+    transform: scale(1.1);
+}
+
+/* Скрываем кнопки на мобильных */
+@media (max-width: 768px) {
+    .slider-nav {
+        display: none;
+    }
+}
+
+/* Заголовок */
+.comentaries_title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.8rem;
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.comentaries__accent {
+    font-weight: 900;
+}
+
+/*  
+.comentaries .bg{
+    color: white;
+    background-image: url('./COMMENT.png');
+    background-size: 80% auto;
+    background-position: right;
+    min-height: 20rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+}
+    */
+
+.subscribe {
+    color: white;
+    background-image: url('./SectionSub.png');
+    background-size: 100% auto;
+    background-position: center top;
+    min-height: 50rem;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.subscribe_title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    color: white; 
+    padding-top: 18rem;
+    padding-bottom: 8rem;
+}
+
+.subscribe__accent {
+    font-weight: 900; 
+}
+
+.footer{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 3rem;
+}
+
+.footerWrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__logo {
+    width: 18rem;
+    height: 100%;
+    margin-top: 2rem;
+}
+
+.footer__links {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+}
+
+.footer__links-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer__link {
+    font-family: 'Myriadpro', sans-serif;
+    font-size: 1.8rem;
+    color: #5e5e5e;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.footer__link:hover{
+    color:white;
+}
+
 @media (max-width: 300px) {
     :root {
         font-size: 1.5vw;
@@ -348,4 +570,15 @@ body{
     :root {
         font-size: 10px;
     } 
+
+    .features__button:hover{
+        background-color: #f62c84;
+        color: white;
+    }
+    
+    .hero__button:hover{
+        background-color: white;
+        color: #f62c84;
+        border:solid 1px #f62c84;
+    }
 }
