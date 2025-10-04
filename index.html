@@ -381,10 +381,7 @@ cursor: pointer;
         justify-content: center;
     }
 
-    .footer {
-    /* НОВОЕ: Гарантированный отступ снизу */
-    padding-bottom: calc(4rem + env(safe-area-inset-bottom, 1rem)) !important;
-}
+  
 }
 
 @media(max-height: 350px){
@@ -401,10 +398,7 @@ cursor: pointer;
         --footerWrapper-size: 1rem;
     } 
 
-    .footer {
-    /* НОВОЕ: Гарантированный отступ снизу */
-    padding-bottom: calc(4rem + env(safe-area-inset-bottom, 1rem)) !important;
-}
+
 }
 
 
@@ -539,5 +533,6 @@ cursor: pointer;
             document.documentElement.style.setProperty('--vh', `${vh}px`);
         });
 </script>
+
 
 </html>
