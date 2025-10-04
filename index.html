@@ -46,6 +46,9 @@
         margin: 0;
         overflow: hidden;
         background: linear-gradient(#010703, #194721);
+
+         /* НОВОЕ: Добавляем отступ снизу для безопасной зоны */
+    padding-bottom: env(safe-area-inset-bottom, 0px);
     }
 
     #bg{
@@ -377,6 +380,11 @@ cursor: pointer;
         display: flex;
         justify-content: center;
     }
+
+    .footer {
+    /* НОВОЕ: Гарантированный отступ снизу */
+    padding-bottom: calc(4rem + env(safe-area-inset-bottom, 1rem)) !important;
+}
 }
 
 @media(max-height: 350px){
@@ -392,6 +400,11 @@ cursor: pointer;
         --cancelWrapper-size: 1rem;
         --footerWrapper-size: 1rem;
     } 
+
+    .footer {
+    /* НОВОЕ: Гарантированный отступ снизу */
+    padding-bottom: calc(4rem + env(safe-area-inset-bottom, 1rem)) !important;
+}
 }
 
 
