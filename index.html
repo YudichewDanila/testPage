@@ -1,5 +1,5 @@
 <!DOCTYPE html >
-<html lang="ru" data-game="wheel" data-theme="wb">
+<html lang="ru" data-game="wheel" data-theme="oz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +20,8 @@
   --black: #000;
   --text: #1E2936;
   --header-bg: linear-gradient(120.02deg, #9333EA 11.59%, #FF41D5 90.85%);
-  --button-bg: linear-gradient(139deg, #FA2EB2, #FD9027);
-  --button-bgActive: linear-gradient(139deg, #fa2eb3a9, #fd8e27a0);
+  --button-bg: linear-gradient(139deg, #F31055, #F01057);
+  --button-bgActive: linear-gradient(139deg, #F31055a9, #F01057a0);
 }
 
 [data-theme=wb] {
@@ -31,7 +31,7 @@
   --red: #FF0049;
   --green: #21A65D;
   --gray: #A5A9B4;
-  --gradient: linear-gradient(0deg, #9333EA -10.41%, #FF41D5 75.85%);
+  --gradient: linear-gradient(25deg, #9333EA -10.41%, #FF41D5 75.85%);
 }
 
 [data-theme=oz] {
@@ -41,7 +41,7 @@
   --red: #EA135E;
   --green: #10C44C;
   --gray: #8F8FA7;
-  --gradient: linear-gradient(90deg, #2359F4 0%, #14348E 100%);
+  --gradient: linear-gradient(30deg, #3868fc 0%, #2a49ff 100%);
 }
 
 
@@ -68,7 +68,7 @@
 }
 
 .wrap .main .finish{
-    background: linear-gradient(#7133a0, #9e43fc);
+    background: linear-gradient(#4876e7, #8e54e9);
     min-height: 90vh;
     display: flex;
     flex-direction: column;
@@ -130,7 +130,7 @@
 }
 
 .startSection_wrapper p span{
-    background: #FF8D2A;
+    background: #F31055;
     border-radius: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -282,6 +282,7 @@
 }
 .infoBlock_data{
     color: #6A6A6A;
+    margin-bottom: 12px;
 }
 
 .infoBlock_header{
@@ -294,7 +295,7 @@
 }
 
 .infoBlock_text p span{
-  background: linear-gradient(45deg, #fd5e2c, #f705c9);
+  background: linear-gradient(139deg, #F31055, #F01057);
   background-clip: text;
   -webkit-background-clip: text; 
   color: transparent;
@@ -610,6 +611,21 @@ justify-content: space-between;
     .wrap .main .finish {
     justify-content: flex-start;
 }
+}
+
+@media(max-width: 600px) and (max-height: 800px){ 
+    .wrap .main .finish {
+    justify-content: flex-start;
+}
+}
+
+@media(max-width: 600px) and (min-height: 800px){ 
+    .startSection_text{
+        margin-bottom: 10rem;
+    }
+    .infoBlock{
+        margin-bottom: 5rem;
+    }
 }
 
 .overlay {
@@ -947,11 +963,11 @@ justify-content: space-between;
             <div class="watchImg">
                 <img width="100%" height="100%" src="./assets/cl.PNG" alt="watch" />
             </div>
-            <div class="modal-title">Сертификат Вайлдберрис почти Ваш</div>
+            <div class="modal-title">Сертификат Озон почти Ваш</div>
             <p class="modal-text">1. Нажмите <b>"Получить"</b> и пройдите быструю регистрацию</p>
             <p class="modal-text">2. Важно! <b>Оплатите 1 рубль</b> для 5-дневного доступа к аналитике</p>
             <p class="modal-text">3. <b>Подтвердите</b> участие и дождитесь розыгрыша</p>
-            <p class="modal-text">4. <b>Получите 1000Р</b> после регистрации для новичков</p>
+            <p class="modal-text">4. <b style="color:#005BFF;">Получите 1000Р</b> после регистрации для новичков</p>
             <br>
             <p class="timerText">Предложение действительно в течение <b class="timer" style="color: red;">05:00</b></p>
             <a class="modal-btn" href="{url}">ПОЛУЧИТЬ</a>
