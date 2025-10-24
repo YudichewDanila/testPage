@@ -1,533 +1,1123 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html >
+<html lang="ru" data-game="wheel" data-theme="wb">
 <head>
     <meta charset="UTF-8">
-    <meta name="apple-mobile-web-app-capable" content="no"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Шаблон</title>
-<style>
-    * {
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        font-family: Roboto, sans-serif;
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<title>Прокла1</title>
+    
+    <style>
+    *{
         margin: 0;
         padding: 0;
     }
-    :root {
-        font-size: 10px;
-        --container: 640px;
-        --mainLogoText-size: 6rem;
-        --mainImg: 35rem;
-        --mainText-size: 1.5rem;
-        --mainPrice-size: 1.2rem;
-        --btnWrapper-size: 10px;
-        --btnHeight: 14em;
-        --btnFonts-size: 3.5em;
-        --btnRadius-size: 13px;
-        --cancelWrapper-size: 1rem;
-        --footerWrapper-size: 7px;
-        --mainImgEnable: flex;
-    }
 
-    body{
-        position: fixed;
-        left: 0;
-        top: 0;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100vh; 
-        height: calc(var(--vh, 1vh) * 100); 
-        padding: 0;
-        margin: 0;
-        overflow: hidden;
-        background: linear-gradient(#010703, #194721);
-
-         /* НОВОЕ: Добавляем отступ снизу для безопасной зоны */
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-    }
-
-    #bg{
-            /* background-image: url(''); */
-            background: linear-gradient(#010703, #194721);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-position-y: 0rem; 
-            background-size: cover;
-            /* max-width: 1200px; */
-            width: 100%;
-            height: 100%;
-            padding: 0;
-            margin: 0;
-            left: 50%;
-            transform: translate(-50%, 0px);
-            z-index: -1;
-            position: fixed; 
-        }
-
-    header{
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
-
-    .container {
-        width: 100%;
-        max-width: var(--container);
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-    .main{
-        width: 100%;
-        height: 90%;
-    }
-
-    .footer{
-        width: 100%;
-    }
-
-/* Customs Css */
-
-.logoMega{
-    width: 12em;
-    line-height: 0;
+:root{
+    font-size: 8px;
+    --white: #fff;
+  --black: #000;
+  --text: #1E2936;
+  --header-bg: linear-gradient(120.02deg, #9333EA 11.59%, #FF41D5 90.85%);
+  --button-bg: linear-gradient(139deg, #FA2EB2, #FD9027);
+  --button-bgActive: linear-gradient(139deg, #fa2eb3a9, #fd8e27a0);
 }
 
-.age{
-    line-height: 0;
-    width: 4em;
-    margin-right: 0em;
+[data-theme=wb] {
+  --body-bg: #F6F6F9;
+  --primary: #983DF4;
+  --primary-rgb: 152, 61, 244;
+  --red: #FF0049;
+  --green: #21A65D;
+  --gray: #A5A9B4;
+  --gradient: linear-gradient(0deg, #9333EA -10.41%, #FF41D5 75.85%);
 }
 
-.headerWrapper{
-        display: flex;
-        justify-content: space-between;
-    }
+[data-theme=oz] {
+  --body-bg: #F6F6FD;
+  --primary: #005BFF;
+  --primary-rgb: 0, 91, 255;
+  --red: #EA135E;
+  --green: #10C44C;
+  --gray: #8F8FA7;
+  --gradient: linear-gradient(90deg, #2359F4 0%, #14348E 100%);
+}
 
-.mainWrapper{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        height: 95%;
-    }
 
-.logoText{
-    width: var(--mainLogoText-size);
+.container {
+    max-width: 640px;
+    padding-left: 0px;
+    padding-right: 0px;
     margin: 0 auto;
 }
 
-.mainText{
-    font-size: var(--mainText-size);
-    font-family: "Roboto", sans-serif;
-    font-weight: 200;
-    color: white;
+.wrap{
+    display: none;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.wrap.active{
+    display: block;
+}
+
+.wrap .main .intro{
+    background: #FFEAFC;
+    min-height: 90vh;
+}
+
+.wrap .main .finish{
+    background: linear-gradient(#7133a0, #9e43fc);
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.header {
+    font-family: "Inter", sans-serif;
+    background: var(--gradient);
+    font-weight: 700;
+    padding: 8px;
     text-align: center;
+    color: var(--white);
+    font-size: 20px;
+}
+
+.fw-bold {
+    font-weight: 700 !important;
+}
+
+.startSection{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-image: url('./assets/bg_section1.png');
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    z-index: 5;
+}
+
+.startSection_wrapper{
+    max-width: 640px;
+    width: 100%;
+    height: 100%;
+    background-image: url('./assets/bg_wrapper1.png');
+    background-size: 100%;
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.startSection_text{
+    font-family: "Inter", sans-serif;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    font-size: 5.33rem;
+    letter-spacing: 0rem;
+    font-weight: 700;
+    color: white;
+}
+
+.startSection_wrapper p{
     padding-bottom: 1rem;
 }
 
-.mainText b{
-    font-size: calc(var(--mainText-size)*1.8);
-    font-weight: 500;
+.startSection_wrapper p span{
+    background: #FF8D2A;
+    border-radius: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
-.price{
-    font-size: var(--mainPrice-size);
-    color: white;
-    text-align: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    text-transform: uppercase;
+.startSection_bg_old{
+    max-width: 640px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-image: url('./assets/bg_1.png');
+    background-size: contain;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-
-.mainImg{
-    display: var(--mainImgEnable);
+.touch_wrapper{
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    z-index: 0;
-    margin-bottom: -10rem;
-    position: relative;
-    overflow: hidden;
+    height: 100%;
+    position: absolute;
+    top: auto;
+    left: auto;
+    background-color: #00000063;
+
+}
+.touch_cursor{
+    width: 20rem;
+    animation: touchPulse 2s infinite ease-in-out;
 }
 
-.mainImg img{
-    width: 110%;
-    max-width: var(--mainImg);
+.touch_cursor img {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 }
 
-
-.btnWrapper{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        max-width: 35em;
-        font-size: var(--btnWrapper-size);
-    }
-
-    .btn{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: var(--btnHeight);
-        text-decoration: none;
-        text-align: center;
-        border-radius: var(--btnRadius-size);
-        color: white;
-        background-color: #26b83b;
-        z-index: 10;
-    }
-    
-    .btn span{
-        font-size: var(--btnFonts-size);
-        cursor: pointer;
-        font-weight: 700;
-    }
-
-    .cancelWrapper{
-        font-size: var(--cancelWrapper-size);
-    }
-
-    .cancel {
-    font-size: 1.2em;
-    padding: 0.8em 2em;
-    background-color: #f1efef00;
-    border: 1px solid none;
-    /* text-decoration: none; */
-    color: #d3d3d3;
-    border-radius: 50px;
-    }
-
-    .cancel{
-        text-decoration: underline;
-        text-underline-offset: 2px;
-    }
-
-.footer{
-    font-size: var(--footerWrapper-size);
-    padding-bottom: 1rem;
+.loader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: var(--body-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  pointer-events: none;
+  visibility: hidden;
+  transition: 0.35s ease;
+}
+.loader.active {
+  opacity: 1;
+  visibility: visible;
+}
+.loader::after {
+  content: "";
+  height: 100px;
+  width: 100px;
+  border: 5px solid var(--primary);
+  border-radius: 100px;
+  border-color: var(--primary) transparent;
+  -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
 }
 
-.footerWrapper{
-    color: white;
+@-webkit-keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+[data-content] {
+  display: none;
+}
+
+[data-game=box] [data-content=box] {
+  display: block;
+}
+
+[data-game=wheel] [data-content=wheel] {
+  display: block;
+}
+
+[data-game=scratch] [data-content=scratch] {
+  display: block;
+}
+
+[data-theme=oz] [data-content=oz] {
+  display: block;
+}
+
+[data-theme=wb] [data-content=wb] {
+  display: block;
+}
+
+.wave {
+    position: absolute;
+    border: 2px solid rgba(176, 176, 176, 0.7);
+    background:rgba(176, 176, 176, 0.1) ;
+    border-radius: 50%;
+    width: 30rem;
+    height: 30rem;
+    animation: waveExpand 2s infinite ease-out;
+    opacity: 0;
+}
+
+.wave:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.wave:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.wave:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+.main .intro{
+    padding-top: 1rem;
+    /* min-height: 100vh; */
+}
+
+.infoBlock{
+    font-family: "Inter", sans-serif;
+    background-color: white;
+    margin-top: 1rem;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.4rem;
+    color: #000000;
+    margin-bottom: 1rem;
+    padding: 1rem;
 }
-.footerWrapper span a{
-color: white;
-cursor: pointer;
-}
-
-
-
-@media (min-width: 350px){
-    :root {
-        font-size: 10px;
-        --mainImg: 35rem;
-        --mainLogoText-size: 6rem;
-        --mainText-size: 1.25rem;
-        --mainPrice-size: 1.3rem;
-        --btnWrapper-size: 10px;
-        --btnFonts-size: 3.5em;
-        --btnRadius-size: 17px;
-        --cancelWrapper-size: 11px;
-        --footerWrapper-size: 8px;
-    } 
+.infoBlock_data{
+    color: #6A6A6A;
 }
 
-@media (min-width: 350px) and (max-height: 670px){
-    :root {
-        font-size: 10px;
-        --mainImg: 35rem;
-        --mainLogoText-size: 6rem;
-        --mainText-size: 1.2rem;
-        --mainPrice-size: 1.3rem;
-        --btnWrapper-size: 10px;
-        --btnFonts-size: 3.5em;
-        --btnRadius-size: 13px;
-        --cancelWrapper-size: 11px;
-        --footerWrapper-size: 8px;
-    } 
+.infoBlock_header{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
-@media (min-width: 400px){
-    :root {
-        font-size: 11px;
-        --mainImg: 35rem;
-        --mainLogoText-size: 9rem;
-        --mainText-size: 1.4rem;
-        --mainPrice-size: 1.4rem;
-        --btnWrapper-size: 12px;
-        --btnFonts-size: 3.5em;
-        --btnRadius-size: 13px;
-        --cancelWrapper-size: 12px;
-        --footerWrapper-size: 9px;
-    } 
+.infoBlock_text{
+    font-weight: 500;
 }
 
-@media (min-width: 400px) and (max-height: 750px){
-    :root {
-        font-size: 10px;
-        --mainImg: 30rem;
-        --footerWrapper-size: 9px;
-    } 
+.infoBlock_text p span{
+  background: linear-gradient(45deg, #fd5e2c, #f705c9);
+  background-clip: text;
+  -webkit-background-clip: text; 
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
-@media (min-width: 500px) and (max-height: 960px){
-    :root {
-        font-size: 11px;
-        --mainImg: 35rem;
-        --btnWrapper-size: 13px;
-    } 
+.game {
+    margin-bottom: 5rem;
 }
 
-@media (min-width: 500px) and (max-height: 770px){
-    :root {
-        font-size: 10px;
-        --mainImg: 35rem;
-        --mainLogoText-size: 9rem;
-        --mainText-size: 1.5rem;
-        --mainPrice-size: 1.5rem;
-        --btnWrapper-size: 13px;
-        --btnFonts-size: 3.5em;
-        --btnRadius-size: 13px;
-        --cancelWrapper-size: 12px;
-        --footerWrapper-size: 10px;
-    } 
+    .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 12rem);
+    justify-content: space-around;
+    gap: 10px;
+    margin: 2rem 0;
+    margin-bottom: 60px;
+}
 
-    .mainImg img{
-        width: 100%;
+.card {
+    font-family: "Inter", sans-serif;
+    width: 12rem;
+    height: 18rem;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .card-front {
+            background: var(--gradient);
+            color: white;
+            font-size: 1.6rem;
+        }
+
+        .card-back {
+            background: var(--gradient);
+            color: white;
+            font-size: 1.6rem;
+            transform: rotateY(180deg);
+        }
+
+        .prize-5000 {
+            background: var(--gradient);
+            color: white;
+            font-size: 1.6rem;
+        }
+
+        .prize-1000 {
+            background: var(--gradient);
+        }
+
+.main .finish{
+    font-family: "Inter", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* height: 90vh; */
+}
+
+.finish .finish_header{
+    font-size: 6rem;
+    color: white;
+}
+
+.finish_img{
+    width: 35rem;
+}
+
+.finish_text{
+    font-size: 2.5rem;
+    color: white;
+    margin-top: 1rem;
+}
+
+.finish_btn{
+    width: 85%;
+    height: 8rem;
+    margin-top: 2rem;
+    margin-bottom: 65px;
+}
+
+.finish_btn button{
+    width: 100%;
+    height: 100%;
+    font-size: 3rem;
+    border-radius: 15px;
+    color: white;
+    background: var(--button-bg);
+    border: solid 0px rgba(0, 0, 0, 0);
+}
+
+.overlayFinish{
+display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+}
+
+.watchImg{
+    width: 12rem;
+    margin: 0 auto;
+}
+
+.overlayFinish.active{
+    display: flex;
+}
+
+.overlayFinish .modal {
+  background: white;
+  border-radius: 20px;
+  padding: 0rem;
+  max-width: 640px;
+  height: 40rem;
+  width: 90%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.overlayFinish .modal-content {
+  text-align: left;
+  padding: 2rem;
+  height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.overlayFinish .modal-title {
+    text-align: center;
+    font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.overlayFinish .modal-text {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #000000;
+}
+
+
+.overlayFinish .modal-btn {
+  font-family: "Inter", sans-serif;
+  width: 90%;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  border-radius: 15px;
+  background: var(--button-bg);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-align: center;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+
+.overlayFinish .modal-btn:hover {
+  background: var(--button-bgActive);
+}
+
+.timerText{
+    font-size: 1.4rem;
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+.footer-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+    max-height: 56px;
+    padding: 12px 0;
+    background-color: var(--white);
+}
+
+.nav-row {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 0.5rem 1fr 0.5rem 1fr 0.5rem 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+.nav a {
+    color: rgb(197, 196, 212);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.nav a.active {
+    color: var(--primary);
+}
+
+@keyframes touchPulse {
+    0% {
+        transform: scale(1);
+        filter: brightness(1);
     }
-
-}
-
-@media (min-width: 500px) and (max-height: 720px){
-    :root {
-        font-size: 9px;
-        --mainImg: 30rem;
-    } 
-}
-
-
-
-@media (min-width: 640px) and (min-height: 960px){
-    :root {
-        font-size: 12px;
-        --btnWrapper-size: 16px;
-        --mainImg: 40rem;
-        --footerWrapper-size: 12px;
+    50% {
+        transform: scale(1.3);
+        filter: brightness(1.3);
     }
-    
-    .mainImg img{
-        width: 100%;
-    }
-    
-}
-
-@media (max-height: 650px) { 
-    :root {
-        font-size: 10px;
-        --mainImg: 28rem;
-        --mainLogoText-size: 5rem;
-        --mainText-size: 1.2rem;
-        --mainPrice-size: 1.2rem;
-        --btnWrapper-size: 10px;
-        --btnFonts-size: 3.5em;
-        --btnRadius-size: 13px;
-        --cancelWrapper-size: 1rem;
-        --footerWrapper-size: 7px;
-    }  
-}
-
-@media (max-height: 550px) { 
-    :root {
-        font-size: 9px;
-        --mainImg: 25rem;
-        --footerWrapper-size: 7px;
-    } 
-}
-
-@media(max-height: 470px){
-    :root {
-        font-size: 7px;
-        --mainImg: 30rem;
-        --mainLogoText-size: 5rem;
-        --mainText-size: 1.2rem;
-        --mainPrice-size: 1.2rem;
-        --btnWrapper-size: 1rem;
-        --btnHeight: 12em;
-        --btnFonts-size: 3.5em;
-        --btnRadius-size: 13px;
-        --cancelWrapper-size: 1rem;
-        --footerWrapper-size: 7px;
-        --mainImgEnable: none;
-    } 
-
-    .main{
-        height: 90%; 
-    }
-    .mainWrapper{
-        display: flex;
-        justify-content: center;
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
     }
 }
 
-@media(max-height: 350px){
-    :root {
-        font-size: 2.2vh;
-        --mainImg: 30rem;
-        --mainLogoText-size: 5rem;
-        --mainText-size: 1rem;
-        --mainPrice-size: 1rem;
-        --btnWrapper-size: 0.8rem;
-        --btnFonts-size: 3.5em;
-        --btnRadius-size: 13px;
-        --cancelWrapper-size: 1rem;
-        --footerWrapper-size: 1rem;
-    } 
+@keyframes waveExpand {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.7;
+        border-width: 3px;
+    }
+    70% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+        border-width: 1px;
+    }
 }
 
+
+
+@media(min-width: 350px){ 
+    :root{
+    font-size: 9px;
+}
+}
+@media(min-width: 400px){ 
+    :root{
+    font-size: 10px;
+}
+}
+@media(min-width: 450px){ 
+    :root{
+    font-size: 11px;
+}
+}
+@media(min-width: 500px){ 
+    :root{
+    font-size: 12px;
+}
+}
+@media(min-width: 550px){ 
+    :root{
+    font-size: 14px;
+}
+}
+
+@media(min-width: 500px) and (max-height: 800px){ 
+    :root{
+    font-size: 10px;
+}
+}
+
+
+@media(min-width: 600px){ 
+    :root{
+    font-size: 15px;
+}
+}
+
+@media(min-width: 600px) and (max-height: 800px){ 
+    :root{
+    font-size: 10px;
+}
+}
+
+@media(max-width: 600px) and (max-height: 800px){ 
+    .wrap .main .finish {
+    justify-content: flex-start;
+}
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+}
+.overlay.active{
+    display: flex;
+}
+
+.modal {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  padding-top: 2rem;
+  padding-left: 0rem;
+  padding-right: 0rem;
+  padding-bottom: 0rem;
+  max-width: 640px;
+  height: 15rem;
+  width: 90%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+  text-align: center;
+  padding: 1rem;
+}
+
+.modal-title {
+    font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.modal-text {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.modal-btn {
+  width: 100%;
+  padding: 1.5rem;
+  background: var(--button-bg);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.modal-btn:hover {
+  background: var(--button-bgActive);
+}
+
+
+
+/* Animations */
+.wrap {
+    opacity: 0;
+    animation: simpleFadeIn 0.5s ease-out 0.3s forwards;
+}
+
+.card {
+    opacity: 0;
+    animation: simpleFadeIn 0.4s ease-out forwards;
+}
+
+
+.card:nth-child(1) { animation-delay: 0.5s; }
+.card:nth-child(2) { animation-delay: 0.6s; }
+.card:nth-child(3) { animation-delay: 0.7s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+.card:nth-child(5) { animation-delay: 0.9s; }
+.card:nth-child(6) { animation-delay: 1.0s; }
+
+.finish {
+    opacity: 0;
+    animation: simpleFadeIn 0.6s ease-out forwards;
+}
+
+
+@keyframes simpleFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+@keyframes simpleFadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.finish_header,
+.finish_img,
+.finish_text,
+.finish_btn {
+    opacity: 0;
+}
+
+.finish_header {
+    animation: slideDownFadeIn 0.6s ease-out 0.3s forwards;
+}
+
+.finish_img {
+    animation: scaleFadeIn 0.6s ease-out 0.5s forwards;
+}
+
+.finish_text {
+    animation: slideUpFadeIn 0.6s ease-out 0.7s forwards;
+}
+
+.finish_btn {
+    animation: slideUpFadeIn 0.6s ease-out 0.9s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes wrapAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes finishAppear {
+    from { 
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to { 
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUpFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.finish_btn button {
+    transition: transform 0.2s ease;
+}
+
+.finish_btn button:active {
+    transform: scale(0.98);
+}
+
+
+.overlay {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal {
+    animation: modalAppear 0.3s ease-out 0.1s both;
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
 
 </style>
 </head>
-
 <body>
-<div id="bg"></div>
+    <div class="loader"></div>
+    <div class="startSection">
+        <div class="startSection_wrapper">
+            <div class="startSection_text">
+                <p><span>Участвуй</span></p>
+                <p><span>в розыгрыше</span></p>
+                <p><span>карт</span></p>
+                <p><span>сегодня</span></p>
+            </div>
+        </div>
+        <div class="touch_wrapper">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="touch_cursor">
+                <img width="100%" height="100%" src="./assets/carbon_touch-1-filled.png" />
+            </div>
+        </div>
+     
+    </div>
+    <div class="wrap">
+        <header class="header">
+            <div class="container">
+                <span class="fw-bold">Сертификат на 5000₽</span>
+            </div>
+        </header>
+        <main class="main">
+            <div  class="intro">
+                <div class="infoBlock">
+                    <div class="infoBlock_data" id="today">22 Октября 2025, Среда</div>
+                    <h2 class="infoBlock_header">Поздравляем!</h2>
+                    <div class="infoBlock_text">
+                        <p><span class="weekday"></span> мы выбираем 7 человек, чтобы дать им</p>
+                        <p>возможность выиграть <span>подарки от наших спонсоров.</span></p>
+                        <p>Найдите пару, чтобы увидеть, какой подарок</p>
+                        <p>вы получите!</p>
+                    </div>
+                </div>
+                <div class="gameBlock">
+                    <div class="game">
+                        <div class="cards" id="cards"></div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: none;" class="finish">
+                <h1 class="finish_header">
+                    Подарочная<br>
+                    карта
+                </h1>
+                <div class="finish_img">
+                    <img width="100%" height="100%" src="./assets/card.png" alt="main Img" />
+                </div>
+                <div class="finish_text">
+                    <p>САМЫЙ ПРИЯТНЫЙ ПОДАРОК</p>
+                </div>
+                <div  class="finish_btn">
+                    <button id="finish_btn">Получить</button>
+                </div>
+            </div>
     
-<header class="header">
-    <div class="container headerWrapper">
-        <div class="logoMega">   
-            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 304 55"
-                enable-background="new 0 0 304 55" xml:space="preserve">
-                <g id="Page-1">
-                    <g id="megafon-logo-green">
-                        <g id="Group">
-                            <path id="Shape" fill="#25c04b" d="M30.3,0.7v27.8l0,0l0,0c0,1.3-1,2.2-2.2,2.2h-3.3l0,0c-0.2,0-0.3,0.2-0.3,0.3v23.3
-                c0.8,0,1.6,0.2,2.5,0.2c14.9,0,27-12.1,27-27C54,13.8,43.7,2.3,30.3,0.7z M29.7,42.3c-1.9,0-3.3-1.6-3.3-3.3
-                c0-1.9,1.6-3.3,3.3-3.3c1.9,0,3.3,1.6,3.3,3.3C33.2,40.8,31.6,42.3,29.7,42.3z M37.6,42.3c-1.9,0-3.3-1.6-3.3-3.3
-                c0-1.9,1.6-3.3,3.3-3.3c1.9,0,3.3,1.6,3.3,3.3S39.6,42.3,37.6,42.3z M45.6,42.3c-1.9,0-3.3-1.6-3.3-3.3c0-1.9,1.6-3.3,3.3-3.3
-                c1.9,0,3.3,1.6,3.3,3.3S47.5,42.3,45.6,42.3z" />
-                            <path id="Shape_1_" fill="#25c04b" d="M27,0.6c-14.9,0-27,12.1-27,27c0,13.1,9.1,23.8,21.3,26.3V29.6l0,0c0-1.1,1-2,2-2.2l0,0
-                h1.1h2.2c0.2,0,0.3-0.2,0.3-0.3L27,0.6L27,0.6z M21.8,22.8c-1.9,0-3.3-1.6-3.3-3.3c0-1.9,1.6-3.3,3.3-3.3c1.9,0,3.3,1.6,3.3,3.3
-                S23.6,22.8,21.8,22.8z" />
-                        </g>
-                        <g id="Group_1_" transform="translate(67.000000, 10.000000)">
-                            <polygon id="Shape_2_" fill="#25c04b" points="230.3,5.3 230.3,15.5 216.7,15.5 216.7,5.3 209.8,5.3 209.8,32.3 216.7,32.3
-                216.7,21.4 230.3,21.4 230.3,32.3 237,32.3 237,5.3 			" />
-                            <path id="Shape_3_" fill="#25c04b"
-                                d="M117.9,8.4c-1.1-2.4-3.3-3.7-5.5-3.7l0,0l0,0l0,0c-2.2,0-4.5,1.3-5.5,3.7L96,32.4h7.2
-                l2.4-5.7h14l2.4,5.7h7.2L117.9,8.4z M107.5,21.3l4.1-9.9c0.2-0.3,0.3-0.3,0.5-0.3l0,0l0,0c0.2,0,0.5,0,0.5,0.3l4.1,9.9H107.5z" />
-                            <path id="Shape_4_" fill="#25c04b" d="M37.5,0.5c-3.2,0-5.2,1.7-6.7,5.1l-8.7,20.3L13.3,5.5c-1.4-3.3-3.5-5.1-6.7-5.1
-                c-3,0-6,2-6,6.7v25.1h6.7V8l8.9,20.1c1.1,2.9,3.2,4.6,5.9,4.6l0,0l0,0l0,0l0,0c2.9,0,4.8-1.7,5.9-4.6L36.9,8v24.5h6.7V7.4
-                C43.5,2.7,40.5,0.5,37.5,0.5z" />
-                            <path id="Shape_5_" fill="#25c04b" d="M55.4,26.6c-0.3,0-0.7-0.3-0.7-0.7v-4.8h16.8v-5.5H54.7v-4.1c0-0.3,0.3-0.7,0.7-0.7h16.7
-                V5.1h-20c-2.4,0-4,1.9-4,4V28c0,2,1.7,4,4,4h20v-5.7H55.4V26.6L55.4,26.6z" />
-                            <path id="Shape_6_" fill="#25c04b" d="M83.4,32.3V11.7c0-0.3,0.3-0.7,0.7-0.7h16.7V5.3h-20c-2.4,0-4,1.9-4,4v22.9L83.4,32.3
-                L83.4,32.3L83.4,32.3z" />
-                            <path id="Shape_7_" fill="#25c04b" d="M205.4,18.9c0-9.4-4.1-13.8-14.3-13.8h-2.4c-10.2,0-14.3,4.5-14.3,13.8l0,0
-                c0,9.2,4.1,13.8,14.3,13.8h2.2C201.3,32.5,205.4,28.1,205.4,18.9L205.4,18.9z M190.9,27h-2.2c-5.5,0-7.8-2.5-7.8-8.1l0,0
-                c0-5.4,1.9-8.1,7.8-8.1h2.2c5.7,0,7.8,2.7,7.8,8.1l0,0C198.7,24.4,196.6,27,190.9,27z" />
-                            <path id="Shape_8_" fill="#25c04b" d="M155.7,1.1h-13.4c-10,0-14,5.1-14,13.8c0,1.4,0.2,2.7,0.3,3.8c1.1,6.2,4.8,10,14.1,10h3
-                v3.5h6.7v-3.5h2.9c9.4,0,13.1-3.8,14.1-10c0.2-1.1,0.3-2.4,0.3-3.8C169.6,6.2,165.5,1.1,155.7,1.1z M145.5,23.1h-3
-                c-4.6,0-6.2-1.7-7.2-4.5c-0.3-1-0.3-2.4-0.3-3.8c0-5.7,2.7-8.1,6.5-8.1h4.1v16.4H145.5L145.5,23.1z M162.7,18.9
-                c-1,2.7-2.7,4.5-7.2,4.5h-3V6.9h4.1c3.8,0,6.5,2.4,6.5,8.1C163,16.5,163,17.7,162.7,18.9z" />
-                        </g>
-                    </g>
-                </g>
-            </svg>
-
+            
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-row">
+                    <nav class="nav">
+                        <div class="nav-row">
+                            <a href="#" class="active">
+                                <svg height="32" width="32"><use xlink:href="./assets/icons.svg#home"></use></svg>
+                            </a>
+                            <a href="#">
+                                <svg height="32" width="32"><use xlink:href="./assets/icons.svg#filter"></use></svg>
+                            </a>
+                            <a href="#">
+                                <svg height="32" width="32"><use xlink:href="./assets/icons.svg#cart"></use></svg>
+                            </a>
+                            <a href="#">
+                                <svg height="32" width="32"><use xlink:href="./assets/icons.svg#user"></use></svg>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
             </div>
-            <div class="age">
-                <svg viewBox="0 0 63 29" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" fill="none" customFrame="#000000">
-                    <defs>
-                        <image id="image_0" width="63.000000" height="29.000000" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAAdCAYAAAAdO7TiAAAABHNCSVQICAgIfAhkiAAAAzxJREFUWIXtmEtonFUYhp+vSeslYJpqQWg1caGWlhahGJDWWrGoIIgtXkAUF6KiKNRFRDduXIh058KFoLgwbtSNWNosvMRbETeaQkGREnsBQWlV1EBqfVz8/2AZz8nMnzkzCPpsfub9zvnO98K5zYH/MNGksToCjEXEiaYDqePAduBqYHUtnwa+AWaXk7MvqCPqteoD6gvqu+pR9U91umGuPeohO/O5OtEnS0mG6wLPA54DNgKbgHEazop21DXANHBrl122Aqd6GbMpw/X3fGCqVFJ1LfAx1RTvlrmI+KVUDd0w3LlJM9QVwFs0Mw7waQ9jrgMuTYS+johfc/1a5qXafIaAi5ZbRM1DwI5M7FvgJWAOOANcBlxZt3+/hzEfB55O6NcDn+Q6DQPU023NuQH1+UzCLOoQ8Ewm/CFwW0T83iRnP1lRON82qs2ynbPAg/8m41De/M6MfigijhYeq2dKm9+U0efUVeoj6ox6XD2lzqtvq7vVno7W5VB6t1+d0S8BDgNXteljVMtkDzCj3hMRPxeuKUtp8xdm9Lu76HsLsF/dGRF/pBqoNwD3JkKTmZxT6v0JfW9ELBQ/53tkG/AksC8T3wg83CDf7Rn9KWCh9JpfirPAF8B7wA9LtJtSVw6ioEGZPwCMR8RkROwC1gOvZNquBW4cRFGDMv96RJxs/YiIReAx4Fim/XWDKKr0mjejX9AuRMSiuh94NNH+ikyeI8DLCX0SuCahvwN8n9AXobz53DE1ktGPZ/SxlBgRs8Bsu15fxVPm90VE9m5fetrnzExk9NGMvtB7KZ0pbf6rjH5TRt+e0ed7L6Uzpc0fIL3ut6g3nyuoO6jO9RSfFa4rSVHzEXEMmMmE31DvVNepd1E9eKQ4CRwsWVeO1hveSqpddwK4vP6238Nb7Fa/BL6jmp7zwGsRcbqOTwG7+OdmejHwZhc1PVsfhX0nANRR4Kce8myJiMOtH+oTwIvLyDMdEfc17aRuBjYkQh9ExI+dOo928bS8FJsTOfeqZxrkeFVd1dR4z/TDfJ13q3rQ6r0/x5x6x6A9w9/Tfoj0JaFbjkRE9mxW11O98myg+s//G3AC+Cgicsfj//STvwDmkwpQOjQbbAAAAABJRU5ErkJggg==" />
-                        <pattern id="pattern_0" width="1.000000" height="1.000000" image-fill-type="fill" patternContentUnits="objectBoundingBox">
-                            <use transform="matrix(0.015873,0,0,0.0344828,0,0)" xlink:href="#image_0" />
-                        </pattern>
-                    </defs>
-                    <rect id="logo 1" width="63.000000" height="29.000000" x="0.000000" y="0.000000" fill="url(#pattern_0)" />
-                </svg>
+        </footer>
+
+    </div>
+
+    <div class="overlay">
+        <div class="modal">
+          <div class="modal-content">
+            <div class="modal-title">У вас есть еще одна попытка!</div>
+            <p class="modal-text">Попробуйте снова!</p>
+          </div>
+          <button class="modal-btn" onclick="closeModal()">ОК</button>
+        </div>
+      </div>
+
+      <div class="overlayFinish">
+        <div class="modal">
+          <div class="modal-content">
+            <div class="watchImg">
+                <img width="100%" height="100%" src="./assets/cl.PNG" alt="watch" />
+            </div>
+            <div class="modal-title">Сертификат Вайлдберрис почти Ваш</div>
+            <p class="modal-text">1. Нажмите <b>"Получить"</b> и пройдите быструю регистрацию</p>
+            <p class="modal-text">2. Важно! <b>Оплатите 1 рубль</b> для 5-дневного доступа к аналитике</p>
+            <p class="modal-text">3. <b>Подтвердите</b> участие и дождитесь розыгрыша</p>
+            <p class="modal-text">4. <b>Получите 1000Р</b> после регистрации для новичков</p>
+            <br>
+            <p class="timerText">Предложение действительно в течение <b class="timer" style="color: red;">05:00</b></p>
+            <a class="modal-btn" href="{url}">ПОЛУЧИТЬ</a>
+          </div>
+         
+        </div>
+      </div>
+ 
+    <script>
+        const startSection = document.querySelector('.startSection');
+        const wrap = document.querySelector('.wrap');
+        startSection.onclick = () =>{
+            startSection.style.display = 'none';
+            wrap.classList.add('active');
+        }
+    </script>
+    <script>
+        const finishBtn = document.querySelector('#finish_btn');
+        const finishModal = document.querySelector('.overlayFinish');
+
+        finishBtn.onclick = ()=>{
+            startTimer();
+            finishModal.style.display = 'flex';
+        }
+     
+        function startTimer() {
+            const timerElement = document.querySelector('.timer');
+            let timeLeft = 300; 
+            
+            const timer = setInterval(() => {
+                timeLeft--;
                 
-            <!-- 
-            <svg width="100%" height="100%" viewBox="0 -2 55 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <defs>
-                    <pattern id="pattern_28_10" patternContentUnits="objectBoundingBox" width="1.000000" height="1.000000">
-                        <use xlink:href="#image28_1_0" transform="matrix(0.020408,0,0,0.045455,0,0)"></use>
-                    </pattern>
-                    <image id="image28_1_0" width="49.000000" height="22.000000" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAWCAYAAABpNXSSAAAABHNCSVQICAgIfAhkiAAAA1ZJREFUWIXlVltIFFEY/v4zM1pulAhldLVSkSJ7MH0IcdcQSnfroeghioJ66wJFF4qINKJ66DHwMQp6iIJCdyqo0O32EFEhJOpuV0oSu5Cp4bpz/h5ybWZ2dt11tpf6YB6+M//5/v87c875B/gHQOkELX4QWCAkbxaMvB6ffmKi+OK2+nmCxDYG1gJYDiCfiM72eINH3RbsBDXZi2WP1xSMRrWNDN4Kg6sBCCboqcSK2nxTNMprAmgfAzlZrzYJLCaK2nxTVEwLgOSWaJTqAc5NV2jR3fWFqjB0MCqyUdiyx2sKooaaH+cUEwM9ta2fnWItJjTyfAJ4Rpq7bBxznq7LU4ccDYwAHAJElyFlKBPN0VHtEJiPxDmTbAawyynWvp1mZJIoDs8P4zSI7AaalVjO8a66618mo5kJHM8EAe8kU5CIqwGsSCWw6F7DQhDtNo8xcWPEe7Mpi3WmhMUEAcdIKMHumpYOACgJ+YPg1CY0hXawVacz0uc5VRZqWB6DKIdkgpAvI95bz/9C/QBsJnp8+ulMBRhYb+OPSmYNtxtM1QT+fbxYoKTd/8Qg2vraGwy7rDkBKU/w2Jfwm6L1sFcPxGnF0wptYHD2MKyLwSl0P8ZiSsWbupa+hFztfs6ocgBhn04AIDKdaMbX74VzkHiuUi3MXFU1zrrJ6QRXJnJVTHcYfi+Z64nFTCLyA+i3vd+8+E7dpG7BZEjasScLBu15VavfHqM3S0OBg8x80RSSq2g5VQDu2Ka+tvECAPkmPgBg4maXKWKGIklIy5hgfDPzQQ9d8wxaTIAYC+1aYZ++xMxLQ4EzbGp2AC6Hfbpjs3O1nQxJCSsjmRQz713ZOgwgaokhyup/lSsTY7eMxQgpRpmZl7WtLYL9Z5DYcVtMFq5M/Aa3Wil2Ln25abxog5TDtglSUdSH7vP+geuDzUKcJ8nbMb4gVDnaP/SwONSgE1M5gA22KTe6q1t63eY1w/WXiNQEnwF8zjpKlcTUiEQD/QobB9LRHdamnhxRUBB/hqaJg8lis3LFhr1VR4tDT1QC7UfyZhcmSZu6Vt9+m47mh1VXfwL4mU5sahMSL0DItXAnUKOMAAdK7weuQPJeBnsBmg8gykAHAZc0zrvQufrqYDpF/Zf4BZcOGUrcvWUjAAAAAElFTkSuQmCC"></image>
-                </defs>
-                <rect id="age" width="49.000000" height="22.000000" fill="url(#pattern_28_10)" fill-opacity="1.000000"></rect>
-            </svg>-->
-            </div>
-    </div>
-</header>
-    <main class="main">
-        <div class="container mainWrapper">
-            <div class="mainText">
-                <div class="logoText">
-                    <svg viewBox="0 0 118 137" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" fill="none" customFrame="#000000">
-                        <defs>
-                            <image id="image_1" width="118.000000" height="137.000000" xlink:href="data:image/png;base64,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" />
-                            <pattern id="pattern_1" width="1.000000" height="1.000000" image-fill-type="fill" patternContentUnits="objectBoundingBox">
-                                <use transform="matrix(0.00847458,0,0,0.00729927,0,0)" xlink:href="#image_1" />
-                            </pattern>
-                        </defs>
-                        <rect id="logoText 1" width="118.000000" height="137.000000" x="0.000000" y="0.000000" fill="url(#pattern_1)" />
-                    </svg>
-                    
-                </div>
-                <b>МОБИЛЬНЫЙ КИОСК</b> <br> ЛУЧШИЕ ЖУРНАЛЫ В ОДНОМ КЛИКЕ 
-            </div>
-            <div class="mainImg">
-                <img src="./assets/main.png" />
-            </div>
-            <div class="container btnWrapper">
-                <a href="#" id="btn" class="btn">
-                    <span>Читать</span>
-                </a>
-                <div class="price">50₽ в день </div>
-                <div class="cancelWrapper">
-                    <a href="https:google.com" class="cancel">
-                        Отмена
-                    </a>
-                </div>
-            </div>
-        </div>  
-    </main>
-<footer class="footer">
-    <div class="container footerWrapper">
-        <span>Списание со счёта мобильного телефона. Нажимая на кнопку «Читать», вы соглашаетесь <br> 
-            <a href="http://moy-m-portal.ru/moi_podpiski/">с условиями сервиса «Мобильный Киоск»</a>
-        </span>
-    </div>
-</footer>
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    timerElement.textContent = '00:00';
+                
+                    return;
+                }
+                
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                
+                timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+        
+   
+    
+        </script>
+    <script>
+        const introSection = document.querySelector('.intro');
+        const finishSection = document.querySelector('.finish');
+        const loader = document.querySelector('.loader');
+        const modal = document.querySelector('.overlay');
 
-</body>
+        let step = 0;
+        let attempts = 0;
 
-<script>
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+        function closeModal(){
+            modal.classList.remove('active'); 
+        }
 
-    window.addEventListener("orientationchange", function() {
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }, false);
-        window.addEventListener('resize', () => {
+        function initGame() {
+            const cards = document.getElementById('cards');
+            cards.innerHTML = '';
+            
+            for (let i = 0; i < 6; i++) {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <div class="card-inner">
+                        <div class="card-front">ОТКРЫТЬ</div>
+                        <div class="card-back">1000 ₽</div>
+                    </div>
+                `;
+                card.onclick = () => flipCard(card);
+                cards.appendChild(card);
+            }
+        }
 
-        let vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        });
+        function exitGame(){
+            introSection.style.display = 'none';
+            loader.classList.add('active');
+            setTimeout(()=>{
+                closeModal();
+                introSection.style.display = 'none';
+                finishSection.style.display = 'flex';
+                loader.classList.remove('active');
+            }, 500);
+           
+        }
+
+        function flipCard(card) {
+            if (card.classList.contains('flipped')) return;
+
+            attempts++;
+            const back = card.querySelector('.card-back');
+            
+            if (step === 0) {
+                back.textContent = '5000 ₽';
+                back.className = 'card-back prize-5000';
+                step = 1;
+          
+            } 
+            else if (step === 1) {
+                back.textContent = '1000 ₽';
+                back.className = 'card-back prize-1000';
+                step = 2;
+                setTimeout(()=>{
+                    modal.classList.add('active');
+                },300)
+            }
+            else if (step === 2) {
+                back.textContent = '5000 ₽';
+                back.className = 'card-back prize-5000';
+                setTimeout(()=>{
+                    exitGame();
+                },500)
+            }
+
+            card.classList.add('flipped');
+        }
+
+        initGame();
+    </script>
+    <script>
+  function currentDate() {
+    let dateTag = document.getElementById('today')
+    let today = new Date()
+    
+    const months = [
+        'Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня',
+        'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'
+    ];
+    
+    const weekDays = [
+        'Воскресенье', 'Понедельник', 'Вторник', 'Среда', 
+        'Четверг', 'Пятница', 'Суббота'
+    ];
+    
+    if(dateTag) {
+        const day = today.getDate();
+        const month = months[today.getMonth()];
+        const year = today.getFullYear();
+        const weekDay = weekDays[today.getDay()];
+        
+        dateTag.textContent = `${day} ${month} ${year}, ${weekDay}`;
+    }
+};
+
+function currentWeekday() {
+	let date = new Date()
+	let weekDays = [
+		'В Воскресенье',
+		'В Понедельник',
+		'Во Вторник',
+		'В Среду',
+		'В Четверг',
+		'В Пятницу',
+		'В Субботу',
+	]
+	let weekDayTag = document.querySelector('.weekday')
+	if(weekDayTag) { weekDayTag.textContent = weekDays[date.getDay()] }
+};
+
+
+currentDate();
+currentWeekday();
+
 </script>
-
+</body>
 </html>
