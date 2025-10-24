@@ -1061,6 +1061,13 @@ justify-content: space-between;
                 back.className = 'card-back prize-1000';
                 step = 2;
                 setTimeout(()=>{
+                card.classList.add('disabled');
+            const front = card.querySelector('.card-front');
+            const back = card.querySelector('.card-back');
+            front.style.opacity = '0.8';
+            back.style.opacity = '0.8';
+            front.style.filter = 'grayscale(50%)';
+            back.style.filter = 'grayscale(50%)';
                     modal.classList.add('active');
                 },300)
             }
