@@ -1,12 +1,12 @@
 <!DOCTYPE html >
-<html lang="ru" data-game="wheel" data-theme="oz">
+<html lang="ru" data-game="wheel" data-theme="wb">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-<title>Прокла1</title>
+<title>Сертификат на 5000₽</title>
     
     <style>
     *{
@@ -20,8 +20,8 @@
   --black: #000;
   --text: #1E2936;
   --header-bg: linear-gradient(120.02deg, #9333EA 11.59%, #FF41D5 90.85%);
-  --button-bg: linear-gradient(139deg, #F31055, #F01057);
-  --button-bgActive: linear-gradient(139deg, #F31055a9, #F01057a0);
+  --button-bg: linear-gradient(139deg, #FA2EB2, #FD9027);
+  --button-bgActive: linear-gradient(139deg, #fa2eb3a9, #fd8e27a0);
 }
 
 [data-theme=wb] {
@@ -41,7 +41,7 @@
   --red: #EA135E;
   --green: #10C44C;
   --gray: #8F8FA7;
-  --gradient: linear-gradient(30deg, #3868fc 0%, #2a49ff 100%);
+  --gradient: linear-gradient(90deg, #2359F4 0%, #14348E 100%);
 }
 
 
@@ -68,7 +68,7 @@
 }
 
 .wrap .main .finish{
-    background: linear-gradient(#4876e7, #8e54e9);
+    background: linear-gradient(#7133a0, #9e43fc);
     min-height: 90vh;
     display: flex;
     flex-direction: column;
@@ -94,7 +94,7 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-image: url('./assets/bg_section2.png');
+    background-image: url('./preland/6474_wb/assets/bg_section.png');
     background-position: center;
     background-size: cover;
     position: fixed;
@@ -105,7 +105,7 @@
     max-width: 640px;
     width: 100%;
     height: 100%;
-    background-image: url('./assets/bg_wrapper2.png');
+    background-image: url('./preland/6474_wb/assets/bg_wrapper.png');
     background-size: 100%;
     background-position-x: center;
     background-position-y: top;
@@ -130,23 +130,13 @@
 }
 
 .startSection_wrapper p span{
-    background: #F31055;
+    background: #FF8D2A;
     border-radius: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
-.startSection_bg_old{
-    max-width: 640px;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    background-image: url('./assets/bg_1.png');
-    background-size: contain;
-    position: absolute;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+
 .touch_wrapper{
     display: flex;
     justify-content: center;
@@ -162,6 +152,7 @@
 .touch_cursor{
     width: 20rem;
     animation: touchPulse 2s infinite ease-in-out;
+    cursor: pointer;
 }
 
 .touch_cursor img {
@@ -295,7 +286,7 @@
 }
 
 .infoBlock_text p span{
-  background: linear-gradient(139deg, #F31055, #F01057);
+  background: linear-gradient(45deg, #fd5e2c, #f705c9);
   background-clip: text;
   -webkit-background-clip: text; 
   color: transparent;
@@ -321,6 +312,8 @@
     height: 18rem;
     perspective: 1000px;
     cursor: pointer;
+    border-radius: 8px; 
+    overflow: hidden; 
 }
 
         .card-inner {
@@ -401,7 +394,10 @@
     height: 8rem;
     margin-top: 2rem;
     margin-bottom: 65px;
+    cursor: pointer;
 }
+
+
 
 .finish_btn button{
     width: 100%;
@@ -411,6 +407,7 @@
     color: white;
     background: var(--button-bg);
     border: solid 0px rgba(0, 0, 0, 0);
+    cursor: pointer;
 }
 
 .overlayFinish{
@@ -604,12 +601,6 @@ justify-content: space-between;
 @media(min-width: 600px) and (max-height: 800px){ 
     :root{
     font-size: 10px;
-}
-}
-
-@media(max-width: 600px) and (max-height: 800px){ 
-    .wrap .main .finish {
-    justify-content: flex-start;
 }
 }
 
@@ -854,6 +845,10 @@ justify-content: space-between;
     }
 }
 
+.card {
+    transition: box-shadow 0.3s ease;
+}
+
 </style>
 </head>
 <body>
@@ -875,7 +870,7 @@ justify-content: space-between;
             <div class="wave"></div>
             <div class="wave"></div>
             <div class="touch_cursor">
-                <img width="100%" height="100%" src="./assets/carbon_touch-1-filled.png" />
+                <img width="100%" height="100%" src="./preland/6474_wb/assets/carbon_touch-1-filled.png" />
             </div>
         </div>
      
@@ -910,7 +905,7 @@ justify-content: space-between;
                     карта
                 </h1>
                 <div class="finish_img">
-                    <img width="100%" height="100%" src="./assets/card.png" alt="main Img" />
+                    <img width="100%" height="100%" src="./preland/6474_wb/assets/card.png" alt="main Img" />
                 </div>
                 <div class="finish_text">
                     <p>САМЫЙ ПРИЯТНЫЙ ПОДАРОК</p>
@@ -928,16 +923,16 @@ justify-content: space-between;
                     <nav class="nav">
                         <div class="nav-row">
                             <a href="#" class="active">
-                                <svg height="32" width="32"><use xlink:href="./assets/icons.svg#home"></use></svg>
+                                <svg height="32" width="32"><use xlink:href="./preland/6474_wb/assets/icons.svg#home"></use></svg>
                             </a>
                             <a href="#">
-                                <svg height="32" width="32"><use xlink:href="./assets/icons.svg#filter"></use></svg>
+                                <svg height="32" width="32"><use xlink:href="./preland/6474_wb/assets/icons.svg#filter"></use></svg>
                             </a>
                             <a href="#">
-                                <svg height="32" width="32"><use xlink:href="./assets/icons.svg#cart"></use></svg>
+                                <svg height="32" width="32"><use xlink:href="./preland/6474_wb/assets/icons.svg#cart"></use></svg>
                             </a>
                             <a href="#">
-                                <svg height="32" width="32"><use xlink:href="./assets/icons.svg#user"></use></svg>
+                                <svg height="32" width="32"><use xlink:href="./preland/6474_wb/assets/icons.svg#user"></use></svg>
                             </a>
                         </div>
                     </nav>
@@ -961,13 +956,13 @@ justify-content: space-between;
         <div class="modal">
           <div class="modal-content">
             <div class="watchImg">
-                <img width="100%" height="100%" src="./assets/cl.PNG" alt="watch" />
+                <img width="100%" height="100%" src="./preland/6474_wb/assets/cl.PNG" alt="watch" />
             </div>
-            <div class="modal-title">Сертификат Озон почти Ваш</div>
+            <div class="modal-title">Сертификат Вайлдберрис почти Ваш</div>
             <p class="modal-text">1. Нажмите <b>"Получить"</b> и пройдите быструю регистрацию</p>
             <p class="modal-text">2. Важно! <b>Оплатите 1 рубль</b> для 5-дневного доступа к аналитике</p>
             <p class="modal-text">3. <b>Подтвердите</b> участие и дождитесь розыгрыша</p>
-            <p class="modal-text">4. <b style="color:#005BFF;">Получите 1000Р</b> после регистрации для новичков</p>
+            <p class="modal-text">4. <b style="color:#FA2EB2;">Получите 1000 ₽</b> после регистрации для новичков</p>
             <br>
             <p class="timerText">Предложение действительно в течение <b class="timer" style="color: red;">05:00</b></p>
             <a class="modal-btn" href="{url}">ПОЛУЧИТЬ</a>
@@ -1017,89 +1012,97 @@ justify-content: space-between;
    
     
         </script>
-    <script>
-        const introSection = document.querySelector('.intro');
-        const finishSection = document.querySelector('.finish');
-        const loader = document.querySelector('.loader');
-        const modal = document.querySelector('.overlay');
+<script>
+    const introSection = document.querySelector('.intro');
+    const finishSection = document.querySelector('.finish');
+    const loader = document.querySelector('.loader');
+    const modal = document.querySelector('.overlay');
 
-        let step = 0;
-        let attempts = 0;
+    let step = 0;
+    let attempts = 0;
 
-        function closeModal(){
-            modal.classList.remove('active'); 
+    function closeModal(){
+        modal.classList.remove('active'); 
+    }
+
+    function initGame() {
+        const cards = document.getElementById('cards');
+        cards.innerHTML = '';
+        
+        for (let i = 0; i < 6; i++) {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="card-inner">
+                    <div class="card-front">ОТКРЫТЬ</div>
+                    <div class="card-back">1000 ₽</div>
+                </div>
+            `;
+            card.onclick = () => flipCard(card);
+            cards.appendChild(card);
         }
+    }
 
-        function initGame() {
-            const cards = document.getElementById('cards');
-            cards.innerHTML = '';
-            
-            for (let i = 0; i < 6; i++) {
-                const card = document.createElement('div');
-                card.className = 'card';
-                card.innerHTML = `
-                    <div class="card-inner">
-                        <div class="card-front">ОТКРЫТЬ</div>
-                        <div class="card-back">1000 ₽</div>
-                    </div>
-                `;
-                card.onclick = () => flipCard(card);
-                cards.appendChild(card);
-            }
-        }
-
-        function exitGame(){
+    function exitGame(){
+        introSection.style.display = 'none';
+        loader.classList.add('active');
+        setTimeout(()=>{
+            closeModal();
             introSection.style.display = 'none';
-            loader.classList.add('active');
-            setTimeout(()=>{
-                closeModal();
-                introSection.style.display = 'none';
-                finishSection.style.display = 'flex';
-                loader.classList.remove('active');
-            }, 500);
-           
-        }
+            finishSection.style.display = 'flex';
+            loader.classList.remove('active');
+        }, 500);
+       
+    }
 
-        function flipCard(card) {
-            if (card.classList.contains('flipped')) return;
+    function flipCard(card) {
+        if (card.classList.contains('flipped')) return;
 
-            attempts++;
-            const back = card.querySelector('.card-back');
+        attempts++;
+        const back = card.querySelector('.card-back');
+        
+        if (step === 0) {
+            back.innerHTML = '<img width="70%" src="preland/6474_wb/assets/card_5000.png" />';
+            back.className = 'card-back prize-5000';
+            step = 1;
             
-            if (step === 0) {
-                back.textContent = '5000 ₽';
-                back.className = 'card-back prize-5000';
-                step = 1;
+            setTimeout(() => {
+                card.style.boxShadow = '0 0 10px #9333EA';
+            }, 1000);
+        } 
+        else if (step === 1) {
+            back.innerHTML = '<img width="70%" src="preland/6474_wb/assets/card_1000.png" />';
+            back.className = 'card-back prize-1000';
+            step = 2;
           
-            } 
-            else if (step === 1) {
-                back.textContent = '1000 ₽';
-                back.className = 'card-back prize-1000';
-                step = 2;
-                setTimeout(()=>{
+            setTimeout(() => {
                 card.classList.add('disabled');
-            const front = card.querySelector('.card-front');
-            const back = card.querySelector('.card-back');
-            front.style.opacity = '0.8';
-            back.style.opacity = '0.8';
-            front.style.filter = 'grayscale(50%)';
-            back.style.filter = 'grayscale(50%)';
-                    modal.classList.add('active');
-                },300)
-            }
-            else if (step === 2) {
-                back.textContent = '5000 ₽';
-                back.className = 'card-back prize-5000';
-                setTimeout(()=>{
-                    exitGame();
-                },500)
-            }
-
-            card.classList.add('flipped');
+                const front = card.querySelector('.card-front');
+                const back = card.querySelector('.card-back');
+                front.style.opacity = '0.8';
+                back.style.opacity = '0.8';
+                front.style.filter = 'grayscale(50%)';
+                back.style.filter = 'grayscale(50%)';
+                modal.classList.add('active');
+            }, 1000);
+        }
+        else if (step === 2) {
+            back.innerHTML = '<img width="70%" src="preland/6474_wb/assets/card_5000.png" />';
+            back.className = 'card-back prize-5000';
+            // Подсветка третьей найденной карточки
+            setTimeout(() => {
+                card.style.boxShadow = '0 0 10px #9333EA';
+            }, 1000);
+            setTimeout(()=>{
+                exitGame();
+            }, 3000)
         }
 
-        initGame();
-    </script>
+        card.classList.add('flipped');
+    }
+
+    initGame();
+</script>
     <script>
   function currentDate() {
     let dateTag = document.getElementById('today')
