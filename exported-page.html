@@ -170,7 +170,7 @@ header { padding-top: var(--header_pt); padding-bottom: var(--header_pb); backgr
 .component-name { font-size: 12px !important; }
 .component-title { font-size: 16px !important; font-weight: 700; }
 .setting-label { font-size: 12px !important; }
-.preview-body { position: fixed; left: 0px; display: flex; flex-direction: column; width: 100%; height: calc(var(--preview-vh, 1vh) * 100); padding-top: 0px; padding-right: 0px; padding-left: 0px; margin: 0px; overflow: hidden; padding-bottom: env(safe-area-inset-bottom, 0px); background: var(--bg-body); }
+.preview-body { position: fixed; left: 0px; display: flex; flex-direction: column; width: 100%; height: calc(var(--preview-vh, 1vh) * 100); padding-top: 0px; padding-right: 0px; padding-left: 0px; margin: 0px;  padding-bottom: env(safe-area-inset-bottom, 0px); background: var(--bg-body); }
 .preview-body .bg { background-image: ; background-attachment: ; background-origin: ; background-clip: ; background-color: ; background-repeat: no-repeat; background-position-x: var(--bgPositionX); background-position-y: var(--bgPositionY); background-size: var(--bgSize); max-width: var(--container); width: 100%; height: 100%; padding: 0px; margin: 0px; left: 50%; transform: translate(-50%, 0px); z-index: -1; position: fixed; }
 .preview-body { font-size: 10px; }
 .preview-body .logoText { width: var(--mainLogoText-size); margin: 0px auto; }
@@ -202,12 +202,12 @@ header { padding-top: var(--header_pt); padding-bottom: var(--header_pb); backgr
 .bee-compact__color_cube.transparent::after { content: ""; position: absolute; top: 100%; left: 0px; transform: rotate(-45deg); transform-origin: 0px 0px; width: 35px; height: 1px; background: red; }
 .bee-compact__color_cube.advance { background: url("data:image/png;base64,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"); }
 .bee-compact__color_cube .alpha { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg=="); background-repeat: repeat; }
-.bee-compact__color-cube--wrap { position: relative; width: 25px; height: 25px; cursor: pointer; overflow: hidden; }
+.bee-compact__color-cube--wrap { position: relative; width: 25px; height: 25px; cursor: pointer;  }
 .bee-compact__color-cube--wrap:hover { transform: scale(1.2); z-index: 299; transition: transform 0.2s; }
 .bee-colorPicker__record { display: flex; align-items: center; margin-top: 20px; }
 .bee-colorPicker__record .text { width: 48px; margin-right: 10px; text-align: right; font-size: 12px; color: rgb(102, 102, 102); }
 .bee-colorPicker__record .color-list { width: auto; display: flex; position: relative; margin: 0px; }
-.bee-colorPicker__record .color-list .color-item { position: relative; width: 25px; height: 25px; cursor: pointer; overflow: hidden; display: inline-block; vertical-align: middle; margin-right: 1px; box-shadow: rgba(0, 0, 0, 0.08) 3px 0px 5px; }
+.bee-colorPicker__record .color-list .color-item { position: relative; width: 25px; height: 25px; cursor: pointer;  display: inline-block; vertical-align: middle; margin-right: 1px; box-shadow: rgba(0, 0, 0, 0.08) 3px 0px 5px; }
 .bee-colorPicker__record .color-list .color-item__round { border-radius: 50%; }
 .bee-colorPicker__record .color-list .color-item.transparent { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg=="); background-repeat: repeat; }
 .bee-colorPicker__record .color-list .color-item:hover { transform: scale(1.2); z-index: 299; transition: transform 0.2s; }
@@ -233,7 +233,6 @@ header { padding-top: var(--header_pt); padding-bottom: var(--header_pb); backgr
 .bee-light-colorPicker__inner-handle { width: 14px; height: 14px; border-radius: 6px; transform: translate(-7px, -2px); background-color: rgb(248, 248, 248); margin-top: 2px; box-shadow: rgba(0, 0, 0, 0.37) 0px 1px 4px; cursor: pointer; }
 .bee-light-colorPicker__inner-handle.vertical { transform: translateY(-7px); margin-top: 0px; }
 .bee-saturation { position: relative; margin-bottom: 15px; width: 100%; height: 125px; }
-.bee-saturation__hidden { overflow: hidden; }
 .bee-saturation__white, .bee-saturation__black { position: absolute; inset: 0px; }
 .bee-saturation__black { background: linear-gradient(0deg, rgb(0, 0, 0), transparent); }
 .bee-saturation__white { background: linear-gradient(90deg, rgb(255, 255, 255), rgba(255, 255, 255, 0)); }
@@ -251,7 +250,7 @@ header { padding-top: var(--header_pt); padding-bottom: var(--header_pb); backgr
 .bee-fk-colorPicker__header .back { border-style: solid; border-color: black; border-image: initial; border-width: 0px 1px 1px 0px; display: inline-block; padding: 4px; margin-left: 2px; transform: rotate(135deg); }
 .bee-fk-colorPicker__display { position: relative; width: 100%; margin: 0px; text-align: left; }
 .bee-fk-colorPicker__display .transparent { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg=="); background-repeat: repeat; }
-.bee-fk-colorPicker__display .current-color { margin-right: 10px; width: 50px; height: 24px; box-shadow: rgba(0, 0, 0, 0.08) 3px 0px 5px; position: relative; cursor: pointer; overflow: hidden; display: inline-block; vertical-align: middle; }
+.bee-fk-colorPicker__display .current-color { margin-right: 10px; width: 50px; height: 24px; box-shadow: rgba(0, 0, 0, 0.08) 3px 0px 5px; position: relative; cursor: pointer;  display: inline-block; vertical-align: middle; }
 .bee-fk-colorPicker__display .current-color .color-cube { width: 100%; height: 100%; }
 .bee-fk-colorPicker__display .hexColor-prefix { position: relative; padding: 0px 4px; font-size: 14px; display: inline-block; vertical-align: middle; }
 .bee-fk-colorPicker__display input { width: 25px; text-align: center; outline: 0px; border-top: 0px; border-right: 0px; border-left: none; display: inline-block; vertical-align: middle; padding-bottom: 3px; border-bottom: 1px solid rgb(227, 226, 232); }
@@ -266,10 +265,10 @@ header { padding-top: var(--header_pt); padding-bottom: var(--header_pb); backgr
 .bee-chrome-colorPicker { position: relative; box-sizing: border-box; border-radius: 3px; box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 10px; user-select: none; background-color: rgb(255, 255, 255); width: 250px; padding-bottom: 20px; }
 .bee-chrome-colorPicker-body { padding: 0px 12px; background-color: rgb(255, 255, 255); }
 .bee-chrome-colorPicker-body .chrome-controls { display: flex; }
-.bee-chrome-colorPicker-body .chrome-controls .chrome-color-wrap { position: relative; width: 36px; height: 36px; border-radius: 50%; overflow: hidden; z-index: 1; }
+.bee-chrome-colorPicker-body .chrome-controls .chrome-color-wrap { position: relative; width: 36px; height: 36px; border-radius: 50%;  z-index: 1; }
 .bee-chrome-colorPicker-body .chrome-controls .chrome-color-wrap .current-color { width: 100%; height: 100%; }
 .bee-chrome-colorPicker-body .chrome-controls .chrome-sliders { flex: 1 1 0%; margin-left: 10px; }
-.bee-color-wrap { margin-right: 10px; width: 50px; height: 24px; box-shadow: rgba(0, 0, 0, 0.08) 3px 0px 5px; position: relative; cursor: pointer; overflow: hidden; display: inline-block; vertical-align: middle; }
+.bee-color-wrap { margin-right: 10px; width: 50px; height: 24px; box-shadow: rgba(0, 0, 0, 0.08) 3px 0px 5px; position: relative; cursor: pointer;  display: inline-block; vertical-align: middle; }
 .bee-color-wrap.transparent { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg=="); background-repeat: repeat; }
 .bee-color-wrap.round { width: 22px; height: 22px; border-radius: 50%; border: 1px solid rgb(216, 216, 216); }
 .bee-color-wrap .current-color { width: 100%; height: 100%; }
