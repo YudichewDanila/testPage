@@ -10,7 +10,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            /* font-family: Arial, Helvetica, sans-serif; */
             font-family: Unbounded, sans-serif;
         }
 
@@ -59,7 +58,6 @@
             width: 100%;
             border-top-left-radius: 16px;
             border-top-right-radius: 16px;
-            /* border-radius: 16px; */
             overflow: hidden;
             background: white;
             border: 1px solid rgb(255, 255, 255);
@@ -215,19 +213,15 @@
             font-weight: 600;
         }
 
-        /* Блок со статусом */
         .header__status {
             display: flex;
             align-items: center;
             gap: 8px;
-            /* Расстояние между точкой и текстом */
             font-family: sans-serif;
-            /* Замените на ваш шрифт */
             font-size: 14px;
             color: #333;
         }
 
-        /* Зеленая точка */
         .status-dot {
             width: 8px;
             height: 8px;
@@ -235,7 +229,6 @@
             border-radius: 50%;
             display: inline-block;
             animation: blink 2s infinite;
-            /* Применяем анимацию */
         }
 
         .status-text {
@@ -244,7 +237,7 @@
             font-weight: 700;
         }
 
-        /* Анимация мигания */
+
         @keyframes blink {
             0% {
                 opacity: 1;
@@ -262,12 +255,12 @@
             }
         }
 
-        /* Убираем стандартные отступы у текста, если они мешают */
+
         .header__logo-text {
             margin: 0;
         }
 
-        /* главная карточка — светлая тема, белый фон */
+
         .light-card {
             max-width: 640px;
             width: 100%;
@@ -279,7 +272,6 @@
             transition: all 0.2s ease;
         }
 
-        /* внутренние отступы заменяют px-3 и др., но сохраняем структуру */
         .section-content {
             display: flex;
             flex-direction: column;
@@ -342,7 +334,7 @@
             font-weight: 700;
         }
 
-        /* контейнер колеса */
+
         .wheel__canvas {
             width: 100%;
             max-width: 500px;
@@ -374,7 +366,7 @@
             height: 100%;
         }
 
-        /* стрелка розовая */
+
         .wheel__pointer {
             position: absolute;
             top: -10px;
@@ -390,7 +382,6 @@
             display: block;
         }
 
-        /* ambient aura */
         .wheel__ambient {
             position: absolute;
             inset: -5px;
@@ -428,8 +419,6 @@
         }
 
 
-
-        /* СТЕКЛЯННЫЙ БЛОК (glass) — светлая версия */
         .glass-block {
             background: #ffffff;
             border-radius: 20px;
@@ -440,7 +429,6 @@
             transition: box-shadow 0.2s;
         }
 
-        /* строка с аватарами + лайки */
         .like-row {
             display: flex;
             align-items: center;
@@ -479,7 +467,6 @@
             letter-spacing: 0.2px;
         }
 
-        /* панель кнопок (лайк, шеар, просмотры) */
         .action-bar {
             display: flex;
             align-items: center;
@@ -531,26 +518,25 @@
             color: #5e6f8d;
         }
 
-        /* КОММЕНТАРИИ — общий контейнер */
+
         .comments-container {
             display: flex;
             flex-direction: column;
             width: 100%;
         }
 
-        /* разделитель между комментариями */
+
         .comment-item {
             border-bottom: 1px solid #edf1f7;
         }
 
-        /* общий отступ для строки комментария */
+
         .comment-row {
             display: flex;
             gap: 10px;
             padding: 3px 0;
         }
 
-        /* аватар комментатора */
         .comment-avatar {
             width: 36px;
             height: 36px;
@@ -567,7 +553,6 @@
             display: block;
         }
 
-        /* блок текста */
         .comment-body {
             flex: 1;
             min-width: 0;
@@ -580,7 +565,6 @@
             font-size: 13px;
             font-weight: 600;
             color: #5d80a6;
-            /* спокойный синий оттенок */
             letter-spacing: -0.2px;
         }
 
@@ -590,7 +574,6 @@
             color: #1e2a3e;
         }
 
-        /* вложенное изображение в комменте */
         .comment-media {
             margin-top: 8px;
             border-radius: 14px;
@@ -606,7 +589,6 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
-        /* футер комментария (время, лайк, ответить) */
         .comment-footer {
             display: flex;
             align-items: center;
@@ -641,13 +623,10 @@
             fill: none;
         }
 
-        /* отступ для вложенных (ответов) через ml-10 аналог */
         .comment-reply {
             margin-left: 46px;
-            /* вместо ml-10 (2.5rem ~ 40px) добавим визуальную вложенность */
         }
 
-        /* Анимация для новых комментариев */
         .comment-item {
             opacity: 0;
             transform: translateY(-20px);
@@ -678,12 +657,10 @@
             }
         }
 
-        /* Для вложенных комментариев с задержкой анимации */
         .comment-reply {
             animation: slideInComment 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
         }
 
-        /* Базовые стили для комментариев (чтобы анимация работала корректно) */
         .comment-item {
             overflow: hidden;
             border-bottom: 1px solid #ffe4ed;
@@ -692,7 +669,6 @@
 
 
 
-        /* кнопка "Смотреть все" */
         .show-all-btn {
             text-align: center;
             padding: 14px 0 12px;
@@ -712,7 +688,6 @@
             background-color: #f5eaf8;
         }
 
-        /* мелкий текст с условиями */
         .legal-note {
             font-size: 9px;
             line-height: 1.4;
@@ -723,7 +698,6 @@
             margin-bottom: 10rem;
         }
 
-        /* убираем стандартные outline для кнопок, добавляем фокус для доступности */
         button:focus-visible {
             outline: 2px solid #5d80a6;
             outline-offset: 2px;
@@ -751,7 +725,7 @@
             padding: 10px 16px;
         }
 
-        /* кнопка-иконка (прикрепление / emoji стиль) */
+
         .bar-icon-btn {
             flex-shrink: 0;
             padding: 8px;
@@ -782,7 +756,6 @@
             fill: none;
         }
 
-        /* поле ввода */
         .message-input {
             flex: 1;
             background: #ede8ec;
@@ -807,7 +780,6 @@
             font-weight: 400;
         }
 
-        /* кнопка отправки */
         .send-btn {
             flex-shrink: 0;
             padding: 8px;
@@ -940,7 +912,6 @@
             }
         }
 
-        /* Контейнеры для приза и загрузки */
         .prize-container,
         .loading-container {
             position: relative;
@@ -1002,7 +973,7 @@
             color: #4a3b4a;
         }
 
-        /* Контейнер контента */
+ 
         .finish-content {
             width: 100%;
             max-width: 480px;
@@ -1019,10 +990,9 @@
             padding-top: 4px;
         }
 
-        /* Блок поздравления */
         .congrats-card {
             border-radius: 16px;
-            padding: 16px;
+            padding: 10px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -1040,7 +1010,7 @@
         }
 
         .congrats-title {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: 600;
             margin-bottom: 4px;
             background: linear-gradient(135deg, #e6178f, #ad228e);
@@ -1050,12 +1020,12 @@
         }
 
         .congrats-text {
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-weight: 600;
-            color: #4a3b4a;
+            line-height: 1.5;
+            color: #10101a;
         }
 
-        /* Карточка приза */
         .prize-card {
             background: #ffffff;
             border: 1px solid #ffe0e8;
@@ -1065,7 +1035,6 @@
 
         .prize-card-border {
             height: 1.5px;
-            /* background: linear-gradient(90deg, transparent, #e6178f, transparent); */
         }
 
         .prize-card-content {
@@ -1114,7 +1083,7 @@
         .prize-decoration {
             font-size: 1.9rem;
             font-weight: 700;
-            color: #8e357f;
+            color: #af45ac;
         }
 
         .prize-date {
@@ -1224,7 +1193,6 @@
             transform: translateX(-50%) scale(0.96);
         }
 
-        /* Инструкция (шаги) */
         .steps-card {
             background: #ffffff;
             border-radius: 16px;
@@ -1282,7 +1250,6 @@
             font-weight: 700;
         }
 
-        /* Таймер */
         .timer-card {
             display: flex;
             flex-direction: column;
@@ -1347,7 +1314,6 @@
             margin-bottom: 0;
         }
 
-        /* Анимация при обновлении */
         @keyframes timerPop {
             0% {
                 transform: scale(1);
@@ -1381,7 +1347,6 @@
             }
         }
 
-        /* Другие призы (неактивные) */
         .other-prizes {
             display: flex;
             flex-direction: column;
@@ -1444,7 +1409,6 @@
             font-weight: 600;
         }
 
-        /* Скрытие колеса */
         .wheel-hidden {
             opacity: 0;
             transform: translateY(20px);
@@ -1494,7 +1458,6 @@
             }
         }
 
-        /* Убедимся, что стрелка остаётся видимой поверх приза */
         .wheel__pointer {
             z-index: 20;
         }
@@ -1584,78 +1547,78 @@
         }
 
         @keyframes riseUp {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-        bottom: -20px;
-    }
-    20% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-80vh) rotate(360deg);
-        opacity: 1;
-        bottom: 100%;
-    }
-}
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+                bottom: -20px;
+            }
 
-/* Выстрел с левой стороны (вправо-вверх) */
-@keyframes shootLeft {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(40vw, -50vh) rotate(720deg);
-        opacity: 0;
-    }
-}
+            20% {
+                opacity: 1;
+            }
 
-/* Выстрел с правой стороны (влево-вверх) */
-@keyframes shootRight {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-40vw, -50vh) rotate(720deg);
-        opacity: 0;
-    }
-}
+            100% {
+                transform: translateY(-80vh) rotate(360deg);
+                opacity: 1;
+                bottom: 100%;
+            }
+        }
 
-/* Падение конфетти вниз */
-@keyframes fallDown {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-    }
-}
+        @keyframes shootLeft {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+                opacity: 0;
+            }
 
-/* Конфетти для выстрелов */
-.confetti {
-    position: fixed;
-    z-index: 9999;
-    pointer-events: none;
-}
+            10% {
+                opacity: 1;
+            }
 
-/* Конфетти для падения */
-.falling-confetti {
-    position: fixed;
-    z-index: 9999;
-    pointer-events: none;
-}
+            100% {
+                transform: translate(40vw, -50vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
 
+        @keyframes shootRight {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+                opacity: 0;
+            }
 
+            10% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(-40vw, -50vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fallDown {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .falling-confetti {
+            position: fixed;
+            z-index: 9999;
+            pointer-events: none;
+        }
     </style>
 </head>
 
@@ -1728,15 +1691,14 @@
                 <p class="wheel__date">1 апреля 2026, Среда</p>
                 <h1 class="wheel__title">Поздравляем!</h1>
                 <p class="wheel__subtitle">Сегодня вы счастливчик!</p>
-                <p class="wheel__description">В четверг мы выбираем <b>7</b> пользователей, чтобы дать<br>  им
-                    возможность выиграть подарки от наших<br>  спонсоров. Покрутите колесо, чтобы увидеть, какой<br> 
+                <p class="wheel__description">В четверг мы выбираем <b>7</b> пользователей, чтобы дать<br> им
+                    возможность выиграть подарки от наших<br> спонсоров. Покрутите колесо, чтобы увидеть, какой<br>
                     подарок вы получите!</p>
             </div>
             <div class="wheel__canvas">
                 <div class="wheel__inner">
                     <div class="wheel__glow"></div>
                     <div class="wheel__relative">
-                        <!-- стрелка розовая с градиентом -->
                         <div class="wheel__pointer">
                             <svg class="pointer-svg pointer-bounce" viewBox="0 0 32 38" fill="none">
                                 <defs>
@@ -1752,7 +1714,7 @@
                                 </defs>
                                 <path d="M16 34 L4 10 L16 16 L28 10 Z" fill="url(#pinkPointerGrad)" stroke="#e6178f"
                                     stroke-width="0.8" filter="url(#shadowPink)" />
-                                
+
                             </svg>
                         </div>
                         <div class="wheel__ambient"></div>
@@ -1774,14 +1736,11 @@
 
             <div class="finish-content">
                 <div class="finish-content-inner">
-                    <!-- Блок поздравления -->
                     <div class="congrats-card">
-                        <!-- <div class="congrats-line"></div> -->
                         <h2 class="congrats-title">Поздравляем!</h2>
-                        <p class="congrats-text">Подарочный сертификат<br>Вайлдберрис уже почти Ваш!</p>
+                        <p class="congrats-text">Подарочный сертификат Вайлдберрис уже <br> почти Ваш!</p>
                     </div>
 
-                    <!-- Карточка приза -->
                     <div class="prize-card">
                         <div class="prize-card-border"></div>
                         <div class="prize-card-content">
@@ -1791,10 +1750,10 @@
                                 </div>
                                 <div class="prize-info">
                                     <h3 class="prize-name">Сертификат Вайлдберрис</h3>
-                                    <p class="prize-decoration">НА 5 000 РУБЛЕЙ</p>
+                                    <p class="prize-decoration">на 5 000 рублей</p>
                                     <p class="prize-date">Дата розыгрыша: <span>10 Апреля 2026</span></p>
                                     <div class="prize-status">
-                                        <!-- <span class="prize-dot"></span> -->
+                                     
                                         <span class="prize-available">Доступно: 1</span>
                                     </div>
                                 </div>
@@ -1807,7 +1766,7 @@
                     </div>
 
                     <button class="prize-btn finishBtn" id="claimPrizeBtn">Получить сертификат</button>
-                    <!-- Инструкция -->
+
                     <div class="steps-card">
                         <div class="step-item">
                             <div class="step-number-active">1</div>
@@ -1828,7 +1787,6 @@
                         </div>
                     </div>
 
-                    <!-- Таймер -->
                     <div class="timer-card">
                         <div class="timer-row">
                             <svg class="timer-icon" viewBox="0 0 24 24" fill="none">
@@ -1858,45 +1816,11 @@
                         <span class="status-dot"></span>
                         <p>Сейчас на сайте: <b>247</b> человек</p>
                     </div>
-
-                    <!-- 
-                    <div class="other-prizes">
-                        <div class="other-prize-item">
-                            <div class="other-prize-img"><img src="assets/pr1.png" alt="MacBook Air 15' M4"></div>
-                            <div class="other-prize-info">
-                                <span class="other-prize-name">MacBook Air 15' M4</span>
-                                <span>Розничная цена: <s class="other-prize-price">RUB 190 000</s></span>
-                                <span>Ваша цена: <span class="other-prize-your-price">RUB 0</span></span>
-                                <span class="other-prize-stock">Доступно: 0</span>
-                            </div>
-                        </div>
-                        <div class="other-prize-item">
-                            <div class="other-prize-img"><img src="assets/pr2.png" alt="Алиса Max 2"></div>
-                            <div class="other-prize-info">
-                                <span class="other-prize-name">Алиса Max 2</span>
-                                <span>Время работы от аккумулятора: 12 часов</span>
-                                <span>Розничная цена: <s class="other-prize-price">RUB 35 000</s></span>
-                                <span>Ваша цена: <span class="other-prize-your-price">RUB 0</span></span>
-                                <span class="other-prize-stock">Доступно: 0</span>
-                            </div>
-                        </div>
-                        <div class="other-prize-item">
-                            <div class="other-prize-img"><img src="assets/pr3.png" alt="Путевка"></div>
-                            <div class="other-prize-info">
-                                <span class="other-prize-name">Путевка</span>
-                                <span>Розничная цена: <s class="other-prize-price">RUB 150 000</s></span>
-                                <span>Ваша цена: <span class="other-prize-your-price">RUB 0</span></span>
-                                <span class="other-prize-stock">Доступно: 0</span>
-                            </div>
-                        </div>
-                    </div>
-                     -->
                 </div>
             </div>
         </section>
         <div class="light-card">
             <div class="section-content">
-                <!-- Блок с лайками, кнопками и статистикой -->
                 <div class="glass-block">
                     <div class="like-row">
                         <div class="avatar-stack">
@@ -1935,16 +1859,12 @@
                     </div>
                 </div>
 
-                <!-- СПИСОК КОММЕНТАРИЕВ -->
-                <div class="comments-container">
+
+                <div class="comments-container"></div>
 
 
-                </div>
-
-                <!-- Кнопка "Смотреть все" -->
                 <button class="show-all-btn">Смотреть все</button>
 
-                <!-- Юридическое примечание -->
                 <p class="legal-note">Игровая механика этого сайта не предполагает моментальное получение подарка. Для
                     участия в розыгрыше вам необходимо иметь 10 дней оплаченных услуг. Подробнее на сайте Акции.</p>
             </div>
@@ -1952,7 +1872,6 @@
         </div>
         <button class="prize-btn fixed-bottom-button finishBtn" id="scrollToTopBtn">Получить сертификат</button>
         <div class="fixed-bottom-bar">
-            <!-- <button class="prize-btn" id="claimPrizeBtn">Получить сертификат</button> -->
             <div class="bar-container">
                 <button class="bar-icon-btn" aria-label="Прикрепить файл">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -1997,23 +1916,21 @@
 
             let isSpinning = false;
 
-            // ========== ПАРАМЕТРЫ ==========
             const SPIN_CONFIG = {
-                duration: 4000,              // Длительность вращения (мс)
-                targetStopAngle1: 70,        // 1-й спин (крестик)
-                targetStopAngle2: 2450,       // 2-й спин (приз) - МЕНЯЙТЕ ЗДЕСЬ!
-                fullRotations: 7,            // Количество полных оборотов
-                prizeDisplayTime: 3000,      // Время показа приза (мс)
-                loadingTime: 2000            // Время показа загрузки (мс)
+                duration: 4000,
+                targetStopAngle1: 70,
+                targetStopAngle2: 2450,
+                fullRotations: 7,
+                prizeDisplayTime: 3000,
+                loadingTime: 2000
             };
 
-            // Функция вращения колеса
             function spinWheel(targetAngle, onComplete) {
                 if (isSpinning) return;
                 isSpinning = true;
 
                 const totalRotation = (SPIN_CONFIG.fullRotations * 360) + targetAngle;
-              
+
 
                 if (wheelWrapper) {
                     wheelWrapper.style.transition = `transform ${SPIN_CONFIG.duration}ms cubic-bezier(0.15, 0.85, 0.3, 1.05)`;
@@ -2027,11 +1944,9 @@
                 }
             }
 
-            // Функция показа приза (с круговым вращением, без текста)
             function showPrize() {
                 document.querySelector('.header').style.display = 'none';
                 document.querySelector('.wheel__ambient').style.display = 'none';
-                // Создаём контейнер для приза (в той же позиции, где было колесо)
                 const prizeContainer = document.createElement('div');
                 prizeContainer.className = 'prize-container';
                 prizeContainer.style.cssText = `
@@ -2059,27 +1974,21 @@
 
                 prizeContainer.appendChild(prizeImg);
 
-                // Находим контейнер, где находится колесо, и заменяем колесо на приз
                 const wheelInner = document.querySelector('.wheel__inner');
                 const wheelImgWrapper = document.querySelector('.wheel__img-wrapper');
 
                 if (wheelInner && wheelImgWrapper) {
-                    // Сохраняем ссылку на wrapper колеса
                     const originalWrapper = wheelImgWrapper;
 
-                    // Прячем колесо с анимацией исчезновения
                     originalWrapper.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
                     originalWrapper.style.opacity = '0';
                     originalWrapper.style.transform = 'scale(0.8)';
 
                     setTimeout(() => {
-                        // Удаляем колесо
                         originalWrapper.style.display = 'none';
 
-                        // Добавляем приз в то же место
                         const wheelRelative = document.querySelector('.wheel__relative');
                         if (wheelRelative) {
-                            // Убедимся, что стрелка остаётся сверху
                             prizeContainer.style.position = 'absolute';
                             prizeContainer.style.top = '0';
                             prizeContainer.style.left = '0';
@@ -2090,7 +1999,6 @@
                     }, 400);
                 }
 
-                // Через время скрываем приз и показываем загрузку
                 setTimeout(() => {
                     if (prizeContainer) {
                         prizeContainer.style.animation = 'fadeOut 0.4s ease forwards';
@@ -2102,7 +2010,6 @@
                 }, SPIN_CONFIG.prizeDisplayTime);
             }
 
-            // Функция показа загрузки
             function showLoading() {
                 const loadingContainer = document.createElement('div');
                 loadingContainer.className = 'loading-container';
@@ -2141,7 +2048,6 @@
                 }, SPIN_CONFIG.loadingTime);
             }
 
-            // Функция показа финишной секции
             function showFinishSection() {
                 if (wheelSection) {
                     wheelSection.style.opacity = '0';
@@ -2157,7 +2063,6 @@
                 }
             }
 
-            // Функции модальных окон
             function showModal(modalElement) {
                 if (modalElement) modalElement.classList.add('active');
             }
@@ -2166,7 +2071,6 @@
                 if (modalElement) modalElement.classList.remove('active');
             }
 
-            // Обработчик 1-й модалки
             function closeModal() {
                 if (modal) {
                     modal.classList.remove('active');
@@ -2176,7 +2080,6 @@
                 }
             }
 
-            // Обработчик 2-й модалки (запускает второй спин)
             function onRetryOk() {
                 hideModal(retryModal);
                 spinWheel(SPIN_CONFIG.targetStopAngle2, () => {
@@ -2184,10 +2087,8 @@
                 });
             }
 
-            // Показываем первое модальное окно
             if (modal) setTimeout(() => modal.classList.add('active'), 100);
 
-            // Обработчики
             if (okBtn) okBtn.addEventListener('click', (e) => { e.preventDefault(); closeModal(); });
             if (retryOkBtn) retryOkBtn.addEventListener('click', (e) => { e.preventDefault(); onRetryOk(); });
 
@@ -2196,15 +2097,13 @@
         })();
     </script>
     <script>
-        //Анимация сообщения
         (function () {
             const inputField = document.querySelector('.message-input');
             const sendButton = document.querySelector('.send-btn');
-            let isSending = false; // флаг блокировки во время отправки
+            let isSending = false;
 
             if (inputField && sendButton) {
 
-                // Функция обновления состояния кнопки (активна только если есть текст и не идет отправка)
                 const updateSendButton = () => {
                     if (!isSending && inputField.value.trim().length > 0) {
                         sendButton.classList.add('active');
@@ -2219,7 +2118,6 @@
                     }
                 };
 
-                // Функция сброса поля к исходному состоянию
                 const resetInputField = () => {
                     inputField.value = '';
                     inputField.classList.remove('sending', 'success');
@@ -2228,33 +2126,27 @@
                     updateSendButton();
                 };
 
-                // Функция отправки сообщения
                 const sendMessage = () => {
                     const messageText = inputField.value.trim();
 
-                    // Если нет текста или уже идет отправка — ничего не делаем
                     if (messageText.length === 0 || isSending) {
                         return;
                     }
 
-                    // Блокируем кнопку и устанавливаем флаг отправки
                     isSending = true;
                     updateSendButton();
 
-                    // Сохраняем исходный текст и меняем на "Сообщение отправляется..."
                     const originalText = messageText;
                     inputField.classList.add('sending');
                     inputField.style.color = '#888';
                     inputField.value = 'Сообщение отправляется...';
 
-                    // Через 3 секунды показываем успех
                     setTimeout(() => {
                         inputField.classList.remove('sending');
                         inputField.classList.add('success');
                         inputField.style.color = '#2ecc71';
                         inputField.value = 'Сообщение отправленно!';
 
-                        // Еще через 2 секунды возвращаем исходное состояние
                         setTimeout(() => {
                             resetInputField();
                         }, 2000);
@@ -2262,13 +2154,12 @@
                     }, 3000);
                 };
 
-                // Обработчик нажатия на кнопку отправки
+
                 sendButton.addEventListener('click', (e) => {
                     e.preventDefault();
                     sendMessage();
                 });
 
-                // Обработчик нажатия Enter в поле ввода
                 inputField.addEventListener('keypress', (e) => {
                     if (e.key === 'Enter') {
                         e.preventDefault();
@@ -2276,10 +2167,7 @@
                     }
                 });
 
-                // Обновляем состояние кнопки при вводе текста
                 inputField.addEventListener('input', updateSendButton);
-
-                // Инициализация
                 updateSendButton();
             }
         })();
@@ -2328,17 +2216,7 @@
                     hasMedia: false,
                     mediaSrc: null
                 },
-                {
-                    type: 'normal',
-                    author: 'Влад Немцов',
-                    authorAvatar: 'assets/3user.jpeg',
-                    text: 'Словно рождественский подарок! Огромное спасибо за подарочный сертификат, который дал возможность получить спининг без затрат.',
-                    time: 'Сегодня ' + getCurrentTime(),
-                    isReply: false,
-                    hasMedia: false,
-                    mediaSrc: null
-                },
- 
+
                 {
                     type: 'normal',
                     author: 'Маргарита Смирнова',
@@ -2363,7 +2241,7 @@
             const commentsContainer = document.querySelector('.comments-container');
             const showAllBtn = document.querySelector('.show-all-btn');
 
-            // Функция создания HTML элемента комментария
+
             function createCommentElement(commentData) {
                 const commentDiv = document.createElement('div');
                 commentDiv.className = 'comment-item';
@@ -2374,7 +2252,6 @@
                 const commentRow = document.createElement('div');
                 commentRow.className = 'comment-row';
 
-                // Аватар
                 const avatarDiv = document.createElement('div');
                 avatarDiv.className = 'comment-avatar';
                 const avatarImg = document.createElement('img');
@@ -2382,7 +2259,6 @@
                 avatarImg.alt = commentData.author;
                 avatarDiv.appendChild(avatarImg);
 
-                // Тело комментария
                 const bodyDiv = document.createElement('div');
                 bodyDiv.className = 'comment-body';
 
@@ -2433,7 +2309,6 @@
                     if (inputField) {
                         inputField.value = `@${commentData.author}, `;
                         inputField.focus();
-                        // Триггерим событие input для активации кнопки отправки
                         const event = new Event('input', { bubbles: true });
                         inputField.dispatchEvent(event);
                     }
@@ -2442,10 +2317,9 @@
                 return commentDiv;
             }
 
-            // Функция добавления нового комментария
             function addComment() {
                 if (commentIndex >= newComments.length) {
-                    // Если все комментарии добавлены, останавливаем интервал
+
                     if (intervalId) {
                         clearInterval(intervalId);
                         intervalId = null;
@@ -2460,11 +2334,7 @@
                 const containerRect = commentsContainer.getBoundingClientRect();
                 const wasAtBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 100;
 
-                // Добавляем комментарий в контейнер
                 commentsContainer.appendChild(newComment);
-
-                // Прокручиваем к новому комментарию
-                //  newComment.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
                 if (!wasAtBottom) {
                     window.scrollTo(0, scrollPosition);
@@ -2473,22 +2343,18 @@
                 commentIndex++;
             }
 
-            // Запускаем добавление комментариев при загрузке страницы
             window.addEventListener('DOMContentLoaded', function () {
-                // Убедимся, что все существующие комментарии имеют правильные классы
                 const existingComments = document.querySelectorAll('.comment-item');
                 existingComments.forEach(comment => {
                     comment.style.opacity = '1';
                     comment.style.transform = 'translateY(0)';
                 });
 
-                // Запускаем интервал добавления комментариев каждые 4 секунды
                 setTimeout(() => {
                     intervalId = setInterval(addComment, 3000);
-                }, 1000); // Задержка 2 секунды перед началом добавления
+                }, 1000);
             });
 
-            // Обновляем счетчик лайков и просмотров (демо)
             const likeBtn = document.querySelector('.icon-btn:first-child');
             const shareBtn = document.querySelector('.icon-btn:nth-child(2)');
             const likeCountSpan = document.querySelector('.icon-btn:first-child span');
@@ -2515,20 +2381,18 @@
         })();
     </script>
     <script>
-        // ========== ТАЙМЕР С 4 КВАДРАТАМИ (ЗАПУСКАЕТСЯ ПРИ ОТКРЫТИИ FINISH СЕКЦИИ) ==========
+
         (function () {
             let timerInterval = null;
-            let remainingSeconds = 297; // 4 минуты 57 секунд = 297
+            let remainingSeconds = 297;
 
             const digit1 = document.getElementById('digit1')?.querySelector('.timer-number');
             const digit2 = document.getElementById('digit2')?.querySelector('.timer-number');
             const digit3 = document.getElementById('digit3')?.querySelector('.timer-number');
             const digit4 = document.getElementById('digit4')?.querySelector('.timer-number');
 
-            // Функция обновления таймера (без анимации)
             function updateTimer() {
                 if (remainingSeconds < 0) {
-                    // Таймер закончился - показываем 00:00
                     if (digit1) digit1.textContent = '0';
                     if (digit2) digit2.textContent = '0';
                     if (digit3) digit3.textContent = '0';
@@ -2543,11 +2407,9 @@
                 const minutes = Math.floor(remainingSeconds / 60);
                 const seconds = remainingSeconds % 60;
 
-                // Разбиваем на отдельные цифры
                 const minutesStr = minutes.toString().padStart(2, '0');
                 const secondsStr = seconds.toString().padStart(2, '0');
 
-                // Обновляем цифры (без анимации)
                 if (digit1) digit1.textContent = minutesStr[0];
                 if (digit2) digit2.textContent = minutesStr[1];
                 if (digit3) digit3.textContent = secondsStr[0];
@@ -2556,25 +2418,19 @@
                 remainingSeconds--;
             }
 
-            // Функция запуска таймера
             function startTimer() {
-                // Останавливаем старый таймер если был
                 if (timerInterval) {
                     clearInterval(timerInterval);
                     timerInterval = null;
                 }
 
-                // Сбрасываем время (4 минуты 57 секунд)
                 remainingSeconds = 297;
 
-                // Обновляем сразу
                 updateTimer();
 
-                // Запускаем интервал
                 timerInterval = setInterval(updateTimer, 1000);
             }
 
-            // Функция остановки таймера
             function stopTimer() {
                 if (timerInterval) {
                     clearInterval(timerInterval);
@@ -2582,26 +2438,23 @@
                 }
             }
 
-            // Наблюдатель за появлением finish секции
             const observer = new MutationObserver(function (mutations) {
                 mutations.forEach(function (mutation) {
                     const finishSection = document.querySelector('.finishSection');
                     if (finishSection && finishSection.style.display === 'block') {
-                        // Finish секция появилась - запускаем таймер
                         startTimer();
-                        observer.disconnect(); // Отключаем наблюдатель после запуска
+                        observer.disconnect();
                     }
                 });
             });
 
-            // Начинаем наблюдение за изменениями в DOM
             observer.observe(document.body, {
                 attributes: true,
                 subtree: true,
                 attributeFilter: ['style']
             });
 
-            // Также проверяем при загрузке (вдруг finish секция уже видна)
+
             setTimeout(() => {
                 const finishSection = document.querySelector('.finishSection');
                 if (finishSection && finishSection.style.display === 'block') {
@@ -2612,30 +2465,27 @@
         })();
     </script>
     <script>
-        // ========== КНОПКА ПРИ СКРОЛЛЕ В СЕКЦИИ FINISH ==========
         (function () {
             const scrollButton = document.getElementById('scrollToTopBtn');
             let finishSection = null;
 
-            // Функция проверки видимости finish секции
             function isFinishSectionVisible() {
                 finishSection = document.querySelector('.finishSection');
                 return finishSection && finishSection.style.display === 'block';
             }
 
-            // Функция проверки - нужно ли показать кнопку
             function checkScrollPosition() {
                 if (!isFinishSectionVisible()) {
                     scrollButton.classList.remove('show');
                     return;
                 }
 
-                // Получаем позицию скролла
+
                 const scrollY = window.scrollY;
                 const windowHeight = window.innerHeight;
                 const documentHeight = document.documentElement.scrollHeight;
 
-                // Если проскроллено больше 60% страницы
+
                 const scrollPercentage = (scrollY + windowHeight) / documentHeight;
 
                 if (scrollPercentage > 0.8) {
@@ -2645,7 +2495,6 @@
                 }
             }
 
-            // Функция скролла вверх
             function scrollToTop() {
                 window.scrollTo({
                     top: 0,
@@ -2653,27 +2502,23 @@
                 });
             }
 
-            // Наблюдатель за появлением finish секции
             const observer = new MutationObserver(function (mutations) {
                 mutations.forEach(function (mutation) {
                     if (isFinishSectionVisible()) {
-                        // Finish секция появилась - включаем проверку скролла
                         window.addEventListener('scroll', checkScrollPosition);
                         window.addEventListener('resize', checkScrollPosition);
-                        checkScrollPosition(); // проверяем сразу
+                        checkScrollPosition();
                         observer.disconnect();
                     }
                 });
             });
 
-            // Начинаем наблюдение
             observer.observe(document.body, {
                 attributes: true,
                 subtree: true,
                 attributeFilter: ['style']
             });
 
-            // Проверяем при загрузке
             setTimeout(() => {
                 if (isFinishSectionVisible()) {
                     window.addEventListener('scroll', checkScrollPosition);
@@ -2683,227 +2528,212 @@
                 }
             }, 100);
 
-            // Обработчик кнопки
             if (scrollButton) {
                 scrollButton.addEventListener('click', scrollToTop);
             }
         })();
     </script>
-   <script>
-    // ========== САЛЮТ (КОНФЕТТИ) ПРИ ОТКРЫТИИ FINISH СЕКЦИИ ==========
-    (function() {
-        // Цвета конфетти
-        const colors = [
-            '#e6178f', '#ff69b4', '#ff1493', '#c71585',
-            '#9b30ff', '#9370db', '#8a2be2', '#9400d3',
-            '#da70d6', '#ee82ee', '#dda0dd', '#ba55d3'
-        ];
-        
-        // Создание конфетти для левой стороны (летит вправо-вверх)
-        function createLeftConfetti(xOffset, yOffset) {
-            const confetti = document.createElement('div');
-            confetti.classList.add('confetti');
-            
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            confetti.style.backgroundColor = randomColor;
-            
-            // Случайная форма и размер
-            const shape = Math.random() > 0.5;
-            if (shape) {
-                const width = 2 + Math.random() * 6;
-                const height = 3 + Math.random() * 8;
-                confetti.style.width = width + 'px';
-                confetti.style.height = height + 'px';
-            } else {
+    <script>
+        (function () {
+            const colors = [
+                '#e6178f', '#ff69b4', '#ff1493', '#c71585',
+                '#9b30ff', '#9370db', '#8a2be2', '#9400d3',
+                '#da70d6', '#ee82ee', '#dda0dd', '#ba55d3'
+            ];
+
+            function createLeftConfetti(xOffset, yOffset) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.backgroundColor = randomColor;
+
+                const shape = Math.random() > 0.5;
+                if (shape) {
+                    const width = 2 + Math.random() * 6;
+                    const height = 3 + Math.random() * 8;
+                    confetti.style.width = width + 'px';
+                    confetti.style.height = height + 'px';
+                } else {
+                    const size = 2 + Math.random() * 6;
+                    confetti.style.width = size + 'px';
+                    confetti.style.height = size + 'px';
+                    confetti.style.borderRadius = '50%';
+                }
+
+                confetti.style.left = (xOffset || 0) + '%';
+                confetti.style.right = 'auto';
+                confetti.style.bottom = (yOffset || 0) + '%';
+                confetti.style.top = 'auto';
+
+                const angle = 60 + Math.random() * 110;
+                const power = 40 + Math.random() * 40;
+                confetti.style.setProperty('--angle', angle + 'deg');
+                confetti.style.setProperty('--power', power + 'vw');
+
+                const duration = 0.8 + Math.random() * 1;
+                confetti.style.animation = `shootLeft ${duration}s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards`;
+                confetti.style.animationDelay = (Math.random() * 0.3) + 's';
+
+                return confetti;
+            }
+
+            function createRightConfetti(xOffset, yOffset) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.backgroundColor = randomColor;
+
+                const shape = Math.random() > 0.5;
+                if (shape) {
+                    const width = 2 + Math.random() * 6;
+                    const height = 3 + Math.random() * 8;
+                    confetti.style.width = width + 'px';
+                    confetti.style.height = height + 'px';
+                } else {
+                    const size = 2 + Math.random() * 6;
+                    confetti.style.width = size + 'px';
+                    confetti.style.height = size + 'px';
+                    confetti.style.borderRadius = '50%';
+                }
+
+                confetti.style.right = (xOffset || 0) + '%';
+                confetti.style.left = 'auto';
+                confetti.style.bottom = (yOffset || 0) + '%';
+                confetti.style.top = 'auto';
+
+                const angle = 60 + Math.random() * 110;
+                const power = 40 + Math.random() * 40;
+                confetti.style.setProperty('--angle', angle + 'deg');
+                confetti.style.setProperty('--power', power + 'vw');
+
+                const duration = 0.8 + Math.random() * 1;
+                confetti.style.animation = `shootRight ${duration}s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards`;
+                confetti.style.animationDelay = (Math.random() * 0.3) + 's';
+
+                return confetti;
+            }
+
+            function createFallingConfetti() {
+                const confetti = document.createElement('div');
+                confetti.classList.add('falling-confetti');
+
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.backgroundColor = randomColor;
+
                 const size = 2 + Math.random() * 6;
                 confetti.style.width = size + 'px';
                 confetti.style.height = size + 'px';
-                confetti.style.borderRadius = '50%';
+
+                if (Math.random() > 0.5) {
+                    confetti.style.borderRadius = '50%';
+                }
+
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = '-20px';
+
+                const duration = 2 + Math.random() * 3;
+                confetti.style.animation = `fallDown ${duration}s linear forwards`;
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+
+                return confetti;
             }
-            
-            // Позиция выстрела (левый край)
-            confetti.style.left = (xOffset || 0) + '%';
-            confetti.style.right = 'auto';
-            confetti.style.bottom = (yOffset || 0) + '%';
-            confetti.style.top = 'auto';
-            
-            // Летит вправо-вверх (угол от 30 до 70 градусов)
-            const angle = 60 + Math.random() * 110;
-            const power = 40 + Math.random() * 40;
-            confetti.style.setProperty('--angle', angle + 'deg');
-            confetti.style.setProperty('--power', power + 'vw');
-            
-            const duration = 0.8 + Math.random() * 1;
-            confetti.style.animation = `shootLeft ${duration}s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards`;
-            confetti.style.animationDelay = (Math.random() * 0.3) + 's';
-            
-            return confetti;
-        }
-        
-        // Создание конфетти для правой стороны (летит влево-вверх)
-        function createRightConfetti(xOffset, yOffset) {
-            const confetti = document.createElement('div');
-            confetti.classList.add('confetti');
-            
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            confetti.style.backgroundColor = randomColor;
-            
-            // Случайная форма и размер
-            const shape = Math.random() > 0.5;
-            if (shape) {
-                const width = 2 + Math.random() * 6;
-                const height = 3 + Math.random() * 8;
-                confetti.style.width = width + 'px';
-                confetti.style.height = height + 'px';
-            } else {
-                const size = 2 + Math.random() * 6;
-                confetti.style.width = size + 'px';
-                confetti.style.height = size + 'px';
-                confetti.style.borderRadius = '50%';
-            }
-            
-            // Позиция выстрела (правый край)
-            confetti.style.right = (xOffset || 0) + '%';
-            confetti.style.left = 'auto';
-            confetti.style.bottom = (yOffset || 0) + '%';
-            confetti.style.top = 'auto';
-            
-            // Летит влево-вверх (угол от 110 до 150 градусов)
-            const angle = 60 + Math.random() * 110;
-            const power = 40 + Math.random() * 40;
-            confetti.style.setProperty('--angle', angle + 'deg');
-            confetti.style.setProperty('--power', power + 'vw');
-            
-            const duration = 0.8 + Math.random() * 1;
-            confetti.style.animation = `shootRight ${duration}s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards`;
-            confetti.style.animationDelay = (Math.random() * 0.3) + 's';
-            
-            return confetti;
-        }
-        
-        // Создание падающих частиц (эффект дождя из конфетти)
-        function createFallingConfetti() {
-            const confetti = document.createElement('div');
-            confetti.classList.add('falling-confetti');
-            
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            confetti.style.backgroundColor = randomColor;
-            
-            const size = 2 + Math.random() * 6;
-            confetti.style.width = size + 'px';
-            confetti.style.height = size + 'px';
-            
-            if (Math.random() > 0.5) {
-                confetti.style.borderRadius = '50%';
-            }
-            
-            confetti.style.left = Math.random() * 100 + '%';
-            confetti.style.top = '-20px';
-            
-            const duration = 2 + Math.random() * 3;
-            confetti.style.animation = `fallDown ${duration}s linear forwards`;
-            confetti.style.animationDelay = Math.random() * 2 + 's';
-            
-            return confetti;
-        }
-        
-        // Запуск салюта
-        function startEdgeFirework() {
-            const confettiCount = 400; // Количество конфетти в выстреле
-            
-            // Выстрел с левой стороны (летит вправо-вверх)
-            for (let i = 0; i < confettiCount; i++) {
-                setTimeout(() => {
-                    const xOffset = Math.random() * 10;
-                    const yOffset = 50 + Math.random() * 40; // Выше источник (20-40%)
-                    const confetti = createLeftConfetti(xOffset, yOffset);
-                    document.body.appendChild(confetti);
-                    
+
+            function startEdgeFirework() {
+                const confettiCount = 400;
+
+                for (let i = 0; i < confettiCount; i++) {
                     setTimeout(() => {
-                        if (confetti && confetti.remove) confetti.remove();
-                    }, 3000);
-                }, i * 6);
-            }
-            
-            // Выстрел с правой стороны (летит влево-вверх)
-            for (let i = 0; i < confettiCount; i++) {
-                setTimeout(() => {
-                    const xOffset = Math.random() * 10;
-                    const yOffset = 50 + Math.random() * 40; // Выше источник (20-40%)
-                    const confetti = createRightConfetti(xOffset, yOffset);
-                    document.body.appendChild(confetti);
-                    
-                    setTimeout(() => {
-                        if (confetti && confetti.remove) confetti.remove();
-                    }, 3000);
-                }, i * 6);
-            }
-            
-            // Через 1 секунду начинается дождь из падающих конфетти
-            setTimeout(() => {
-                const fallingCount = 300;
-                for (let i = 0; i < fallingCount; i++) {
-                    setTimeout(() => {
-                        const confetti = createFallingConfetti();
+                        const xOffset = Math.random() * 10;
+                        const yOffset = 50 + Math.random() * 40;
+                        const confetti = createLeftConfetti(xOffset, yOffset);
                         document.body.appendChild(confetti);
-                        
+
                         setTimeout(() => {
                             if (confetti && confetti.remove) confetti.remove();
-                        }, 6000);
-                    }, i * 20);
+                        }, 3000);
+                    }, i * 6);
                 }
-            }, 1000);
-            
-            // Вторая волна падающих конфетти
-            setTimeout(() => {
-                const fallingCount = 200;
-                for (let i = 0; i < fallingCount; i++) {
+
+                for (let i = 0; i < confettiCount; i++) {
                     setTimeout(() => {
-                        const confetti = createFallingConfetti();
+                        const xOffset = Math.random() * 10;
+                        const yOffset = 50 + Math.random() * 40;
+                        const confetti = createRightConfetti(xOffset, yOffset);
                         document.body.appendChild(confetti);
-                        
+
                         setTimeout(() => {
                             if (confetti && confetti.remove) confetti.remove();
-                        }, 6000);
-                    }, i * 25);
+                        }, 3000);
+                    }, i * 6);
                 }
-            }, 2500);
-        }
-        
-        // Наблюдатель за появлением finish секции
-        let fireworkLaunched = false;
-        
-        const observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
+
+
+                setTimeout(() => {
+                    const fallingCount = 300;
+                    for (let i = 0; i < fallingCount; i++) {
+                        setTimeout(() => {
+                            const confetti = createFallingConfetti();
+                            document.body.appendChild(confetti);
+
+                            setTimeout(() => {
+                                if (confetti && confetti.remove) confetti.remove();
+                            }, 6000);
+                        }, i * 20);
+                    }
+                }, 1000);
+
+
+                setTimeout(() => {
+                    const fallingCount = 200;
+                    for (let i = 0; i < fallingCount; i++) {
+                        setTimeout(() => {
+                            const confetti = createFallingConfetti();
+                            document.body.appendChild(confetti);
+
+                            setTimeout(() => {
+                                if (confetti && confetti.remove) confetti.remove();
+                            }, 6000);
+                        }, i * 25);
+                    }
+                }, 2500);
+            }
+
+
+            let fireworkLaunched = false;
+
+            const observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
+                    const finishSection = document.querySelector('.finishSection');
+                    if (finishSection && finishSection.style.display === 'block' && !fireworkLaunched) {
+                        fireworkLaunched = true;
+                        startEdgeFirework();
+                        observer.disconnect();
+                    }
+                });
+            });
+
+            observer.observe(document.body, {
+                attributes: true,
+                subtree: true,
+                attributeFilter: ['style']
+            });
+
+            setTimeout(() => {
                 const finishSection = document.querySelector('.finishSection');
                 if (finishSection && finishSection.style.display === 'block' && !fireworkLaunched) {
                     fireworkLaunched = true;
                     startEdgeFirework();
-                    observer.disconnect();
                 }
-            });
-        });
-        
-        observer.observe(document.body, {
-            attributes: true,
-            subtree: true,
-            attributeFilter: ['style']
-        });
-        
-        setTimeout(() => {
-            const finishSection = document.querySelector('.finishSection');
-            if (finishSection && finishSection.style.display === 'block' && !fireworkLaunched) {
-                fireworkLaunched = true;
-                startEdgeFirework();
-            }
-        }, 100);
-    })();
-</script>
+            }, 100);
+        })();
+    </script>
     <script>
-        // ========== ДИНАМИЧЕСКИЕ ДАТЫ ==========
+
         (function () {
 
-            // Функция получения текущей даты в формате "2 Апреля 2026, Четверг"
+
             function getCurrentDate() {
                 const now = new Date();
 
@@ -2918,7 +2748,7 @@
                 return `${day} ${month} ${year}, ${weekday}`;
             }
 
-            // Функция получения даты через N дней
+
             function getFutureDate(daysToAdd) {
                 const futureDate = new Date();
                 futureDate.setDate(futureDate.getDate() + daysToAdd);
@@ -2948,35 +2778,29 @@
                 return `${day} ${month} ${year}`;
             }
 
-            // ===== НАСТРОЙКИ =====
-            const DAYS_UNTIL_PRIZE = 10; // Через сколько дней розыгрыш (меняйте здесь!)
-            // ====================
 
-            // Обновляем все даты на странице
+            const DAYS_UNTIL_PRIZE = 10;
             function updateAllDates() {
-                // 1. Дата в финишной секции
                 const finishDateElement = document.querySelector('.finish-date');
                 if (finishDateElement) {
                     finishDateElement.textContent = getCurrentDate();
                 }
 
-                // 2. Дата розыгрыша в карточке приза
                 const prizeDateElement = document.querySelector('.prize-date span');
                 if (prizeDateElement) {
                     prizeDateElement.textContent = getPrizeDate(DAYS_UNTIL_PRIZE);
                 }
 
-                // 3. Дата в заголовке колеса (если есть)
                 const wheelDateElement = document.querySelector('.wheel__date');
                 if (wheelDateElement) {
                     wheelDateElement.textContent = getCurrentDate();
                 }
             }
 
-            // Запускаем обновление дат
+
             updateAllDates();
 
-            // Экспортируем функции для использования в других скриптах
+
             window.DateUtils = {
                 getCurrentDate,
                 getFutureDate,
@@ -2987,9 +2811,9 @@
         })();
     </script>
     <script>
-        // ========== ДИНАМИЧЕСКИЙ ДЕНЬ НЕДЕЛИ ==========
-        (function() {
-            
+
+        (function () {
+
             // Функция получения дня недели с правильным предлогом
             function getCurrentWeekday() {
                 const now = new Date();
@@ -3002,19 +2826,17 @@
                     { name: 'Пятницу', preposition: 'В' },
                     { name: 'Субботу', preposition: 'В' }
                 ];
-                
-                const dayIndex = now.getDay(); 
+
+                const dayIndex = now.getDay();
                 const day = weekdays[dayIndex];
-                
-                // Особый случай для "во вторник"
+
                 if (day.name === 'Вторник') {
                     return 'во Вторник';
                 }
-                
+
                 return `${day.preposition} ${day.name}`;
             }
-            
-            // Обновляем текст в описании колеса
+
             function updateWheelDescription() {
                 const wheelDescription = document.querySelector('.wheel__description');
                 if (wheelDescription) {
@@ -3022,10 +2844,9 @@
                     wheelDescription.innerHTML = `${weekday} мы выбираем <b>7</b> пользователей, чтобы дать<br> им возможность выиграть подарки от наших<br> спонсоров. Покрутите колесо, чтобы увидеть, какой<br> подарок вы получите!`;
                 }
             }
-            
-            // Запускаем обновление
+
             updateWheelDescription();
-            
+
         })();
     </script>
 </body>
