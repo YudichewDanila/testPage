@@ -240,7 +240,8 @@
 
         .status-text {
             color: gray;
-            font-size: 1.4rem;
+            font-size: 1.35rem;
+            font-weight: 700;
         }
 
         /* Анимация мигания */
@@ -337,7 +338,7 @@
         }
 
         .wheel__description b {
-            color: #7e7a84;
+            color: #060606;
             font-weight: 700;
         }
 
@@ -1582,32 +1583,79 @@
             color: #8d8598;
         }
 
-        /* Конфетти */
-        .confetti {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            top: -10px;
-            z-index: 9999;
-            pointer-events: none;
-            animation: fall 5s linear forwards;
-        }
+        @keyframes riseUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+        bottom: -20px;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-80vh) rotate(360deg);
+        opacity: 1;
+        bottom: 100%;
+    }
+}
 
-        @keyframes fall {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
-            }
+/* Выстрел с левой стороны (вправо-вверх) */
+@keyframes shootLeft {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(40vw, -50vh) rotate(720deg);
+        opacity: 0;
+    }
+}
 
-            80% {
-                opacity: 0.8;
-            }
+/* Выстрел с правой стороны (влево-вверх) */
+@keyframes shootRight {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-40vw, -50vh) rotate(720deg);
+        opacity: 0;
+    }
+}
 
-            100% {
-                transform: translateY(100vh) rotate(720deg);
-                opacity: 0;
-            }
-        }
+/* Падение конфетти вниз */
+@keyframes fallDown {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Конфетти для выстрелов */
+.confetti {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* Конфетти для падения */
+.falling-confetti {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+
     </style>
 </head>
 
@@ -1638,14 +1686,14 @@
                 <div class="modal-gradient-line"></div>
                 <div class="modal-inner">
                     <div class="modal-icon-retry">
-                        <svg class="retryIcone" fill="none" viewBox="0 0 24 24" stroke="#3b82f6" stroke-width="2">
+                        <svg class="retryIcone" fill="none" viewBox="0 0 24 24" stroke="#8034b8" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
                             </path>
                         </svg>
                     </div>
                     <h2 class="modal-title-retry">У вас ещё одна попытка!</h2>
-                    <p class="modal-text">Попробуйте снова!</p>
+                    <p class="modal-text" style="margin-bottom: 0rem;">Попробуйте снова!</p>
                     <button id="retryOkBtn" class="modal-ok-btn-retry">ОК</button>
                 </div>
             </div>
@@ -1680,8 +1728,8 @@
                 <p class="wheel__date">1 апреля 2026, Среда</p>
                 <h1 class="wheel__title">Поздравляем!</h1>
                 <p class="wheel__subtitle">Сегодня вы счастливчик!</p>
-                <p class="wheel__description">В четверг мы выбираем <b>7</b> пользователей,<br> чтобы дать им
-                    возможность выиграть подарки<br> от наших спонсоров. Покрутите колесо, чтобы<br> увидеть, какой
+                <p class="wheel__description">В четверг мы выбираем <b>7</b> пользователей, чтобы дать<br>  им
+                    возможность выиграть подарки от наших<br>  спонсоров. Покрутите колесо, чтобы увидеть, какой<br> 
                     подарок вы получите!</p>
             </div>
             <div class="wheel__canvas">
@@ -2244,7 +2292,7 @@
                     type: 'reply',
                     author: 'Марта Ирвин',
                     authorAvatar: 'assets/6user.jpeg',
-                    text: 'Спасибо Геймспорту за новенький айфон))',
+                    text: 'Не могла поверить своим глазам, когда увидела, что выиграла подарочный сертификат! Спасибо за возможность пополнить свой гардероб без затрат!',
                     time: 'Сегодня ' + getCurrentTime(),
                     isReply: false,
                     hasMedia: false,
@@ -2254,7 +2302,7 @@
                     type: 'reply',
                     author: 'Олеся Березина',
                     authorAvatar: 'assets/5user.jpg',
-                    text: 'Марта Ирвин, ты реально получила айфон?????',
+                    text: 'Марта Ирвин, ты реально получила сертификат?',
                     time: 'Сегодня ' + getCurrentTime(),
                     isReply: true,
                     hasMedia: false,
@@ -2284,27 +2332,18 @@
                     type: 'normal',
                     author: 'Влад Немцов',
                     authorAvatar: 'assets/3user.jpeg',
-                    text: 'мне выпал айфон!! как его забрать?',
+                    text: 'Словно рождественский подарок! Огромное спасибо за подарочный сертификат, который дал возможность получить спининг без затрат.',
                     time: 'Сегодня ' + getCurrentTime(),
                     isReply: false,
                     hasMedia: false,
                     mediaSrc: null
                 },
-                {
-                    type: 'normal',
-                    author: 'Андрей Чурсин',
-                    authorAvatar: 'assets/2user.jpeg',
-                    text: 'блин, можно как то поменять подарок? у меня уже есть аирподсы, мне ничего не выпало((( можно мне еще одну попытку?',
-                    time: 'Сегодня ' + getCurrentTime(),
-                    isReply: false,
-                    hasMedia: false,
-                    mediaSrc: null
-                },
+ 
                 {
                     type: 'normal',
                     author: 'Маргарита Смирнова',
                     authorAvatar: 'assets/7user.jpg',
-                    text: 'сегодня позвонили, сказали что я выиграла Путевку, пришлют через неделю, надеюсь это правда)',
+                    text: 'Это просто чудо! Я так рада, что выиграла и смогла выбрать то, что долго хотела. Огромное спасибо за такой замечательный подарок!',
                     time: 'Сегодня ' + getCurrentTime(),
                     isReply: false,
                     hasMedia: false,
@@ -2650,152 +2689,216 @@
             }
         })();
     </script>
-    <script>
-        // ========== САЛЮТ (КОНФЕТТИ) ПРИ ОТКРЫТИИ FINISH СЕКЦИИ ==========
-        (function () {
-            // Цвета конфетти (фиолетовый, пурпурный, розовый)
-            const colors = [
-                '#e6178f', '#ff69b4', '#ff1493', '#c71585', // розовые
-                '#9b30ff', '#9370db', '#8a2be2', '#9400d3', // фиолетовые
-                '#da70d6', '#ee82ee', '#dda0dd', '#ba55d3'  // пурпурные
-            ];
-
-            // Функция создания одного конфетти
-            function createConfetti(leftPos) {
-                const confetti = document.createElement('div');
-                confetti.classList.add('confetti');
-
-                // Случайный цвет
-                const randomColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.backgroundColor = randomColor;
-
-                // Случайная форма
-                const shape = Math.random() > 0.5;
-                if (shape) {
-                    const width = 1 + Math.random() * 8;
-                    const height = 1 + Math.random() * 12;
-                    confetti.style.width = width + 'px';
-                    confetti.style.height = height + 'px';
-                } else {
-                    const size = 2 + Math.random() * 5;
-                    confetti.style.width = size + 'px';
-                    confetti.style.height = size + 'px';
-                    confetti.style.borderRadius = '50%';
-                }
-
-                // Позиция
-                if (leftPos !== undefined) {
-                    confetti.style.left = leftPos + '%';
-                } else {
-                    confetti.style.left = Math.random() * 100 + '%';
-                }
-
-                // Быстрая анимация
-                const duration = 1.5 + Math.random() * 2;
-                confetti.style.animationDuration = duration + 's';
-
-                // Случайная задержка
-                const delay = Math.random() * 0.3;
-                confetti.style.animationDelay = delay + 's';
-
-                // Случайное вращение
-                const rotate = Math.random() * 360;
-                confetti.style.transform = `rotate(${rotate}deg)`;
-
-                return confetti;
+   <script>
+    // ========== САЛЮТ (КОНФЕТТИ) ПРИ ОТКРЫТИИ FINISH СЕКЦИИ ==========
+    (function() {
+        // Цвета конфетти
+        const colors = [
+            '#e6178f', '#ff69b4', '#ff1493', '#c71585',
+            '#9b30ff', '#9370db', '#8a2be2', '#9400d3',
+            '#da70d6', '#ee82ee', '#dda0dd', '#ba55d3'
+        ];
+        
+        // Создание конфетти для левой стороны (летит вправо-вверх)
+        function createLeftConfetti(xOffset, yOffset) {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.backgroundColor = randomColor;
+            
+            // Случайная форма и размер
+            const shape = Math.random() > 0.5;
+            if (shape) {
+                const width = 2 + Math.random() * 6;
+                const height = 3 + Math.random() * 8;
+                confetti.style.width = width + 'px';
+                confetti.style.height = height + 'px';
+            } else {
+                const size = 2 + Math.random() * 6;
+                confetti.style.width = size + 'px';
+                confetti.style.height = size + 'px';
+                confetti.style.borderRadius = '50%';
             }
-
-            // Функция запуска салюта
-            function startFirework() {
-                const confettiCount = 400; // Много конфетти
-
-                for (let i = 0; i < confettiCount; i++) {
-                    setTimeout(() => {
-                        const confetti = createConfetti();
-                        document.body.appendChild(confetti);
-
-                        setTimeout(() => {
-                            if (confetti && confetti.remove) confetti.remove();
-                        }, 4000);
-                    }, i * 8); // Очень быстрое появление
-                }
+            
+            // Позиция выстрела (левый край)
+            confetti.style.left = (xOffset || 0) + '%';
+            confetti.style.right = 'auto';
+            confetti.style.bottom = (yOffset || 0) + '%';
+            confetti.style.top = 'auto';
+            
+            // Летит вправо-вверх (угол от 30 до 70 градусов)
+            const angle = 60 + Math.random() * 110;
+            const power = 40 + Math.random() * 40;
+            confetti.style.setProperty('--angle', angle + 'deg');
+            confetti.style.setProperty('--power', power + 'vw');
+            
+            const duration = 0.8 + Math.random() * 1;
+            confetti.style.animation = `shootLeft ${duration}s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards`;
+            confetti.style.animationDelay = (Math.random() * 0.3) + 's';
+            
+            return confetti;
+        }
+        
+        // Создание конфетти для правой стороны (летит влево-вверх)
+        function createRightConfetti(xOffset, yOffset) {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.backgroundColor = randomColor;
+            
+            // Случайная форма и размер
+            const shape = Math.random() > 0.5;
+            if (shape) {
+                const width = 2 + Math.random() * 6;
+                const height = 3 + Math.random() * 8;
+                confetti.style.width = width + 'px';
+                confetti.style.height = height + 'px';
+            } else {
+                const size = 2 + Math.random() * 6;
+                confetti.style.width = size + 'px';
+                confetti.style.height = size + 'px';
+                confetti.style.borderRadius = '50%';
             }
-
-            // Функция запуска салюта с левого и правого края
-            function startEdgeFirework() {
-                const confettiCount = 1500; // Всего конфетти
-
-                // Левый край (30% конфетти)
-                for (let i = 0; i < confettiCount * 0.3; i++) {
-                    setTimeout(() => {
-                        const leftPos = Math.random() * 20; // 0-20%
-                        const confetti = createConfetti(leftPos);
-                        document.body.appendChild(confetti);
-
-                        setTimeout(() => {
-                            if (confetti && confetti.remove) confetti.remove();
-                        }, 10000);
-                    }, i * 5);
-                }
-
-                // Правый край (30% конфетти)
-                for (let i = 0; i < confettiCount * 0.3; i++) {
-                    setTimeout(() => {
-                        const leftPos = 80 + Math.random() * 20; // 80-100%
-                        const confetti = createConfetti(leftPos);
-                        document.body.appendChild(confetti);
-
-                        setTimeout(() => {
-                            if (confetti && confetti.remove) confetti.remove();
-                        }, 10000);
-                    }, i * 5);
-                }
-
-                // Центр (40% конфетти)
-                for (let i = 0; i < confettiCount * 0.4; i++) {
-                    setTimeout(() => {
-                        const confetti = createConfetti();
-                        document.body.appendChild(confetti);
-
-                        setTimeout(() => {
-                            if (confetti && confetti.remove) confetti.remove();
-                        }, 4000);
-                    }, i * 4);
-                }
+            
+            // Позиция выстрела (правый край)
+            confetti.style.right = (xOffset || 0) + '%';
+            confetti.style.left = 'auto';
+            confetti.style.bottom = (yOffset || 0) + '%';
+            confetti.style.top = 'auto';
+            
+            // Летит влево-вверх (угол от 110 до 150 градусов)
+            const angle = 60 + Math.random() * 110;
+            const power = 40 + Math.random() * 40;
+            confetti.style.setProperty('--angle', angle + 'deg');
+            confetti.style.setProperty('--power', power + 'vw');
+            
+            const duration = 0.8 + Math.random() * 1;
+            confetti.style.animation = `shootRight ${duration}s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards`;
+            confetti.style.animationDelay = (Math.random() * 0.3) + 's';
+            
+            return confetti;
+        }
+        
+        // Создание падающих частиц (эффект дождя из конфетти)
+        function createFallingConfetti() {
+            const confetti = document.createElement('div');
+            confetti.classList.add('falling-confetti');
+            
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.backgroundColor = randomColor;
+            
+            const size = 2 + Math.random() * 6;
+            confetti.style.width = size + 'px';
+            confetti.style.height = size + 'px';
+            
+            if (Math.random() > 0.5) {
+                confetti.style.borderRadius = '50%';
             }
-
-            // Наблюдатель за появлением finish секции
-            let fireworkLaunched = false;
-
-            const observer = new MutationObserver(function (mutations) {
-                mutations.forEach(function (mutation) {
-                    const finishSection = document.querySelector('.finishSection');
-                    if (finishSection && finishSection.style.display === 'block' && !fireworkLaunched) {
-                        fireworkLaunched = true;
-                        startEdgeFirework(); // Запускаем мощный салют
-                        observer.disconnect();
-                    }
-                });
-            });
-
-            // Начинаем наблюдение
-            observer.observe(document.body, {
-                attributes: true,
-                subtree: true,
-                attributeFilter: ['style']
-            });
-
-            // Проверяем при загрузке
+            
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.top = '-20px';
+            
+            const duration = 2 + Math.random() * 3;
+            confetti.style.animation = `fallDown ${duration}s linear forwards`;
+            confetti.style.animationDelay = Math.random() * 2 + 's';
+            
+            return confetti;
+        }
+        
+        // Запуск салюта
+        function startEdgeFirework() {
+            const confettiCount = 400; // Количество конфетти в выстреле
+            
+            // Выстрел с левой стороны (летит вправо-вверх)
+            for (let i = 0; i < confettiCount; i++) {
+                setTimeout(() => {
+                    const xOffset = Math.random() * 10;
+                    const yOffset = 50 + Math.random() * 40; // Выше источник (20-40%)
+                    const confetti = createLeftConfetti(xOffset, yOffset);
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        if (confetti && confetti.remove) confetti.remove();
+                    }, 3000);
+                }, i * 6);
+            }
+            
+            // Выстрел с правой стороны (летит влево-вверх)
+            for (let i = 0; i < confettiCount; i++) {
+                setTimeout(() => {
+                    const xOffset = Math.random() * 10;
+                    const yOffset = 50 + Math.random() * 40; // Выше источник (20-40%)
+                    const confetti = createRightConfetti(xOffset, yOffset);
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        if (confetti && confetti.remove) confetti.remove();
+                    }, 3000);
+                }, i * 6);
+            }
+            
+            // Через 1 секунду начинается дождь из падающих конфетти
             setTimeout(() => {
+                const fallingCount = 300;
+                for (let i = 0; i < fallingCount; i++) {
+                    setTimeout(() => {
+                        const confetti = createFallingConfetti();
+                        document.body.appendChild(confetti);
+                        
+                        setTimeout(() => {
+                            if (confetti && confetti.remove) confetti.remove();
+                        }, 6000);
+                    }, i * 20);
+                }
+            }, 1000);
+            
+            // Вторая волна падающих конфетти
+            setTimeout(() => {
+                const fallingCount = 200;
+                for (let i = 0; i < fallingCount; i++) {
+                    setTimeout(() => {
+                        const confetti = createFallingConfetti();
+                        document.body.appendChild(confetti);
+                        
+                        setTimeout(() => {
+                            if (confetti && confetti.remove) confetti.remove();
+                        }, 6000);
+                    }, i * 25);
+                }
+            }, 2500);
+        }
+        
+        // Наблюдатель за появлением finish секции
+        let fireworkLaunched = false;
+        
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
                 const finishSection = document.querySelector('.finishSection');
                 if (finishSection && finishSection.style.display === 'block' && !fireworkLaunched) {
                     fireworkLaunched = true;
                     startEdgeFirework();
+                    observer.disconnect();
                 }
-            }, 100);
-        })();
-    </script>
-
+            });
+        });
+        
+        observer.observe(document.body, {
+            attributes: true,
+            subtree: true,
+            attributeFilter: ['style']
+        });
+        
+        setTimeout(() => {
+            const finishSection = document.querySelector('.finishSection');
+            if (finishSection && finishSection.style.display === 'block' && !fireworkLaunched) {
+                fireworkLaunched = true;
+                startEdgeFirework();
+            }
+        }, 100);
+    })();
+</script>
     <script>
         // ========== ДИНАМИЧЕСКИЕ ДАТЫ ==========
         (function () {
@@ -2881,6 +2984,48 @@
                 DAYS_UNTIL_PRIZE
             };
 
+        })();
+    </script>
+    <script>
+        // ========== ДИНАМИЧЕСКИЙ ДЕНЬ НЕДЕЛИ ==========
+        (function() {
+            
+            // Функция получения дня недели с правильным предлогом
+            function getCurrentWeekday() {
+                const now = new Date();
+                const weekdays = [
+                    { name: 'Воскресенье', preposition: 'В' },
+                    { name: 'Понедельник', preposition: 'В' },
+                    { name: 'Вторник', preposition: 'Во' },
+                    { name: 'Среду', preposition: 'В' },
+                    { name: 'Четверг', preposition: 'В' },
+                    { name: 'Пятницу', preposition: 'В' },
+                    { name: 'Субботу', preposition: 'В' }
+                ];
+                
+                const dayIndex = now.getDay(); 
+                const day = weekdays[dayIndex];
+                
+                // Особый случай для "во вторник"
+                if (day.name === 'Вторник') {
+                    return 'во Вторник';
+                }
+                
+                return `${day.preposition} ${day.name}`;
+            }
+            
+            // Обновляем текст в описании колеса
+            function updateWheelDescription() {
+                const wheelDescription = document.querySelector('.wheel__description');
+                if (wheelDescription) {
+                    const weekday = getCurrentWeekday();
+                    wheelDescription.innerHTML = `${weekday} мы выбираем <b>7</b> пользователей, чтобы дать<br> им возможность выиграть подарки от наших<br> спонсоров. Покрутите колесо, чтобы увидеть, какой<br> подарок вы получите!`;
+                }
+            }
+            
+            // Запускаем обновление
+            updateWheelDescription();
+            
         })();
     </script>
 </body>
