@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <title>VPN App</title>
+    <style>
+        :root {
+            --maxVh: 100;
+            --container: 640px;
+            --bg-body: #151515;
+            --bg-header: hsl(0, 0%, 0%);
+            --header_pt: 0.5rem;
+            --header_pb: 0.5rem;
+            --header_justify_content: space-between;
+            --header_align_items: center;
+            --bgcolor: rgba(43, 43, 43, 0.88);
+            --bgimage: url('./assets/bg.PNG');
+            --bg: rgba(43, 43, 43, 0.88);
+            --bgSize: cover;
+            --bgPositionX: center;
+            --bgPositionY: center;
+            --mainWrapper_display: flex;
+            --mainWrapper_flex_direction: column;
+            --mainWrapper_justify_content: center;
+            --mainWrapper_align_items: center;
+            --mainWrapper_width: 100%;
+            --mainWrapper_height: 90%;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            font-size: 10px;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--bg-body);
+            display: flex;
+            flex-direction: column;
+            height: calc(var(--vh, 1vh) * var(--maxVh));
+            left: 0px;
+            overflow: hidden;
+            padding: 0 0 env(safe-area-inset-bottom, 0);
+        }
+
+        .bg,
+        body {
+            margin: 0px;
+            position: fixed;
+            width: 100%;
+        }
+
+        .bg {
+            background-image: var();
+            background-attachment: scroll;
+            background-origin: padding-box;
+            background-clip: border-box;
+            background-color: transparent;
+            background-position-x: var(--bgPositionX);
+            background-position-y: var(--bgPositionY);
+            background-repeat: no-repeat;
+            background-size: var(--bgSize);
+            height: 100%;
+            left: 50%;
+            max-width: var(--container);
+            padding: 0px;
+            transform: translate(-50%);
+            z-index: -1;
+        }
+
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        header {
+            background: var(--bg-header);
+            padding-bottom: var(--header_pb);
+            padding-top: var(--header_pt);
+            z-index: 11;
+        }
+
+        .headerWrapper {
+            align-items: var(--header_align_items);
+            display: flex;
+            justify-content: var(--header_justify_content);
+        }
+
+        .burger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 2.5rem;
+            height: 2rem;
+            min-height: 16px;
+            cursor: pointer;
+            background: #00000000;
+            padding: 1px 0;
+        }
+
+        .burger span {
+            display: block;
+            height: 0.35rem;
+            background: #000000;
+            width: 100%;
+        }
+
+        .logo {
+            width: 18rem;
+            height: 3.4rem;
+        }
+
+        .leftPanel {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .rightPanel {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .serchIcon {
+            width: 2.5rem;
+        }
+
+        .settingIcon {
+            width: 2.2rem;
+        }
+
+        .userIcon {
+            width: 2rem;
+        }
+
+        .video-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.3rem;
+            color: #606060;
+            padding: 0px 12px;
+            padding-bottom: 10px;
+            border-radius: 8px;
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .meta-genre {
+            font-weight: 500;
+            color: #909090;
+            text-decoration: none;
+            border-bottom: 2px solid #909090;
+            padding-bottom: 0px;
+        }
+
+        .meta-separator {
+            color: #909090;
+            font-weight: 300;
+        }
+
+        .meta-duration {
+            padding: 3px;
+            border-radius: 5px;
+            background-color: #9d9d9d;
+            color: white;
+        }
+
+
+        .btnIcon {
+            width: 1.5rem;
+        }
+
+        .cameraIcon {
+            width: 2.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .cameraIcon svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .containers {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: var(--container);
+            padding-left: 1rem;
+            padding-right: 1rem;
+            width: 100%;
+        }
+
+        .main {
+            height: 90%;
+            width: 100%;
+            position: relative;
+        }
+
+
+        .mainWrapper {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-grid {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 0px;
+            justify-content: flex-start;
+            margin: 0 auto;
+            max-width: var(--container);
+            padding: 3rem 0rem;
+        }
+
+        .back-title {
+            font-size: 2.34rem;
+            color: red;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .video-grid p {
+            font-size: 1.66rem;
+            font-weight: 600;
+        }
+
+        .back-text {
+            color: #474747;
+        }
+
+        .back-steps {
+            width: 80%;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            color: #474747;
+        }
+
+        .back-time {
+            color: red;
+        }
+
+        .video-card {
+            flex: 0 0 auto;
+            width: 100%;
+            max-width: 100%;
+            background: rgb(255, 255, 255);
+            border-radius: 0px;
+            overflow: hidden;
+        }
+
+        @media (min-width: 500px) {
+            .video-card {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 700px) {
+            .video-card {
+                width: 100%;
+            }
+        }
+
+        .video-thumbnail {
+            width: 90%;
+            aspect-ratio: 16 / 10;
+            background-color: #2a2a2a;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: initial;
+            display: block;
+        }
+
+        .video-title {
+            padding: 0px 10px;
+            padding-top: 10px;
+            color: rgb(0, 0, 0);
+            font-size: 1.4rem;
+            font-weight: 500;
+            text-align: center;
+            background: rgb(255, 255, 255);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .whiteBlock {
+            position: fixed;
+            top: 42%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 20;
+            background: white;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 30rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .modal-text {
+            text-align: left;
+            font-size: 1.34rem;
+        }
+
+        .modal-title {
+            font-weight: 400;
+            color: #000000;
+            margin-top: 12px;
+            line-height: 1.2;
+        }
+
+        .modal-description {
+            color: #ff0101;
+            margin: 0px 0 6px;
+            line-height: 1.4;
+        }
+
+
+        .modal-subtitle {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .highlight {
+            color: #ff3b30;
+            font-weight: 600;
+        }
+
+        .modal {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 2rem 2rem 0rem 2rem;
+        }
+
+        .modal-logo {
+            width: 2.7rem;
+            height: 2.7rem;
+            margin-right: 1.5rem;
+        }
+
+
+        .modal-recommended {
+            font-size: 1.6rem;
+            color: #34c759;
+            font-weight: 500;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .modal-recommended::before,
+        .modal-recommended::after {
+            content: "•";
+            font-size: 2rem;
+            color: #34c759;
+            line-height: 1;
+            padding: 0.5rem;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+
+        .modal-btn {
+            flex: 1;
+            width: 100%;
+            background: white;
+            border: 1px solid #ffffff;
+            border-radius: 0px;
+            padding: 2rem 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .modal-btn:hover {
+            background: #f5f5f5;
+        }
+
+        .btn-cancel {
+            color: #ff3b30;
+            border-bottom-left-radius: 30px;
+        }
+
+        .btn-install {
+            color: #007aff;
+            border-bottom-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+        }
+
+
+        @media (max-height: 600px) {
+            :root {
+                font-size: 10px;
+            }
+        }
+
+        @media (min-width: 380px) and (min-height: 750px) {
+            :root {
+                font-size: 11px;
+            }
+        }
+
+        @media (min-width: 410px) and (min-height: 750px) {
+            :root {
+                font-size: 12px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            :root {
+                font-size: 14px;
+            }
+
+            .containers {
+                padding-left: 3rem;
+                padding-right: 2rem;
+            }
+
+            .cameraIcon {
+                width: 2rem;
+            }
+
+        }
+
+        @media (min-width: 640px) and (max-height: 700px) {
+            :root {
+                font-size: 12px;
+            }
+        }
+
+        @media (min-width: 640px) and (max-height: 600px) {
+            :root {
+                font-size: 11px;
+            }
+        }
+
+        @media (max-height: 500px) {
+            :root {
+                font-size: 8px;
+            }
+        }
+
+
+        @media (max-height: 400px) {
+            :root {
+                font-size: 7px;
+            }
+
+            .whiteBlock {
+                max-width: 35rem;
+            }
+        }
+
+        @media (max-width: 350px) {
+            :root {
+                font-size: 8px;
+            }
+        }
+
+        @media (max-width: 350px) and (min-height: 700px) {
+            .whiteBlock {
+                top: 55%;
+                left: 50%;
+            }
+        }
+
+        @media (max-width: 300px) {
+            :root {
+                font-size: 6px;
+            }
+
+            .video-thumbnail {
+                aspect-ratio: 16 / 10;
+            }
+
+            .cameraIcon {
+                display: none;
+            }
+        }
+
+        @media (max-height: 300px) {
+            :root {
+                font-size: 5.5px;
+            }
+
+            .whiteBlock {
+                max-width: 35rem;
+            }
+
+            .modal-subtitle {
+                margin-bottom: 6px;
+            }
+        }
+
+        @media (max-height: 200px) {
+            :root {
+                font-size: 3vh;
+            }
+
+            .modal-recommended {
+                display: none;
+            }
+
+            .modal-btn {
+                padding: 2rem 0;
+                font-size: 2rem;
+            }
+
+            .modal-logo {
+                width: 17px;
+                height: 17px;
+                margin-right: 15px;
+            }
+
+            .modal-text {
+                font-size: 7px;
+            }
+
+            .whiteBlock {
+                max-width: 200px;
+            }
+        }
+
+        .resolution-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: #ff0000;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            z-index: 2;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-link {
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            bottom: 10%;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+        }
+
+        .footer-link a {
+            color: #007aff;
+            font-size: 2.15rem;
+            font-weight: 700;
+        }
+
+        .footer-progress {
+            position: fixed;
+            bottom: 10%;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+            background-color: #aeaeae;
+            z-index: 1000;
+        }
+
+        .progress-dot {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            background-color: #ff0000;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 38, 0, 0.5);
+        }
+
+
+        .progress-dot::after {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 2px;
+            background-color: #aeaeae;
+        }
+
+        @media (min-height: 1000px){
+            .whiteBlock{
+                top: 65%;
+                left: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="modal-overlay"></div>
+
+    <header class="header">
+        <div class="containers headerWrapper">
+            <div class="logo">
+                <svg width="100%" height="100%" viewBox="0 0 270 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M15 3.25L3.75 8.25V15.75C3.75 22.6875 8.55 29.175 15 30.75C21.45 29.175 26.25 22.6875 26.25 15.75V8.25L15 3.25ZM15 16.9875H23.75C23.0875 22.1375 19.65 26.725 15 28.1625V17H6.25V9.875L15 5.9875V16.9875Z"
+                        fill="#474747" />
+                    <path
+                        d="M55.6733 6.63636V27H52.8494L42.4986 12.0653H42.3097V27H39.2372V6.63636H42.081L52.4418 21.5909H52.6307V6.63636H55.6733ZM66.4989 27.3082C64.9942 27.3082 63.6983 26.9867 62.6112 26.3438C61.5307 25.6941 60.6954 24.7827 60.1055 23.6094C59.5221 22.4295 59.2305 21.0473 59.2305 19.4631C59.2305 17.8987 59.5221 16.5199 60.1055 15.3267C60.6954 14.1335 61.5174 13.2022 62.5714 12.5327C63.632 11.8632 64.8716 11.5284 66.2901 11.5284C67.1519 11.5284 67.9871 11.6709 68.7958 11.956C69.6045 12.241 70.3304 12.6884 70.9734 13.2983C71.6164 13.9081 72.1235 14.7003 72.4947 15.6747C72.8659 16.6425 73.0515 17.8191 73.0515 19.2045V20.2585H60.9109V18.0312H70.1381C70.1381 17.2491 69.979 16.5563 69.6609 15.9531C69.3427 15.3433 68.8952 14.8627 68.3185 14.5114C67.7485 14.16 67.079 13.9844 66.31 13.9844C65.4748 13.9844 64.7456 14.1899 64.1225 14.6009C63.506 15.0052 63.0288 15.5355 62.6907 16.1918C62.3593 16.8414 62.1935 17.5473 62.1935 18.3097V20.0497C62.1935 21.0705 62.3725 21.9389 62.7305 22.6548C63.0951 23.3707 63.6022 23.9176 64.2518 24.2955C64.9014 24.6667 65.6604 24.8523 66.5288 24.8523C67.0922 24.8523 67.6059 24.7727 68.07 24.6136C68.534 24.4479 68.935 24.2027 69.2731 23.8778C69.6112 23.553 69.8697 23.152 70.0487 22.6747L72.8626 23.1818C72.6372 24.0104 72.2328 24.7363 71.6495 25.3594C71.0728 25.9759 70.3469 26.4564 69.4719 26.8011C68.6036 27.1392 67.6126 27.3082 66.4989 27.3082ZM83.4794 11.7273V14.1136H75.1371V11.7273H83.4794ZM77.3743 8.06818H80.3473V22.5156C80.3473 23.0923 80.4335 23.5265 80.6058 23.8182C80.7782 24.1032 81.0002 24.2988 81.272 24.4048C81.5504 24.5043 81.852 24.554 82.1768 24.554C82.4155 24.554 82.6243 24.5374 82.8033 24.5043C82.9822 24.4711 83.1214 24.4446 83.2209 24.4247L83.7578 26.8807C83.5855 26.947 83.3402 27.0133 83.022 27.0795C82.7038 27.1525 82.3061 27.1922 81.8288 27.1989C81.0466 27.2121 80.3175 27.0729 79.6413 26.7812C78.9652 26.4896 78.4183 26.0388 78.0007 25.429C77.5831 24.8191 77.3743 24.0535 77.3743 23.1321V8.06818ZM90.0792 27L85.5849 11.7273H88.6573L91.6502 22.9432H91.7994L94.8022 11.7273H97.8746L100.858 22.8935H101.007L103.98 11.7273H107.052L102.568 27H99.5352L96.4329 15.973H96.2042L93.1019 27H90.0792ZM115.842 27.3082C114.41 27.3082 113.161 26.9801 112.093 26.3239C111.026 25.6676 110.198 24.7495 109.608 23.5696C109.018 22.3897 108.723 21.0109 108.723 19.4332C108.723 17.849 109.018 16.4635 109.608 15.277C110.198 14.0904 111.026 13.169 112.093 12.5128C113.161 11.8565 114.41 11.5284 115.842 11.5284C117.274 11.5284 118.523 11.8565 119.591 12.5128C120.658 13.169 121.486 14.0904 122.076 15.277C122.666 16.4635 122.961 17.849 122.961 19.4332C122.961 21.0109 122.666 22.3897 122.076 23.5696C121.486 24.7495 120.658 25.6676 119.591 26.3239C118.523 26.9801 117.274 27.3082 115.842 27.3082ZM115.852 24.8125C116.78 24.8125 117.549 24.5672 118.159 24.0767C118.769 23.5862 119.219 22.9332 119.511 22.1179C119.809 21.3026 119.958 20.4044 119.958 19.4233C119.958 18.4489 119.809 17.554 119.511 16.7386C119.219 15.9167 118.769 15.2571 118.159 14.7599C117.549 14.2628 116.78 14.0142 115.852 14.0142C114.917 14.0142 114.142 14.2628 113.525 14.7599C112.915 15.2571 112.461 15.9167 112.163 16.7386C111.871 17.554 111.725 18.4489 111.725 19.4233C111.725 20.4044 111.871 21.3026 112.163 22.1179C112.461 22.9332 112.915 23.5862 113.525 24.0767C114.142 24.5672 114.917 24.8125 115.852 24.8125ZM126.28 27V11.7273H129.153V14.1534H129.312C129.591 13.3314 130.081 12.6851 130.784 12.2145C131.493 11.7372 132.295 11.4986 133.19 11.4986C133.376 11.4986 133.595 11.5052 133.847 11.5185C134.105 11.5317 134.307 11.5483 134.453 11.5682V14.4119C134.334 14.3788 134.122 14.3423 133.817 14.3026C133.512 14.2562 133.207 14.233 132.902 14.233C132.199 14.233 131.573 14.3821 131.023 14.6804C130.479 14.9721 130.048 15.3797 129.73 15.9034C129.412 16.4205 129.253 17.0104 129.253 17.6733V27H126.28ZM139.76 21.8196L139.74 18.1903H140.257L146.343 11.7273H149.902L142.962 19.0852H142.495L139.76 21.8196ZM137.026 27V6.63636H139.999V27H137.026ZM146.671 27L141.202 19.7415L143.25 17.6634L150.32 27H146.671ZM171.367 11.9858C171.261 11.0445 170.824 10.3153 170.055 9.79829C169.286 9.27462 168.318 9.01278 167.151 9.01278C166.316 9.01278 165.594 9.14536 164.984 9.41051C164.374 9.66903 163.9 10.027 163.562 10.4844C163.23 10.9351 163.065 11.4489 163.065 12.0256C163.065 12.5095 163.177 12.9271 163.403 13.2784C163.635 13.6297 163.936 13.9247 164.308 14.1634C164.685 14.3954 165.09 14.5909 165.521 14.75C165.951 14.9025 166.366 15.0284 166.763 15.1278L168.752 15.6449C169.402 15.804 170.068 16.0194 170.751 16.2912C171.433 16.563 172.067 16.9209 172.65 17.3651C173.233 17.8092 173.704 18.3594 174.062 19.0156C174.426 19.6719 174.609 20.4574 174.609 21.3722C174.609 22.5256 174.31 23.5497 173.714 24.4446C173.124 25.3395 172.265 26.0455 171.138 26.5625C170.018 27.0795 168.663 27.3381 167.072 27.3381C165.547 27.3381 164.228 27.0961 163.114 26.6122C162.001 26.1283 161.129 25.4422 160.499 24.554C159.87 23.6591 159.522 22.5985 159.455 21.3722H162.538C162.597 22.108 162.836 22.7211 163.254 23.2116C163.678 23.6955 164.218 24.0568 164.874 24.2955C165.537 24.5275 166.263 24.6435 167.052 24.6435C167.92 24.6435 168.692 24.5076 169.369 24.2358C170.051 23.9574 170.588 23.5729 170.979 23.0824C171.371 22.5852 171.566 22.0052 171.566 21.3423C171.566 20.7391 171.394 20.2453 171.049 19.8608C170.711 19.4763 170.25 19.1581 169.667 18.9062C169.09 18.6544 168.437 18.4323 167.708 18.2401L165.302 17.5838C163.671 17.1397 162.379 16.4867 161.424 15.625C160.476 14.7633 160.002 13.6231 160.002 12.2045C160.002 11.0312 160.32 10.0071 160.957 9.1321C161.593 8.2571 162.455 7.57765 163.542 7.09375C164.629 6.60322 165.855 6.35795 167.221 6.35795C168.6 6.35795 169.816 6.5999 170.87 7.08381C171.931 7.56771 172.766 8.2339 173.376 9.08239C173.986 9.92424 174.304 10.892 174.33 11.9858H171.367ZM184.624 27.3082C183.119 27.3082 181.823 26.9867 180.736 26.3438C179.656 25.6941 178.82 24.7827 178.23 23.6094C177.647 22.4295 177.355 21.0473 177.355 19.4631C177.355 17.8987 177.647 16.5199 178.23 15.3267C178.82 14.1335 179.642 13.2022 180.696 12.5327C181.757 11.8632 182.997 11.5284 184.415 11.5284C185.277 11.5284 186.112 11.6709 186.921 11.956C187.73 12.241 188.455 12.6884 189.098 13.2983C189.741 13.9081 190.248 14.7003 190.62 15.6747C190.991 16.6425 191.176 17.8191 191.176 19.2045V20.2585H179.036V18.0312H188.263C188.263 17.2491 188.104 16.5563 187.786 15.9531C187.468 15.3433 187.02 14.8627 186.444 14.5114C185.873 14.16 185.204 13.9844 184.435 13.9844C183.6 13.9844 182.871 14.1899 182.248 14.6009C181.631 15.0052 181.154 15.5355 180.816 16.1918C180.484 16.8414 180.319 17.5473 180.319 18.3097V20.0497C180.319 21.0705 180.498 21.9389 180.855 22.6548C181.22 23.3707 181.727 23.9176 182.377 24.2955C183.026 24.6667 183.785 24.8523 184.654 24.8523C185.217 24.8523 185.731 24.7727 186.195 24.6136C186.659 24.4479 187.06 24.2027 187.398 23.8778C187.736 23.553 187.995 23.152 188.174 22.6747L190.988 23.1818C190.762 24.0104 190.358 24.7363 189.775 25.3594C189.198 25.9759 188.472 26.4564 187.597 26.8011C186.729 27.1392 185.738 27.3082 184.624 27.3082ZM200.908 27.3082C199.43 27.3082 198.157 26.9735 197.09 26.304C196.03 25.6278 195.214 24.6965 194.644 23.5099C194.074 22.3234 193.789 20.9645 193.789 19.4332C193.789 17.8821 194.081 16.5133 194.664 15.3267C195.247 14.1335 196.069 13.2022 197.13 12.5327C198.191 11.8632 199.44 11.5284 200.879 11.5284C202.039 11.5284 203.073 11.7438 203.981 12.1747C204.889 12.599 205.621 13.1955 206.178 13.9645C206.742 14.7334 207.076 15.6316 207.183 16.6591H204.289C204.13 15.9432 203.765 15.3267 203.195 14.8097C202.632 14.2926 201.876 14.0341 200.928 14.0341C200.1 14.0341 199.374 14.2528 198.751 14.6903C198.134 15.1212 197.654 15.7377 197.309 16.5398C196.964 17.3352 196.792 18.2765 196.792 19.3636C196.792 20.4773 196.961 21.4384 197.299 22.2472C197.637 23.0559 198.114 23.6823 198.731 24.1264C199.354 24.5705 200.086 24.7926 200.928 24.7926C201.492 24.7926 202.002 24.6899 202.46 24.4844C202.924 24.2723 203.311 23.9706 203.623 23.5795C203.941 23.1884 204.163 22.7178 204.289 22.1676H207.183C207.076 23.1553 206.755 24.0369 206.218 24.8125C205.681 25.5881 204.962 26.1979 204.06 26.642C203.165 27.0862 202.115 27.3082 200.908 27.3082ZM220.037 20.6662V11.7273H223.02V27H220.096V24.3551H219.937C219.586 25.1705 219.022 25.8499 218.247 26.3935C217.478 26.9304 216.52 27.1989 215.373 27.1989C214.392 27.1989 213.524 26.9834 212.768 26.5526C212.019 26.1151 211.429 25.4688 210.998 24.6136C210.574 23.7585 210.362 22.7012 210.362 21.4418V11.7273H213.335V21.0838C213.335 22.1245 213.623 22.9531 214.2 23.5696C214.777 24.1861 215.526 24.4943 216.447 24.4943C217.004 24.4943 217.557 24.3551 218.108 24.0767C218.664 23.7983 219.125 23.3774 219.49 22.8139C219.861 22.2505 220.043 21.5346 220.037 20.6662ZM227.014 27V11.7273H229.888V14.1534H230.047C230.325 13.3314 230.816 12.6851 231.518 12.2145C232.228 11.7372 233.03 11.4986 233.925 11.4986C234.11 11.4986 234.329 11.5052 234.581 11.5185C234.839 11.5317 235.042 11.5483 235.188 11.5682V14.4119C235.068 14.3788 234.856 14.3423 234.551 14.3026C234.246 14.2562 233.941 14.233 233.636 14.233C232.934 14.233 232.307 14.3821 231.757 14.6804C231.214 14.9721 230.783 15.3797 230.464 15.9034C230.146 16.4205 229.987 17.0104 229.987 17.6733V27H227.014ZM237.76 27V11.7273H240.733V27H237.76ZM239.262 9.37074C238.745 9.37074 238.301 9.19839 237.929 8.85369C237.565 8.50237 237.382 8.08475 237.382 7.60085C237.382 7.11032 237.565 6.69271 237.929 6.34801C238.301 5.99668 238.745 5.82102 239.262 5.82102C239.779 5.82102 240.22 5.99668 240.584 6.34801C240.955 6.69271 241.141 7.11032 241.141 7.60085C241.141 8.08475 240.955 8.50237 240.584 8.85369C240.22 9.19839 239.779 9.37074 239.262 9.37074ZM251.862 11.7273V14.1136H243.52V11.7273H251.862ZM245.757 8.06818H248.73V22.5156C248.73 23.0923 248.816 23.5265 248.989 23.8182C249.161 24.1032 249.383 24.2988 249.655 24.4048C249.933 24.5043 250.235 24.554 250.56 24.554C250.798 24.554 251.007 24.5374 251.186 24.5043C251.365 24.4711 251.504 24.4446 251.604 24.4247L252.141 26.8807C251.968 26.947 251.723 27.0133 251.405 27.0795C251.087 27.1525 250.689 27.1922 250.212 27.1989C249.429 27.2121 248.7 27.0729 248.024 26.7812C247.348 26.4896 246.801 26.0388 246.384 25.429C245.966 24.8191 245.757 24.0535 245.757 23.1321V8.06818ZM257.03 32.7273C256.586 32.7273 256.182 32.6908 255.817 32.6179C255.453 32.5516 255.181 32.4787 255.002 32.3991L255.718 29.9631C256.261 30.1089 256.745 30.1719 257.169 30.152C257.594 30.1321 257.968 29.973 258.293 29.6747C258.624 29.3764 258.916 28.8892 259.168 28.2131L259.536 27.1989L253.948 11.7273H257.13L260.998 23.5795H261.157L265.025 11.7273H268.216L261.922 29.0384C261.631 29.8338 261.259 30.5066 260.809 31.0568C260.358 31.6136 259.821 32.0313 259.198 32.3097C258.575 32.5881 257.852 32.7273 257.03 32.7273Z"
+                        fill="#474747" />
+                </svg>
+
+            </div>
+            <div class="rightPanel">
+
+            </div>
+        </div>
+
+    </header>
+    <main class="main">
+
+        <div class="containers mainWrapper">
+            <div class="video-grid">
+                <h1 class="back-title">Third party software could be<br> tracking your activity</h1>
+                <p class="back-text">Your IP could be exposed, everyone can<br> define your location. Follow these steps
+                    to encrypt your web
+                    traffic and change IP<br> address:</p>
+                <p class="back-steps">Step 1: Install and activate the VPN from the Google Play to protect your privacy
+                    and secure your
+                    online activities.<br>
+                    Step 2: Turn on the real-time protection to prevent data leak and others from accessing your online
+                    activities</p>
+                <p class="back-time">1 minutes and 38 seconds</p>
+            </div>
+            <div class="whiteBlock">
+                <div class="modal">
+                    <div class="modal-logo">
+                        <svg width="100%" height="100%" viewBox="0 0 36 36" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M17.875 0C8.00313 0 0 8.00313 0 17.875C0 27.7469 8.00313 35.75 17.875 35.75C27.7469 35.75 35.75 27.7469 35.75 17.875C35.75 8.00313 27.7469 0 17.875 0ZM19.5 9.75C19.5 9.31902 19.3288 8.9057 19.024 8.60095C18.7193 8.29621 18.306 8.125 17.875 8.125C17.444 8.125 17.0307 8.29621 16.726 8.60095C16.4212 8.9057 16.25 9.31902 16.25 9.75V19.5C16.25 19.931 16.4212 20.3443 16.726 20.649C17.0307 20.9538 17.444 21.125 17.875 21.125C18.306 21.125 18.7193 20.9538 19.024 20.649C19.3288 20.3443 19.5 19.931 19.5 19.5V9.75ZM19.5 25.1875C19.5 24.7565 19.3288 24.3432 19.024 24.0385C18.7193 23.7337 18.306 23.5625 17.875 23.5625C17.444 23.5625 17.0307 23.7337 16.726 24.0385C16.4212 24.3432 16.25 24.7565 16.25 25.1875V26C16.25 26.431 16.4212 26.8443 16.726 27.149C17.0307 27.4538 17.444 27.625 17.875 27.625C18.306 27.625 18.7193 27.4538 19.024 27.149C19.3288 26.8443 19.5 26.431 19.5 26V25.1875Z"
+                                fill="#7E7E7E" />
+                        </svg>
+
+                    </div>
+                    <div class="modal-text">
+                        <p class="modal-title">(1) SYSTEM NOTIFICATION</p>
+                        <p class="modal-description">Network alert</p>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <a href="{url}" class="modal-btn btn-install">OK</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="footer-link">
+        <a href="{url}">Download and install</a>
+    </div>
+<script>
+
+function parseTimerText(text) {
+    const minutesMatch = text.match(/(\d+)\s*minutes?/);
+    const secondsMatch = text.match(/(\d+)\s*seconds?/);
+    
+    const minutes = minutesMatch ? parseInt(minutesMatch[1]) : 0;
+    const seconds = secondsMatch ? parseInt(secondsMatch[1]) : 0;
+    
+    return minutes * 60 + seconds;
+}
+
+function formatTimeText(totalSeconds) {
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    
+    let result = '';
+    if (minutes > 0) {
+        result += `${minutes} minutes${minutes !== 1 ? 's' : ''}`;
+    }
+    if (seconds > 0) {
+        if (result) result += ' and ';
+        result += `${seconds} second${seconds !== 1 ? 's' : ''}`;
+    }
+    
+    return result;
+}
+
+function startTimer(element) {
+    let totalSeconds;
+    if (element.hasAttribute('data-timer')) {
+        totalSeconds = parseInt(element.getAttribute('data-timer'));
+    } else {
+        totalSeconds = parseTimerText(element.textContent);
+    }
+    
+    element.setAttribute('data-timer', totalSeconds);
+    
+    const interval = setInterval(() => {
+        if (totalSeconds <= 0) {
+            clearInterval(interval);
+            element.textContent = 'Time is up!';
+            element.classList.add('timer-finished');
+            return;
+        }
+        
+        totalSeconds--;
+        element.setAttribute('data-timer', totalSeconds);
+        element.textContent = formatTimeText(totalSeconds);
+    }, 1000);
+    
+    return interval;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const timerElement = document.querySelector('.back-time');
+    if (timerElement) {
+        startTimer(timerElement);
+    }
+});
+</script>
+</body>
+</html>
