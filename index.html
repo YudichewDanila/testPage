@@ -1,16 +1,43 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Поздравляем!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <title>VPN App</title>
     <style>
+        :root {
+            --maxVh: 100;
+            --container: 640px;
+            --bg-body: #151515;
+            --bg-header: hsl(0, 0%, 0%);
+            --header_pt: 0.5rem;
+            --header_pb: 0.5rem;
+            --header_justify_content: space-between;
+            --header_align_items: center;
+            --bgcolor: rgba(43, 43, 43, 0.88);
+            --bgimage: url('./assets/bg.PNG');
+            --bg: rgba(43, 43, 43, 0.88);
+            --bgSize: cover;
+            --bgPositionX: center;
+            --bgPositionY: center;
+            --mainWrapper_display: flex;
+            --mainWrapper_flex_direction: column;
+            --mainWrapper_justify_content: center;
+            --mainWrapper_align_items: center;
+            --mainWrapper_width: 100%;
+            --mainWrapper_height: 90%;
+        }
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: Unbounded, sans-serif;
         }
 
         :root {
@@ -18,2839 +45,722 @@
         }
 
         body {
-            background-color: #f5eef6;
+            font-family: "Inter", sans-serif;
+            background: var(--bg-body);
+            display: flex;
+            flex-direction: column;
+            height: calc(var(--vh, 1vh) * var(--maxVh));
+            left: 0px;
+            overflow: hidden;
+            padding: 0 0 env(safe-area-inset-bottom, 0);
+            -webkit-text-size-adjust: 100%;
+            line-height: 1.4;
+        }
 
+        .bg,
+        body {
+            margin: 0px;
+            position: fixed;
+            width: 100%;
+        }
+
+        .bg {
+            background-image: var();
+            background-attachment: scroll;
+            background-origin: padding-box;
+            background-clip: border-box;
+            background-color: transparent;
+            background-position-x: var(--bgPositionX);
+            background-position-y: var(--bgPositionY);
+            background-repeat: no-repeat;
+            background-size: var(--bgSize);
+            height: 100%;
+            left: 50%;
+            max-width: var(--container);
+            padding: 0px;
+            transform: translate(-50%);
+            z-index: -1;
         }
 
         .modal-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 100;
-            display: flex;
-            align-items: end;
-            justify-content: center;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(6px);
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-container {
-            width: 100%;
-            max-width: 640px;
-            position: relative;
-            bottom: 0;
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
-        }
-
-        .modal-overlay.active .modal-container {
-            transform: translateY(0);
-        }
-
-        .modal-content {
-            width: 100%;
-            border-top-left-radius: 16px;
-            border-top-right-radius: 16px;
-            overflow: hidden;
-            background: white;
-            border: 1px solid rgb(255, 255, 255);
-        }
-
-        .modal-gradient-line {
-            margin: 5px auto;
-            max-width: 45px;
-            width: 100%;
-            height: 5px;
-            background: silver;
-            border-radius: 16px;
-        }
-
-        .modal-inner {
-            padding: 18px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .modal-icon {
-            width: 5.6rem;
-            height: 5.6rem;
-            margin: 0 auto;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(230, 23, 143, 0.15), rgba(230, 23, 143, 0.05));
-            border: 1px solid rgba(230, 23, 144, 0);
-        }
-
-        .welcomeIcone {
-            width: 2.8rem;
-            height: 2.8rem;
-            fill: #e6178f;
-        }
-
-        .retryIcone {
-            width: 2.8rem;
-            height: 2.8rem;
-        }
-
-        .modal-title {
-            font-size: 2.4rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #e6178f, #ad228e, #8d317d);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        .modal-icon-retry {
-            width: 5.6rem;
-            height: 5.6rem;
-            margin: 0 auto;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #eddff7;
-            border: 1px solid rgba(230, 23, 144, 0);
-        }
-
-        .modal-title-retry {
-            font-size: 2.4rem;
-            font-weight: 700;
-            background: black;
-            color: black;
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        .modal-text {
-            font-size: 1.8rem;
-            line-height: 1.5;
-            color: #857d8f;
-            margin-bottom: 2.5rem;
-        }
-
-        .modal-ok-btn {
-            width: 100%;
-            padding: 2rem;
-            border-radius: 12px;
-            border: none;
-            background: linear-gradient(90deg, #ce1fa2, #ac238e, #892c7a);
-            color: white;
-            font-size: 1.8rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 20px #ce1fa2c2;
-        }
-
-        .modal-ok-btn-retry {
-            width: 100%;
-            padding: 2rem;
-            border-radius: 12px;
-            border: none;
-            background: linear-gradient(90deg, #892de6, #7d2fec, #6e2bf2);
-            color: white;
-            font-size: 1.8rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 20px #8a2de677;
-        }
-
-        .modal-ok-btn:hover {
-            transform: scale(0.98);
-            background: linear-gradient(135deg, #c0157a, #a01268);
-        }
-
-        .modal-ok-btn:active {
-            transform: scale(0.96);
-        }
-
-        .container {
-            max-width: 640px;
-            width: 100%;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            margin: 0 auto;
-        }
-
-        .header {
-            display: flex;
-            width: 100%;
-            padding: 1.5rem;
-            justify-content: space-between;
-            background-color: #f5f2f8;
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.338);
-            margin-bottom: 2rem;
-        }
-
-        .header__logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .header__logo svg {
-            width: 3rem;
-            padding-right: 1rem;
-        }
-
-        .header__logo-text {
-            font-size: 1.5rem;
-            color: #666273;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: 600;
-        }
-
-        .header__status {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: sans-serif;
-            font-size: 14px;
-            color: #333;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #60bf9f;
-            border-radius: 50%;
-            display: inline-block;
-            animation: blink 2s infinite;
-        }
-
-        .status-text {
-            color: gray;
-            font-size: 1.35rem;
-            font-weight: 700;
-        }
-
-
-        @keyframes blink {
-            0% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 0.3;
-                transform: scale(1.2);
-            }
-
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-
-        .header__logo-text {
-            margin: 0;
-        }
-
-
-        .light-card {
-            max-width: 640px;
-            width: 100%;
-            margin: 0 auto;
-            background-color: #f5eaf8;
-            border-radius: 28px;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.02);
-            overflow: hidden;
-            transition: all 0.2s ease;
-        }
-
-        .section-content {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            width: 100%;
-            padding: 0 12px;
-            margin-top: 16px;
-            position: relative;
-        }
-
-        .wheel {
-            background: linear-gradient(145deg, #fff9fc, #fff0f6);
-            border-radius: 48px;
-            margin: 8px 0 12px 0;
-            padding: 16px 12px;
-            box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.8), 0 8px 20px rgba(255, 105, 180, 0.12);
-        }
-
-        .wheel__hero {
-            text-align: center;
-            margin-bottom: 12px;
-            margin-top: 12px;
-        }
-
-        .wheel__date {
-            font-size: 1.4rem;
-            letter-spacing: 0.6px;
-            color: silver;
-            font-weight: 600;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .wheel__title {
-            font-size: 3rem;
-            font-weight: 600;
-            background: linear-gradient(135deg, #ff1ac6, #ad228e, #8d317d);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin: 6px 0 4px;
-            letter-spacing: -0.3px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .wheel__subtitle {
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .wheel__description {
-            font-size: 1.6rem;
-            line-height: 1.45;
-            margin: 6px auto 0;
-            color: #857d8f;
-        }
-
-        .wheel__description b {
-            color: #060606;
-            font-weight: 700;
-        }
-
-
-        .wheel__canvas {
-            width: 100%;
-            max-width: 500px;
-            margin: 12px auto 8px;
-            position: relative;
-        }
-
-        .wheel__inner {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            aspect-ratio: 1 / 1;
-        }
-
-        .wheel__glow {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            background: radial-gradient(circle, rgba(255, 105, 180, 0.12) 0%, transparent 65%);
-            border-radius: 50%;
-        }
-
-        .wheel__relative {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-
-        .wheel__pointer {
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 25;
-            filter: drop-shadow(0 2px 6px rgba(255, 105, 180, 0.4));
-        }
-
-        .pointer-svg {
-            width: 5.5rem;
-            height: 6rem;
-            display: block;
-        }
-
-        .wheel__ambient {
-            position: absolute;
-            inset: -5px;
-            border-radius: 50%;
-            pointer-events: none;
-            background: conic-gradient(rgb(203 21 158 / 18%), rgb(203 21 158 / 18%), rgb(203 21 158 / 18%), rgb(203 21 158 / 18%), rgb(203 21 158 / 18%));
-            filter: blur(18px);
-            opacity: 0.6;
-        }
-
-        .wheel__img-wrapper {
-            position: relative;
-            width: 100%;
-            cursor: pointer;
-            user-select: none;
-            aspect-ratio: 1 / 1;
-            transition: transform 0.1s ease;
-            transform-origin: center center;
-            -webkit-transform-origin: center center;
-            transform-box: fill-box;
-            max-width: 100%;
-            overflow: hidden;
-        }
-
-        .wheel__img-wrapper:active {
-            transform: scale(0.97);
-        }
-
-        .wheel-image {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-            filter: drop-shadow(0 6px 12px rgba(255, 105, 180, 0.2));
-        }
-
-
-        .glass-block {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 16px 16px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(0, 0, 0, 0.04);
-            transition: box-shadow 0.2s;
-        }
-
-        .like-row {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .avatar-stack {
-            display: flex;
-            margin-right: 4px;
-        }
-
-        .avatar-unit {
-            width: 24px;
-            height: 24px;
-            border-radius: 999px;
-            overflow: hidden;
-            border: 2px solid #ffffff;
-            background-color: #eef2f5;
-        }
-
-        .avatar-unit:not(:first-child) {
-            margin-left: -8px;
-        }
-
-        .avatar-unit img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .like-count {
-            font-size: 12px;
-            color: #5e6f8d;
-            letter-spacing: 0.2px;
-        }
-
-        .action-bar {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-top: 10px;
-            padding-top: 10px;
-            font-size: 12px;
-            font-weight: 500;
-            color: #5e6f8d;
-            border-top: 1px solid #e9edf2;
-        }
-
-        .icon-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: none;
-            border: none;
-            font-size: 12px;
-            font-weight: 500;
-            color: #5e6f8d;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            padding: 4px 0;
-
-        }
-
-        .icon-btn svg {
-            width: 14px;
-            height: 14px;
-            stroke: currentColor;
-            stroke-width: 1.5;
-            fill: none;
-            transition: transform 0.2s;
-        }
-
-        .icon-btn:active {
-            transform: scale(0.94);
-        }
-
-        .ml-auto {
-            margin-left: auto;
-        }
-
-        .view-stats {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: #5e6f8d;
-        }
-
-
-        .comments-container {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }
-
-
-        .comment-item {
-            border-bottom: 1px solid #edf1f7;
-        }
-
-
-        .comment-row {
-            display: flex;
-            gap: 10px;
-            padding: 3px 0;
-        }
-
-        .comment-avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            overflow: hidden;
-            flex-shrink: 0;
-            background-color: #eef2fa;
-        }
-
-        .comment-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .comment-body {
-            flex: 1;
-            min-width: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .comment-author {
-            font-size: 13px;
-            font-weight: 600;
-            color: #5d80a6;
-            letter-spacing: -0.2px;
-        }
-
-        .comment-text {
-            font-size: 13px;
-            line-height: 1.45;
-            color: #1e2a3e;
-        }
-
-        .comment-media {
-            margin-top: 8px;
-            border-radius: 14px;
-            overflow: hidden;
-            width: 55%;
-            max-width: 200px;
-        }
-
-        .comment-media img {
-            width: 100%;
-            border-radius: 14px;
-            display: block;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .comment-footer {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-top: 4px;
-            font-size: 11px;
-            color: #8a99b0;
-        }
-
-        .comment-footer button {
-            background: none;
-            border: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 11px;
-            color: #8a99b0;
-            cursor: pointer;
-            transition: all 0.15s ease;
-
-        }
-
-        .comment-footer button:active {
-            transform: scale(0.94);
-        }
-
-        .comment-footer svg {
-            width: 11px;
-            height: 11px;
-            stroke: currentColor;
-            stroke-width: 2;
-            fill: none;
-        }
-
-        .comment-reply {
-            margin-left: 46px;
-        }
-
-        .comment-item {
-            opacity: 0;
-            transform: translateY(-20px);
-            animation: slideInComment 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
-        }
-
-        @keyframes slideInComment {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
-                max-height: 0;
-                margin-bottom: 0;
-                padding-top: 0;
-                padding-bottom: 0;
-            }
-
-            60% {
-                opacity: 0.8;
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-                max-height: 200px;
-                margin-bottom: 0;
-                padding-top: 12px;
-                padding-bottom: 12px;
-            }
-        }
-
-        .comment-reply {
-            animation: slideInComment 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
-        }
-
-        .comment-item {
-            overflow: hidden;
-            border-bottom: 1px solid #ffe4ed;
-            transition: all 0.3s ease;
-        }
-
-
-
-        .show-all-btn {
-            text-align: center;
-            padding: 14px 0 12px;
-            font-size: 13px;
-            font-weight: 500;
-            background: none;
-            border: none;
-            color: #5d80a6;
-            cursor: pointer;
-            width: 100%;
-            transition: background 0.2s;
-            border-radius: 24px;
-
-        }
-
-        .show-all-btn:hover {
-            background-color: #f5eaf8;
-        }
-
-        .legal-note {
-            font-size: 9px;
-            line-height: 1.4;
-            text-align: right;
-            padding: 12px 4px 32px 4px;
-            color: #8e9bb0;
-            letter-spacing: 0.2px;
-            margin-bottom: 10rem;
-        }
-
-        button:focus-visible {
-            outline: 2px solid #5d80a6;
-            outline-offset: 2px;
-            border-radius: 12px;
-        }
-
-        .fixed-bottom-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 50;
-            background: #ffffff;
-            border-top: 1px solid var(--border-subtle);
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
-            backdrop-filter: blur(0px);
-        }
-
-        .bar-container {
-            max-width: 480px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 16px;
-        }
-
-
-        .bar-icon-btn {
-            flex-shrink: 0;
-            padding: 8px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            border-radius: 50%;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #aaa1ae;
-        }
-
-        .bar-icon-btn:hover {
-            background-color: #ffffff;
-        }
-
-        .bar-icon-btn:active {
-            transform: scale(0.92);
-        }
-
-        .bar-icon-btn svg {
-            width: 20px;
-            height: 20px;
-            stroke: currentColor;
-            stroke-width: 1.5;
-            fill: none;
-        }
-
-        .message-input {
-            flex: 1;
-            background: #ede8ec;
-            border: 1px solid #d1ceda;
-            border-radius: 40px;
-            padding: 10px 18px;
-            font-size: 13px;
-
-            color: #8d8696;
-            outline: none;
-            transition: all 0.2s;
-        }
-
-        .message-input:focus {
-            border-color: #d1ceda;
-            box-shadow: 0 0 0 3px rgba(92, 91, 92, 0.103);
-            background: #ffffff;
-        }
-
-        .message-input::placeholder {
-            color: #968f9d;
-            font-weight: 400;
-        }
-
-        .send-btn {
-            flex-shrink: 0;
-            padding: 8px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            border-radius: 50%;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #bdb6bf;
-            opacity: 0.65;
-        }
-
-        .send-btn.active {
-            opacity: 1;
-            color: #bdb6bf57;
-        }
-
-        .send-btn:hover {
-            background-color: #bdb6bf57;
-            opacity: 1;
-        }
-
-        .send-btn:active {
-            transform: scale(0.92);
-        }
-
-        .send-btn svg {
-            width: 20px;
-            height: 20px;
-            stroke: currentColor;
-            stroke-width: 2;
-            fill: none;
-        }
-
-        .message-input.sending {
-            color: #888;
-            font-style: italic;
-            transition: all 0.2s ease;
-        }
-
-        .message-input.success {
-            color: #2ecc71;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-
-        .send-btn.disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
-
-        .send-btn.active {
-            opacity: 1;
-            color: #ff69b4;
-        }
-
-        @keyframes spinWheel {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        .wheel-spinning {
-            animation: spinWheel var(--spin-duration, 5000ms) cubic-bezier(0.2, 0.9, 0.4, 1.1) infinite;
-        }
-
-        .wheel__img-wrapper {
-            transition: transform 0.1s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes bounceIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.3);
-            }
-
-            50% {
-                opacity: 1;
-                transform: scale(1.05);
-            }
-
-            70% {
-                transform: scale(0.9);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        .prize-container,
-        .loading-container {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-
-        .finishSection {
-            display: none;
-        }
-
-        .finish-section {
-            max-width: 480px;
-            width: 100%;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .finish-header {
-            width: 100%;
-            max-width: 480px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            padding-top: 12px;
-            padding-bottom: 0;
-            padding-left: 16px;
-            padding-right: 16px;
-            text-align: center;
-        }
-
-        .finish-date {
-            font-size: 11px;
-            letter-spacing: 0.5px;
-            color: #999;
-        }
-
-        .finish-title {
-            font-size: 18px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #e6178f, #ad228e);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            line-height: 1.3;
-        }
-
-        .finish-subtitle {
-            font-size: 15px;
-            font-weight: 600;
-            color: #4a3b4a;
-        }
-
- 
-        .finish-content {
-            width: 100%;
-            max-width: 480px;
-            margin: 0 auto;
-        }
-
-        .finish-content-inner {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            width: 100%;
-            padding-left: 12px;
-            padding-right: 12px;
-            padding-top: 4px;
-        }
-
-        .congrats-card {
-            border-radius: 16px;
-            padding: 10px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            background: #fff;
-            border: 1px solid rgba(230, 23, 143, 0.15);
-        }
-
-        .congrats-line {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #e6178f, transparent);
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 10;
+            pointer-events: none;
         }
 
-        .congrats-title {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-            background: linear-gradient(135deg, #e6178f, #ad228e);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
+        header {
+            background: var(--bg-header);
+            padding-bottom: var(--header_pb);
+            padding-top: var(--header_pt);
+            z-index: 11;
         }
 
-        .congrats-text {
-            font-size: 1.6rem;
-            font-weight: 600;
-            line-height: 1.5;
-            color: #10101a;
+        .headerWrapper {
+            align-items: var(--header_align_items);
+            display: flex;
+            justify-content: var(--header_justify_content);
         }
 
-        .prize-card {
-            background: #ffffff;
-            border: 1px solid #ffe0e8;
-            border-radius: 16px;
-            overflow: hidden;
-        }
-
-        .prize-card-border {
-            height: 1.5px;
-        }
-
-        .prize-card-content {
-            padding: 12px;
+        .burger {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            justify-content: space-between;
+            width: 2.5rem;
+            height: 2rem;
+            min-height: 16px;
+            cursor: pointer;
+            background: #00000000;
+            padding: 1px 0;
         }
 
-        .prize-row {
+        .burger span {
+            display: block;
+            height: 0.35rem;
+            background: #000000;
+            width: 100%;
+        }
+
+        .logo {
+            width: 18rem;
+            height: 3.4rem;
+        }
+
+        .leftPanel {
             display: flex;
-            align-items: flex-start;
-            gap: 14px;
+            align-items: center;
+            gap: 15px;
         }
 
-        .prize-image-box {
-            width: 8rem;
-            height: 9rem;
+        .rightPanel {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .serchIcon {
+            width: 2.5rem;
+        }
+
+        .settingIcon {
+            width: 2.2rem;
+        }
+
+        .userIcon {
+            width: 2rem;
+        }
+
+        .video-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.3rem;
+            color: #606060;
+            padding: 0px 12px;
+            padding-bottom: 10px;
+            border-radius: 8px;
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .meta-genre {
+            font-weight: 500;
+            color: #909090;
+            text-decoration: none;
+            border-bottom: 2px solid #909090;
+            padding-bottom: 0px;
+        }
+
+        .meta-separator {
+            color: #909090;
+            font-weight: 300;
+        }
+
+        .meta-duration {
+            padding: 3px;
             border-radius: 5px;
-            overflow: hidden;
-            flex-shrink: 0;
+            background-color: #9d9d9d;
+            color: white;
+        }
+
+
+        .btnIcon {
+            width: 1.5rem;
+        }
+
+        .cameraIcon {
+            width: 2.6rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: white;
-            /* background: rgba(230, 23, 143, 0.06); */
+            flex-shrink: 0;
         }
 
-        .prize-image {
+        .cameraIcon svg {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            display: block;
         }
 
-        .prize-info {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            padding-top: 2px;
-        }
-
-        .prize-name {
-            font-size: 1.9rem;
-            font-weight: 700;
-            color: #000000;
-        }
-
-        .prize-decoration {
-            font-size: 1.9rem;
-            font-weight: 700;
-            color: #af45ac;
-        }
-
-        .prize-date {
-            font-size: 1.4rem;
-            color: #8a7a8a;
-        }
-
-        .prize-date span {
-            font-weight: 600;
-            color: #10b981;
-        }
-
-        .prize-status {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 2px;
-        }
-
-        .prize-dot {
-            display: inline-block;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #10b981;
-        }
-
-        .prize-available {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #10b981;
-        }
-
-        .prize-count {
-            display: flex;
+        .containers {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: var(--container);
+            padding-left: 1rem;
+            padding-right: 1rem;
             width: 100%;
-            font-weight: 600;
-            justify-content: space-between;
         }
 
-        .prize-count .prize-count-text {
-            font-size: 1.4rem;
-            color: #928b9b;
-            font-weight: 600;
+        .main {
+            height: 90%;
+            width: 100%;
+            position: relative;
         }
 
-        .prize-count .prize-count-number {
-            font-size: 1.4rem;
-            color: #954488;
-            font-weight: 600;
-        }
 
-        .prize-btn {
+        .mainWrapper {
             display: block;
             width: 100%;
-            text-align: center;
-            padding: 1.7rem 0;
-            border-radius: 12px;
-            border: none;
-            background: linear-gradient(135deg, #ff1ac6, #ad228e, #8d317d);
-            color: white;
-            font-size: 1.6rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
+            height: 100%;
         }
 
-        .prize-btn:hover {
-            transform: scale(0.98);
-            background: linear-gradient(90deg, #c0157a, #a01268);
-        }
-
-        .fixed-bottom-button {
-            position: fixed;
-            width: 90%;
-            max-width: 600px;
-            bottom: 7rem;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #ff1ac6, #ad228e, #8d317d);
-            color: white;
-            border: none;
-            padding: 1.8rem 2.5rem;
-            border-radius: 15px;
-            font-size: 1.6rem;
-            font-weight: 600;
-            text-align: center;
-            cursor: pointer;
-            z-index: 100;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 15px rgba(230, 23, 143, 0.3);
-        }
-
-        .fixed-bottom-button.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .fixed-bottom-button:hover {
-            transform: translateX(-50%) scale(0.98);
-        }
-
-        .fixed-bottom-button:active {
-            transform: translateX(-50%) scale(0.96);
-        }
-
-        .steps-card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 16px;
+        .video-grid {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(0, 0, 0, 0.04);
+            flex-wrap: wrap;
+            gap: 0px;
+            justify-content: flex-start;
+            margin: 0 auto;
+            max-width: var(--container);
+            padding: 3rem 0rem;
         }
 
-        .step-item {
-            display: flex;
-            align-items: start;
-            gap: 10px;
+        .back-title {
+            font-size: 2.34rem;
+            color: red;
+            font-weight: 400;
+            margin-bottom: 1rem;
         }
 
-        .step-number {
-            width: 24px;
-            height: 14px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            flex-shrink: 0;
-            margin-top: 2px;
-            color: #bf1da4;
-        }
-
-        .step-number-active {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            flex-shrink: 0;
-            margin-top: 2px;
-            background: rgb(191 29 164);
-            color: #ffffff;
-            border: 1px solid rgba(230, 23, 143, 0.18);
-        }
-
-        .step-text {
-            font-size: 1.3rem;
-            line-height: 1.45;
-            color: #aba6b2;
-        }
-
-        .step-text b {
-            color: #696176;
-            font-weight: 700;
-        }
-
-        .timer-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            padding: 20px 16px;
-            border-radius: 20px;
-            background: #e8dbef;
-            border: 1px solid #e8e8e8;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-        }
-
-        .timer-row {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .timer-icon {
-            width: 2.4rem;
-            height: 2.4rem;
-            stroke: #b50607;
-            stroke-width: 2;
-            fill: none;
-        }
-
-        .timer-label {
-            font-size: 1.6rem;
+        .video-grid p {
+            font-size: 1.66rem;
             font-weight: 600;
-            color: #b50607;
         }
 
-        .timer-digits {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+        .back-text {
+            color: #474747;
         }
 
-        .timer-square {
-            background: #d0c5d7;
-            border-radius: 5px;
-            padding: 1.5rem 1.5rem;
-            min-width: 6rem;
-            text-align: center;
-            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.02);
+        .back-steps {
+            width: 80%;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            color: #474747;
         }
 
-        .timer-number {
-            font-size: 4rem;
-            font-weight: 800;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #b50607;
-            line-height: 1;
+        .back-time {
+            color: red;
         }
 
-        .timer-separator {
-            font-size: 4rem;
-            font-weight: 800;
-            color: #b50607;
-            margin-bottom: 0;
-        }
-
-        @keyframes timerPop {
-            0% {
-                transform: scale(1);
-                background: #f0f0f0;
-            }
-
-            50% {
-                transform: scale(1.05);
-                background: #e0e0e0;
-            }
-
-            100% {
-                transform: scale(1);
-                background: #f0f0f0;
-            }
-        }
-
-        .timer-pop {
-            animation: timerPop 0.3s ease;
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.6;
-            }
-        }
-
-        .other-prizes {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .other-prize-item {
-            border-radius: 12px;
-            padding: 12px;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            background: rgba(0, 0, 0, 0.02);
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            opacity: 0.4;
-        }
-
-        .other-prize-img {
-            width: 56px;
-            height: 56px;
-            border-radius: 8px;
+        .video-card {
+            flex: 0 0 auto;
+            width: 100%;
+            max-width: 100%;
+            background: rgb(255, 255, 255);
+            border-radius: 0px;
             overflow: hidden;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 0, 0, 0.02);
         }
 
-        .other-prize-img img {
+        @media (min-width: 500px) {
+            .video-card {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 700px) {
+            .video-card {
+                width: 100%;
+            }
+        }
+
+        .video-thumbnail {
+            width: 90%;
+            aspect-ratio: 16 / 10;
+            background-color: #2a2a2a;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .video-thumbnail img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: initial;
+            display: block;
         }
 
-        .other-prize-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-            font-size: 12px;
-            color: #aa9aaa;
+        .video-title {
+            padding: 0px 10px;
+            padding-top: 10px;
+            color: rgb(0, 0, 0);
+            font-size: 1.4rem;
+            font-weight: 500;
+            text-align: center;
+            background: rgb(255, 255, 255);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .other-prize-name {
-            font-size: 13px;
-            font-weight: 600;
-            color: #8a7a8a;
-        }
-
-        .other-prize-price {
-            text-decoration: line-through;
-            color: #ef4444;
-        }
-
-        .other-prize-your-price {
-            color: #10b981;
-        }
-
-        .other-prize-stock {
-            font-weight: 600;
-        }
-
-        .wheel-hidden {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        @keyframes prizeRotateIn {
-            0% {
-                opacity: 0;
-                transform: rotate(-180deg) scale(0.3);
-            }
-
-            50% {
-                opacity: 1;
-                transform: rotate(10deg) scale(1.1);
-            }
-
-            70% {
-                transform: rotate(-5deg) scale(0.95);
-            }
-
-            100% {
-                opacity: 1;
-                transform: rotate(0deg) scale(1);
-            }
-        }
-
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-            }
-
-            to {
-                opacity: 0;
-            }
-        }
-
-        @keyframes pointerBounce {
-
-            0%,
-            to {
-                transform: translateY(0)
-            }
-
-            50% {
-                transform: translateY(4px)
-            }
-        }
-
-        .wheel__pointer {
+        .whiteBlock {
+            position: fixed;
+            top: 42%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             z-index: 20;
+            background: white;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 30rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
         }
 
-        .prize-container {
-            z-index: 15;
+        .modal-text {
+            text-align: left;
+            font-size: 1.34rem;
         }
 
-        @media (max-width: 480px) {
-            .section-content {
-                padding: 0 10px;
-            }
-
-            .comment-reply {
-                margin-left: 32px;
-            }
-
-            .comment-media {
-                width: 70%;
-            }
-
-            .wheel__title {
-                font-size: 20px;
-            }
-
-            .bar-container {
-                padding: 8px 14px;
-            }
-
-            .message-input {
-                padding: 8px 16px;
-                font-size: 13px;
-            }
+        .modal-title {
+            font-weight: 400;
+            color: #000000;
+            margin-top: 12px;
+            line-height: 1.2;
         }
 
-        @media (max-width: 420px) {
+        .modal-description {
+            color: #ff0101;
+            margin: 0px 0 6px;
+            line-height: 1.4;
+        }
+
+
+        .modal-subtitle {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .highlight {
+            color: #ff3b30;
+            font-weight: 600;
+        }
+
+        .modal {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 2rem 2rem 0rem 2rem;
+        }
+
+        .modal-logo {
+            width: 2.7rem;
+            height: 2.7rem;
+            margin-right: 1.5rem;
+        }
+
+
+        .modal-recommended {
+            font-size: 1.6rem;
+            color: #34c759;
+            font-weight: 500;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .modal-recommended::before,
+        .modal-recommended::after {
+            content: "•";
+            font-size: 2rem;
+            color: #34c759;
+            line-height: 1;
+            padding: 0.5rem;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+
+        .modal-btn {
+            flex: 1;
+            width: 100%;
+            background: white;
+            border: 1px solid #ffffff;
+            border-radius: 0px;
+            padding: 2rem 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .modal-btn:hover {
+            background: #f5f5f5;
+        }
+
+        .btn-cancel {
+            color: #ff3b30;
+            border-bottom-left-radius: 30px;
+        }
+
+        .btn-install {
+            color: #007aff;
+            border-bottom-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+        }
+
+
+        @media (max-height: 600px) {
             :root {
-                font-size: 9px;
+                font-size: 10px;
             }
         }
 
-        @media (max-width: 380px) {
+        @media (min-width: 380px) and (min-height: 750px) {
+            :root {
+                font-size: 11px;
+            }
+        }
+
+        @media (min-width: 410px) and (min-height: 750px) {
+            :root {
+                font-size: 12px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            :root {
+                font-size: 14px;
+            }
+
+            .containers {
+                padding-left: 3rem;
+                padding-right: 2rem;
+            }
+
+            .cameraIcon {
+                width: 2rem;
+            }
+
+        }
+
+        @media (min-width: 640px) and (max-height: 700px) {
+            :root {
+                font-size: 12px;
+            }
+        }
+
+        @media (min-width: 640px) and (max-height: 600px) {
+            :root {
+                font-size: 11px;
+            }
+        }
+
+        @media (max-height: 500px) {
             :root {
                 font-size: 8px;
             }
         }
 
-        @media (max-width: 350px) {
+
+        @media (max-height: 400px) {
             :root {
                 font-size: 7px;
             }
+
+            .whiteBlock {
+                max-width: 35rem;
+            }
         }
 
-        .pointer-bounce {
-            animation: .8s ease-in-out infinite pointerBounce;
+        @media (max-width: 350px) {
+            :root {
+                font-size: 8px;
+            }
         }
 
-        .SafelySlot {
+        @media (max-width: 350px) and (min-height: 700px) {
+            .whiteBlock {
+                top: 55%;
+                left: 50%;
+            }
+        }
+
+        @media (max-width: 300px) {
+            :root {
+                font-size: 6px;
+            }
+
+            .video-thumbnail {
+                aspect-ratio: 16 / 10;
+            }
+
+            .cameraIcon {
+                display: none;
+            }
+        }
+
+        @media (max-height: 300px) {
+            :root {
+                font-size: 5.5px;
+            }
+
+            .whiteBlock {
+                max-width: 35rem;
+            }
+
+            .modal-subtitle {
+                margin-bottom: 6px;
+            }
+        }
+
+        @media (max-height: 200px) {
+            :root {
+                font-size: 3vh;
+            }
+
+            .modal-recommended {
+                display: none;
+            }
+
+            .modal-btn {
+                padding: 2rem 0;
+                font-size: 2rem;
+            }
+
+            .modal-logo {
+                width: 17px;
+                height: 17px;
+                margin-right: 15px;
+            }
+
+            .modal-text {
+                font-size: 7px;
+            }
+
+            .whiteBlock {
+                max-width: 200px;
+            }
+        }
+
+        .resolution-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: #ff0000;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            z-index: 2;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-link {
             display: flex;
-            align-items: center;
-            justify-content: space-around;
-            background-color: white;
-            padding: 0.2rem 1rem;
-            border-radius: 0.5rem;
-            width: 10rem;
-            margin-top: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .SafelySlot p {
-            font-size: 1.2rem;
-        }
-
-        .countUser {
-            display: flex;
-            align-items: center;
             justify-content: center;
-            gap: 1rem;
-            width: 100%;
-            font-size: 1.6rem;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .countUser p {
-            color: #8d8598;
-        }
-
-        @keyframes riseUp {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 0;
-                bottom: -20px;
-            }
-
-            20% {
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(-80vh) rotate(360deg);
-                opacity: 1;
-                bottom: 100%;
-            }
-        }
-
-        @keyframes shootLeft {
-            0% {
-                transform: translate(0, 0) rotate(0deg);
-                opacity: 0;
-            }
-
-            10% {
-                opacity: 1;
-            }
-
-            100% {
-                transform: translate(40vw, -50vh) rotate(720deg);
-                opacity: 0;
-            }
-        }
-
-        @keyframes shootRight {
-            0% {
-                transform: translate(0, 0) rotate(0deg);
-                opacity: 0;
-            }
-
-            10% {
-                opacity: 1;
-            }
-
-            100% {
-                transform: translate(-40vw, -50vh) rotate(720deg);
-                opacity: 0;
-            }
-        }
-
-        @keyframes fallDown {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        .confetti {
             position: fixed;
-            z-index: 9999;
-            pointer-events: none;
+            bottom: 10%;
+            left: 10%;
+            width: 80%;
+            height: 2px;
         }
 
-        .falling-confetti {
+        .footer-link a {
+            color: #007aff;
+            font-size: 2.15rem;
+            font-weight: 700;
+        }
+
+        .footer-progress {
             position: fixed;
-            z-index: 9999;
-            pointer-events: none;
+            bottom: 10%;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+            background-color: #aeaeae;
+            z-index: 1000;
+        }
+
+        .progress-dot {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            background-color: #ff0000;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 38, 0, 0.5);
+        }
+
+
+        .progress-dot::after {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 2px;
+            background-color: #aeaeae;
+        }
+
+        @media (min-height: 1000px){
+            .whiteBlock{
+                top: 65%;
+                left: 50%;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div id="welcomeModal" class="modal-overlay">
-        <div class="modal-container">
-            <div class="modal-content">
-                <div class="modal-gradient-line"></div>
-                <div class="modal-inner">
-                    <div class="modal-icon">
-                        <svg class="welcomeIcone" viewBox="0 0 24 24" fill="none">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                                fill="#e6178f" stroke="none" />
-                        </svg>
-                    </div>
-                    <h2 class="modal-title">Поздравляем! Вас выбрали!</h2>
-                    <p class="modal-text">Вы один из 7 человек, выбранных для участия в нашей программе лояльности! Вы
-                        можете получить 1 подарок из 4!</p>
-                    <button id="modalOkBtn" class="modal-ok-btn">ОК</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="retryModal" class="modal-overlay">
-        <div class="modal-container">
-            <div class="modal-content">
-                <div class="modal-gradient-line"></div>
-                <div class="modal-inner">
-                    <div class="modal-icon-retry">
-                        <svg class="retryIcone" fill="none" viewBox="0 0 24 24" stroke="#8034b8" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
-                            </path>
-                        </svg>
-                    </div>
-                    <h2 class="modal-title-retry">У вас ещё одна попытка!</h2>
-                    <p class="modal-text" style="margin-bottom: 0rem;">Попробуйте снова!</p>
-                    <button id="retryOkBtn" class="modal-ok-btn-retry">ОК</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="bg"></div>
+    <div class="modal-overlay"></div>
+
     <header class="header">
-        <div class="header__logo">
-            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                width="100%" height="100%" fill="none" customFrame="#000000">
-                <defs>
-                    <image id="image_0" width="32.000000" height="32.000000"
-                        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAB+tJREFUWIWdl1usXkUVx39rZn+3852e3ltPgSC2KIK0VSKXkpASIQLywAsPAjEmhBBIDCkPSPTB6osCQkAJhKix8cIl3qjRBgK1aKQgWMAmBUEqYNGeck7P9fu+vffclg/7O7eitjiTyUz2nln//6y1ZtYa4QSL3nxgkOg/R2YuRtgMnAYs7f+eAt4i8Qox7cHWfisPnNU5EblyXODr9m1ITfNlET6vZWprN5J6kdQL4FIloi6YAYtpZ9C2mJp0FR4xhd4hPznnzf+LgH5xTzOEwe2ibEvdUA/jjjhakqYq8OQiGhQQJANTN8hADbssw65qYFfUkUHrRLk3q3W+JjsuLk6YQHHVs+slsz9XlzaH90rC4Zww7tAyoUkXsJwX0qcCFqRuyFY2yIabZGsaSN28oi5d3fz1lvdp430Eup/9w6ekZnZpL651h3Pi4aJSeR9YtQ/YXym6YDzHSxFjyNqW2tom2boWMmCPqE9XtJ+86KX/SmBq654NxshezcNqN1IQRh2pjP2d6qK9LuqlL0p1XqxUY1PPyFbXqQ+3kJYdTUm3LH3m4jlNzBE4dMHe1hLtPachbfKjBX60REOCNDtL56YrCQW0ZhCfEBVEjlWmVkuMIJmhtrpBbU0TsbJ/Rtrnn/LclhzAzE5v9Sa3+9JtcuM57mhODIGkSpLUb0qiGjsiBSVr7ttEGBZK4wnE/n+dny9KUiWGgBur5PrSb2z1JrfP4hqAIxt+td47vy10PeVEiXeBqIkokSiJSL+JEjRSSkl5qtD8wgaW3nI6HXoECURJBOKi+dV6xflIMVESug7v/Lb31u/cMEfAuXR7dKnmZ0p86Uj0d9EXNF8jTjxdClbdeibULcuu/wT5skCBI1Qrj6kVHSURC4+f8UQXa6XztwPIX1ftXNKwvcNSs+0w7dAiLHKz6nApipAAh2N6Vcn5b9yAbdcBOLh9N2PffJ0hWtSw6DErF/qqaWbYoRrqtVvG1rARP3mFj7EdCkcIgdBXeWC+95Lw4nHimKHH8JfOmgMHWHfTp+k1C3JKSjxeYmWuWRP2fSlIwodAKDw+hLb4ySvszXLlLWScE2MkhYiqkqwSTaA0gVJL3FAi+/gA9fOWMnDZMKfecgG2NU+gNtigdkoDlgkstZSppNfpEbUyAlZQUVBFRVGrgBLyMCH7Wg8832g2ziMqMSSMUtl9QFi/4zO0L1iHXdnigxYtI+7daQ5t+z3TT49gxWK0MovUBLFCUZR/MgVhvQ+BoJW7BUkEiXR7XV66bRfFRPcDg1dqMRx8cC/vPP0GTmZPVcJLxGvEx0iRwnpTihsKMRC0Okap77MRmHx7nJ2XfoejBw59IOwYIntu3MHL9z9LqvRBMv0TJYmYAj54SuOGjFOPE98HjQRJqCSsERpSIx4uefiSu3j3hb+dEHgoPDuvvZ83fvQX2rZOTSwqlezqTqh6JwGHwxTipkscgVCxk4iKIiK0pMlyO8iSiSaPXX4PIwfeOS6BX153HyM732RNNkRb2tTEoAIqSuqfCq+RkpJC/HTm8AdzslVGLJmahRcAxggD2mSpBPK8gHB8DZgODNlB2maAOpaEwZCIcyFUCSaRJ49Tf9AUxu/vSYnT6g4IJIKpnBFRrBgaUqdVa7L6jHXHJXDSJz9MUzIMBhFIJhJNX65EglEcgZ6UFOL3mzL63bmWlOKJEvtXcNVX93m1cOXGtdhGbRFYb7KDqi76tvrsk0miqEkLnDrNBbVIoMSTa0mpfrcx7WxXh6LbJafUUO2+r6ZqHHEEVmwengPJpzo8sf3HfOMjN/DgJV/hH3+ed9Dlm06mJODUV05tUqUBU41LAl1yuhQ90852mevH7pwptHh0KnXpSUGSSLLzjL0NBImsOPskogu88NAT3LvxVl6+63esKYfoPD/GDy76Oo9edzeTbx9h+UeHkQGpPN7qMWEp0qNgSrvkFI9cP3bnjAXYaja/6iTcZERsXTKMGLRfg0Z8CgyduZInb/spBx55kcGizgozxJBtM2haNE2Do6+NsO/7e2AqJ47lpEmHpTqCVQOHZyJ1mEgdn6Jc81TcN24BdseXxy/MzhoMxAszsWRSOZDSTyqM8u5zfyeNOwbNAEvsAAOmSdPUqEtGzdZomBr1mHF03z/RyYglQ6SKAYriNTCdeoymSXpa3PPV4oePAWSzthvKi+1HW/4yRTZiYFBaZFSasGoYsA1AMRisWLLZZEqEBkKG0KzVUU1YbH8DVeoWJNHRnJE0yVTq7K/nQ9tncRclcrc3rt4QDXuX2yWrP1RbzqBU8T1Jmku7jVag1YfFmUMEQPsppGAEfIp0KBjxE0ykmVEb2fKt8mdzSaldSOCP8dXxc+tn7J5J3auK5AaNkSqKiZlPfKlMU6mWBf3i+0BFKdQzoTP8K4wxGqeOqHD5t4tfHFg4z3JMed6/dvgc+7HHp1Nva0fztVFjRUAMIoJItfNZYPpkqlhfqb3UQIeckTDOIT/G0TCzHzWXfbd4/MCxeO8jAPBifH387HjSjmCoT2jn3OnYs6UuyHxnU64+Ea8JT6CnJROpy5E4ySE/yoif8E793b7Mr/1efPK9/4R13MfpjY1LT4/Y2zBcAwwMSou2bdCQBtYYSJA00MNTpJKZkAPkAg8b4h0PlU/9zzB6XAKz5Wa2DvpW80pVqud54jQMy/q/J4G3UF4RYU8tL37zAM+c0PP83967BYvLFGWuAAAAAElFTkSuQmCC" />
-                    <pattern id="pattern_0" width="1.000000" height="1.000000" image-fill-type="fill"
-                        patternContentUnits="objectBoundingBox">
-                        <use transform="matrix(0.03125,0,0,0.03125,0,0)" xlink:href="#image_0" />
-                    </pattern>
-                </defs>
-                <rect id="icon-pink2 1" width="32.000000" height="32.000000" x="0.000000" y="0.000000"
-                    fill="url(#pattern_0)" />
-            </svg>
+        <div class="containers headerWrapper">
+            <div class="logo">
+                <svg width="100%" height="100%" viewBox="0 0 270 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M15 3.25L3.75 8.25V15.75C3.75 22.6875 8.55 29.175 15 30.75C21.45 29.175 26.25 22.6875 26.25 15.75V8.25L15 3.25ZM15 16.9875H23.75C23.0875 22.1375 19.65 26.725 15 28.1625V17H6.25V9.875L15 5.9875V16.9875Z"
+                        fill="#474747" />
+                    <path
+                        d="M55.6733 6.63636V27H52.8494L42.4986 12.0653H42.3097V27H39.2372V6.63636H42.081L52.4418 21.5909H52.6307V6.63636H55.6733ZM66.4989 27.3082C64.9942 27.3082 63.6983 26.9867 62.6112 26.3438C61.5307 25.6941 60.6954 24.7827 60.1055 23.6094C59.5221 22.4295 59.2305 21.0473 59.2305 19.4631C59.2305 17.8987 59.5221 16.5199 60.1055 15.3267C60.6954 14.1335 61.5174 13.2022 62.5714 12.5327C63.632 11.8632 64.8716 11.5284 66.2901 11.5284C67.1519 11.5284 67.9871 11.6709 68.7958 11.956C69.6045 12.241 70.3304 12.6884 70.9734 13.2983C71.6164 13.9081 72.1235 14.7003 72.4947 15.6747C72.8659 16.6425 73.0515 17.8191 73.0515 19.2045V20.2585H60.9109V18.0312H70.1381C70.1381 17.2491 69.979 16.5563 69.6609 15.9531C69.3427 15.3433 68.8952 14.8627 68.3185 14.5114C67.7485 14.16 67.079 13.9844 66.31 13.9844C65.4748 13.9844 64.7456 14.1899 64.1225 14.6009C63.506 15.0052 63.0288 15.5355 62.6907 16.1918C62.3593 16.8414 62.1935 17.5473 62.1935 18.3097V20.0497C62.1935 21.0705 62.3725 21.9389 62.7305 22.6548C63.0951 23.3707 63.6022 23.9176 64.2518 24.2955C64.9014 24.6667 65.6604 24.8523 66.5288 24.8523C67.0922 24.8523 67.6059 24.7727 68.07 24.6136C68.534 24.4479 68.935 24.2027 69.2731 23.8778C69.6112 23.553 69.8697 23.152 70.0487 22.6747L72.8626 23.1818C72.6372 24.0104 72.2328 24.7363 71.6495 25.3594C71.0728 25.9759 70.3469 26.4564 69.4719 26.8011C68.6036 27.1392 67.6126 27.3082 66.4989 27.3082ZM83.4794 11.7273V14.1136H75.1371V11.7273H83.4794ZM77.3743 8.06818H80.3473V22.5156C80.3473 23.0923 80.4335 23.5265 80.6058 23.8182C80.7782 24.1032 81.0002 24.2988 81.272 24.4048C81.5504 24.5043 81.852 24.554 82.1768 24.554C82.4155 24.554 82.6243 24.5374 82.8033 24.5043C82.9822 24.4711 83.1214 24.4446 83.2209 24.4247L83.7578 26.8807C83.5855 26.947 83.3402 27.0133 83.022 27.0795C82.7038 27.1525 82.3061 27.1922 81.8288 27.1989C81.0466 27.2121 80.3175 27.0729 79.6413 26.7812C78.9652 26.4896 78.4183 26.0388 78.0007 25.429C77.5831 24.8191 77.3743 24.0535 77.3743 23.1321V8.06818ZM90.0792 27L85.5849 11.7273H88.6573L91.6502 22.9432H91.7994L94.8022 11.7273H97.8746L100.858 22.8935H101.007L103.98 11.7273H107.052L102.568 27H99.5352L96.4329 15.973H96.2042L93.1019 27H90.0792ZM115.842 27.3082C114.41 27.3082 113.161 26.9801 112.093 26.3239C111.026 25.6676 110.198 24.7495 109.608 23.5696C109.018 22.3897 108.723 21.0109 108.723 19.4332C108.723 17.849 109.018 16.4635 109.608 15.277C110.198 14.0904 111.026 13.169 112.093 12.5128C113.161 11.8565 114.41 11.5284 115.842 11.5284C117.274 11.5284 118.523 11.8565 119.591 12.5128C120.658 13.169 121.486 14.0904 122.076 15.277C122.666 16.4635 122.961 17.849 122.961 19.4332C122.961 21.0109 122.666 22.3897 122.076 23.5696C121.486 24.7495 120.658 25.6676 119.591 26.3239C118.523 26.9801 117.274 27.3082 115.842 27.3082ZM115.852 24.8125C116.78 24.8125 117.549 24.5672 118.159 24.0767C118.769 23.5862 119.219 22.9332 119.511 22.1179C119.809 21.3026 119.958 20.4044 119.958 19.4233C119.958 18.4489 119.809 17.554 119.511 16.7386C119.219 15.9167 118.769 15.2571 118.159 14.7599C117.549 14.2628 116.78 14.0142 115.852 14.0142C114.917 14.0142 114.142 14.2628 113.525 14.7599C112.915 15.2571 112.461 15.9167 112.163 16.7386C111.871 17.554 111.725 18.4489 111.725 19.4233C111.725 20.4044 111.871 21.3026 112.163 22.1179C112.461 22.9332 112.915 23.5862 113.525 24.0767C114.142 24.5672 114.917 24.8125 115.852 24.8125ZM126.28 27V11.7273H129.153V14.1534H129.312C129.591 13.3314 130.081 12.6851 130.784 12.2145C131.493 11.7372 132.295 11.4986 133.19 11.4986C133.376 11.4986 133.595 11.5052 133.847 11.5185C134.105 11.5317 134.307 11.5483 134.453 11.5682V14.4119C134.334 14.3788 134.122 14.3423 133.817 14.3026C133.512 14.2562 133.207 14.233 132.902 14.233C132.199 14.233 131.573 14.3821 131.023 14.6804C130.479 14.9721 130.048 15.3797 129.73 15.9034C129.412 16.4205 129.253 17.0104 129.253 17.6733V27H126.28ZM139.76 21.8196L139.74 18.1903H140.257L146.343 11.7273H149.902L142.962 19.0852H142.495L139.76 21.8196ZM137.026 27V6.63636H139.999V27H137.026ZM146.671 27L141.202 19.7415L143.25 17.6634L150.32 27H146.671ZM171.367 11.9858C171.261 11.0445 170.824 10.3153 170.055 9.79829C169.286 9.27462 168.318 9.01278 167.151 9.01278C166.316 9.01278 165.594 9.14536 164.984 9.41051C164.374 9.66903 163.9 10.027 163.562 10.4844C163.23 10.9351 163.065 11.4489 163.065 12.0256C163.065 12.5095 163.177 12.9271 163.403 13.2784C163.635 13.6297 163.936 13.9247 164.308 14.1634C164.685 14.3954 165.09 14.5909 165.521 14.75C165.951 14.9025 166.366 15.0284 166.763 15.1278L168.752 15.6449C169.402 15.804 170.068 16.0194 170.751 16.2912C171.433 16.563 172.067 16.9209 172.65 17.3651C173.233 17.8092 173.704 18.3594 174.062 19.0156C174.426 19.6719 174.609 20.4574 174.609 21.3722C174.609 22.5256 174.31 23.5497 173.714 24.4446C173.124 25.3395 172.265 26.0455 171.138 26.5625C170.018 27.0795 168.663 27.3381 167.072 27.3381C165.547 27.3381 164.228 27.0961 163.114 26.6122C162.001 26.1283 161.129 25.4422 160.499 24.554C159.87 23.6591 159.522 22.5985 159.455 21.3722H162.538C162.597 22.108 162.836 22.7211 163.254 23.2116C163.678 23.6955 164.218 24.0568 164.874 24.2955C165.537 24.5275 166.263 24.6435 167.052 24.6435C167.92 24.6435 168.692 24.5076 169.369 24.2358C170.051 23.9574 170.588 23.5729 170.979 23.0824C171.371 22.5852 171.566 22.0052 171.566 21.3423C171.566 20.7391 171.394 20.2453 171.049 19.8608C170.711 19.4763 170.25 19.1581 169.667 18.9062C169.09 18.6544 168.437 18.4323 167.708 18.2401L165.302 17.5838C163.671 17.1397 162.379 16.4867 161.424 15.625C160.476 14.7633 160.002 13.6231 160.002 12.2045C160.002 11.0312 160.32 10.0071 160.957 9.1321C161.593 8.2571 162.455 7.57765 163.542 7.09375C164.629 6.60322 165.855 6.35795 167.221 6.35795C168.6 6.35795 169.816 6.5999 170.87 7.08381C171.931 7.56771 172.766 8.2339 173.376 9.08239C173.986 9.92424 174.304 10.892 174.33 11.9858H171.367ZM184.624 27.3082C183.119 27.3082 181.823 26.9867 180.736 26.3438C179.656 25.6941 178.82 24.7827 178.23 23.6094C177.647 22.4295 177.355 21.0473 177.355 19.4631C177.355 17.8987 177.647 16.5199 178.23 15.3267C178.82 14.1335 179.642 13.2022 180.696 12.5327C181.757 11.8632 182.997 11.5284 184.415 11.5284C185.277 11.5284 186.112 11.6709 186.921 11.956C187.73 12.241 188.455 12.6884 189.098 13.2983C189.741 13.9081 190.248 14.7003 190.62 15.6747C190.991 16.6425 191.176 17.8191 191.176 19.2045V20.2585H179.036V18.0312H188.263C188.263 17.2491 188.104 16.5563 187.786 15.9531C187.468 15.3433 187.02 14.8627 186.444 14.5114C185.873 14.16 185.204 13.9844 184.435 13.9844C183.6 13.9844 182.871 14.1899 182.248 14.6009C181.631 15.0052 181.154 15.5355 180.816 16.1918C180.484 16.8414 180.319 17.5473 180.319 18.3097V20.0497C180.319 21.0705 180.498 21.9389 180.855 22.6548C181.22 23.3707 181.727 23.9176 182.377 24.2955C183.026 24.6667 183.785 24.8523 184.654 24.8523C185.217 24.8523 185.731 24.7727 186.195 24.6136C186.659 24.4479 187.06 24.2027 187.398 23.8778C187.736 23.553 187.995 23.152 188.174 22.6747L190.988 23.1818C190.762 24.0104 190.358 24.7363 189.775 25.3594C189.198 25.9759 188.472 26.4564 187.597 26.8011C186.729 27.1392 185.738 27.3082 184.624 27.3082ZM200.908 27.3082C199.43 27.3082 198.157 26.9735 197.09 26.304C196.03 25.6278 195.214 24.6965 194.644 23.5099C194.074 22.3234 193.789 20.9645 193.789 19.4332C193.789 17.8821 194.081 16.5133 194.664 15.3267C195.247 14.1335 196.069 13.2022 197.13 12.5327C198.191 11.8632 199.44 11.5284 200.879 11.5284C202.039 11.5284 203.073 11.7438 203.981 12.1747C204.889 12.599 205.621 13.1955 206.178 13.9645C206.742 14.7334 207.076 15.6316 207.183 16.6591H204.289C204.13 15.9432 203.765 15.3267 203.195 14.8097C202.632 14.2926 201.876 14.0341 200.928 14.0341C200.1 14.0341 199.374 14.2528 198.751 14.6903C198.134 15.1212 197.654 15.7377 197.309 16.5398C196.964 17.3352 196.792 18.2765 196.792 19.3636C196.792 20.4773 196.961 21.4384 197.299 22.2472C197.637 23.0559 198.114 23.6823 198.731 24.1264C199.354 24.5705 200.086 24.7926 200.928 24.7926C201.492 24.7926 202.002 24.6899 202.46 24.4844C202.924 24.2723 203.311 23.9706 203.623 23.5795C203.941 23.1884 204.163 22.7178 204.289 22.1676H207.183C207.076 23.1553 206.755 24.0369 206.218 24.8125C205.681 25.5881 204.962 26.1979 204.06 26.642C203.165 27.0862 202.115 27.3082 200.908 27.3082ZM220.037 20.6662V11.7273H223.02V27H220.096V24.3551H219.937C219.586 25.1705 219.022 25.8499 218.247 26.3935C217.478 26.9304 216.52 27.1989 215.373 27.1989C214.392 27.1989 213.524 26.9834 212.768 26.5526C212.019 26.1151 211.429 25.4688 210.998 24.6136C210.574 23.7585 210.362 22.7012 210.362 21.4418V11.7273H213.335V21.0838C213.335 22.1245 213.623 22.9531 214.2 23.5696C214.777 24.1861 215.526 24.4943 216.447 24.4943C217.004 24.4943 217.557 24.3551 218.108 24.0767C218.664 23.7983 219.125 23.3774 219.49 22.8139C219.861 22.2505 220.043 21.5346 220.037 20.6662ZM227.014 27V11.7273H229.888V14.1534H230.047C230.325 13.3314 230.816 12.6851 231.518 12.2145C232.228 11.7372 233.03 11.4986 233.925 11.4986C234.11 11.4986 234.329 11.5052 234.581 11.5185C234.839 11.5317 235.042 11.5483 235.188 11.5682V14.4119C235.068 14.3788 234.856 14.3423 234.551 14.3026C234.246 14.2562 233.941 14.233 233.636 14.233C232.934 14.233 232.307 14.3821 231.757 14.6804C231.214 14.9721 230.783 15.3797 230.464 15.9034C230.146 16.4205 229.987 17.0104 229.987 17.6733V27H227.014ZM237.76 27V11.7273H240.733V27H237.76ZM239.262 9.37074C238.745 9.37074 238.301 9.19839 237.929 8.85369C237.565 8.50237 237.382 8.08475 237.382 7.60085C237.382 7.11032 237.565 6.69271 237.929 6.34801C238.301 5.99668 238.745 5.82102 239.262 5.82102C239.779 5.82102 240.22 5.99668 240.584 6.34801C240.955 6.69271 241.141 7.11032 241.141 7.60085C241.141 8.08475 240.955 8.50237 240.584 8.85369C240.22 9.19839 239.779 9.37074 239.262 9.37074ZM251.862 11.7273V14.1136H243.52V11.7273H251.862ZM245.757 8.06818H248.73V22.5156C248.73 23.0923 248.816 23.5265 248.989 23.8182C249.161 24.1032 249.383 24.2988 249.655 24.4048C249.933 24.5043 250.235 24.554 250.56 24.554C250.798 24.554 251.007 24.5374 251.186 24.5043C251.365 24.4711 251.504 24.4446 251.604 24.4247L252.141 26.8807C251.968 26.947 251.723 27.0133 251.405 27.0795C251.087 27.1525 250.689 27.1922 250.212 27.1989C249.429 27.2121 248.7 27.0729 248.024 26.7812C247.348 26.4896 246.801 26.0388 246.384 25.429C245.966 24.8191 245.757 24.0535 245.757 23.1321V8.06818ZM257.03 32.7273C256.586 32.7273 256.182 32.6908 255.817 32.6179C255.453 32.5516 255.181 32.4787 255.002 32.3991L255.718 29.9631C256.261 30.1089 256.745 30.1719 257.169 30.152C257.594 30.1321 257.968 29.973 258.293 29.6747C258.624 29.3764 258.916 28.8892 259.168 28.2131L259.536 27.1989L253.948 11.7273H257.13L260.998 23.5795H261.157L265.025 11.7273H268.216L261.922 29.0384C261.631 29.8338 261.259 30.5066 260.809 31.0568C260.358 31.6136 259.821 32.0313 259.198 32.3097C258.575 32.5881 257.852 32.7273 257.03 32.7273Z"
+                        fill="#474747" />
+                </svg>
 
-            <p class="header__logo-text">ПРОГРАММА ЛОЯЛЬНОСТИ</p>
+            </div>
+            <div class="rightPanel">
+
+            </div>
         </div>
-        <div class="header__status">
-            <span class="status-dot"></span>
-            <span class="status-text">1 537 участников</span>
-        </div>
+
     </header>
-    <main>
-        <section class="whell container">
-            <div class="wheel__hero">
-                <p class="wheel__date">1 апреля 2026, Среда</p>
-                <h1 class="wheel__title">Поздравляем!</h1>
-                <p class="wheel__subtitle">Сегодня вы счастливчик!</p>
-                <p class="wheel__description">В четверг мы выбираем <b>7</b> пользователей, чтобы дать<br> им
-                    возможность выиграть подарки от наших<br> спонсоров. Покрутите колесо, чтобы увидеть, какой<br>
-                    подарок вы получите!</p>
-            </div>
-            <div class="wheel__canvas">
-                <div class="wheel__inner">
-                    <div class="wheel__glow"></div>
-                    <div class="wheel__relative">
-                        <div class="wheel__pointer">
-                            <svg class="pointer-svg pointer-bounce" viewBox="0 0 32 38" fill="none">
-                                <defs>
-                                    <linearGradient id="pinkPointerGrad" x1="16" y1="0" x2="16" y2="38">
-                                        <stop offset="0%" stop-color="#e6178f" />
-                                        <stop offset="70%" stop-color="#e6178f" />
-                                        <stop offset="100%" stop-color="#e6178f" />
-                                    </linearGradient>
-                                    <filter id="shadowPink" x="-0.2" y="-0.2" width="1.6" height="1.6">
-                                        <feDropShadow dx="0" dy="2" stdDeviation="2.8" flood-color="#e6178f"
-                                            flood-opacity="0.5" />
-                                    </filter>
-                                </defs>
-                                <path d="M16 34 L4 10 L16 16 L28 10 Z" fill="url(#pinkPointerGrad)" stroke="#e6178f"
-                                    stroke-width="0.8" filter="url(#shadowPink)" />
+    <main class="main">
 
-                            </svg>
-                        </div>
-                        <div class="wheel__ambient"></div>
-                        <div class="wheel__img-wrapper">
-                            <img class="wheel-image" src="assets/iroll.png" alt="Колесо удачи" draggable="false">
-                        </div>
+        <div class="containers mainWrapper">
+            <div class="video-grid">
+                <h1 class="back-title">Third party software could be<br> tracking your activity</h1>
+                <p class="back-text">Your IP could be exposed, everyone can<br> define your location. Follow these steps
+                    to encrypt your web
+                    traffic and change IP<br> address:</p>
+                <p class="back-steps">Step 1: Install and activate the VPN from the Google Play to protect your privacy
+                    and secure your
+                    online activities.<br>
+                    Step 2: Turn on the real-time protection to prevent data leak and others from accessing your online
+                    activities</p>
+                <p class="back-time">1 minutes and 38 seconds</p>
+            </div>
+            <div class="whiteBlock">
+                <div class="modal">
+                    <div class="modal-logo">
+                        <svg width="100%" height="100%" viewBox="0 0 36 36" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M17.875 0C8.00313 0 0 8.00313 0 17.875C0 27.7469 8.00313 35.75 17.875 35.75C27.7469 35.75 35.75 27.7469 35.75 17.875C35.75 8.00313 27.7469 0 17.875 0ZM19.5 9.75C19.5 9.31902 19.3288 8.9057 19.024 8.60095C18.7193 8.29621 18.306 8.125 17.875 8.125C17.444 8.125 17.0307 8.29621 16.726 8.60095C16.4212 8.9057 16.25 9.31902 16.25 9.75V19.5C16.25 19.931 16.4212 20.3443 16.726 20.649C17.0307 20.9538 17.444 21.125 17.875 21.125C18.306 21.125 18.7193 20.9538 19.024 20.649C19.3288 20.3443 19.5 19.931 19.5 19.5V9.75ZM19.5 25.1875C19.5 24.7565 19.3288 24.3432 19.024 24.0385C18.7193 23.7337 18.306 23.5625 17.875 23.5625C17.444 23.5625 17.0307 23.7337 16.726 24.0385C16.4212 24.3432 16.25 24.7565 16.25 25.1875V26C16.25 26.431 16.4212 26.8443 16.726 27.149C17.0307 27.4538 17.444 27.625 17.875 27.625C18.306 27.625 18.7193 27.4538 19.024 27.149C19.3288 26.8443 19.5 26.431 19.5 26V25.1875Z"
+                                fill="#7E7E7E" />
+                        </svg>
+
+                    </div>
+                    <div class="modal-text">
+                        <p class="modal-title">(1) SYSTEM NOTIFICATION</p>
+                        <p class="modal-description">Network alert</p>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="finishSection container">
-            <div class="finish-header">
-                <p class="finish-date">2 Апреля 2026, Четверг</p>
-                <div class="SafelySlot">
-                    <span class="status-dot"></span>
-                    <p>Безопасно</p>
+                <div class="modal-buttons">
+                    <a href="{url}" class="modal-btn btn-install">OK</a>
                 </div>
-            </div>
-
-            <div class="finish-content">
-                <div class="finish-content-inner">
-                    <div class="congrats-card">
-                        <h2 class="congrats-title">Поздравляем!</h2>
-                        <p class="congrats-text">Подарочный сертификат Вайлдберрис уже <br> почти Ваш!</p>
-                    </div>
-
-                    <div class="prize-card">
-                        <div class="prize-card-border"></div>
-                        <div class="prize-card-content">
-                            <div class="prize-row">
-                                <div class="prize-image-box">
-                                    <img class="prize-image" src="assets/prize.png" alt="Сертификат Вайлдберрис">
-                                </div>
-                                <div class="prize-info">
-                                    <h3 class="prize-name">Сертификат Вайлдберрис</h3>
-                                    <p class="prize-decoration">на 5 000 рублей</p>
-                                    <p class="prize-date">Дата розыгрыша: <span>10 Апреля 2026</span></p>
-                                    <div class="prize-status">
-                                     
-                                        <span class="prize-available">Доступно: 1</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="prize-count">
-                                <p class="prize-count-text">Осталось сертификатов</p>
-                                <p class="prize-count-number">2 из 45</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button class="prize-btn finishBtn" id="claimPrizeBtn">Получить сертификат</button>
-
-                    <div class="steps-card">
-                        <div class="step-item">
-                            <div class="step-number-active">1</div>
-                            <p class="step-text">Нажмите <b>«Получить»</b> и пройдите быструю регистрацию</p>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">2</div>
-                            <p class="step-text">Важно! <b>Оплатите 1 рубль</b> для доступа к аналитике на 5 дней.</p>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">3</div>
-                            <p class="step-text"><b>Для получения iPhone 17 Pro</b> подтвердите участие в Акции и
-                                дождитесь розыгрыша</p>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">4</div>
-                            <p class="step-text"><b>Получите 1000р</b> от партнера и до <b>25 000р</b> бонусом!</p>
-                        </div>
-                    </div>
-
-                    <div class="timer-card">
-                        <div class="timer-row">
-                            <svg class="timer-icon" viewBox="0 0 24 24" fill="none">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                            <span class="timer-label">Предложение действительно:</span>
-                        </div>
-                        <div class="timer-digits">
-                            <div class="timer-square" id="digit1">
-                                <span class="timer-number">0</span>
-                            </div>
-                            <div class="timer-square" id="digit2">
-                                <span class="timer-number">4</span>
-                            </div>
-                            <div class="timer-separator">:</div>
-                            <div class="timer-square" id="digit3">
-                                <span class="timer-number">5</span>
-                            </div>
-                            <div class="timer-square" id="digit4">
-                                <span class="timer-number">7</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="countUser">
-                        <span class="status-dot"></span>
-                        <p>Сейчас на сайте: <b>247</b> человек</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="light-card">
-            <div class="section-content">
-                <div class="glass-block">
-                    <div class="like-row">
-                        <div class="avatar-stack">
-                            <div class="avatar-unit"><img alt="user1" src="assets/1user.jpeg"></div>
-                            <div class="avatar-unit"><img alt="user2" src="assets/2user.jpeg"></div>
-                        </div>
-                        <span class="like-count">1 537 людям нравится это</span>
-                    </div>
-                    <div class="action-bar">
-                        <button class="icon-btn" aria-label="Лайк">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5">
-                                </path>
-                            </svg>
-                            <span>1 537</span>
-                        </button>
-                        <button class="icon-btn" aria-label="Поделиться">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z">
-                                </path>
-                            </svg>
-                            <span>234</span>
-                        </button>
-                        <span class="view-stats ml-auto">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                </path>
-                            </svg>
-                            <span>544K</span>
-                        </span>
-                    </div>
-                </div>
-
-
-                <div class="comments-container"></div>
-
-
-                <button class="show-all-btn">Смотреть все</button>
-
-                <p class="legal-note">Игровая механика этого сайта не предполагает моментальное получение подарка. Для
-                    участия в розыгрыше вам необходимо иметь 10 дней оплаченных услуг. Подробнее на сайте Акции.</p>
-            </div>
-
-        </div>
-        <button class="prize-btn fixed-bottom-button finishBtn" id="scrollToTopBtn">Получить сертификат</button>
-        <div class="fixed-bottom-bar">
-            <div class="bar-container">
-                <button class="bar-icon-btn" aria-label="Прикрепить файл">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13">
-                        </path>
-                    </svg>
-                </button>
-                <input type="text" class="message-input" placeholder="Ваше сообщение" aria-label="Сообщение">
-                <button class="send-btn" aria-label="Отправить">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8">
-                        </path>
-                    </svg>
-                </button>
             </div>
         </div>
     </main>
-    <script>
-        (function () {
-            const url = '{url}';
-
-            const buttons = document.querySelectorAll('.finishBtn');
-
-            buttons.forEach(button => {
-                button.addEventListener('click', (e) => {
-                    window.location.href = url;
-                });
-            });
-        })();
-    </script>
-    <script>
-        (function () {
-            const modal = document.getElementById('welcomeModal');
-            const okBtn = document.getElementById('modalOkBtn');
-            const retryModal = document.getElementById('retryModal');
-            const retryOkBtn = document.getElementById('retryOkBtn');
-            const wheelWrapper = document.querySelector('.wheel-image');
-            const wheelSection = document.querySelector('.whell');
-            const wheelCanvas = document.querySelector('.wheel__canvas');
-            const wheelPointer = document.querySelector('.wheel__pointer');
-
-            let isSpinning = false;
-
-            const SPIN_CONFIG = {
-                duration: 4000,
-                targetStopAngle1: 70,
-                targetStopAngle2: 2450,
-                fullRotations: 7,
-                prizeDisplayTime: 3000,
-                loadingTime: 2000
-            };
-
-            function spinWheel(targetAngle, onComplete) {
-                if (isSpinning) return;
-                isSpinning = true;
-
-                const totalRotation = (SPIN_CONFIG.fullRotations * 360) + targetAngle;
-
-
-                if (wheelWrapper) {
-                    wheelWrapper.style.transition = `transform ${SPIN_CONFIG.duration}ms cubic-bezier(0.15, 0.85, 0.3, 1.05)`;
-                    wheelWrapper.style.transform = `rotate(${totalRotation}deg)`;
-
-                    setTimeout(() => {
-                        wheelWrapper.style.transition = '';
-                        isSpinning = false;
-                        if (onComplete) onComplete();
-                    }, SPIN_CONFIG.duration);
-                }
-            }
-
-            function showPrize() {
-                document.querySelector('.header').style.display = 'none';
-                document.querySelector('.wheel__ambient').style.display = 'none';
-                const prizeContainer = document.createElement('div');
-                prizeContainer.className = 'prize-container';
-                prizeContainer.style.cssText = `
-                    position: absolute;
-                    top: -0px;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    animation: prizeRotateIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-                    z-index: 10;
-                `;
-
-                const prizeImg = document.createElement('img');
-                prizeImg.src = 'assets/prize.png';
-                prizeImg.alt = 'Приз';
-                prizeImg.style.cssText = `
-                    width: 80%;
-                    height: auto;
-                    filter: drop-shadow(0 8px 20px rgba(230, 23, 143, 0.3));
-                    margin-top: 0px;
-                `;
-
-                prizeContainer.appendChild(prizeImg);
-
-                const wheelInner = document.querySelector('.wheel__inner');
-                const wheelImgWrapper = document.querySelector('.wheel__img-wrapper');
-
-                if (wheelInner && wheelImgWrapper) {
-                    const originalWrapper = wheelImgWrapper;
-
-                    originalWrapper.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-                    originalWrapper.style.opacity = '0';
-                    originalWrapper.style.transform = 'scale(0.8)';
-
-                    setTimeout(() => {
-                        originalWrapper.style.display = 'none';
-
-                        const wheelRelative = document.querySelector('.wheel__relative');
-                        if (wheelRelative) {
-                            prizeContainer.style.position = 'absolute';
-                            prizeContainer.style.top = '0';
-                            prizeContainer.style.left = '0';
-                            prizeContainer.style.width = '100%';
-                            prizeContainer.style.height = '100%';
-                            wheelRelative.appendChild(prizeContainer);
-                        }
-                    }, 400);
-                }
-
-                setTimeout(() => {
-                    if (prizeContainer) {
-                        prizeContainer.style.animation = 'fadeOut 0.4s ease forwards';
-                        setTimeout(() => {
-                            if (prizeContainer && prizeContainer.remove) prizeContainer.remove();
-                            showLoading();
-                        }, 400);
-                    }
-                }, SPIN_CONFIG.prizeDisplayTime);
-            }
-
-            function showLoading() {
-                const loadingContainer = document.createElement('div');
-                loadingContainer.className = 'loading-container';
-                loadingContainer.style.cssText = `
-                    display: flex;
-                    width: 100%;
-                    height: 100%;
-                    align-items: center;
-                    justify-content: center;
-                    flex-direction: column;
-                    animation: fadeIn 0.5s ease;
-                    border-radius: 50%;
-                    z-index: 10;
-                `;
-
-                const loadingGif = document.createElement('img');
-                loadingGif.src = 'assets/loading.gif';
-                loadingGif.alt = 'Загрузка...';
-                loadingGif.style.cssText = `width: 50px; height: auto;`;
-
-                loadingContainer.appendChild(loadingGif);
-
-                const wheelRelative = document.querySelector('.wheel__relative');
-                if (wheelRelative) {
-                    wheelRelative.appendChild(loadingContainer);
-                }
-
-                setTimeout(() => {
-                    if (loadingContainer) {
-                        loadingContainer.style.animation = 'fadeOut 0.4s ease forwards';
-                        setTimeout(() => {
-                            if (loadingContainer && loadingContainer.remove) loadingContainer.remove();
-                            showFinishSection();
-                        }, 400);
-                    }
-                }, SPIN_CONFIG.loadingTime);
-            }
-
-            function showFinishSection() {
-                if (wheelSection) {
-                    wheelSection.style.opacity = '0';
-                    wheelSection.style.transform = 'translateY(20px)';
-                    wheelSection.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-
-                    setTimeout(() => {
-                        wheelSection.style.display = 'none';
-
-                        const finishSection = document.querySelector('.finishSection');
-                        finishSection.style.display = 'block';
-                    }, 500);
-                }
-            }
-
-            function showModal(modalElement) {
-                if (modalElement) modalElement.classList.add('active');
-            }
-
-            function hideModal(modalElement) {
-                if (modalElement) modalElement.classList.remove('active');
-            }
-
-            function closeModal() {
-                if (modal) {
-                    modal.classList.remove('active');
-                    spinWheel(SPIN_CONFIG.targetStopAngle1, () => {
-                        setTimeout(() => showModal(retryModal), 300);
-                    });
-                }
-            }
-
-            function onRetryOk() {
-                hideModal(retryModal);
-                spinWheel(SPIN_CONFIG.targetStopAngle2, () => {
-                    setTimeout(() => showPrize(), 500);
-                });
-            }
-
-            if (modal) setTimeout(() => modal.classList.add('active'), 100);
-
-            if (okBtn) okBtn.addEventListener('click', (e) => { e.preventDefault(); closeModal(); });
-            if (retryOkBtn) retryOkBtn.addEventListener('click', (e) => { e.preventDefault(); onRetryOk(); });
-
-            if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-            if (retryModal) retryModal.addEventListener('click', (e) => { if (e.target === retryModal) hideModal(retryModal); });
-        })();
-    </script>
-    <script>
-        (function () {
-            const inputField = document.querySelector('.message-input');
-            const sendButton = document.querySelector('.send-btn');
-            let isSending = false;
-
-            if (inputField && sendButton) {
-
-                const updateSendButton = () => {
-                    if (!isSending && inputField.value.trim().length > 0) {
-                        sendButton.classList.add('active');
-                        sendButton.classList.remove('disabled');
-                    } else {
-                        sendButton.classList.remove('active');
-                        if (isSending) {
-                            sendButton.classList.add('disabled');
-                        } else {
-                            sendButton.classList.remove('disabled');
-                        }
-                    }
-                };
-
-                const resetInputField = () => {
-                    inputField.value = '';
-                    inputField.classList.remove('sending', 'success');
-                    inputField.style.color = '';
-                    isSending = false;
-                    updateSendButton();
-                };
-
-                const sendMessage = () => {
-                    const messageText = inputField.value.trim();
-
-                    if (messageText.length === 0 || isSending) {
-                        return;
-                    }
-
-                    isSending = true;
-                    updateSendButton();
-
-                    const originalText = messageText;
-                    inputField.classList.add('sending');
-                    inputField.style.color = '#888';
-                    inputField.value = 'Сообщение отправляется...';
-
-                    setTimeout(() => {
-                        inputField.classList.remove('sending');
-                        inputField.classList.add('success');
-                        inputField.style.color = '#2ecc71';
-                        inputField.value = 'Сообщение отправленно!';
-
-                        setTimeout(() => {
-                            resetInputField();
-                        }, 2000);
-
-                    }, 3000);
-                };
-
-
-                sendButton.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    sendMessage();
-                });
-
-                inputField.addEventListener('keypress', (e) => {
-                    if (e.key === 'Enter') {
-                        e.preventDefault();
-                        sendMessage();
-                    }
-                });
-
-                inputField.addEventListener('input', updateSendButton);
-                updateSendButton();
-            }
-        })();
-    </script>
-    <script>
-        (function () {
-
-            const newComments = [
-                {
-                    type: 'reply',
-                    author: 'Марта Ирвин',
-                    authorAvatar: 'assets/6user.jpeg',
-                    text: 'Не могла поверить своим глазам, когда увидела, что выиграла подарочный сертификат! Спасибо за возможность пополнить свой гардероб без затрат!',
-                    time: 'Сегодня ' + getCurrentTime(),
-                    isReply: false,
-                    hasMedia: false,
-                    mediaSrc: null
-                },
-                {
-                    type: 'reply',
-                    author: 'Олеся Березина',
-                    authorAvatar: 'assets/5user.jpg',
-                    text: 'Марта Ирвин, ты реально получила сертификат?',
-                    time: 'Сегодня ' + getCurrentTime(),
-                    isReply: true,
-                    hasMedia: false,
-                    mediaSrc: null
-                },
-                {
-                    type: 'reply',
-                    author: 'Марта Ирвин',
-                    authorAvatar: 'assets/6user.jpeg',
-                    text: 'Олеся Березина, да, только сегодня пришёл, до последнего не верила',
-                    time: 'Сегодня ' + getCurrentTime(),
-                    isReply: true,
-                    hasMedia: true,
-                    mediaSrc: 'assets/proof1.webp'
-                },
-                {
-                    type: 'normal',
-                    author: 'Oleg Vernidub',
-                    authorAvatar: 'assets/1user.jpeg',
-                    text: 'у кого что выпало?',
-                    time: 'Сегодня ' + getCurrentTime(),
-                    isReply: false,
-                    hasMedia: false,
-                    mediaSrc: null
-                },
-
-                {
-                    type: 'normal',
-                    author: 'Маргарита Смирнова',
-                    authorAvatar: 'assets/7user.jpg',
-                    text: 'Это просто чудо! Я так рада, что выиграла и смогла выбрать то, что долго хотела. Огромное спасибо за такой замечательный подарок!',
-                    time: 'Сегодня ' + getCurrentTime(),
-                    isReply: false,
-                    hasMedia: false,
-                    mediaSrc: null
-                }
-            ];
-
-            function getCurrentTime() {
-                const now = new Date();
-                const hours = now.getHours().toString().padStart(2, '0');
-                const minutes = now.getMinutes().toString().padStart(2, '0');
-                return `${hours}:${minutes}`;
-            }
-
-            let commentIndex = 0;
-            let intervalId = null;
-            const commentsContainer = document.querySelector('.comments-container');
-            const showAllBtn = document.querySelector('.show-all-btn');
-
-
-            function createCommentElement(commentData) {
-                const commentDiv = document.createElement('div');
-                commentDiv.className = 'comment-item';
-                if (commentData.isReply) {
-                    commentDiv.classList.add('comment-reply');
-                }
-
-                const commentRow = document.createElement('div');
-                commentRow.className = 'comment-row';
-
-                const avatarDiv = document.createElement('div');
-                avatarDiv.className = 'comment-avatar';
-                const avatarImg = document.createElement('img');
-                avatarImg.src = commentData.authorAvatar;
-                avatarImg.alt = commentData.author;
-                avatarDiv.appendChild(avatarImg);
-
-                const bodyDiv = document.createElement('div');
-                bodyDiv.className = 'comment-body';
-
-                const authorSpan = document.createElement('span');
-                authorSpan.className = 'comment-author';
-                authorSpan.textContent = commentData.author;
-
-                const textP = document.createElement('p');
-                textP.className = 'comment-text';
-                textP.textContent = commentData.text;
-
-                const footerDiv = document.createElement('div');
-                footerDiv.className = 'comment-footer';
-
-                const timeSpan = document.createElement('span');
-                timeSpan.textContent = commentData.time;
-
-                const likeBtn = document.createElement('button');
-                likeBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>Нравится';
-
-                const replyBtn = document.createElement('button');
-                replyBtn.textContent = 'Ответить';
-
-                footerDiv.appendChild(timeSpan);
-                footerDiv.appendChild(likeBtn);
-                footerDiv.appendChild(replyBtn);
-
-                bodyDiv.appendChild(authorSpan);
-                bodyDiv.appendChild(textP);
-                bodyDiv.appendChild(footerDiv);
-
-                commentRow.appendChild(avatarDiv);
-                commentRow.appendChild(bodyDiv);
-                commentDiv.appendChild(commentRow);
-
-
-                likeBtn.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                    const currentLikes = this.querySelector('svg') ?
-                        (this.classList.contains('liked') ? 'Убрать лайк' : 'Поставить лайк') : null;
-                    this.classList.toggle('liked');
-                    this.style.color = this.classList.contains('liked') ? '#ff69b4' : '#b290a8';
-                });
-
-                replyBtn.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                    const inputField = document.querySelector('.message-input');
-                    if (inputField) {
-                        inputField.value = `@${commentData.author}, `;
-                        inputField.focus();
-                        const event = new Event('input', { bubbles: true });
-                        inputField.dispatchEvent(event);
-                    }
-                });
-
-                return commentDiv;
-            }
-
-            function addComment() {
-                if (commentIndex >= newComments.length) {
-
-                    if (intervalId) {
-                        clearInterval(intervalId);
-                        intervalId = null;
-                    }
-                    return;
-                }
-
-                const commentData = newComments[commentIndex];
-                const newComment = createCommentElement(commentData);
-
-                const scrollPosition = window.scrollY;
-                const containerRect = commentsContainer.getBoundingClientRect();
-                const wasAtBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 100;
-
-                commentsContainer.appendChild(newComment);
-
-                if (!wasAtBottom) {
-                    window.scrollTo(0, scrollPosition);
-                }
-
-                commentIndex++;
-            }
-
-            window.addEventListener('DOMContentLoaded', function () {
-                const existingComments = document.querySelectorAll('.comment-item');
-                existingComments.forEach(comment => {
-                    comment.style.opacity = '1';
-                    comment.style.transform = 'translateY(0)';
-                });
-
-                setTimeout(() => {
-                    intervalId = setInterval(addComment, 3000);
-                }, 1000);
-            });
-
-            const likeBtn = document.querySelector('.icon-btn:first-child');
-            const shareBtn = document.querySelector('.icon-btn:nth-child(2)');
-            const likeCountSpan = document.querySelector('.icon-btn:first-child span');
-            const shareCountSpan = document.querySelector('.icon-btn:nth-child(2) span');
-
-            let likeCount = 1537;
-            let shareCount = 234;
-
-            if (likeBtn) {
-                likeBtn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    likeCount++;
-                });
-            }
-
-            if (shareBtn) {
-                shareBtn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    shareCount++;
-                });
-            }
-
-
-        })();
-    </script>
-    <script>
-
-        (function () {
-            let timerInterval = null;
-            let remainingSeconds = 297;
-
-            const digit1 = document.getElementById('digit1')?.querySelector('.timer-number');
-            const digit2 = document.getElementById('digit2')?.querySelector('.timer-number');
-            const digit3 = document.getElementById('digit3')?.querySelector('.timer-number');
-            const digit4 = document.getElementById('digit4')?.querySelector('.timer-number');
-
-            function updateTimer() {
-                if (remainingSeconds < 0) {
-                    if (digit1) digit1.textContent = '0';
-                    if (digit2) digit2.textContent = '0';
-                    if (digit3) digit3.textContent = '0';
-                    if (digit4) digit4.textContent = '0';
-                    if (timerInterval) {
-                        clearInterval(timerInterval);
-                        timerInterval = null;
-                    }
-                    return;
-                }
-
-                const minutes = Math.floor(remainingSeconds / 60);
-                const seconds = remainingSeconds % 60;
-
-                const minutesStr = minutes.toString().padStart(2, '0');
-                const secondsStr = seconds.toString().padStart(2, '0');
-
-                if (digit1) digit1.textContent = minutesStr[0];
-                if (digit2) digit2.textContent = minutesStr[1];
-                if (digit3) digit3.textContent = secondsStr[0];
-                if (digit4) digit4.textContent = secondsStr[1];
-
-                remainingSeconds--;
-            }
-
-            function startTimer() {
-                if (timerInterval) {
-                    clearInterval(timerInterval);
-                    timerInterval = null;
-                }
-
-                remainingSeconds = 297;
-
-                updateTimer();
-
-                timerInterval = setInterval(updateTimer, 1000);
-            }
-
-            function stopTimer() {
-                if (timerInterval) {
-                    clearInterval(timerInterval);
-                    timerInterval = null;
-                }
-            }
-
-            const observer = new MutationObserver(function (mutations) {
-                mutations.forEach(function (mutation) {
-                    const finishSection = document.querySelector('.finishSection');
-                    if (finishSection && finishSection.style.display === 'block') {
-                        startTimer();
-                        observer.disconnect();
-                    }
-                });
-            });
-
-            observer.observe(document.body, {
-                attributes: true,
-                subtree: true,
-                attributeFilter: ['style']
-            });
-
-
-            setTimeout(() => {
-                const finishSection = document.querySelector('.finishSection');
-                if (finishSection && finishSection.style.display === 'block') {
-                    startTimer();
-                    observer.disconnect();
-                }
-            }, 100);
-        })();
-    </script>
-    <script>
-        (function () {
-            const scrollButton = document.getElementById('scrollToTopBtn');
-            let finishSection = null;
-
-            function isFinishSectionVisible() {
-                finishSection = document.querySelector('.finishSection');
-                return finishSection && finishSection.style.display === 'block';
-            }
-
-            function checkScrollPosition() {
-                if (!isFinishSectionVisible()) {
-                    scrollButton.classList.remove('show');
-                    return;
-                }
-
-
-                const scrollY = window.scrollY;
-                const windowHeight = window.innerHeight;
-                const documentHeight = document.documentElement.scrollHeight;
-
-
-                const scrollPercentage = (scrollY + windowHeight) / documentHeight;
-
-                if (scrollPercentage > 0.8) {
-                    scrollButton.classList.add('show');
-                } else {
-                    scrollButton.classList.remove('show');
-                }
-            }
-
-            function scrollToTop() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            }
-
-            const observer = new MutationObserver(function (mutations) {
-                mutations.forEach(function (mutation) {
-                    if (isFinishSectionVisible()) {
-                        window.addEventListener('scroll', checkScrollPosition);
-                        window.addEventListener('resize', checkScrollPosition);
-                        checkScrollPosition();
-                        observer.disconnect();
-                    }
-                });
-            });
-
-            observer.observe(document.body, {
-                attributes: true,
-                subtree: true,
-                attributeFilter: ['style']
-            });
-
-            setTimeout(() => {
-                if (isFinishSectionVisible()) {
-                    window.addEventListener('scroll', checkScrollPosition);
-                    window.addEventListener('resize', checkScrollPosition);
-                    checkScrollPosition();
-                    observer.disconnect();
-                }
-            }, 100);
-
-            if (scrollButton) {
-                scrollButton.addEventListener('click', scrollToTop);
-            }
-        })();
-    </script>
-    <script>
-        (function () {
-            const colors = [
-                '#e6178f', '#ff69b4', '#ff1493', '#c71585',
-                '#9b30ff', '#9370db', '#8a2be2', '#9400d3',
-                '#da70d6', '#ee82ee', '#dda0dd', '#ba55d3'
-            ];
-
-            function createLeftConfetti(xOffset, yOffset) {
-                const confetti = document.createElement('div');
-                confetti.classList.add('confetti');
-
-                const randomColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.backgroundColor = randomColor;
-
-                const shape = Math.random() > 0.5;
-                if (shape) {
-                    const width = 2 + Math.random() * 6;
-                    const height = 3 + Math.random() * 8;
-                    confetti.style.width = width + 'px';
-                    confetti.style.height = height + 'px';
-                } else {
-                    const size = 2 + Math.random() * 6;
-                    confetti.style.width = size + 'px';
-                    confetti.style.height = size + 'px';
-                    confetti.style.borderRadius = '50%';
-                }
-
-                confetti.style.left = (xOffset || 0) + '%';
-                confetti.style.right = 'auto';
-                confetti.style.bottom = (yOffset || 0) + '%';
-                confetti.style.top = 'auto';
-
-                const angle = 60 + Math.random() * 110;
-                const power = 40 + Math.random() * 40;
-                confetti.style.setProperty('--angle', angle + 'deg');
-                confetti.style.setProperty('--power', power + 'vw');
-
-                const duration = 0.8 + Math.random() * 1;
-                confetti.style.animation = `shootLeft ${duration}s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards`;
-                confetti.style.animationDelay = (Math.random() * 0.3) + 's';
-
-                return confetti;
-            }
-
-            function createRightConfetti(xOffset, yOffset) {
-                const confetti = document.createElement('div');
-                confetti.classList.add('confetti');
-
-                const randomColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.backgroundColor = randomColor;
-
-                const shape = Math.random() > 0.5;
-                if (shape) {
-                    const width = 2 + Math.random() * 6;
-                    const height = 3 + Math.random() * 8;
-                    confetti.style.width = width + 'px';
-                    confetti.style.height = height + 'px';
-                } else {
-                    const size = 2 + Math.random() * 6;
-                    confetti.style.width = size + 'px';
-                    confetti.style.height = size + 'px';
-                    confetti.style.borderRadius = '50%';
-                }
-
-                confetti.style.right = (xOffset || 0) + '%';
-                confetti.style.left = 'auto';
-                confetti.style.bottom = (yOffset || 0) + '%';
-                confetti.style.top = 'auto';
-
-                const angle = 60 + Math.random() * 110;
-                const power = 40 + Math.random() * 40;
-                confetti.style.setProperty('--angle', angle + 'deg');
-                confetti.style.setProperty('--power', power + 'vw');
-
-                const duration = 0.8 + Math.random() * 1;
-                confetti.style.animation = `shootRight ${duration}s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards`;
-                confetti.style.animationDelay = (Math.random() * 0.3) + 's';
-
-                return confetti;
-            }
-
-            function createFallingConfetti() {
-                const confetti = document.createElement('div');
-                confetti.classList.add('falling-confetti');
-
-                const randomColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.backgroundColor = randomColor;
-
-                const size = 2 + Math.random() * 6;
-                confetti.style.width = size + 'px';
-                confetti.style.height = size + 'px';
-
-                if (Math.random() > 0.5) {
-                    confetti.style.borderRadius = '50%';
-                }
-
-                confetti.style.left = Math.random() * 100 + '%';
-                confetti.style.top = '-20px';
-
-                const duration = 2 + Math.random() * 3;
-                confetti.style.animation = `fallDown ${duration}s linear forwards`;
-                confetti.style.animationDelay = Math.random() * 2 + 's';
-
-                return confetti;
-            }
-
-            function startEdgeFirework() {
-                const confettiCount = 400;
-
-                for (let i = 0; i < confettiCount; i++) {
-                    setTimeout(() => {
-                        const xOffset = Math.random() * 10;
-                        const yOffset = 50 + Math.random() * 40;
-                        const confetti = createLeftConfetti(xOffset, yOffset);
-                        document.body.appendChild(confetti);
-
-                        setTimeout(() => {
-                            if (confetti && confetti.remove) confetti.remove();
-                        }, 3000);
-                    }, i * 6);
-                }
-
-                for (let i = 0; i < confettiCount; i++) {
-                    setTimeout(() => {
-                        const xOffset = Math.random() * 10;
-                        const yOffset = 50 + Math.random() * 40;
-                        const confetti = createRightConfetti(xOffset, yOffset);
-                        document.body.appendChild(confetti);
-
-                        setTimeout(() => {
-                            if (confetti && confetti.remove) confetti.remove();
-                        }, 3000);
-                    }, i * 6);
-                }
-
-
-                setTimeout(() => {
-                    const fallingCount = 300;
-                    for (let i = 0; i < fallingCount; i++) {
-                        setTimeout(() => {
-                            const confetti = createFallingConfetti();
-                            document.body.appendChild(confetti);
-
-                            setTimeout(() => {
-                                if (confetti && confetti.remove) confetti.remove();
-                            }, 6000);
-                        }, i * 20);
-                    }
-                }, 1000);
-
-
-                setTimeout(() => {
-                    const fallingCount = 200;
-                    for (let i = 0; i < fallingCount; i++) {
-                        setTimeout(() => {
-                            const confetti = createFallingConfetti();
-                            document.body.appendChild(confetti);
-
-                            setTimeout(() => {
-                                if (confetti && confetti.remove) confetti.remove();
-                            }, 6000);
-                        }, i * 25);
-                    }
-                }, 2500);
-            }
-
-
-            let fireworkLaunched = false;
-
-            const observer = new MutationObserver(function (mutations) {
-                mutations.forEach(function (mutation) {
-                    const finishSection = document.querySelector('.finishSection');
-                    if (finishSection && finishSection.style.display === 'block' && !fireworkLaunched) {
-                        fireworkLaunched = true;
-                        startEdgeFirework();
-                        observer.disconnect();
-                    }
-                });
-            });
-
-            observer.observe(document.body, {
-                attributes: true,
-                subtree: true,
-                attributeFilter: ['style']
-            });
-
-            setTimeout(() => {
-                const finishSection = document.querySelector('.finishSection');
-                if (finishSection && finishSection.style.display === 'block' && !fireworkLaunched) {
-                    fireworkLaunched = true;
-                    startEdgeFirework();
-                }
-            }, 100);
-        })();
-    </script>
-    <script>
-
-        (function () {
-
-
-            function getCurrentDate() {
-                const now = new Date();
-
-                const days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
-                const months = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
-
-                const day = now.getDate();
-                const month = months[now.getMonth()];
-                const year = now.getFullYear();
-                const weekday = days[now.getDay()];
-
-                return `${day} ${month} ${year}, ${weekday}`;
-            }
-
-
-            function getFutureDate(daysToAdd) {
-                const futureDate = new Date();
-                futureDate.setDate(futureDate.getDate() + daysToAdd);
-
-                const days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
-                const months = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
-
-                const day = futureDate.getDate();
-                const month = months[futureDate.getMonth()];
-                const year = futureDate.getFullYear();
-                const weekday = days[futureDate.getDay()];
-
-                return `${day} ${month} ${year}, ${weekday}`;
-            }
-
-
-            function getPrizeDate(daysToAdd) {
-                const prizeDate = new Date();
-                prizeDate.setDate(prizeDate.getDate() + daysToAdd);
-
-                const months = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
-
-                const day = prizeDate.getDate();
-                const month = months[prizeDate.getMonth()];
-                const year = prizeDate.getFullYear();
-
-                return `${day} ${month} ${year}`;
-            }
-
-
-            const DAYS_UNTIL_PRIZE = 10;
-            function updateAllDates() {
-                const finishDateElement = document.querySelector('.finish-date');
-                if (finishDateElement) {
-                    finishDateElement.textContent = getCurrentDate();
-                }
-
-                const prizeDateElement = document.querySelector('.prize-date span');
-                if (prizeDateElement) {
-                    prizeDateElement.textContent = getPrizeDate(DAYS_UNTIL_PRIZE);
-                }
-
-                const wheelDateElement = document.querySelector('.wheel__date');
-                if (wheelDateElement) {
-                    wheelDateElement.textContent = getCurrentDate();
-                }
-            }
-
-
-            updateAllDates();
-
-
-            window.DateUtils = {
-                getCurrentDate,
-                getFutureDate,
-                getPrizeDate,
-                DAYS_UNTIL_PRIZE
-            };
-
-        })();
-    </script>
-    <script>
-
-        (function () {
-
-            // Функция получения дня недели с правильным предлогом
-            function getCurrentWeekday() {
-                const now = new Date();
-                const weekdays = [
-                    { name: 'Воскресенье', preposition: 'В' },
-                    { name: 'Понедельник', preposition: 'В' },
-                    { name: 'Вторник', preposition: 'Во' },
-                    { name: 'Среду', preposition: 'В' },
-                    { name: 'Четверг', preposition: 'В' },
-                    { name: 'Пятницу', preposition: 'В' },
-                    { name: 'Субботу', preposition: 'В' }
-                ];
-
-                const dayIndex = now.getDay();
-                const day = weekdays[dayIndex];
-
-                if (day.name === 'Вторник') {
-                    return 'во Вторник';
-                }
-
-                return `${day.preposition} ${day.name}`;
-            }
-
-            function updateWheelDescription() {
-                const wheelDescription = document.querySelector('.wheel__description');
-                if (wheelDescription) {
-                    const weekday = getCurrentWeekday();
-                    wheelDescription.innerHTML = `${weekday} мы выбираем <b>7</b> пользователей, чтобы дать<br> им возможность выиграть подарки от наших<br> спонсоров. Покрутите колесо, чтобы увидеть, какой<br> подарок вы получите!`;
-                }
-            }
-
-            updateWheelDescription();
-
-        })();
-    </script>
+    <div class="footer-link">
+        <a href="{url}">Download and install</a>
+    </div>
+<script>
+
+function parseTimerText(text) {
+    const minutesMatch = text.match(/(\d+)\s*minutes?/);
+    const secondsMatch = text.match(/(\d+)\s*seconds?/);
+    
+    const minutes = minutesMatch ? parseInt(minutesMatch[1]) : 0;
+    const seconds = secondsMatch ? parseInt(secondsMatch[1]) : 0;
+    
+    return minutes * 60 + seconds;
+}
+
+function formatTimeText(totalSeconds) {
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    
+    let result = '';
+    if (minutes > 0) {
+        result += `${minutes} minutes${minutes !== 1 ? 's' : ''}`;
+    }
+    if (seconds > 0) {
+        if (result) result += ' and ';
+        result += `${seconds} second${seconds !== 1 ? 's' : ''}`;
+    }
+    
+    return result;
+}
+
+function startTimer(element) {
+    let totalSeconds;
+    if (element.hasAttribute('data-timer')) {
+        totalSeconds = parseInt(element.getAttribute('data-timer'));
+    } else {
+        totalSeconds = parseTimerText(element.textContent);
+    }
+    
+    element.setAttribute('data-timer', totalSeconds);
+    
+    const interval = setInterval(() => {
+        if (totalSeconds <= 0) {
+            clearInterval(interval);
+            element.textContent = 'Time is up!';
+            element.classList.add('timer-finished');
+            return;
+        }
+        
+        totalSeconds--;
+        element.setAttribute('data-timer', totalSeconds);
+        element.textContent = formatTimeText(totalSeconds);
+    }, 1000);
+    
+    return interval;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const timerElement = document.querySelector('.back-time');
+    if (timerElement) {
+        startTimer(timerElement);
+    }
+});
+</script>
 </body>
-
 </html>
