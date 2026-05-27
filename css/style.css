@@ -863,8 +863,15 @@ ul li i:after {
 
 
 
-@media (max-width: 640px) { :root {font-size: 14px;} .freeLogo{left: -10px; top: -15px;}}
-@media (max-width: 500px) { :root {font-size: 13px;} .steps__item { width: 7.5rem } .form__title{font-size: 2.5rem;}  .form__decoration{font-size: 1.2rem;} .form__img {width: 12rem;} }
-@media (max-width: 400px) { :root {font-size: 12px;} .steps__item { width: 7rem } .form__img{flex: 1;} }
-@media (max-width: 370px) { :root {font-size: 11px;} .steps__item { width: 6rem } }
-@media (max-width: 350px) { :root {font-size: 10px;} .freeLogo{left: -6px; top: -10px;}}
+
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 10px !important;
+  }
+  
+  * {
+    -webkit-text-size-adjust: none !important;
+    text-size-adjust: none !important;
+  }
+}
