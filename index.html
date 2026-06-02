@@ -21,7 +21,7 @@
         /* --logoMega-color: #25c04b; */
         --logoMega-color: white;
         --btnWrapper-size: 10px;
-        --footerWrapper-size: 0.9rem;
+        --footerWrapper-size: 1rem;
       }
 
       * {
@@ -121,7 +121,7 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        max-width: 50em;
+        max-width: 50rem;
         font-size: var(--btnWrapper-size);
       }
 
@@ -131,9 +131,9 @@
         align-items: center;
         width: 100%;
         /* height: 30em; */
-        height: 17rem;
+        height: 25rem;
         background-color: white;
-        border-radius: 50px;
+        border-radius: 2rem;
         text-decoration: none;
       }
 
@@ -175,8 +175,6 @@
         text-decoration: none;
       }
 
-
-
       .footer {
         width: 100%;
         padding-bottom: 1rem;
@@ -192,14 +190,29 @@
         cursor: pointer;
       }
 
+      @media (max-height: 700px){
+        .btn{
+            height: 20rem;
+        }
+
+        .price {
+            margin-bottom: 1rem;
+        }
+      }
+
+      
+      @media (max-height: 650px){ .btn{height: 17rem;}}
+
+      @media (max-height: 500px){ .btn{height: 15rem;}}
+
       @media (max-height: 300px) {
         :root {
-          font-size: 3vh;
+            font-size: clamp(1px, 2.5vmin, 10px);
         }
       }
       @media (max-width: 310px) {
         :root {
-          font-size: 3vw;
+            font-size: clamp(1px, 2.5vmin, 10px);
         }
       }
     </style>
