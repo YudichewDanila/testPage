@@ -3,18 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <title>МОБИЛЬНЫЙ КИОСК</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Megafon Киоск</title>
     <style>
       :root {
         font-size: 10px;
         font-size: clamp(6px, 3vmin, 16px);
-        --container: 640px;
+        --container: 1200px;
         --bgColor: linear-gradient(90deg, #010703, #109b10);
         --logoMega-size: 10rem;
         --logoText-size: 1.6rem;
@@ -29,7 +26,6 @@
         padding: 0;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
-        font-family: Roboto, sans-serif;
       }
 
       body {
@@ -85,7 +81,7 @@
 
       .logoText {
         font-size: var(--logoText-size);
-        font-family: Roboto, sans-serif;
+        font-family: "Roboto", sans-serif;
         color: white;
         font-weight: 400;
         /* transform: translateY(-0.2rem);  */
@@ -93,7 +89,7 @@
 
       .logoAge {
         font-size: var(--logoText-size);
-        font-family: Roboto, sans-serif;
+        font-family: "Roboto", sans-serif;
         color: white;
         font-weight: 500;
         /* transform: translateY(-0.2rem);  */
@@ -141,6 +137,7 @@
         display: flex;
         align-items: center;
         font-size: 3rem;
+        font-family: "Inter", sans-serif;
         cursor: pointer;
         font-weight: 700;
         color: black;
@@ -153,12 +150,13 @@
 
       .price {
         font-size: 1.2rem;
+        font-weight: 300;
+        font-family: "Inter", sans-serif;
         color: white;
         text-align: center;
         padding-top: 1rem;
         padding-bottom: 1rem;
         margin-bottom: 2rem;
-        text-transform: uppercase;
       }
 
       .cancelWrapper {
@@ -167,6 +165,8 @@
 
       .cancel {
         font-size: 1rem;
+        font-weight: 300;
+        font-family: "Inter", sans-serif;
         padding: 0.8rem 2rem;
         background-color: #f1efef00;
         border: 1px solid #ffffff;
@@ -179,6 +179,8 @@
         width: 100%;
         padding-bottom: 1rem;
         font-size: var(--footerWrapper-size);
+        font-weight: 300;
+        font-family: "Inter", sans-serif;
       }
 
       .footerWrapper {
