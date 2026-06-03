@@ -3,14 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Megafon Киоск</title>
     <style>
       :root {
         font-size: 10px;
-        font-size: clamp(6px, 3vmin, 16px);
+        font-size: clamp(6px, 3vmin, 14px);
         --container: 1200px;
         --bgColor: linear-gradient(90deg, #010703, #109b10);
         --logoMega-size: 10rem;
@@ -32,10 +35,10 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: calc(var(--vh, 1vh) * 100);  
+        height: calc(var(--vh, 1vh) * 100);
         height: 100dvh;
         position: fixed;
-        overflow: hidden; 
+        overflow: hidden;
       }
 
       .bg {
@@ -83,7 +86,7 @@
         font-size: var(--logoText-size);
         font-family: "Roboto", sans-serif;
         color: white;
-        font-weight: 400;
+        font-weight: 600;
         /* transform: translateY(-0.2rem);  */
       }
 
@@ -117,7 +120,7 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        max-width: 50rem;
+        max-width: 30rem;
         font-size: var(--btnWrapper-size);
       }
 
@@ -127,7 +130,7 @@
         align-items: center;
         width: 100%;
         /* height: 30em; */
-        height: 25rem;
+        height: 23rem;
         background-color: white;
         border-radius: 2rem;
         text-decoration: none;
@@ -136,10 +139,10 @@
       .btn span {
         display: flex;
         align-items: center;
-        font-size: 3rem;
+        font-size: 2.8rem;
         font-family: "Inter", sans-serif;
         cursor: pointer;
-        font-weight: 700;
+        font-weight: 500;
         color: black;
       }
 
@@ -167,11 +170,11 @@
         font-size: 1rem;
         font-weight: 300;
         font-family: "Inter", sans-serif;
-        padding: 0.8rem 2rem;
+        padding: 0.7rem 2rem;
         background-color: #f1efef00;
-        border: 1px solid #ffffff;
+        border: 0.7px solid #ffffff;
         color: #ffffff;
-        border-radius: 5px;
+        border-radius: 3px;
         text-decoration: none;
       }
 
@@ -192,29 +195,92 @@
         cursor: pointer;
       }
 
-      @media (max-height: 700px){
-        .btn{
-            height: 20rem;
-        }
+      @media (min-width: 350px) {
+      }
 
-        .price {
-            margin-bottom: 1rem;
+      @media (min-width: 350px) and (max-height: 670px) {
+      }
+
+      @media (min-width: 400px) {
+        :root {
+          --logoMega-size: 12rem;
+          --logoText-size: 1.8rem;
         }
       }
 
-      
-      @media (max-height: 650px){ .btn{height: 17rem;}}
+      @media (min-width: 500px) and (max-height: 960px) {
+        :root {
+          font-size: 14px;
+          font-size: clamp(6px, 3.5vmin, 15px);
+        }
+      }
 
-      @media (max-height: 500px){ .btn{height: 15rem;}}
+      @media (min-width: 500px) and (max-height: 770px) {
+        :root {
+          font-size: 12px;
+          font-size: clamp(6px, 3vmin, 15px);
+        }
+      }
+
+      @media (min-width: 500px) and (max-height: 720px) {
+        :root {
+          font-size: 11px;
+          font-size: clamp(6px, 3vmin, 14px);
+        }
+      }
+
+      @media (min-width: 640px) {
+        :root {
+          --logoMega-size: 14rem;
+          --logoText-size: 2rem;
+        }
+        .btnWrapper{
+            max-width: 50rem;
+        }
+        .btn {
+          height: 25rem;
+        }
+      }
+
+      @media (min-width: 640px) and (min-height: 960px) {
+        :root {
+          font-size: 16px;
+          font-size: clamp(6px, 4vmin, 16px);
+        }
+        .btn {
+          height: 25rem;
+        }
+      }
+
+      @media (max-height: 650px) {
+        .btn {
+          height: 23rem;
+        }
+      }
+
+      @media (max-height: 560px) {
+        .btn {
+          height: 18rem;
+        }
+        .price {
+          margin-bottom: 1rem;
+        }
+      }
+
+      @media (max-height: 500px) {
+        .btn {
+          height: 15rem;
+        }
+      }
 
       @media (max-height: 300px) {
         :root {
-            font-size: clamp(1px, 2.5vmin, 10px);
+          font-size: clamp(1px, 2.5vmin, 10px);
         }
       }
       @media (max-width: 310px) {
         :root {
-            font-size: clamp(1px, 2.5vmin, 10px);
+          font-size: clamp(1px, 2.5vmin, 10px);
         }
       }
     </style>
@@ -335,9 +401,9 @@
     <footer class="footer">
       <div class="container footerWrapper">
         <span>
-          18+. Нажимая на кнопку «Продолжить», вы соглашаетесь
+          18+. Нажимая на кнопку «Продолжить», вы соглашаетесь с
           <a href="http://moy-m-portal.ru/moi_podpiski/">
-            с <br />
+            <br />
             подключением и условиями сервиса «Мобильный Киоск»</a
           >
         </span>
