@@ -169,6 +169,7 @@ body.rtl-text {
 
 .flex-container {
 	display: flex;
+	display: none;
 	justify-content: space-between;
 	align-items: center;
 	font-family: Arial, sans-serif;
