@@ -567,26 +567,18 @@ body.rtl-text {
 
 
 .arrowFormLeft{
-
 	width: 2.5rem;
+	height: 4rem;
 	margin-left: -2rem;
-	margin-top: -1rem;
-    /* left: -1.7rem; */
 	z-index: 2;
-	
-	/* top: 27%; */
 	animation: moveLeft 1s ease-in-out infinite;
 }
 
 .arrowFormRight{
-
 	width: 2.5rem;
+	height: 4rem;
 	margin-right: -2rem;
-	margin-top: -1rem;
-    /* right: -1.7rem; */
 	z-index: 2;
-	/* margin-top: 1rem; */
-    /* top: 27%; */
 	animation: moveRight 1s ease-in-out infinite;
 }
 
