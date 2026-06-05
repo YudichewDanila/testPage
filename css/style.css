@@ -243,8 +243,7 @@ body.rtl-text {
 	font-size: 1.5rem;
 	color: #000000;
 	width: 1.5rem;
-	height: 1.5rem;  
-
+	height: 1.5rem;
 }
 
 
@@ -560,21 +559,34 @@ body.rtl-text {
 	text-align: right;
 }
 
+.containerField{
+	display: flex;
+	position: relative;
+}
+
+
 .arrowFormLeft{
 	position: absolute;
 	width: 2.5rem;
     left: -1.7rem;
-	top: 27%;
+	z-index: 2;
+	margin-top: 1rem;
+	/* top: 27%; */
 	animation: moveLeft 1s ease-in-out infinite;
 }
 
 .arrowFormRight{
-	position: absolute;
+	position: absolute; 
 	width: 2.5rem;
     right: -1.7rem;
-    top: 27%;
+	z-index: 2;
+	margin-top: 1rem;
+    /* top: 27%; */
 	animation: moveRight 1s ease-in-out infinite;
 }
+
+
+
 
 @keyframes moveLeft {
     0%, 100% {
@@ -1761,13 +1773,6 @@ span.bold-price {
 }
 
 @media (orientation: landscape) and (min-width: 1280px) {
-	.arrowFormLeft{
-		top: 28%;
-	}
-
-	.arrowFormRight{
-		top: 28%;
-	}
 
 
 	.container{
@@ -1788,13 +1793,6 @@ span.bold-price {
 
 @media (orientation: landscape) and (min-width: 1600px) {
 
-	.arrowFormLeft{
-		top: 31%;
-	}
-
-	.arrowFormRight{
-		top: 31%;
-	}
 
 	.main,
 	.footer,
