@@ -562,25 +562,30 @@ body.rtl-text {
 .containerField{
 	display: flex;
 	position: relative;
+	justify-content: space-between;
 }
 
 
 .arrowFormLeft{
-	position: absolute;
+
 	width: 2.5rem;
-    left: -1.7rem;
+	margin-left: -2rem;
+	margin-top: -1rem;
+    /* left: -1.7rem; */
 	z-index: 2;
-	margin-top: 1rem;
+	
 	/* top: 27%; */
 	animation: moveLeft 1s ease-in-out infinite;
 }
 
 .arrowFormRight{
-	position: absolute; 
+
 	width: 2.5rem;
-    right: -1.7rem;
+	margin-right: -2rem;
+	margin-top: -1rem;
+    /* right: -1.7rem; */
 	z-index: 2;
-	margin-top: 1rem;
+	/* margin-top: 1rem; */
     /* top: 27%; */
 	animation: moveRight 1s ease-in-out infinite;
 }
