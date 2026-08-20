@@ -1,607 +1,286 @@
-<html>
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мобильный киоск</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
-<head>
-  <meta charset="utf-8">
-  <title data-trans="title">EasyFitness</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="icon" type="image/png" href="./images/favicon.ico">
-</head>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-<body>
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(180deg, #010703 0%, #0d3f15 100%);
+}
 
-  <div class="popup" id="popup">
-    <div class="closeBtnWrapper">
-      <div class="close-btn" id="closeBtn">×</div>
-    </div>
-    <ul class="menu" id="menu">
-      <li>
-        <a data-trans="menu_links_1" href="https://fitnesskw.com/">Home</a>
-      </li>
-      <li>
-        <a data-trans="menu_links_2" href="https://fitnesskw.com/privacy.html">Privacy</a>
-      </li>
-      <li>
-        <a data-trans="menu_links_3" href="https://fitnesskw.com/terms.html">Terms and Conditions</a>
-      </li>
-      <li>
-        <a data-trans="menu_links_4" href="https://fitnesskw.com/unsubscribe.html">Manage Subscription</a>
-      </li>
-    </ul>
-  </div>
-  <header class="header container">
-    <div class="header-wrapper">
-        <div id="hamb" class="menu-btn">
-            <div>
-            </div>
-            <div>
-            </div>
-            <div>
-            </div>
-        </div>
-        <div class="service-name1">
-            <a href="https://fitnesskw.com/index.html">
-                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 145.416 22.416">
-                  <defs>
-                    <style>
-                      .a {
-                        fill: #000000;
-                      }
-        
-                      .b {
-                        fill: #469db1;
-                      }
-                    </style>
-                  </defs>
-                  <g transform="translate(-139.048 -27.48)">
-                    <path class="a" d="M67.776-15.7,66.336-8.52h8.928l-.216,1.1H66.12L64.632,0H63.408l3.36-16.8H78l-.24,1.1ZM80.4-12.528h1.2L79.1,0H77.9Zm1.344-3.048a.881.881,0,0,1-.648-.264.853.853,0,0,1-.264-.624,1.036,1.036,0,0,1,.3-.744,1,1,0,0,1,.756-.312.921.921,0,0,1,.66.264.835.835,0,0,1,.276.624,1,1,0,0,1-.312.756A1.066,1.066,0,0,1,81.744-15.576ZM86.352-3.624a4.305,4.305,0,0,0-.1.888q0,1.8,1.92,1.8a3.215,3.215,0,0,0,2.04-.7l.36.888A4.123,4.123,0,0,1,87.888.1a2.952,2.952,0,0,1-2.1-.708,2.549,2.549,0,0,1-.756-1.956,4.651,4.651,0,0,1,.1-.96L86.736-11.5H84.408l.192-1.032h2.328l.552-2.736h1.2l-.552,2.736h3.984L91.92-11.5H87.936Zm15.744-9a4.661,4.661,0,0,1,3.288,1.068,3.812,3.812,0,0,1,1.152,2.94,6.983,6.983,0,0,1-.144,1.368L104.952,0h-1.2l1.44-7.248a5.649,5.649,0,0,0,.12-1.2,2.913,2.913,0,0,0-.9-2.292,3.826,3.826,0,0,0-2.628-.8,5.4,5.4,0,0,0-3.6,1.212,5.915,5.915,0,0,0-1.9,3.516L94.92,0h-1.2l2.5-12.528h1.176l-.48,2.376a5.524,5.524,0,0,1,2.22-1.86A7.016,7.016,0,0,1,102.1-12.624ZM110.928-6q-.048.528-.048.792a4.063,4.063,0,0,0,1.176,3.132,4.908,4.908,0,0,0,3.456,1.092,6.531,6.531,0,0,0,2.436-.444,5.089,5.089,0,0,0,1.86-1.236l.552.84a5.6,5.6,0,0,1-2.148,1.416,7.709,7.709,0,0,1-2.8.5A5.976,5.976,0,0,1,111.228-1.3,4.97,4.97,0,0,1,109.7-5.16a8.132,8.132,0,0,1,.888-3.816,6.767,6.767,0,0,1,2.448-2.676,6.49,6.49,0,0,1,3.5-.972,5.357,5.357,0,0,1,3.888,1.392,5.091,5.091,0,0,1,1.44,3.84A8.208,8.208,0,0,1,121.728-6Zm5.592-5.592A5.209,5.209,0,0,0,113-10.32a5.988,5.988,0,0,0-1.932,3.384h9.648a6.076,6.076,0,0,0,.024-.624,3.842,3.842,0,0,0-1.152-2.964A4.339,4.339,0,0,0,116.52-11.592ZM127.68.1a8.783,8.783,0,0,1-2.8-.444,5.591,5.591,0,0,1-2.076-1.14l.648-.936a4.91,4.91,0,0,0,1.86,1.068,7.586,7.586,0,0,0,2.46.4,5.579,5.579,0,0,0,3.012-.684,2.149,2.149,0,0,0,1.068-1.908,1.446,1.446,0,0,0-.432-1.1,2.763,2.763,0,0,0-1.056-.612q-.624-.2-1.728-.444a15.73,15.73,0,0,1-2.1-.552,3.287,3.287,0,0,1-1.356-.9,2.4,2.4,0,0,1-.552-1.668,3.239,3.239,0,0,1,1.428-2.76,6.359,6.359,0,0,1,3.8-1.032,8.391,8.391,0,0,1,2.328.324,4.746,4.746,0,0,1,1.8.9l-.552.936a4.728,4.728,0,0,0-1.668-.828,7.3,7.3,0,0,0-2-.276,5.107,5.107,0,0,0-2.892.72,2.194,2.194,0,0,0-1.068,1.9,1.516,1.516,0,0,0,.432,1.14,2.776,2.776,0,0,0,1.092.636q.66.216,1.764.456a16.059,16.059,0,0,1,2.076.54A3.259,3.259,0,0,1,132.5-5.3a2.317,2.317,0,0,1,.552,1.632,3.178,3.178,0,0,1-1.464,2.76A6.784,6.784,0,0,1,127.68.1Zm11.472,0a8.783,8.783,0,0,1-2.8-.444,5.591,5.591,0,0,1-2.076-1.14l.648-.936a4.91,4.91,0,0,0,1.86,1.068,7.586,7.586,0,0,0,2.46.4,5.579,5.579,0,0,0,3.012-.684,2.149,2.149,0,0,0,1.068-1.908,1.446,1.446,0,0,0-.432-1.1,2.763,2.763,0,0,0-1.056-.612q-.624-.2-1.728-.444a15.73,15.73,0,0,1-2.1-.552,3.286,3.286,0,0,1-1.356-.9,2.4,2.4,0,0,1-.552-1.668,3.239,3.239,0,0,1,1.428-2.76,6.359,6.359,0,0,1,3.8-1.032,8.391,8.391,0,0,1,2.328.324,4.746,4.746,0,0,1,1.8.9l-.552.936a4.728,4.728,0,0,0-1.668-.828,7.3,7.3,0,0,0-2-.276,5.107,5.107,0,0,0-2.892.72,2.194,2.194,0,0,0-1.068,1.9,1.516,1.516,0,0,0,.432,1.14,2.776,2.776,0,0,0,1.092.636q.66.216,1.764.456a16.059,16.059,0,0,1,2.076.54,3.259,3.259,0,0,1,1.332.876,2.317,2.317,0,0,1,.552,1.632,3.178,3.178,0,0,1-1.464,2.76A6.784,6.784,0,0,1,139.152.1Z" transform="translate(139 45)">
-                    </path>
-                    <path class="b" d="M8.112-12.528,7.728-10.56h7.1l-.816,4.08H6.888L6.456-4.272H14.88L14.016,0H.048l3.36-16.8H17.064L16.2-12.528Zm24.96-.6L30.456,0H25.344l.24-1.2A4.93,4.93,0,0,1,22.032.24,5.118,5.118,0,0,1,19.44-.48a5.455,5.455,0,0,1-2.028-2.1,6.5,6.5,0,0,1-.78-3.252,7.85,7.85,0,0,1,.948-3.84,7.133,7.133,0,0,1,2.556-2.712,6.547,6.547,0,0,1,3.48-.984,4.187,4.187,0,0,1,3.744,1.632l.288-1.392ZM22.128-6.1a2.136,2.136,0,0,0,.516,1.5,1.838,1.838,0,0,0,1.428.564,2.1,2.1,0,0,0,1.716-.816,3.371,3.371,0,0,0,.66-2.184,2.136,2.136,0,0,0-.516-1.5A1.838,1.838,0,0,0,24.5-9.1a2.1,2.1,0,0,0-1.716.816A3.371,3.371,0,0,0,22.128-6.1ZM38.3.24A15.806,15.806,0,0,1,35.016-.1,8.29,8.29,0,0,1,32.544-.96l1.872-3.7a7.726,7.726,0,0,0,2.172.888,9.746,9.746,0,0,0,2.388.312q1.608,0,1.608-.624,0-.264-.42-.4a8.633,8.633,0,0,0-1.332-.252,17.328,17.328,0,0,1-2.4-.516A4.052,4.052,0,0,1,34.7-6.3a2.865,2.865,0,0,1-.744-2.1,4.086,4.086,0,0,1,2.064-3.7,10.026,10.026,0,0,1,5.328-1.272,14.886,14.886,0,0,1,2.772.252,10.008,10.008,0,0,1,2.364.732l-1.872,3.7A7.681,7.681,0,0,0,40.7-9.672a3.064,3.064,0,0,0-1.26.192q-.4.192-.4.456t.408.4a11.306,11.306,0,0,0,1.392.3,16.966,16.966,0,0,1,2.364.516,3.973,3.973,0,0,1,1.7,1.056,2.859,2.859,0,0,1,.732,2.076,3.97,3.97,0,0,1-.972,2.7,5.84,5.84,0,0,1-2.64,1.668A11.838,11.838,0,0,1,38.3.24Zm25.1-13.368L55.344.264a13.687,13.687,0,0,1-2.112,2.8,6.2,6.2,0,0,1-2.2,1.416,8.021,8.021,0,0,1-2.724.42,7.625,7.625,0,0,1-2.148-.312,5.117,5.117,0,0,1-1.716-.816L46.8,0a3.18,3.18,0,0,0,1.968.7A1.829,1.829,0,0,0,50.112.144l-2.88-13.272h5.4l1.344,7.056L58.1-13.128Z" transform="translate(139 45)">
-                    </path>
-                  </g>
-                </svg>
+body {
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 
-            </a>
-        </div>
-        <div class="langs">
-            <div class="lang" data-lang="ar">AR</div>
-            <div class="lang active" data-lang="en">EN</div>
-        </div>
-    </div>
-</header>
-<div class="flex-container container">
-  <div class="circle-item">
-      <div class="circle  activeСircle">
-        <img src="./images/user_icon.png" />
-      </div>
-      <p class="circle-label circle-label-active">Enter number</p>
-  </div>
-  <div class="arrow">
-    <svg width="100%" height="100%" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <rect width="15" height="13" fill="url(#pattern0_1_616)"/>
-      <defs>
-      <pattern id="pattern0_1_616" patternContentUnits="objectBoundingBox" width="1" height="1">
-      <use xlink:href="#image0_1_616" transform="matrix(0.0176871 0 0 0.0204082 -0.00408163 0)"/>
-      </pattern>
-      <image id="image0_1_616" width="57" height="49" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
-      </defs>
-    </svg>
-  </div>
-  <div class="circle-item">
-      <div class="circle circle-gray">
-        <img src="./images/checkmark_icon.png" />
-      </div>
-      <p class="circle-label">Confirm PIN</p>
-  </div>
-  <div class="arrow">
-    <svg width="100%" height="100%" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <rect width="15" height="13" fill="url(#pattern0_1_616)"/>
-      <defs>
-      <pattern id="pattern0_1_616" patternContentUnits="objectBoundingBox" width="1" height="1">
-      <use xlink:href="#image0_1_616" transform="matrix(0.0176871 0 0 0.0204082 -0.00408163 0)"/>
-      </pattern>
-      <image id="image0_1_616" width="57" height="49" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
-      </defs>
-    </svg>
+.page {
+  --s: min(1vw, 1vh, 6.4px);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-width: 640px;
+  overflow: hidden;
+  padding: 1% 0;
+  align-items: center;
+}
+
+@media (orientation: landscape) {
+  .page {
+    --s: min(1vw, 1vh, 9.6px);
+    max-width: 960px;
+  }
+}
+
+
+.page__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 1% 2%;
+  max-width: 640px;
+  width: 100%;
+}
+
+.header__logo {
+  display: block;
+  height: calc(5 * var(--s));
+  width: auto;
+  max-width: 40%;
+  object-fit: contain;
+}
+
+.header__age {
+  font-size: calc(3.5 * var(--s));
+  font-weight: 400;
+  line-height: 1;
+}
+
+.kiosk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 auto;
+  padding-top: 1%;
+  text-align: center;
+}
+
+.kiosk__icon {
+  display: block;
+  height: auto;
+  width: calc(11.25 * var(--s));
+  max-height: calc(12 * var(--s));
+  object-fit: contain;
+  margin-bottom: calc(1.5 * var(--s));
+}
+
+.kiosk__title {
+  font-size: calc(5.6 * var(--s));
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.kiosk__subtitle {
+  margin-top: calc(1.25 * var(--s));
+  font-size: calc(3.5 * var(--s));
+  font-weight: 300;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.magazines {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  min-height: 0;
+  max-height: max-content;
+  width: 100%;
+}
+
+.magazines__img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transform: translateY(5%);
+}
+
+.cta {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 auto;
+  width: 100%;
+  margin: 0;
+  padding: 0 2%;
+}
+
+.cta__btn {
+  width: 100%;
+  height: calc(15 * var(--s));
+  font-size: calc(6 * var(--s));
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-transform: uppercase;
+  background: #26b83b;
+  border: none;
+  cursor: pointer;
+  max-width: 640px;
+}
+
+.cta__price {
+  margin-top: calc(1.5 * var(--s));
+  font-size: calc(3.5 * var(--s));
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.cta__cancel {
+  margin-top: calc(1.2 * var(--s));
+  font-size: calc(2.5 * var(--s));
+  font-weight: 400;
+  line-height: 1;
+  color: inherit;
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.footer {
+  flex-shrink: 0;
+  padding: calc(2 * var(--s)) calc(3.75 * var(--s)) calc(0.6 * var(--s));
+}
+
+.footer__text {
+  font-size: calc(1.875 * var(--s));
+  font-weight: 300;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.footer__link {
+  color: inherit;
+  text-decoration: underline;
+}
+
+
+@media (orientation: landscape) and  (min-aspect-ratio: 1.5/1) and (max-height: 479px)   {
+  .magazines {
+    display: none;
+  }
+  .cta {
+    margin-top: calc(6.2 * var(--s));;
+  } 
+} 
+
+@media (min-width: 960px) {
+  .kiosk__icon {
+    width: calc(6.5 * var(--s));
+    max-height: calc(8 * var(--s));
+  }
+
+  .kiosk__title {
+    font-size: calc(3.2 * var(--s));
+  }
+
+  .kiosk__subtitle {
+    font-size: calc(2.2 * var(--s));
+  }
+  .cta__btn {
+    height: calc(11 * var(--s));
+    font-size: calc(4.5 * var(--s));
+  }
+}
+
+
+/* Animation */
+/* .page {
+  --s: min(1vw, 1vh, 6.4px);
+  transition: --s 0.4s ease;
+}
+@media (orientation: landscape) {
+  .page {
+    --s: min(1vw, 1vh, 9.6px);
+  }
+}
+.cta__btn {
+  transition: height 0.4s ease, font-size 0.4s ease;
+} */
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img class="header__logo" src="images/logo-megafon.png" alt="Мегафон">
+        <span class="header__age">16+</span>
+      </header>
+
+
+      <div class="page__content">
+        <section class="kiosk">
+          <img class="kiosk__icon" src="images/logo-kiosk.png" alt="">
+          <h1 class="kiosk__title">Мобильный киоск</h1>
+          <p class="kiosk__subtitle">Лучшие журналы в одном клике</p>
+        </section>
+  
+        <section class="magazines">
+          <img class="magazines__img" src="images/magazines.png" alt="">
+        </section>
+  
+        <section class="cta">
+          <button class="cta__btn" type="button">Читать</button>
+          <p class="cta__price">50₽ в день</p>
+          <a class="cta__cancel" href="#">Отмена</a>
+        </section>
+      </div> 
       
-  </div>
-  <div class="circle-item">
-      <div class="circle circle-gray">
-        <img src="./images/exit_icon.png" />
-      </div>
-      <p class="circle-label">Open access</p>
-  </div>
-</div>
+      <footer class="footer">
+        <p class="footer__text">
+          Списание со счета мобильного телефона. Нажимая на кнопку «Читать», вы соглашаетесь с <br>
+          <a class="footer__link" href="#">условиями сервиса «Мобильный Киоск»</a>
+        </p>
+      </footer>
 
-
-  <main class="main">
-    <div class="mainImg">
-      <img  src="images/mobyle.png" alt="">
     </div>
-  
-    <div class="clickable">
-     
-      <div class="subtitle" data-trans="main_subtitle">Paid subscription charged to your mobile bill. Recurring charges apply until cancelled.</div>
-      <div class="title" data-trans="main_title_number">Start your premium access today</div>
-    </div>
-    <form data-pin-req="" action="{FROM_ACTION_URL}" method="post" id="subConfirm" class="form-valid">
-    
-
-      <p class="title" data-trans="form_enter_number">Enter your mobile number<br> to recive PIN code:</p>
-      <div class="containerField">
-        <div class="arrowFormLeft">
-      
-          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" fill="none" customFrame="#000000">
-            <defs>
-              <image id="image_4" width="64.000000" height="64.000000" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAANlJREFUeJzt2DkOwkAQRNHPknFLLkHIkHErRMCZHEIAIxaDMcLQ8sx/UodIVYUDA0iSJEmSpBFJwDY6RJQEHC9X3QiJa/nqRki0y1czQuJ1+eJHWPK+fL4UE/G3FsCO/iMU+SQ4Ao4AOALgCIAjAAON0PfDpVxrhOhA4SNEhwkdYU69VgDT6BTBGoh/FKNunVeIDhJavsYB7sqP3acvQpYvheWxvOUt33FFlQf/FgfOP16q++YfdY1QfPns2QjVlM9uR/iq/GyQOP93ACbAHtgEZ5EkSZIkaWxO5MhXfuwsTN8AAAAASUVORK5CYII=" />
-              <pattern id="pattern_4" width="1.000000" height="1.000000" image-fill-type="fill" patternContentUnits="objectBoundingBox">
-                <use transform="matrix(0.015625,0,0,0.015625,0,0)" xlink:href="#image_4" />
-              </pattern>
-            </defs>
-            <rect id="free-icon-right-arrow-3278474 1" width="64.000000" height="64.000000" x="0.000000" y="0.000000" fill="url(#pattern_4)" />
-          </svg>
-          
-                 
-        </div>
-        
-        <div class="field">
-          <div class="field-left">
-              <div class="field-icon">
-                <svg width="100%" height="100%" viewBox="0 0 34 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <rect width="34" height="24" fill="url(#pattern0_1_641)"/>
-                  <defs>
-                  <pattern id="pattern0_1_641" patternContentUnits="objectBoundingBox" width="1" height="1">
-                  <use xlink:href="#image0_1_641" transform="matrix(0.00759013 0 0 0.0107527 -0.000948767 0)"/>
-                  </pattern>
-                  <image id="image0_1_641" width="132" height="93" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAABdCAYAAABkdc5AAAAg8klEQVR4nO2da6xlyXXXf2vvc27f27e7p28/xt3To8GZyYzNzNiMNTDIIgljx06QiGJjYhMH28oXZOVLhCBEKEgYISwhRUJCSEQKEhIGgYmJQPCNSME8PgSQjQhRlMD4kSiPGcbz6OnHvffsXbX4ULWqVtU5d9xjz/S0xCnp3nPO3vVYtdZ/Pap27Sohpw9/+MP7v/N7X/9733judz86DdNlriCcHWCxA4sFDAOgIJo/BRAY3J9QkwCq+bukP3XfyffFrtHmxfIrTcW+DcjtDrkeTd8toyiQ6S7lpftNba/0y9Huy6m7b4QU2qX+DZZnU34qHyDz1V93hLlqagafUgHRTFoERVMxBbU+qOaiEWKEKHpqsfvSwekz/+baUfiZr37pq9c1121NLhn4S6OMnw5DfA8Xlvs8sAf7S1iM6c+Ebp1uhOj+Tuqc76Ax0jO0MLUv1/HCeuvrbMC0gaFddWsXh5Paf71kgHMA9sIXX8kJQLJ+9IrU09/pRMWFtr+1+44DBIDG9BeDEubbQ4xfl8P45e+9/O7/+Kc/+9F/+4t//LPT4gtf+ML+Zz7zmU8Nw87Hwjx9L0F30Qi7I+wvYFjAuHBa6BjgOyA9MzcIpCkjtT4rL55BPcN6zd5gNXy9G9tk/bvl94bkJOB4yYi/1AN+2ADGnt6TACHr3zcBQnCCpmOPguYLBgzFwAA6CNO4G+fwCKePz35t+r0HD774HyLwrxf/69f/+99dLsenp2l6FPQ8MHIDCAvY3cuWYQRGqjl2DAFEpBicQlfpZ8sZzR2tmDIzC6qCDLmfGSyNQejNuidGfDZp+SSe/Rs0MtetlcLSlv0X6Yxq+ZDSJ6xvTV9bHoiAmvv0vPOKtamLrh9rgFjL6L40riNCHCFEWMSRcT5N0Gvz8aF89bf+2+8//PEP/apcuHD+D6+/cv1sUN0FxkLUlX146gG4uAvzTEL9WMIIKdotJTwwjx1zB4cTbLZKYkSSTWbIIMkPFkBIZYr3ubkax+Jyu4gy34zk+k8wGkY7CrEoebqgtIL19RsB9b6zYg1eDKhVfQ0A/r6nSQVEpetjq2QWepVy6r8aoerKRmJUiAoaUY0JFGGGeQXHx7clzv/n8nj5P0vhW5dkHJB33oe+7wE42EVXAeYByWKWLIqGUUXTTBd9rwwugCgiFqTaNROsJmtX4JR7ry74ktw2oDpkgCVOKYIMWq0lQ22WrC1FeGK3CGL6P4BE1ME5xZLqLIGzfeIAYcgTzR8DOhgdmrs7VECoFNqswkReui7OWFl8LZLkKpmPtZBkZZSskVlzzVsoEBXViMaQ/uYJphnmI2U+Ptydz9x0+OoAAbAc4LELDO+5hhzsM69mmBOrrB9D59ZbcHQ1OjPba5T2JrdRgZ6wUsvaNTJIqwvAtVv0tC1XtPgk2n2ZzqE3owx3bSNtfd2dGXD1NIOhjfSkG1KsmaPLSzRbi4SHNByJMRJDIIYpWYhpBatjxsNRFyc1pQBThOdeQaaR8b0PwJV95jnCKjkI0USOgaKaVmPvCYxxQi+m0EXhDX/LcHUTZ5Jvr/Wmz0SHN/5J4Oum34p0dPZB3Frb0vUntyuO/r7PTduvB44aQIgrb9az8X9a+Sa6AZBmDdV4qmhMCiODZgs2ZCu9QGOUEwFR0nEgfP1bMAfkyasM184j+wPxaMUYEnERZYjieNmx3DqKYZrOr0uXt+NW4V/WhkYRLOBrI/bKM6dqmzTNGEopUATrm2/ihzXapOlC10B321nF0nwtpNICSnLO2te+bKbIQNnY+0x5zjeoEIuFc3+looFvDwhA50D45ksMRzPjrRl5+AA9fQqOZ5hTCBK9z8Mcp0WgNFGRUJE7SA1ITRopsNSCfi3lW7wMaB2RGJfU5tAsgqgCV4eZ3hD0frMKwuxLuloC51yBuc4o2X360Yi6docuGMz1qAUHuYy/7+kbjD1dbEH33YckvjLN8hhKZSkWqROLqfU7AgSARiX8wXW4vWK8fovF49fQ8zvoQgjHIZkdjXk4P2SiY6WtaFI1mlqhnYHRmT2v7TkIbbUVZKhDXkQLs1rz7bRd1oXfa7WZ1/Rdq2CcxjYBs6S4SqWEdaUiM45aKnZiLkxo0V7zbiKMdhjd59tkodSsd8RiLBvlVcQNiK7z947SsDOyeOgy41NXCFfPoIuReBgYYkKgRiNFLdDdOK5OsYSUUYJ6Jjum9UJtqsjTxJtmlU2ja+YTLIIjzsSltfl0vQFYV1lmcOueNviQRuCtNaj3ZGNR1i6t35RKaGmoUGTBpUaiKiFG5rBC5xWsVrCaWLwW79xC+BRXgdVzz7M4PEQev5/FY1eYdhbEOQ1nBEHyELAwOJcdMpVlnC/t/drVNmqWk55pZD/QR9klopGWQaX4hsvNRKmTqyLtvZ4+KMNZ6W43YwAfE/YjiKw1TduckKS6n2IpSisb+oo6Q2QusNJV/dobcBmb0vz71xlvHhGfv8XeM49wuK9EHRlXmt15FZQJObrvesLYqvSln8o+iUPFqWrNW6ISx92mKYfEzF0b+vqgV3Mdm4eyFXDF3W0whdrPchpdjo41JaCR6VoftJukKL9NQcT93FCb+msZFSLfJSAAwvVj4m/8IdwKLJ++Qrh6gC4jOgfUczX1onYMM7N2KfsNTNM6a9Bxp1EsnMXprpeatLWmtaLNdtlNwnc1V2BWxXI5vJJKS0MDio5Y3ehC1jKlWyUQleIqxcyGh1bj/yq8JQtfumdSbyiofL2kqhx//QUWt28zPv4AwxMPsDqlyCpH6VptZYXA0PKl2MpWV9Q628mtc5Xt1HXOb3aqiqXmbyToLEObT9bx4tuV9ese80mmjuHmx12lm8DswVCesDhrqiq1hLVrwaLWfjT6p1r7rVoemdfOJjm9KYCwND9/A735Tcb/e5Od97+TeX8JcwBVYqZuiC0XJccH9gCpT6YNxriSevPfhAuaJ2paK2P9L5pdudmM13w+iwKsjrUZQUn0Zb07ITZw9NotV42vcy27AaG4gh7mrj7PljVPnMdLmp2grWspY+H6/GZdCt9lEoHFw/ezeOoBwkMHTBqQOTLqULSkBH5dcLTJovaVu2maYsF1reCmitZ9dBndnESD01a7J1bQ3y/S8dZGaqWerpLXLOc6rZv6791O8QS0/Ot1yn6nxxsJABqVEANTnPIo4xiOZpY3eHMthCVVmL7xInLjEH38foYnrxJ3l8TjkMbrmkYhHhSex8ZBj9b+HlSmace+Jt52mtLG4dVMe6vZ9CNzfX2pR2euJVukJiZqaa89ahtonqq2ceJ6ft9mR3uJUTvTVPurtVRnPNO1ZGLfEkAAEGF68Qb82iGLlw459dRDhKv7zDEgU0zMUJAoxb8ly5W7JbVLphV9UGbDQXGjERvqbuLlWpzdWZM1ZXZmuMVjptc9ptbeneTMdWos90TqEHYzXZ6iBs3r9zd4r0aZ3Dy20RbRdF0p7sOwot/pxNQbTcNiZHHlHOMTV+Cx+wn7S/R4TnOnkbpMk/r01AMBH2GvqXX9bpNcxReaeXepmH2rzK37XGPExqeWBgBZy2czr+JzNijrIFcsjDR3zFKtryfpnd5G8lqslyBTSWshyBNTgTk4l3E8Mb72FrmMPsU5MP3Bq4TrRyxfvMX43quE+/eZAVlFxmCIr5YiQp3ltA5VW5on4imrj8oiHYtRBDQmRKyZUuO4q9KZKKq1aTW1CbqKw645VCnrevuy3uGra9jWcZQkJZNLugEFpii1b5rp8RZIhfSEU9PoJj0GjJTQVO2vNvOWWwjfgXF3yeLafeiTV4iPXCTuLBhXmh61a57JNOK0MrVodsffdLldxlY7pfQmxUxnyu/1TZoyksGhmhfyDOTH/U0R8xXVMoin2FuC1go0bsCBr0zldbFCqapovJQfxS0140gyCHKv0mOMBIcYiDESwgoNeer6eGJ87Q6fdr45KREbjmb0my/Dq4eMLx+y+/iDhAs7zCMMK81aHZFow6Tc+YySfszeIroOyaAPybT7L2v3/O+1GT4tsKwtN6alc3EncMBTmnJKc7+20djFJp5xBHV1rWesK/Fr7dVG9BbiLsUQJ6Xx3C6nvucdhMcvw0MHRI3IKqDZhSRTlwgdcgdU/ZCrhGopFUtbg70TnW4TqHmB9vll/Zp0F9yT2fTZLkbuBV8shYs91vLI64imu+UB06GuwlUjMT91jDESYwC/Yup4ZrjxFs1D3GkSYDi1ZLhyjvHxq+i7LhN2hLgKSCAHnCkqTg/LNM+j1PWNxQXbVC6dJVfWgrbSeK6pCCbfqjpvsUm7aCV7ancf2tXTQ9dO/fJ67ZdWu6evTTmXzd8rrqR0wtlCTYAwi6AxpOX40QAxw2qCG+PddBnrSYFwPBF/92XijSMWt48Zn3gHemZBPA5I0Lyiopq2NDRyMQWSnzRqQYFZiUawVJDUJM28UDX51fzWB16tpSh8N8E2cxOtc/EWpTNKJ07NW4yw2f3ltrX0okWzQ0YZSmrlYQLDDDqllddhhhBAh7fXQvRpOLvLzhNX4Yn7WZ1ZZrMmeXhqnalRQrGVZe0ga0FkkzZxVXpheImrey1vXXtrdnGmwmhwv329PSLswtBd92Nm6eqKuPcdGr9AXgNTyxoILF/Mr/OpA8Q0wWqGW6fuLUAADKeX7Dz6DlZ/9CLx/lMwSRqBRCBo7kxdidWNTZMA7cUCbyLKm1nmS1yjzXdxHHEAsDkL/9sa8CAodUvbvgdET5sHib/f+ATWJWWgtet5KF4+rZLo/ImqA8Sc44gJVgFuLO41QCTYD8sF+q7LUd59cBjP7b3A0fEhQZRZ0wsmOtcOGrPKO75eELquXZsA0ZOQ383oLtby1o4HzOjq9oIs383y5Lp7MPTCZ8P1/ruXeyS/sJGti2atMOsQoJgP1WQZ1OKIGY4VbmzG3duYTLIB9k7fHq7t/VZ874NfZLr9IhElRmW1Is2Lh5SPMQljIAtldPWtgJ2ujaHN0ieT/Virv6O01rarw98KS2Bq6w+sl7PU3+vrtTye1rCh4GRfYroXcqEIrCIcBbh1l2Yq7yx5BynK4eqmfu32V7mx+Cc8+OArHH5F+M27CN6nga/kz7udvtLRsen+69H1lde5dwdJ772/IcDwO8DfAk5/d93bpjeShm+f5e1IFj6z4mRvv01vQbpHAVHSFgx3Od3DgLiHYt3/j9IWENvUpHsYENv0dqQtILapSVtAbFOTtoDYpiZtAbFNTdoCYpuatAXENjVpC4htatIWENvUpC0gtqlJW0BsU5O2gNimJm0BsU1N2gJim5q0BcQ2NWkLiG1q0hYQ29SkLSC2qUlbQGxTk7aA2KYmbQGxTU26ZwGxfSHj7Un3OiCWbNfj39V0D73sW9OAMMJeZLj28c//7f1f+rmfO/4KDE/fA+D4cv581v/+sr/z1qRncwsnfX7X9T77bBARvce2AwDb2GGJHL5758xv/8PP/51/ubxw5lvzYQgQWEaAQCSmNz9jIKwmOFqlnVDCBBHCapXejo9TeT0+hFhPfQqByJS2FTiaWIYjljlvDOlV+hBH6pYCK6xlwpDfvI+EkF6pj6sp0RJINIxAKNu8EMaBMQBjKm+v9Icxujf3Q35Zv+4HEKgbGtTdAwbGsf5e2d4PMWSqau5yJphVOMBQ6h/YZWLeObM6+56nXvjmwcu/do8BIpGzM468j93w6dM7R+9/8okXD4mHU6x7+ieCk3BV07YRw6x5IxHN2x7EtCuuBmwzpqhu76doWw8GJETGEBg1thtm5E1J3Nkz6WLwu3zEREPey8neU1bXH3fyGN3uJSiepnQ3UH15yLmHwZ9gVmvJu2mUsrlr2FG01mJ0W/qOtmfVIChRA+PxmUuXnn9+9/Sv3EOASKScXS75wNnzfCLu8SdlxbRacTNGZpQosbDPM7JsrdQcjq5l6ykqhCgCUms1tTuoMpbfdk9rde4z7eLjt0Rsheyqd3frMQs+d/T5tV6TngJpwaQuD6TtGitkWxBrC7tCtwqsUFZIPLNcHr125vzzbzMg/L6IysVTO3zk3CU+ttznj7FgWB1x+9ZtjmNgCjNBFTQiWQPqjrzK3HQksSvtzVW1NWZWx6bLiXEDSdvaraequG27IxPgkOsZGDLE2r2AKgjsuz/fz53B4ejzd62VmqMeV9VTb/X15f3vWmfM/VCS01RWwALleLnzdm4p1G6udHVnh49dusRP7Jznj0xJwMfTjIa04eYUAjEoEmMBQtqmMHU4qjbXS822va9WgZT9XF0INZBOKC4M1kqlbexmok/5pZhlA2Uq6S1M3QWlTW1uzd/W7czgLATttsYeJHlDNPW3GvhVx5WoTn+BmRllIrIicsR3eCrfm5eUBQOP7iz5yMEFfuz0AVemgWmYOQpKHAaCKlEHwiDokCyECTdtxCmQQeL28cXrpF33xw81R0hCOb8jWjmtYDBabUP29Kueu21X2ACGTfMp/dk1xfQ36inUnfV17V4DnwwWOyDX2JAOis0U2mbXKGhwVm1GUQLCzF0fdnrmKfvjkqdPneYT587wwf1znJ+VW1GZSEcSBxHmcSTkDUuTBIfsw03YIHHIO9E7T6mt6SxWw4cZ9j+DqZp3mq0v6387KHbztFkfN6TPaug3xQ7VSgi6BojN9XcHMjZpLdIwS6cxB9LKoEMZkZj7SOOpcDcB0e6jfGlnyQfOHfDj++d4/6kddKXcDIGAMquk/UoHIagQytbGUHe0zRU5wddTxbJwVVueejTgzHlBgrZGBi9Y55edZfl2TteOb6iQauvF/xawbf7td6tClonyTU/6zKgudOqIakRiGp0JMMS0DbodQRu5axYiBVypQ5GrOzt85L4DfvL8BR4bhNUcuRGVmYEgaX/SmSF5g1xc8wk8ZbtfzWZXLaY2IWa2ZKmVkYcI2LDSLCeO4YYME546nOBF2boeDwgPPm8h6o3NyGmudge5eINULEnXVl+PAdVbt3QS35CGmjkCF42IDkiJhO6yyxhQHtrZ5S9evMinz57nWlBuT5HbKLMMzAgBmEkjhGhjvBK41WGfMU4AGaUeOwgU1okDRKYAl0U8AEytir+QNRCYFvmDBTeJ2AtGtBsVSAVcJTW150i3njaWwmKNjUapbIWc9+d2da7tmD3kk+l1gFCPfBTuAiAkG6SFCI+e2uOzly7y4+fOsx+UV3UmIslFKMxAVCFKjeyN0Bob5GOkBXc3fytnYaXrio0C2gjcn3rbBoVVC4v5tTLGNO9WPAm6LiSF7mmRVIAOuaCStmN27s6FkhkI7Wmn3kJUIRto7cCXYU1BVFLILPnMdSQ1XbbU5i0HRJoFWIzCnzhzlp86uMxHdvfYmQMvT5GIcAQco3WPc+oEkgXCGmEg5S+C02otagjgRWlnd0aMpc3xK3WMitchnzbsp39COHlCygQ2AMu3NjqPxkq1mOGkcs6w+GOnzaJsci/+Xvpdjq57qwAxlM/FCB+6cMBPX7jIs8OSMAVeipEZmBQmVWaBGIWo/SwiJTBqgjLRpkOoN6lewCZmU+lUaihuoh74GiGd0Z05WIxstiJqZ3dpx+ACqjbYszrM4RWNrnitPVDDgeZzsSoLxQ6fOyFyqPGNcw/ibpLjLBHQkYFImYULTi94yyxEFdWOKB89uMDPXLqfp2TgcBW4FQcCQ5oyFZhF0tQClIi8mGAH8eYkna4TxuVGe3r+aRWGnUNlprjYjSKYGo9Ye8XLSlyvuPndTnjbXEWBqPdDbKCbNkpoJ7qkCLzS7tyGuO/WZ1ej+QYtB8Ll87+1tvgmAyLrqSiXdMmnL13gpy9e5IEZXgvK8TAyE1gpTKThZMBb70y+OrdRRVHYY5NCVXecSfcHqWhleWGxj+JzVvPrYmdqFr02U+WDhk5Ly1GPVfUL3ErM4sqbGxFph68YEg2c3ZOUJsj1PHFXygkx3sTi6kl5bEa2HhRYefImAcJcRGLIM2cP+MTeGT5z8Txn5sB1jaxEmIOwUmEizY+FmHgZxFDrpowthMgCqlrUsIlqLpwGapfbWZQ6Z1EzlCCuFCuSbPI1JsonyYfS2pGRror10+RrfQacRnDWpD/+R3VT8QoI6R1Ka2GK4th42x0y460XfFeA8OFRImBXhB86uI+fvXyF9+0sWK2OuR5GAiOzRlairPKIIogLIJVmlrHqgWOErv9WUjkLMD3fxAm+Kn2drm5lb0//pLSTRnEu2LR5jVLGFc9fegPin4ea4SousNg5p9QWR6g0VsUZrSaZxRMv404m4iZN6kwQ5ZwvcX/wHQPCVyFA5JGzZ/iR3X3+8pXLXDmeOT4KHOnIhDCpEjQFkUHT8/vYMLeOAVB1iukMvtj9worcvD+ILXdane8tjLJ6PN/U1VEnvky6/Vngvv92vHQfAdjkWOqWM9aFXc7piTXnH6SLO6B+zdxU9+W4X08oNAuYhd0cDGf5tfmtVF4JbxgQfTA1sisLvv/CPp+8eIE/u3+OncOJGyJMMU1BT5rWGgWkPHINlbTidRPhbs2ACbdXvXLwuk1PU0DRaLCRaGhxZrWdvXS9y66rtQLOXpVg1Jlircx0P3NbmxHlh4W1e86MN+bLE9ddywAvGHbd8mAtPbAAUnETeXXICW8IEEKNFVLI98TZ+/jg6V0+/Y7zvCsKcTVzM0SUHCdojhU0P3RVCDZX70x3mTaO1TSXkMorhPqPOn1TzHLjN1ptqkZ03R97oTfXxN8XihNwt/oTeH2RDaSXPD0VzjB17boLPb4MBKY8YhRCcUo2RI/W94wEiycchXdsISSDwYofLHb5/vN7/IVL5/m+vT3OToHVNHIzzKgoIQorpYBA8/yCHQmVVjc54WjuiHs+UaVf1T1Z9J6dNYYwGRa9UJen1G/i9ctOMhu1GY+UsoXGAlZ3z1uIAkBppN4H/238kGHamf3W4vn5VG/vN7k3dX0iT527OZSGt+TJvOo47ggQqXhEBuGJ/TP86H0H/LmD0zw8BkaFV6bApGm9USRmy1D9fcAQWh/xqntIhaS5dc1UD5KmsEGLr45+rt46Y/SZYREXphU1ts5bbOImiVzvKNc2WRUHXnfiruRDP0udZi6ilKxp3sA5mYTq0n4bKGuJZ4yCAjfJrs4/pyh1tQv/entkMZghTNaCIy3Hlt2hy1DODgv+1H1n+MT9F/ng3mnOK9yaArfDlEcR2SAFKUGjZBDEgkznIvxj4aLMidByymCnx34CpeZOLI1Z4LbOoET1xiqtX/3PZk3jJlu+zgrn78nzGH7CPGUqlqjMe/hJpcGNOJx6i/f65qJSStNhNn1Jk7+Hj1+NFTfAWiE/Bo+lxICyRL49IAYRHt3b44fPnOFH7zvLe06dYgiRF6bArAOiyhTTKELJy9i8Kcv9K3ECbn7BmB+NUblj0Sub1Ly52taclrCj+Pf6EKRwyjVTI4+SvHch0ToUSybGe9dwjU/8g66YBdxMX7j7VXC1TW2C0n695PpK6+aHAJqsbmWP/XfTTeYmYlLSGJVB0/mnMa8TjUQWu3uvD4hdEd5/7iw/cfGAZ/d2Oa9w+zByQ5U4gEYhRAhoOWg8PxRAbV24DpWJNq63MKFT2RqstRNUUJ8S+oUx7YUMxCIA/903s+G6eh2q1ep6YUp4XujzjqfaB2lIq0JaT1WMNUlLQ+2gIzxbTOnbqZ+R8uZCqjUqmi1DjDbmm4nEOA8c7jxw7caiUNSl3XHkB8+e5acuXuCZ3R3moHxrUlZ2yG7QvN5RqzAd9VHJD5FiNvUpky14qdx2Jr2fYfS/NDG6ThV1gZfV1lsLaaqwhmjOCW8bwweXrRDVk5iB1E4o+2C5XVldVLpjdzvsS7cdyNYUoOWLdvFA7WOmTLUuEdSIBDv3OxBRZqLOhMMZnjv98CP/fnH1wqUXXnjlpbNRdRd3hOhjp3b5ycv38/Ri5PrtI25HIWha3zij+TjuvJJXBbNbZapZ8+RTcY+eOYV9hTm1nKzB01xQDxIFFzQ4BcqmpnnE4Fnm6vOa3SKkE55d7wDWY8m10vTzpHwbC+LB6uH2eslb20p/UtiYhREhzmgIGRCRiOqE3no5xv/x6MGjP7/4+A//yBd/4Zf+6TMawmMK5wUWpxh4Sgcu3brFK4slt+fUQIjKnLU8LXwVhIjYZAegbjmR19DGHeQOGMuHwgiKhtSYy2O++kV7t8KGVZ6hFQP1up86Tm2uM1rUdNm9RaHkB1FpFDS4YVyJhTL4/IjY/HoJ7zID+ilss3ytvMUzbA11lXIpI49qnbXyHs1DbS1npqvOaAbDTCCgMaKvvnLp0nM/8KV/8OLiEz/4fX/zH/+rf/HJRYw/Nqm+bwHnrzEurgVY3bzFq8tTRJaQ1zRGUWKOETTmEa8Ko3pGprcWiGkZT5knKIbTj8IThwYU1SFNpJSnlQlwpjSqNOW0AYS7rrX+7EnLK29Dvj9I+rRX3KSMFPqnDGkZ6lD6F4n59RxUGCTmenpRJUGLpvIiyaoOkqbvbWhtdIjkfE6uxcI0vlERWmWy50HR/R7MVeQeqKa3RjVFfEQCx2mR2qu390//9jN/7a//z8/97F8dBOBx2HkePsUwfExifPIRhssfYnnqqeXOeN/iFAxjek9Q82QTkhtI10Zg1CTIssSr8DMFPgIQbbzezLgzZuZKnpMQLGKvZrOuLMAJqnU+Klo1xWluv+xNmlKb1DCxOofG6VOFCsMqI2sjlkjfWRwq/d7K1GZNpJtcih9yqvttM6XeUjmrXCgwNfGKEeydrRCYjoPoi/Pu3m/sP/tnfvnRv/+lf/7YY3K8APhNWH3u45/7Z//7G796/b/8+n99djfEH1DhkZvKviiMWhfZpMVsoLkjQhrDLrKW+w4NGrOW2BUXgJlJVEmTIjb5oLEKLLunwbSs6Ki2+SQHbUIesmrRPtPKmK1LxGmlE6DkJyzVOqT3SKNjvbcy1d6nu7FxXTXeMddlVitqUoCgFdZ+eaBb5OchUNqr4hX3miK0rylbvgoPG2CmUFKPZtGvHe3v/aeHP/mpL3/gF3/h34nIKnPTixB+/pN/5dJ9+/PnFy+/8OfH669ekKNj0TkyxJBe9IiKhvTGs0aFaUJXK5ZHK2QKEOZUU4yUGUj1epODG+cHxhAZbZIkZsNZ5jIiIkOKkMWGn1KHZKKIRvo4fnCsqzrje5quCvaqSl3NCZXp1XArdZK3DXEVmtLe5pieOifX2AMPg+jgaICw+7Xu6natZ2Yp7be3e7jyChyhGvZOv3zhnY/98vc89czf+MAX/9G3/NDp/wEiw2XMBWaVoQAAAABJRU5ErkJggg=="/>
-                  </defs>
-                  </svg>
-                  
-                       
-              </div>
-              <span class="field-prefix">+971</span>
-              <span class="field-line">|</span>
-          </div>
-  
-          <div class="field-input-wrapper">
-         
-              <input class="field-input" type="tel" name="msisdn" id="msisdn" maxlength="9" placeholder="Mobile Number" data-trans-placeholder="form_mobile_placeholder">
-          </div>
-      </div>
-      <div class="arrowFormRight">
-         
-        <svg viewBox="0 0 64.3723 64.3721" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" fill="none" customFrame="#000000">
-          <defs>
-            <image id="image_5" width="64.000000" height="64.000000" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAANlJREFUeJzt2DkOwkAQRNHPknFLLkHIkHErRMCZHEIAIxaDMcLQ8sx/UodIVYUDA0iSJEmSpBFJwDY6RJQEHC9X3QiJa/nqRki0y1czQuJ1+eJHWPK+fL4UE/G3FsCO/iMU+SQ4Ao4AOALgCIAjAAON0PfDpVxrhOhA4SNEhwkdYU69VgDT6BTBGoh/FKNunVeIDhJavsYB7sqP3acvQpYvheWxvOUt33FFlQf/FgfOP16q++YfdY1QfPns2QjVlM9uR/iq/GyQOP93ACbAHtgEZ5EkSZIkaWxO5MhXfuwsTN8AAAAASUVORK5CYII=" />
-            <pattern id="pattern_5" width="1.000000" height="1.000000" image-fill-type="fill" patternContentUnits="objectBoundingBox">
-              <use transform="matrix(0.015625,0,0,0.015625,0,0)" xlink:href="#image_5" />
-            </pattern>
-          </defs>
-          <rect id="free-icon-right-arrow-3278474 1" width="64.000000" height="64.000000" x="0.000000" y="0.000000" fill="url(#pattern_5)" transform="matrix(-0.999983,0.0058344,-0.0058344,-0.999983,64.3723,63.999)" />
-        </svg>
-        
-        
-             
-      </div>
-      </div>
-    
-    <div class="validBlock">
-      <svg width="1rem" height="1rem" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <rect width="21" height="21" fill="url(#pattern0_1_637)"/>
-        <defs>
-        <pattern id="pattern0_1_637" patternContentUnits="objectBoundingBox" width="1" height="1">
-        <use xlink:href="#image0_1_637" transform="scale(0.0121951)"/>
-        </pattern>
-        <image id="image0_1_637" width="82" height="82" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAABSCAYAAADHLIObAAAeqklEQVR4nMV9a7RdVZXm9821zz03hKC888IA4WHho6oJGEQ0xBcORAiRUKUCIgSsrnZ0O9oeZY/Rdt2Ko6u6fvTDUWO0LYqxoGjLIgho4qNUHgFFwsPRahWKEAQSTMIzQCD3nrPX/PrH2s9zz7kJIdjrjnPvOfvsx1rfno9vzjXXvsT/jyZw2e3Lwq45JxIAulu3j4OH/FDCW4wYh8gZj6fkwiSJX0LPvm9q4dxJADjwxQe18cyNEYR+D6Nod+n3eaVlt05ku87cxu638sPd9G8RtTgEjLnrYNKOJ3UwnGN7dT5TT+Jzkj9kxudiRA+Bm835t1PnZU8dePs8bVy+Jn+NR1W11xzIk66fGDv88EdNz2XHRIsfFu1kQAdJWATo9TIFAh0DOgAzUSHJI8Hqd91TFyAIFCKE3IE+oD6cEeBOEo8BfIH0n4Xx8M3l71v44Bqu8dd6nK8pkKd/95LF1rcLAC6J0MEE30DoMAe6JDJAmdNpAMhAg5EsoSt/T++iADgcDhXNQUEQcwG5EVMSnnZgizHeZhnXP7tp968fWLOu91qN9TUB8q3Xfmb2gXOePp6ZfRS5nyvyCAV1IWYEgiALZjQYwARWArCWQtJGdFVQ8dslCJ62ePocPYowFxENmnJgGxyPkr7R0Nnw7FT3kQcu/OKu/T3m/Qrke268+NDJwLmQnS/YUsFPIjFPQEeGYCQDDKTBwPqHJZBlp4gmcO2uqtqi8keAClDdHRIQ4QDcIUWJPVJPAHiQwL2AbhyP2n7Lyr9/Zn+Nfb8B+bbrVx8Tuv2LDHwrhD8SMc+FrpFGoxkJo4EwBDZhBMAZlLn5Qa0/aIGqElSHQ3Al5Xd3uMtJRBA9OraB+L8O/SKic90951392/0x/v0C5Ok3XrLYLfwp6R8y4SgHx2gy0iwwwAgYA0wGkEka2XQlRIJnCIjlV0VT8astnyxUvNyS1NzlxasAWO4SnFBPxBbAvmOIa+PsWTvvfu9VT7waDF4VkMu+u3phL/rrQX0CuVaSOELSLMtIQ4CRCAwwWMMGElQCUmUHmr3gtDct7RaUvqlFESXa01TeVTmmqFiAG+HRReNuAs86dTsRHkaeXXfXyi9v3lcs9hnIpesvPb4jfSSCxxv4brleD8O4GS2YIagE0GCF4yiBTGCwvjprMBobR1xZM3xM9pKlhCp9XUgjREeMjogIOQR4rsAczq0IuDFKX930ob97aF/w2CcgT/3O6hOyXr7aTCtALnQgEAyZMQQLMASYCptIq4Ab5ISvCWdoSGqFsSfFd0SokMroCdxIOYVJmD0pYV2ehavv/eDVv3mll31lQ5mYsFPf9sRxY3lcLeICuo6UaVyEZcjQMUNgBspgJEiUiljYxH266r41Nd54QZfSmwSgIiIcMXeIcgKTMu6gcEMvC1ffe8+Ch7Fm74n8IFkb2SY0YUvf8djiTh6vEHEBoLkOjBtpHWboWIYMWZJGWsOZFI6ldBz7EcSmYE87dbWBQEGvkuMzZAzImKHDDjqWwWgmYBzQXBEXdPJ4xdJ3PLZ4QhN7jc/eDUsT9q4Njy2O4BUuXEBoLqSumVnGgMCAUAAIEGWIV7UZu9Owi4O9aZrMgfccueM0K5r2L6lTYThLIu8u5IqIisiZO8ApgduNuCFAX7njnEWbsRch5p6BnJiwpac8tjiTrXb4KghzjRgzImTsVCCWpLp1ylIS95SMeYVSWp1yFPBqf6w+NO1nwaNqmhSRKyKnR0k9EdsNti6nX73pvkWb96TmM4uuwGUnbz7WhNWSLoTjSABdkiFDBwFZArHihc3RshCDGUCkMO0wDFfZaeo7DPwBJ1Zz1OJV3oHCfhNEYPkKyBgQZAFAF44jJV1owuplJ289tjL2I9qMQJ52yyXzI7OPmXg+5EeQGA9Gy5ghMEsRSksSGyPgTACWu9ZckgSG+SMxvYZ6+n3y/mUf64MtsV4EhmTrGYzQuORHUPjjHvzKJTddeexMZ50RyGzXrNc5sRimBTCOw2gBhoyFV27d6b0c1DSA1dK6Fg8f5OQN4DQI4qC3GdTp6m419jFWN5SWADUYAgIyBhIYh3AYpQvGQv+Tb/vWRceMGtZIIE+/8crFYu9yOpe7qwPAAg3BOmChzi3P2GxDwGwB0YKuMGpqgiloiESr8Rp5v0bc1BrnNpgVoyjMUwCTijNjYCCIWaDmEjpvjJ2LT/3hvzl02GWHAnnGho8eTMs/AuCDIg6lMZR3q0w3oBUrFwNkW4qaw+coe1lISqlpxd4YhOrVMqfWDWh0Mt3gEuKSJpUvI0UTOUZoobvelD2/6/Bh5x8KZJyyBQLeImqhoDEIZpZsSJVmKEZW5gbbnVatsEMRaMGPQYBHaumQ7xoXHfDMRRhefa/CW4+6oYWhsiQoAURlxsQAoEPD0qzLK995/UXHDPZiGpCnXb9qlgVbQfjJgMZADyRSyIcGwa56PzjaZpJrSBs6r9WerWpKD4dsH2xVTF2+VKUt2j/Ttg85cRGrW5HuywpHBDEDcIRLZ8fxzkdx219kzT60gJyYgGH27ONAnipqvgsZYcgGaQ7L6w4Ms0o+jGpsIFSbh1FtlN8fLseFbqjM+BTptMYrzUYU4SIbgJbaVdr7JJoVmOXIJYwJWEDo7W+fevS4ZlzQAnLNA6toOT4E4A9AdECSalrG9qCHedrRw2+r8x4o+gjQhsNXef5CMkvgIoSIiNwj+rGPvnL01Ueu2JZgJOfWpFlk4dSJRI1AmBAodgEcxymuPPNrH++W/ajFc2LCzlj6+Ime651wLBAQSEvWgjaN55XDSAI2SqqGbJ8GOht/976Vt4INKa+krpRGT1FLjLnLVeSULRJiRx0jsoJDJhCt8uhMd4VMCRiLCG5wByLcQB5J6o82zn65X/ankshlZ2JMuZ9L4BgRHU83BMGsmiLYf+3V+N92kyvNzhRTC1GO3HP0Yx+9fs/zvN93+VSUb3b5HZ7H3+buvam8l0/5pOd0zKQdhjR+o4EGwGVwdQG+fums2VXEU6Gza862KPFkAUe6FCrG3xTDadym4brTDu3vhuLFab/bLBxDrEOpgCxetXdJalwAqIjcc+QxjzHPey7f7dIjAG5lx64KDH9F8asUfuTybe79GBVbkxRDu6ukc0mcSEoZhEUhhguX3H9lVgMpMdvy/AKBr5OrG6VCBtvDbbvRBhdrGurB8e9rax3bvHBtLdsgOqJHxLzviupJ2kqzOwLsa4Hh8wcuOORLd5679gcy/i9j+BuSDwKW0z3djoorDQhDFRSVnpwAEEAcBvgp9y+ZF4HCRi65/5NZ6Mz+OFxHSwyBZD3rN12s2LgcB4VyYL+RAHH6R5Xna3JBIrGBRmjUmn4tphFyORRzp2tSxHaa3WzK/o8d9OADG5dvnCwvf9eKtS+euuHjm8ecTwPI6aoiKbVGW3SEBVF3ImECMIoydUHMWXrLc4dvEp7MAODpX06F+YfYmwgdAiYnY42555oS1BcpxzuM7+1Lq7ErMkIquGUZMpXfq6AvBYhREbk7FGOEMBkRdpD4NvrZF+8cMZk1HnJ67CQBcMGz5AEa03ENMAnQUyzuLJTbKalD4g2d3S9+auL2ZWsMAP7gyIMEMBO8kysSXpLvJAwcgKpNRzBChTUzuiPMESo72ERORaSiFoi5l5IYI1xTpLbR9B3Y5BdGzghOTNjuqe5BETxIUOaU4A5qFCVriAoLFacBZHDZwZBO3DDnxDS999SW7eMGHQRYokPNtFhL14YPffT2PRnJYZwQLdWuN9VZIlfKaufI4blHQpMAfgeEH846YM5f/fScrz82/HLi2960eVEH8VOkvxWwYKlaoRaVVpcG+18KmOB5TlFBxi4A2JX3Lel05x/4OQhHg+gYzay0CxgFVX2BmdKO2iOObAluK69RCXvtqdPsX56mBjxCuaK5JhWxjWa3xR0vfu7W9/7tjlGXe9sPrjg6dDufgukcAw41qGMFfyRZjWX6mFV7bTIVOyCAQEe5H9J/Zs6Y3X//ElBxoeCvQ5pWrWOYkao5SuIKZ1BKD8v3deg2zDdCtT8pzUl9lsI3qyiSKryzokeTT0LaJobbszm7/v3dV6x7dlSP33nTpUdlU34JgHPM7QjBusFC4YutvPKMOlYJTcHsIY0JPO7AqWduMSwBHGEskmEyTlIQrJUAVa3h004+zAk0gkCpAqBKJlQZmDaoZVKmDPPS+Yv9JMgTzekrQjF3OCZFbBN460uzDv70xuXrZqwwswPsdYIfT/lCJ2bRYMZUyABM14a2NhYAWJHQEFMMbsjMdIjEN2fpJF4IYKtGrL5LLcrSdDqFDJU0RXVSoLQ3AgArpK1BYUqXTA7jTiXwrChOjjTTxzyK4FQktpP8pw70uV+c9d9fmgnEM268+IT8JVxGchmIsWBgABGUMuNUQxqnJ1TRihIaQhX7MguhY1Anq74UUk1O47A905pCZpgkkVBVUatiMj6JGEErblIKYQvLR0jtWaVydq881JE8c18Rrogg5CJ30Pl95b3Pb/zwdTtn6uHSH1x6vHZztVwrYDqMUDCEVFJjBpMqsRk+whLCYsJMaW8zwtyqvcqkRbnvEIkcPG1j0MXvOnWVahnkkVH96C4SpCCZmQKzQJoYjCm/2WSkdZdVhH4qJDGXQ3JYlMM4CfiDEfhvmz583ZMzgfiu9R85vj+FK1xaaQFzJY0l+sIio1XWJBUjM4Ce+lIpzzA3YABjisPL8NLuP+XLfYNl5QRlyyM0D57GDaqot0hZeSrqzieV573cXX1Aj7jrbrge8ah+3u/n/bynPObJaRQvr2xpojYOVbFz3x3RHXQ5YD0I20jesWnFNcMpTtGW3nDp8X3vXkHhfCPmA97NjJbRmCEUNZoDHFm13jYj4UHXWoaMzSnobNn6y96cC4cCnpXw1KdOd4eF3Ri+aqNR4CmHuzvErSD+meSPaPyNO04g+V7J3wT5fM+VwRTc0mykZA1Zb8TPiHA5KHc4+gC20ngTPfwDMEFgzVCCddr3Lz+OU/EKSOcDOEpQJyDNgKaChnbU1jT9ZZg6KDLN32WJYnOvrBfjGiOPBjhW+PU6J9TgIyqdTuOCXr0rwYwRYB/Ev5h4VTfPf3rLz4997rS3b93EfvyZDOcQvECu+RE5IUuek0rRQuGsEmo5VEgigVyGLYS+mStcffeIKtuJiQn74R/+9hhNxitArgSxAPAxMzAoTbOW9ZrAYLFrPa66jQpGyuMaEklwBYRJmQXAOeyA0flsr1P5dLhHF/GEhDtsV+8nt3zs688BwN3AswDufNeGy5/uu0D6BYDmQbEbHRYtpom1VE6LHMkmBiESyEFsAXhjNo6v3vH+rz48ojNYs2aNv+Pbn1gFYQWEBaSPgaCVAFpoZLRq+zg4YlSjHhGOaDq8RnA9xJ2ER9T0rza2AMp8XHqPJhNIkinAFZFEV7+J8lvf89Hjnx/swB3nfPVXdKyl8ZsSthGaAjxGd/RiHz2lhKx7DhMiwT5gj8vDjXRbe8f7Zy4CPe1blx9H6D2i5tHUodHKyrPALE1ioZkgfDWtNX0Gy8z/IwJ+i+QcxGlYl7HaNMNRc0MRiCUDC+hmJvzl8MvftWLtg+rHqwy82cVthCYD5NEjJr2PKeQwwIPYl/CEgJsJrL1rxdoHZxrW2zdctihY/DN3LSbQJT2k/GGGjBmsmEoeNvc0vA1T+GJbVdpW72Ebz73m15CeEa1fJwZmmJwqJVKsOFUAEJBRIkic5LI/ueVfPf7GVdevCsNOcdfKazdP+fgXiLAe0g6SL3cCY7+ooqXTCe0gdTPoewTxtPWXLECOT7uwArC5BLJSnZNNbAcY9Z+9BbTJrusoriWRS+67siMoJvJRRiWlT6qnmKazotpQlME8oQyKcylc4JldsnX84OOX3basNf9btvvO/99bNN75a8C+D8d2yibnWMdno+MB6IHYBNN1Pz33ml/PNMxlGz4+lwqfJeO5AI+AYSzALGOGDJ2WfwbqqKSxpY3ZAIaD9UelySsVsQKyPCBFeF7s7A2067sx/Tp1pJJYajDQxiDNRdRKIn7Y7cShJR4A8NOzvvTkS/L/JPIWgr8LtJczs5dgtiUCv/SX9dRoCIGlP7r8yH60/wz5B0EcafBZwRAyCwjIUs6g7mnF+0ZKYkNjW8psTdDqfIGrLpm09FUKlEQWUjjCWzXeVaUrIKTyjhhcZgLGAB1FxDf6C/0jMDG6hPjn51+z8/mDZv0HULcBtlniY4Q2MN/9D3dfeO3wtS8C3/5PFx3B3f4Xos4CMFfgLKNZWcxQVstVKeqGSLbKBNF4b9O3DbiFFMIWmRk28oSG+wFD7AUpjodMCRhHyRKHgVnHNKmVZrxDQ0ZCTiNkEJYDuOSMUx8/GtMVp2oPLP/irp1zXvoMENeT+EZ+QPd/3rXyH0eueTn1posP4VT4NN3fQ2keaN0QYB0WdeyNlWUGgNZM5zSgaQJaKF4T5GZ2quloRC+KD0rb5rIlS+6HGLYS9jzB6AQia7BGuZ2mRAJEYJkgNTAQojIAB8OxEsK/XnrTHy8aBUwCc92uBee+/Jc/ntz1N3tahTV+wIEHSPYmA+eJ1qUpBGQoJkvbFXMcMHQ1p2uDirbxan0j1skYlYkVR+jQYeh75CQBYMlVq17XnXvgNx06LZdmZQzWtQyZFSsUVCczBls7ceHIIUTliO4QohO226UnJd3UAb9w5/l/t2UmkPbUlm+4bFEv158z4ByPcZ7G2OkqOZbKP7N9m9PbNp2pwr3GGKaPqyTWSDYRDvdUAtNTBKgeYM9AeMQA4PCj5k4a+ALheWUASmbuI4lQ0dWynwUVKpdhWIAQzIlxUkdY4Ll942dOv/my+fuIIZZ/95LFefR/J+gDHnUYjdmYMlTSOE1Xh7XajYwKAFtHVxKYPggpQSNFV3qKwWY79MgPGQD8ascLjFBOWD9jUMoveqrYakb0M6h5GoLBRGQwZDB0rKgtdMyCa75RH4Txz8/63sfm7QVurXbqjRefsLvf+dMonAdoLk3jwYyZB5jK0K/Qm6EVIc3+D6Nzzf04bWuaMyqzUw6G4OZhCqZnfnzGf91pAHDYW7qRgf8C8lkC0eVpvXNVlDmzVJaXSyYpLZuryDANMDMQ4xDmy/2cF3tjnz1t/SUL9gZAADjl5stO7JhdQcTzAcwjNR7MLKtI9/AMajtFNiRArlrzC7a2sOErVDiYYgWZA3wW0s+XgaE4Slx6858sMjvgKsDfmbuPZ5ZxzDJklqF5v5tdnN6NwtokUgr3Mh2WJvIld0GTYNgm9+9nnVn/40CbfPH7Z39tKF88/erL5thhOiknLgBwvsHnk+hmDFZ657KQoZ2NYXPRwpCeDkpse3uKTGpS6UgLQaNH9D1HT7mM4WWjNvX7nY/fs/LqJ8p5bOX3XflE94ne8yCnAtkVxAghQ51Nq+9Ze0utOIUJL+NwEqGRIIigAXEciPPNcJ7H3Ye+6PGRM3548TVTz02+cO+F67YDwLJvf+SwaGOLYsR7Bb0zgG90YAHITiCtTIXVJTVtR1jVo7PZy1EgjtrWPq4qTKCDToGckvDCPRdcvRVq1Ece+OK8kPPRnwF8q5GzHbIywWoAUk2bMMxzN7tTgpkOKXKYSvySIiRYVOxSPFLUuQ7bgZe5aKw7e/O7vnvZzfnUpPoaO1u5LwH9zQKOIpQZEYyW0rIlkNOUGUX41ki0sNm7EpghY2jSS5ZSmVyvF2m9QqlhxijiKTLcs+Teqzr3n/LJfgXkxtvRO2OpfdtzLaNwFIkAwSIiMqa80LTVXTM2S9aFCfxU8Uo4CUMwh0yMAdJCSSud2KapeJIsI6g/BDgf0BiMRqaps6yona0z3Amg6eHsq2xpJg9l5l/04sEjAggHMUXFrYFjN9y35Mqc+OTArVm1Kpx+0ezPErpUwNEOdoIZuigXbYZq6dlM6tC0mWpIQF27U68BTKuoPabEiSz5fhdoZmQwY7EQoF6eUk/oD1jrgfkW1ZsGejZzrF2u9a5qjOCpZNojDOgDeBTStT9Zce1/KQ9tF+OftE5TGdaDeABgD+U6e5W++5Xf7VYCi6gij2BEFtL6v45loWPZWGYWMgsh2FinY53QYQedInau5dBa5x6ORJ2laeT9yl7M3OHWWFPRflREVFr0LbBH4WE33iDVPKtdjL8GvuOllx4GuYnEVgN7clekFyS0DJFmpkUVcNP4WBH/lmCCxRKMAlB22GXGFDMXS0YV0J6umu5cqrs0QF3qL/eg8K3h1DlZl+AeEZFDEGjIKWyDa9P75xz9MFlXPk3Lymy9cN3u2MnXQfoOoR2CYizqs6sangG2P3M321LAwZ+CvgRYJXslobeWQtfgVSBOEzAN/G3L4rSNQw4pfXRVZ6RY0mmH2BP0C8+zb3x++edbz10bmt66+wPXPYwxrY3kXTT0AcUcEf0klygndupy4Zk9eT385jubBqoN+aaW7ca2GTW0gK31fZG4GLjnKmKOesFTk3g7cuSIdAhyo00R2IrMft45fPyJQTM3Mk/o5k8FxwNw20JHD14XvDeLperOz9wG+XEJT3M6alB1y+RNaxXzjAA2Tj4I2h76V9W+SakeXRG58lQNnLJmz4j4Xuz7tRuXT38k2Eggf3rWdU9mzL/BgA2iPetCP508ebGytmd4EfsradNRGqmGwz4Pa639k8iNnNRDLYkpgkmFCX3kiKkuyI3Wd+p2dPpf2nT+NY8Ou+SMi2c2nnfdww5+jfLbjMxJeUSSylg+Lw8lrRkcwUyjm7nVHndI48BOQ6vH0g5Evc62CWXqc3pXg1iXyeTK4XIRdBMnAX8iwB/ujGfPj+rzHlchxTC1k9BDFLdSnEKqmU3rWYrIp6p7bLu/EQjsXZu2iHXYqauiSmDYGue2M1ZDg+qwrwYxSWGOHH3lUCK1kwCecoWbYOHvN555zchq4D0Cec+m436Xj2dfV8abBOwAOEUgpnrFvJBLrwa0N5q3N+2VwQ5UVy5jO7U31x9KTGvSHcunrChHHxFBdAMnHXzSgX/s5H71j+99w6ND7MMr7K8m7IzvPnKcPFtdPq5GUJcqUllmqKLfskpLZVSx95C8cvD2vrWFWzVPVCxKB5NEZgyRjp4T22m8vs+w9uyzFzy8p6ei7t0CQ67x95x97MN5V1+h8E2A2wlOSfKyExEN0u5Nrrm/ZPTVtybFiUqpsX7hWHJFmMzh7Mm13dzXIfBr9770/Oa9ebTsXq/UXMM1vuknizb3s/AVCjcA3G7ApCQvK2qj8vQAt/KnQd5HrtzHXgVur6BNv0blEMvnohV97auPvqJyjwikB3AKxHYFrlM3rn3fB456CBeui3tz1X3q/6nfWX1ClsfVJFbR/QgZxuHpYZtlsVIKBesn9ZUXq7Nag+Hj/mkt9tD4UybBXA5nmsCKVFpWS+SERcK3uvMmdm3tXXevfQhrRsxJD2n73P+l6y89PpCXI2IlTQsVlYHMyoe+lHE0zYoaoTJ7qBHPjhyedWfj3WAbDAgowNGYHCh2KIlapBdP6YuFg4SbMAnaThdv5Vj8tamz7sev+dP6BtrpN165GFl+kRCPM9iZLh0CYByAmafHGKSHijQCv2olQdGBCs0CjBK6KpxuQlrArzL52kjSNUK9NHlXhLBKtZvldIeXk9LwaLBc4BYwrM+iXZPPzp+56/1rf7cvWLxqjTrtR59cEF7a/XqHXQ7gPAPmRXm3nPFKKbPyAcVplrEuHW5G0SnsrOp1hvTMG5KXmlAt/qxYbB0rV8/YRfVIOUDyYDYl8WkJdxL8TZhl19551qt71u5+s/GnbPjEseO5/kzCOQ4dRUNHQjDVz3EoH7ZRpibqpXo1rNPyDUUbVGO1zGAd4iXHUhT6F5ntgls6QYfUM8MWRX4vjoUvj02FnXd++MvbXu349yt1W77hskW9GC9x2hIKJ0GaD2hMQnDAmikzK/imVXXczTpaNuxnG7jGlsqJoKAzpTon75yXixTcxAiwB/J3Ih6w6PePdcK1t52z9rH9Nfb9zoFPv/myOTamo2JPK2l8h6BjDZonoOtRmRxp/i8YwUatDpu1Eg2xVLKCg9F8Ragh1M/QLeyiQwxwIyOpKYjbAD7irp+EMd7oPW65a8XaF/fnuF+zYGLVP68a2/rEnBM4Fc8jbTmEhS4cBvdMZEYhgylzVA95TzJapRsHM9s1lFX+MAGpqCiXo2MUxQiyb+QUgKdAbJX8NnXDtxYuePE369782vybgdcyKkttYsLevfTxN/ajznPHyQIzmOYochGqf3rBjgEdEVmEhfSgY9RJCNZZJhROSQIyygn2BfQl5IByc+wU8TiCvWDgvWNBN9+66Q2/fiXPy92X9toDWbQlV17ZOfAjU2HXnG7sbu0c7vby0H/DIufYnjpVESJTX45njXrIDTvl7AnhVwy6euyDRz2B24Hf179i+b0B2Wqv9h8DAQAlB3dL/sALvdnvnnVsPgUU/xzo3Rvz33d4//8AY2VrdPFhgTYAAAAASUVORK5CYII="/>
-        </defs>
-        </svg>
-        
-          
-      <p>Valid Kuwait Number</p>
-  </div>
-      <button class="btn" disabled id="form_submit_btn" type="submit" data-trans="form_button_text_number">Continue
-        <span>to subscribe with OTP</span>
-      </button>
-      <div class="button_bottom_text">
-        <img src="images/checkmark.png" alt="">
-        <span data-trans="form_text_1">Instant Access</span>
-        <img src="images/checkmark.png" alt="">
-        <span data-trans="form_text_2">Auto-renewal</span>
-        <img src="images/checkmark.png" alt="">
-        <span data-trans="form_text_3">Cancel Anytime</span>
-        <br>
-        <span data-trans="form_text_4">KWD 0.7/week for Zain, KWD 0.8/week for Ooredoo, KWD 0.2/day for STC</span>
-      </div>
-    </form>
-   
-    <div class="langs2">
-      <div class="lang2" data-lang="ar">AR</div>
-      <div class="lang2 active" data-lang="en">EN</div>
-    </div>
-    <a class="btn-exit" href="https://google.com/" data-trans="form_exit"></a>
-    <section class="how_works">
-      <h1 class="how_works_title" data-trans="how_works_title">How It Works</h1>
-      <div class="how_works_blocks_all">
-        <div class="how_works_blocks">
-          <div class="how_works_block">
-            <div class="how_works_block_title">
-              <span>01</span>
-              <h2 data-trans="how_works_block_title_1">Sign Up</h2>
-            </div>
-            <div data-trans="how_works_block_text_1" class="how_works_block_text">Enter your mobile number to begin.</div>
-          </div>
-          <div class="how_works_block">
-            <div class="how_works_block_title">
-              <span>02</span>
-              <h2 data-trans="how_works_block_title_2">Verify</h2>
-            </div>
-            <div data-trans="how_works_block_text_2" class="how_works_block_text">Confirm your access with the PIN sent by SMS.</div>
-          </div>
-        </div>
-        <div class="how_works_blocks">
-          <div class="how_works_block">
-            <div class="how_works_block_title">
-              <span>03</span>
-              <h2 data-trans="how_works_block_title_3">Choose goal</h2>
-            </div>
-            <div data-trans="how_works_block_text_3" class="how_works_block_text">Select weight loss, tone, lifestyle or strength</div>
-          </div>
-          <div class="how_works_block">
-            <div class="how_works_block_title">
-              <span>04</span>
-              <h2 data-trans="how_works_block_title_4">Start</h2>
-            </div>
-            <div data-trans="how_works_block_text_4" class="how_works_block_text">Open workouts, meal ideas and tracking tools.</div>
-          </div>
-        </div>
-      </div>
-      <div class="how_works_help">
-        <h2 data-trans="how_works_help_h1">EasyFitness is a service that helps you stay fit easily!</h2>
-        <p data-trans="how_works_help_text_1">EasyFitness includes: tracking nutrients and calories, 5 training programs of different complexity, more than 150 effective exercises from professional trainers.</p>
-        <p data-trans="how_works_help_text_2">Our workout programs include beginner, weight loss, muscle gain, strength, and flexibility categories.</p>
-        <p data-trans="how_works_help_text_3">Each plan comes with clear instructions, video guides, and tools for tracking your progress.</p>
-        <img class="how_works_img" src="images/how_works.png" alt="">
-      </div>
-      <div>
-      </div>
-    </section>
-    <section class="popular_feat">
-      <h1 data-trans="popular_feat_title" class="popular_feat_title">Popular features inside</h1>
-      <div class="popular_feat_blocks_all">
-        <div class="popular_feat_blocks">
-          <div class="popular_feat_block">
-            <div class="popular_feat_block_title">
-              <img src="images/popular_feat_workout.png" alt="">
-              <h2 data-trans="popular_feat_block_title_1">Workout programs</h2>
-            </div>
-            <div data-trans="popular_feat_block_text_1" class="popular_feat_block_text">Structured routines for home or gym</div>
-            <a data-trans="popular_feat_block_button" class="popular_feat_block_btn" href="https://fitnesskw.com/programs.html">Learn more →</a>
-          </div>
-          <div class="popular_feat_block">
-            <div class="popular_feat_block_title">
-              <img src="images/popular_feat_meal.png" alt="">
-              <h2 data-trans="popular_feat_block_title_2">Meal plans</h2>
-            </div>
-            <div data-trans="popular_feat_block_text_2" class="popular_feat_block_text">Simple nutrition support for real life</div>
-            <a data-trans="popular_feat_block_button" class="popular_feat_block_btn" href="https://fitnesskw.com/nutrition.html">Learn more →</a>
-          </div>
-        </div>
-        <div class="popular_feat_blocks">
-          <div class="popular_feat_block">
-            <div class="popular_feat_block_title">
-              <img src="images/popular_feat_progress.png" alt="">
-              <h2 data-trans="popular_feat_block_title_3">Progress tracker</h2>
-            </div>
-            <div data-trans="popular_feat_block_text_3" class="popular_feat_block_text">Follow workouts, habits and improvements</div>
-            <a data-trans="popular_feat_block_button" class="popular_feat_block_btn" href="https://fitnesskw.com/index.html">Learn more →</a>
-          </div>
-          <div class="popular_feat_block">
-            <div class="popular_feat_block_title">
-              <img src="images/popular_feat_motivation.png" alt="">
-              <h2 data-trans="popular_feat_block_title_4">Motivation</h2>
-            </div>
-            <div data-trans="popular_feat_block_text_4" class="popular_feat_block_text">Challenges and guidance to stay consistent</div>
-            <a data-trans="popular_feat_block_button" class="popular_feat_block_btn" href="https://fitnesskw.com/index.html">Learn more →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="fit_sup">
-      <h1 data-trans="fit_sup_title" class="fit_sup_title">Fitness support for every goal</h1>
-      <div class="fit_sup_blocks">
-        <div class="fit_sup_block">
-          <img src="images/fit_sup_line.png" alt="">
-          <h2 data-trans="fit_sup_block_title_1" class="fit_sup_block_title">Weight loss</h2>
-          <p data-trans="fit_sup_block_text_1" class="fit_sup_block_text">Effective training routines and supportive meal suggestions.</p>
-        </div>
-        <div class="fit_sup_block">
-          <img src="images/fit_sup_line.png" alt="">
-          <h2 data-trans="fit_sup_block_title_2" class="fit_sup_block_title">Muscle & tone</h2>
-          <p data-trans="fit_sup_block_text_2" class="fit_sup_block_text">Structured plans to build shape, strength and consistency.</p>
-        </div>
-        <div class="fit_sup_block">
-          <img src="images/fit_sup_line.png" alt="">
-          <h2 data-trans="fit_sup_block_title_3" class="fit_sup_block_title">Healthy lifestyle</h2>
-          <p data-trans="fit_sup_block_text_3" class="fit_sup_block_text">Daily movement and nutrition routines for real life.</p>
-        </div>
-        <div class="fit_sup_block">
-          <img src="images/fit_sup_line.png" alt="">
-          <h2 data-trans="fit_sup_block_title_4" class="fit_sup_block_title">Beginner friendly</h2>
-          <p data-trans="fit_sup_block_text_4" class="fit_sup_block_text">Simple guidance for people just getting started.</p>
-        </div>
-      </div>
-    </section>
-    <section class="easy_us">
-      <h1 data-trans="easy_us_title" class="easy_us_title">EasyFitness Usability</h1>
-      <div class="easy_us_blocks">
-        <div class="easy_us_block">
-          <h2>
-            <img src="images/easy_us_smartphone.png" alt="">
-            <span data-trans="easy_us_block_title_1">Available on all devices</span>
-          </h2>
-          <p data-trans="easy_us_block_text_1">Use EasyFitness on desktop, mobile, and tablet.</p>
-        </div>
-        <div class="easy_us_block">
-          <h2>
-            <img src="images/easy_us_connections.png" alt="">
-            <span data-trans="easy_us_block_title_2">Online and offline access</span>
-          </h2>
-          <p data-trans="easy_us_block_text_2">Train with EasyFitness wherever and whenever it works for you.</p>
-        </div>
-        <div class="easy_us_block">
-          <h2>
-            <img src="images/easy_us_download.png" alt="">
-            <span data-trans="easy_us_block_title_3">Download content anytime</span>
-          </h2>
-          <p data-trans="easy_us_block_text_3">Save selected fitness content for quick access later.</p>
-        </div>
-        <div class="easy_us_block">
-          <h2>
-            <img src="images/easy_us_camera.png" alt="">
-            <span data-trans="easy_us_block_title_4">Download workout videos</span>
-          </h2>
-          <p data-trans="easy_us_block_text_4">Keep workout videos on your device and train offline.</p>
-        </div>
-        <div class="easy_us_block">
-          <h2>
-            <img src="images/easy_us_lighting.png" alt="">
-            <span data-trans="easy_us_block_title_5">Simple and flexible to use</span>
-          </h2>
-          <p data-trans="easy_us_block_text_5">Open your content fast and fit training into your daily routine.</p>
-        </div>
-      </div>
-    </section>
-    <section class="every_sub">
-      <h1 data-trans="every_sub_title" class="every_sub_title">Everything in your subscription</h1>
-      <div class="every_sub_blocks">
-        <div class="every_sub_block">
-          <div class="every_sub_block_content">
-            <img src="images/every_sub_checkmark.png" alt="">
-            <span data-trans="every_sub_block_content_1">Guided workout plan</span>
-          </div>
-          <div class="every_sub_block_content">
-            <img src="images/every_sub_checkmark.png" alt="">
-            <span data-trans="every_sub_block_content_2">Goal-based fitness support</span>
-          </div>
-          <div class="every_sub_block_content">
-            <img src="images/every_sub_checkmark.png" alt="">
-            <span data-trans="every_sub_block_content_3">Nutrition guidance</span>
-          </div>
-          <div class="every_sub_block_content">
-            <img src="images/every_sub_checkmark.png" alt="">
-            <span data-trans="every_sub_block_content_4">Progress tracking tools</span>
-          </div>
-        </div>
-        <div class="every_sub_block">
-          <div class="every_sub_block_content">
-            <img src="images/every_sub_checkmark.png" alt="">
-            <span data-trans="every_sub_block_content_5">Motivation and challenge content</span>
-          </div>
-          <div class="every_sub_block_content">
-            <img src="images/every_sub_checkmark.png" alt="">
-            <span data-trans="every_sub_block_content_6">Flexible routine support</span>
-          </div>
-          <div class="every_sub_block_content">
-            <img src="images/every_sub_checkmark.png" alt="">
-            <span data-trans="every_sub_block_content_7">Mobile-friendly access</span>
-          </div>
-          <div class="every_sub_block_content">
-            <img src="images/every_sub_checkmark.png" alt="">
-            <span data-trans="every_sub_block_content_8">Cancel anytime by operator rules</span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="simple_sub">
-      <h1 data-trans="simple_sub_title" class="simple_sub_title">Simple, transparent subscription</h1>
-      <p data-trans="simple_sub_subtitle" class="simple_sub_subtitle">Charged Directly to Your Phone Bill Service is automatically renewed until cancelled.</p>
-      <div class="simple_sub_blocks">
-        <div class="simple_sub_block">
-          <h2 data-trans="simple_sub_block_title_1" class="simple_sub_block_title">Zain Kuwait</h2>
-          <h2 data-trans="simple_sub_block_subtitle_1" class="simple_sub_block_subtitle">0.7 KWD / week</h2>
-          <p class="simple_sub_block_text">
-            <span data-trans="simple_sub_block_text_1_1">First day free</span>
-            <br>
-            <span data-trans="simple_sub_block_text_1_2">Cancel: send UNSUB EF to 93052</span>
-          </p>
-        </div>
-        <div class="simple_sub_block">
-          <h1 data-trans="simple_sub_block_title_2" class="simple_sub_block_title">STC Kuwait</h1>
-          <h2 data-trans="simple_sub_block_subtitle_2" class="simple_sub_block_subtitle">0.2 KWD / day</h2>
-          <p data-trans="simple_sub_block_text_2" class="simple_sub_block_text">Cancel: send STOP2 to 50365</p>
-        </div>
-        <div class="simple_sub_block">
-          <h1 data-trans="simple_sub_block_title_3" class="simple_sub_block_title">Ooredoo Kuwait</h1>
-          <h2 data-trans="simple_sub_block_subtitle_3" class="simple_sub_block_subtitle">
-            <span data-trans="simple_sub_block_subtitle_3_1">0.8 KWD / week for prepaid</span>
-            <br>
-            <span data-trans="simple_sub_block_subtitle_3_2">3.5 KWD / month for postpaid</span>
-          </h2>
-          <p data-trans="simple_sub_block_text_3" class="simple_sub_block_text">
-            First day free
-            <br>
-            Cancel: send STOP 1 to 1371</p>
-        </div>
-      </div>
-    </section>
-    <section class="faq">
-      <h1 data-trans="faq_title">Frequently Asked Questions</h1>
-      <div class="faq_blocks">
-        <ul>
-          <li>
-            <input type="checkbox" checked="">
-            <i></i>
-            <h3 data-trans="faq_title_1">What is EasyFitness?</h3>
-            <p data-trans="faq_quastion_1">EasyFitness is a subscription-based fitness content service that helps users stay active and manage their fitness routine. The service includes nutrition and calorie tracking, training programs of different complexity, and a library of exercises from professional trainers.</p>
-          </li>
-          <li>
-            <input type="checkbox" checked="">
-            <i></i>
-            <h3 data-trans="faq_title_2">How do I subscribe?</h3>
-            <p data-trans="faq_quastion_2">To subscribe, enter your mobile number and confirm the PIN code sent by SMS. After confirmation, your subscription will be activated on your mobile account.</p>
-          </li>
-          <li>
-            <input type="checkbox" checked="">
-            <i></i>
-            <h3 data-trans="faq_title_3">How much does the service cost?</h3>
-            <p data-trans="faq_quastion_3">Standard subscription charges apply depending on your mobile operator. Pricing includes: 0.7 KWD per week for Zain users, 0.2 KWD/day for STC users, 0.8 KWD per week for prepaid users, and 3.5 KWD per month for postpaid Ooredoo users (VAT inclusive where applicable).</p>
-          </li>
-          <li>
-            <input type="checkbox" checked="">
-            <i></i>
-            <h3 data-trans="faq_title_4">Does the subscription renew automatically?</h3>
-            <p data-trans="faq_quastion_4">Yes. The subscription renews automatically unless you cancel it.</p>
-          </li>
-          <li>
-            <input type="checkbox" checked="">
-            <i></i>
-            <h3 data-trans="faq_title_5">How can I cancel my subscription?</h3>
-            <p>
-              <span data-trans="faq_quastion_5">You can unsubscribe at any time using the contact email shown on the page or by sending the operator-specific stop command:</span>
-              <br>
-              <span data-trans="faq_quastion_5_1">- Zain: UNSUB EF to 93052</span>
-              <br>
-              <span data-trans="faq_quastion_5_2">- STC: STOP2 to 50365</span>
-              <br>
-              <span data-trans="faq_quastion_5_3">- Ooredoo: STOP 1 to 1371
-            </p>
-            </span>
-          </li>
-          <li>
-            <input type="checkbox" checked="">
-            <i></i>
-            <h3 data-trans="faq_title_6">Is my payment information secure?</h3>
-            <p>
-              <span data-trans="faq_quastion_6">Yes. Subscription charges are processed through your mobile operator billing flow, and confirmation is completed by SMS PIN verification.</span>
-            </p>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <section class="ready">
-      <div class="ready_block">
-        <h1 data-trans="ready_block_title" class="ready_block_title">Ready to start your fitness journey?</h1>
-        <h2 data-trans="ready_block_subtitle" class="ready_block_subtitle">Join EasyFitness and unlock practical support for everyday life.</h2>
-        <button class="ready_block_button" id="bottom_form_action" data-trans="ready_block_button">START YOUR SUBSCRIPTION NOW</button>
-      </div>
-    </section>
-  </main>
-  <footer class="footer">
-    <h5 data-trans="footer_text_1">After clicking 'Continue to Subscribe' you will receive PIN message to Confirm your subscription.</h5>
-    <h5 data-trans="footer_text_2">TERMS AND CONDITIONS:</h5>
-    <br>
-    <h5 data-trans="footer_text_3">To subscribe to EasyFitness, first day free, then 0.7 KWD per week for Zain users, 0.2 KWD/Day for STC users, 0.8 KWD per week for prepaid users and 3.5 KWD per month for postpaid users for Ooredoo users you should confirm your mobile number and you will receive a Pin Code via SMS.</h5>
-    <h5 data-trans="footer_text_4">Service is automatically renewed until cancelled.</h5>
-    <h5 data-trans="footer_text_5">You may unsubscribe at any time at support_kw@customer-help.center or sending UNSUB EF to 93052 for Zain users, send STOP2 to 50365 for STC users and sending STOP 1 to 1371 for Ooredoo users.</h5>
-    <br>
-    <h5 data-trans="footer_text_6">© 2026 Powered by Inspiritum</h5>
-    <br>
-    <div class="foot_links">
-      <a data-trans="menu_links_1" href="https://fitnesskw.com">Home</a>
-      <a data-trans="menu_links_2" href="https://fitnesskw.com/privacy.html">Privacy</a>
-      <a data-trans="menu_links_3" href="https://fitnesskw.com/terms.html">Terms and Conditions</a>
-      <a data-trans="menu_links_4" href="https://fitnesskw.com/unsubscribe.html">Manage Subscription</a>
-    </div>
-  </footer>
-  
-  <div class="loading">
-  </div>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/nav.js"></script>
-  <script>
-    let bottomFormAction = document.getElementById('bottom_form_action');
-    let form = document.getElementById('subConfirm');
-    //id msisdn
-    let input = document.getElementById('msisdn');
-    // input.oninput = () => {
-    //     input.value = input.value.replace(/[^0-9]/, '');
-    //     if (input.value.substr(0, 3) === '965') input.setAttribute('maxlength', '11');
-    //     else input.setAttribute('maxlength', '8');
-    // }
-    input.oninput = () => {
-      input.value = input.value.replace(/[^\d\u0660-\u0669]/g, '');
-
-      let firstThreeDigits = input.value.substr(0, 3);
-
-      if (firstThreeDigits === '965' || firstThreeDigits === '\u0669\u0666\u0668') {
-        input.setAttribute('maxlength', '11');
-      } else if (input.value.startsWith('0') || input.value.startsWith('\u0660')) {
-        input.setAttribute('maxlength', '9');
-      } else {
-        input.setAttribute('maxlength', '8');
-      }
-      let pattern = /(0{8}|1{8}|2{8}|3{8}|4{8}|5{8}|6{8}|7{8}|8{8}|9{8}|\u0660{8}|\u0661{8}|\u0662{8}|\u0663{8}|\u0664{8}|\u0665{8}|\u0666{8}|\u0667{8}|\u0668{8}|\u0669{8})/;
-      if (pattern.test(input.value)) {
-        alert('Sequences of 8 identical digits are prohibited.');
-        input.value = input.value.replace(pattern, '');
-      }
-    };
-
-    $('[name=msisdn]').keyup(function() {
-      if (this.value.length < $('[name=msisdn]').attr('maxlength')) {
-        $(' [type=submit]').prop('disabled', true);
-        // $('[data-pin-req] .field-alert').addClass('active');
-        // $(this).closest('form').removeClass('form-valid');
-      } else {
-        $(' [type=submit]').prop('disabled', false);
-        // $('[data-pin-req] .field-alert').remove('.active');
-        // $(this).closest('form').addClass('form-valid');
-      }
-    });
-
-    form.onsubmit = (e) => {
-      e.preventDefault();
-
-      document.querySelector('button[type=submit]').setAttribute('disabled', 'disabled');
-      form.submit();
-    }
-
-    bottomFormAction.onclick = (e) => {
-      e.preventDefault();
-
-      let msisdnValue = input.value;
-      let maxLength = parseInt(input.getAttribute('maxlength'));
-
-      if (!msisdnValue || msisdnValue.length < maxLength) {
-        form.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center'
-        });
-
-        input.closest('.field').querySelector('.field-alert').classList.add('active');
-        input.focus();
-
-        return;
-      }
-
-      document.querySelector('#form_submit_btn').setAttribute('disabled', 'disabled');
-      form.submit();
-    }
-  </script>
-  
-</body>
-
+  </body>
 </html>
